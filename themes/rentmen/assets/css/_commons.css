@@ -110,6 +110,12 @@ Containers
 	padding: 0;
 	list-style: none;
 }
+ul.reset-list,
+ol.reset-list{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 .reset-list li{
 	padding: 0;
 	margin: 0;

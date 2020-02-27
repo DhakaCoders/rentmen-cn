@@ -18,8 +18,11 @@ header.header .hdr-topbar{
 .hdr-rgt{
 	display: flex;
 	justify-content: flex-end;
+	align-items: center;
 }
-.main-nav{
+.main-nav,
+.hdr-social,
+.hdr-sign-up{
 	display: inline-block;
 	vertical-align: baseline;
 }
@@ -31,13 +34,22 @@ nav.main-nav ul li{
 	
 }
 nav.main-nav ul li a{
-	
+	color: #000000;
+	font-size: 14px;
+	font-weight: 700;
+	display: inline-block;
+	vertical-align: baseline;
+	position: relative;
+	padding-bottom: 40px;
+	padding-left: 2px;
+	padding-right: 2px;	
 }
 nav.main-nav > ul{
 
 }
 nav.main-nav > ul > li{
-
+	display: inline-block;
+	vertical-align: baseline;
 }
 nav.main-nav > ul > li > a{
 	color: #1E1E1E;
@@ -53,4 +65,63 @@ nav.main-nav > ul > li.menu-item-has-children > a{
 
 nav.main-nav > ul > li.menu-item-has-children ul.sub-menu{
 	
+}
+
+nav.main-nav > ul > li.menu-item-has-children > ul.sub-menu{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	min-width: 205px;
+	padding: 5px 0 0 0;
+	background: #fff;
+	z-index: 30;
+	box-shadow: 0 11px 10px 0 rgba(0, 0, 0, 0.15);
+	-ms-box-shadow: 0 11px 10px 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0 11px 10px 0 rgba(0, 0, 0, 0.15);
+    transform: scale3d(1,0,1);
+    -ms-transform: scale3d(1,0,1);
+    -webkit-transform: scale3d(1,0,1);
+    transition: all .5s;
+    -ms-transition: all .5s;
+    -webkit-transition: all .5s;
+    transform-origin: top;
+    -ms-transform-origin: top;
+    -webkit-transform-origin: top;
+    opacity: 0;
+}
+nav.main-nav > ul > li.menu-item-has-children:hover > ul.sub-menu{
+    transform: scale3d(1,1,1);
+    -ms-transform: scale3d(1,1,1);
+    -webkit-transform: scale3d(1,1,1);
+    opacity: 1;
+}
+nav.main-nav ul.sub-menu li{
+	padding: 0 0 0 0;
+	display: block;
+	position: relative;
+	border-bottom: 1px solid #eee;
+}
+nav.main-nav ul.sub-menu li a{
+	color: #9e9ea1;
+	font-size: 14px;
+	display: block;
+	padding: 10px 20px;
+}
+
+nav.main-nav ul.sub-menu li:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 0;
+    background: #0055FF;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+nav.main-nav ul.sub-menu li:hover:before {
+    height: 100%;
 }
