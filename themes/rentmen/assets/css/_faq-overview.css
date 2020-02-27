@@ -5,18 +5,24 @@
 .faq-cnt-inner{
 	text-align: center;
 }
-.faq-cnt-inner h3{
+.faq-cnt-inner h1{
+	font-size: 36px;
 	line-height: 1.4;
 	color: #222020;
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
-	font-family: 'Oswald';
-	font-weight: 700;
 	margin: 0;
 	padding-bottom: 20px;
 }
 .faq-cnt-inner p{
 	margin-bottom: 28px;
+}
+
+.faq-content .rm-search-form input[type="search"] {
+    width: 770px;
+}
+.faq-content .rm-search-submit-btn {
+    right: 263px;
 }
 
 
@@ -82,25 +88,38 @@
 .faq-grd-item-des h5{
 	line-height: 1.4;
 	margin: 0;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	padding-bottom: 25px;
+}
+.faq-grd-item-des h5 a{
+	color: #1E1E1E;
 }
 .faq-grd-item-des p{
 	margin-bottom: 25px;
 	font-weight: normal;
 }
-.faq-grd-item-des a{
+.faq-grd-item-des > a{
 	color: #ACABAB;
 	font-weight: 700;
 	padding-right: 32px;
 	position: relative;
+}
+.faq-grd-item-des a:after{
+	content: "";
+	background: url('../images/faq-right-arrow.svg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 14px;
+	width: 16px;
 }
 .faq-grd-item-des a i{
 	position: absolute;
 	top: -1px;
 	right: 0;
 }
-.faq-grd-item-des a:hover{
+.faq-grd-item-des > a:hover{
 	color: #F3BF00;
 	padding-right: 40px;
 }
