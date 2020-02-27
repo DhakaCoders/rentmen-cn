@@ -12,6 +12,19 @@ a,input,img,textarea,button{
 	-webkit-transform: scale(1.1);
 	-o-transform: scale(1.1);
 }
+.hm-de-kijker-post-img-overflow:hover .hm-de-kijker-post-img,
+a,input,img,textarea,button{
+	transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+}
+.hm-de-kijker-post-img-overflow:hover .hm-de-kijker-post-img,
+.scale{
+	transform: scale(1.03);
+	-ms-transform: scale(1.03);
+	-webkit-transform: scale(1.03);
+	-o-transform: scale(1.03);
+}
 
 /**
 All Hovers
