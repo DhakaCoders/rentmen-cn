@@ -1,3 +1,29 @@
+header.header .hdr-topbar{
+	background: #F3BF00;
+	padding-top: 19px;
+	border-bottom: 6px solid #1E1E1E;
+}
+
+.hdr-topbar-inr{
+	position: relative;
+}
+.hdr-topbar-inr{
+	padding-left: 380px;
+}
+.logo{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.hdr-rgt{
+	display: flex;
+	justify-content: flex-end;
+}
+.main-nav{
+	display: inline-block;
+	vertical-align: baseline;
+}
+
 nav.main-nav ul{
 
 }
@@ -14,7 +40,7 @@ nav.main-nav > ul > li{
 
 }
 nav.main-nav > ul > li > a{
-
+	color: #1E1E1E;
 }
 
 nav.main-nav > ul > li.current-menu-item > a{
