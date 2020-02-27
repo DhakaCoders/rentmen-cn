@@ -146,8 +146,47 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 /*Prashanto*/
 
+//slick slider
+
+if( $('.product-slider-wrp').length ){
+
+  $('.bigViewSlider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 700,
+    fade: true,
+    dots: false,
+    arrows: false,
+    asNavFor: '.thumbSlider'
+  });
+
+  $('.thumbSlider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 700,
+    dots: false,
+    arrows: true, 
+    focusOnSelect: true,
+    vertical: true,
+    verticalSwiping: true,
+    asNavFor: '.bigViewSlider',
+    prevArrow: $('.thumbSlider-arrows .leftArrow'),
+    nextArrow: $('.thumbSlider-arrows .rightArrow'),
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          vertical: false,
+          verticalSwiping: false,
+        }
+      }
+    ]
+  });
 
 
+}
 
 
 
