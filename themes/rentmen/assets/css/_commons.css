@@ -15,13 +15,16 @@ a, a:hover, a:focus, button:hover, button:focus{
 }
 
 body {
-    background: #f8f8f8;
-    color: #000000;
-    font-size: 18px;
+    background: #ffffff;
+    color: #1E1E1E;
+    font-size: 16px;
     line-height: 24px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
 p{
-	line-height: 1.2;
+	line-height: 24px;
+	margin-bottom: 10px;
 }
 /*-- app gap use pattern --*/
 /*data-xxs = 575
@@ -86,10 +89,10 @@ Containers
 	
 }
 .container-lg{
-
+	max-width: 1625px;
 }
 .container{
-	max-width: 1200px;
+	max-width: 1405px;
 	width: 100%;
 }
 .container-md{
@@ -106,7 +109,15 @@ Containers
 	padding: 0;
 	list-style: none;
 }
-
+.reset-list li{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	margin: 0;
+}
+.reset-list li:before{
+	content: none!important;
+}
 .first:first-child{
 	padding-left: 0;
 	margin-left: 0;
