@@ -298,8 +298,9 @@ hm-two-grid-sec-wrp
 	color: #BF211E;
 	font-weight: 300;
 }
-.hm-two-grid-dsc h1{
+.hm-two-grid-dsc h2{
 	margin: 0;
+	font-size: 48px;
 	line-height: 1.1;
 	margin-bottom: 22px;
 }

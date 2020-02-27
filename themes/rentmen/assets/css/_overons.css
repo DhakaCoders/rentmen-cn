@@ -1,0 +1,120 @@
+/*
+---------------------
+overons-two-part-sec-wrp
+---------------------
+*/
+.overons-two-part-sec-wrp{
+	margin-top: 70px;
+	position: relative;
+	height: 920px;
+}
+.overons-two-part-rgt{
+	float: right;
+	width: 50%;
+}
+.overons-two-part-lft {
+    width: 50%;
+    float: left;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+.overons-two-part-lft-img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 125px;
+	z-index: 1;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: center center !important;
+	height: 920px !important
+}
+.overons-two-part-rgt .hm-two-grid-dsc{
+	padding-top: 65px;
+	padding-left: 15px;
+}
+.hm-two-grid-dsc blockquote{
+	border-left: 8px solid #F3BF00;
+	font-size: 24px;
+	line-height: 36px;
+	color: #ACABAB;
+	font-weight: 400;
+	font-style: italic;
+	padding: 16px 0 21px 25px;
+	margin-bottom: 30px;
+	margin-top: 35px;
+}
+.overons-two-part-rgt .hm-two-grid-dsc a{
+	margin-top: 5px;
+	border: 3px solid #F3BF00;
+}
+.overons-two-part-rgt .hm-two-grid-dsc a:last-child{
+	background:#fff;
+	color: #F3BF00;
+	margin-left: 15px;
+}
+/*
+---------------------
+overons-service-sec-wrp
+----------------------
+*/
+.overons-service-sec-wrp{
+	background:#F6F6F6;
+	position: relative;
+	padding-bottom: 100px;
+}
+.overons-justo-box{
+	max-width: 788px;
+	width: 100%;
+	background: linear-gradient(171.11deg, #F9DC5C -0.05%, rgba(255, 255, 255, 0) 100%), #F3BF00;
+	height: 224px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: 0;
+	top: -115px;
+	z-index: 1;
+}
+.overons-justo-box h2{
+	font-size: 48px;
+	line-height: 52px;
+	color: #fff;
+	margin: 0;
+}
+.overons-service-wrp{
+	padding-top: 200px;
+	position: relative;
+}
+.overons-service-wrp ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.overons-service-wrp ul li{
+	float: left;
+	width: 33.3333%;
+	padding: 0 50px 50px;
+	border-right: 2px solid #eaeaea;
+}
+.overons-service-wrp ul li:last-child{
+	border-right: 0;
+}
+.overons-service-box-dsc{
+	text-align: center;
+}
+.overons-service-box-dsc i{
+	display: inline-block;
+	vertical-align: baseline;
+}
+.overons-service-box-dsc h4{
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
