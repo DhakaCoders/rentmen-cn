@@ -29,9 +29,7 @@
 .default-page-con h4,
 .default-page-con h5{
 	margin-bottom: 25px;
-	font-weight: 600;
 	line-height: 1.1;
-	color: #43587B;
 }
 .default-page-con h2{
 	margin-bottom: 15px;
@@ -97,11 +95,11 @@ ol li::before {
 	padding: 0 5.5px;
 }
 .default-page-con p {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .dfp-promo-module{
-	padding-bottom: 17px;
+	padding-bottom: 30px;
 }
 .dfp-promo-module h1{
 	text-transform: uppercase;
@@ -111,20 +109,7 @@ ol li::before {
 	margin-bottom: 0!important;
 	padding-bottom: 20px;
 }
-.dfp-promo-module > strong{
-	display: block;
-	font-weight: 300;
-	font-size: 30px;
-	line-height: 36px;
-	color: #7B8CA8;
-	margin-bottom: 15px;
-}
-.dfp-plate-one-img-bx{
-	margin-bottom: 35px;
-	background-size: cover!important;
-	background-position: center center!important;
-	min-height: 410px;
-}
+
 .dfp-plate-one-img-bx img{
 	width: 100%;
 }
@@ -253,7 +238,7 @@ Gallery design
 */
 
 .gallery-wrap{
-	margin-top: -5px;
+	padding-top: 13px;
 	padding-bottom: 6px;
 }
 .gallery {
