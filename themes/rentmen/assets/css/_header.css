@@ -245,6 +245,7 @@ nav.main-nav ul.sub-menu li:hover:after {
 	line-height: 19px;
 	text-transform: uppercase;
 	position: relative;
+	cursor: pointer;
 }
 .rm-search-submit-btn button:before{
 	content: "";
@@ -258,9 +259,9 @@ nav.main-nav ul.sub-menu li:hover:after {
 .rm-search-submit-btn button i{
 	padding-right: 10px;
 }
-/*.rm-search-form form button:hover svg{
+.rm-search-form form button:hover svg{
 	fill: #F3BF00!important;
-}*/
+}
 .rm-search-form{
 	position: relative;
 	width: 100%;
