@@ -9,7 +9,8 @@
   max-width: 875px;
   padding-bottom: 80px;
 }
-.ftr-top-head h3{
+.ftr-top-head h2{
+  font-size: 36px;
   line-height: 42px;
   letter-spacing: 0.03em;
   margin-bottom: 25px;
@@ -80,8 +81,7 @@
   color: #222020;
   margin-bottom: 32px;
 }
-
-.ftr-col ul li{
+.ftr-col ul li{ 
   padding: 0;
   margin-bottom: 25px;
 }
@@ -91,7 +91,6 @@
 .ftr-col ul li a:hover{
   color: #F3BF00;
 }
-
 .ftr-col ul li::before {
   content: none;
 }
@@ -107,11 +106,6 @@
   left: 0;
   top: 0;
 }
-
-
-
-
-
 .ftr-btm{
   padding: 65px 0 70px;
 }
