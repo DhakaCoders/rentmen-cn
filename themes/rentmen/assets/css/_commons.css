@@ -1,5 +1,5 @@
 /**
-Commons
+Commons 
 */
 *, *:focus,.btn,.btn:focus{
 	outline: 0!important;
@@ -90,7 +90,7 @@ Containers
 	
 }
 .container-lg{
-	max-width: 1625px;
+	max-width: 1725px;
 }
 .container{
 	max-width: 1405px;
@@ -101,11 +101,17 @@ Containers
 }
 
 .container-sm{
-
+	width: 935px;
 }
 
 
 .ulc{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul.reset-list,
+ol.reset-list{
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -192,22 +198,35 @@ form .bootstrap-select button{
 form .bootstrap-select .caret{
 	border: 0;
 }
-form .bootstrap-select .caret::before {
-	content: "\f107";
+.dropdown-toggle{
+	position: relative;
+}
+.dropdown-toggle::after{
+	content: none;
+}
+.dropdown-toggle::before{
+	content: "\f107"!important;
     font-family: 'Font Awesome 5 Free';
     font-weight: 600;
     text-decoration: inherit;
-    color: #710023;
+    color: #1E1E1E;
     font-size: 22px;
     padding-right: 0;
     position: absolute;
-    top: -6px;
-    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    right: 15px;
     line-height: 15px;
 }
-form .bootstrap-select.open .caret::before{
-	content: "\f106";
+.bootstrap-select.open .dropdown-toggle::before{
+	content: "\f106"!important;
 }
+
+
+
+
 form .open > .dropdown-toggle.btn-default:hover,
 form .btn-default.active, form .btn-default:active, 
 form .open > .dropdown-toggle.btn-default{
@@ -250,9 +269,44 @@ form .dropdown-menu li a{
 .dropdown-menu>.active>a, 
 .dropdown-menu>.active>a:focus, 
 .dropdown-menu>.active>a:hover{
-	background-color: #710023;
+	background-color: #F3BF00;
 }
 
 .bootstrap-select .dropdown-toggle:focus{
 	outline: none!important;
+}
+
+
+
+/*customize- select*/
+.rm-selctpicker-ctlr button.btn{
+	border: 1px solid #DFDFDF;
+	border-radius: 0;
+	
+}
+.rm-selctpicker-ctlr .bootstrap-select .dropdown-toggle .filter-option-inner-inner{
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 22px;
+}
+.bootstrap-select .dropdown-toggle .filter-option,
+.bootstrap-select .dropdown-toggle .filter-option-inner{
+	height: 100%;
+}
+.bootstrap-select .dropdown-toggle .filter-option-inner{
+	display: flex;
+	align-items: center;
+}
+
+
+
+.hdr-btm-select-filter .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
+}
+.hdr-btm-select-filter{
+	width: 264px;
+}
+.hdr-btm-select-filter  .rm-selctpicker-ctlr button.btn{
+	height: 64px;
 }

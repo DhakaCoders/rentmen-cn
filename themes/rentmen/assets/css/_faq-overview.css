@@ -1,0 +1,138 @@
+
+.faq-content{
+	padding: 80px 0;
+}
+.faq-cnt-inner{
+	text-align: center;
+}
+.faq-cnt-inner h3{
+	line-height: 1.4;
+	color: #222020;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	font-family: 'Oswald';
+	font-weight: 700;
+	margin: 0;
+	padding-bottom: 20px;
+}
+.faq-cnt-inner p{
+	margin-bottom: 28px;
+}
+
+
+.faq-grd-sec{
+	background: #F6F6F6;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.faq-btn{
+	text-align: center;
+	padding-bottom: 50px;
+	border-bottom: 3px solid #fff;
+}
+.faq-btn ul li{
+	display: inline-block;
+	padding-left: 31px;
+	padding-right: 31px;
+}
+.faq-btn ul li a{
+	font-size: 14px;
+	line-height: 19px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.faq-btn ul li.active a{
+	color: #F3BF00;
+	text-decoration: underline;
+}
+
+
+
+.faq-grd-wrap{
+	margin-top: 100px;
+}
+.faq-grd-wrap ul{
+	margin-left: -26px;
+	margin-right: -26px;
+}
+.faq-grd-wrap ul li{
+	float: left;
+	width: 33.3333%;
+	padding-left: 26px;
+	padding-right: 26px;
+	margin-bottom: 85px;
+}
+.faq-grd-wrap ul li:nth-child(3n+1){
+	clear: left;
+}
+.faq-grd-item{
+	background: #fff;
+	position: relative;
+}
+.faq-grd-item-inner{
+	display: flex;
+	align-items: center;
+	min-height: 290px;
+}
+.faq-grd-item-des{
+	padding-left: 25px;
+	padding-right: 20px;
+}
+.faq-grd-item-des h5{
+	line-height: 1.4;
+	margin: 0;
+	font-weight: 600;
+	padding-bottom: 25px;
+}
+.faq-grd-item-des p{
+	margin-bottom: 25px;
+	font-weight: normal;
+}
+.faq-grd-item-des a{
+	color: #ACABAB;
+	font-weight: 700;
+	padding-right: 32px;
+	position: relative;
+}
+.faq-grd-item-des a i{
+	position: absolute;
+	top: -1px;
+	right: 0;
+}
+.faq-grd-item-des a:hover{
+	color: #F3BF00;
+	padding-right: 40px;
+}
+.faq-grd-icon{
+	position: absolute;
+	top: -40px;
+	left: 25px;
+}
+
+
+
+.faq-pagination{
+	text-align: center;
+}
+.faq-pagination ul li{
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.faq-pagination ul li a{
+	color: #BEBEBE;
+	font-weight: 700;
+	height: 46px;
+	width: 46px;
+	border: 4px solid #E2E2E2;
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.faq-pagination ul li.active a,
+.faq-pagination ul li a:hover{
+	color: #1E1E1E;
+	border: 4px solid #F3BF00;
+}

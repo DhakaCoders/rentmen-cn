@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+/*!
+ * animate.css -http://daneden.me/animate
+ * Version - 3.5.1
+ * Licensed under the MIT license - http://opensource.org/licenses/MIT
+ *
+ * Copyright (c) 2016 Daniel Eden
+ */
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+.animated.flipOutX,
+.animated.flipOutY,
+.animated.bounceIn,
+.animated.bounceOut {
+  -webkit-animation-duration: .75s;
+  animation-duration: .75s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.quick-by-modal-main{
+  background: #fff;
+  padding-left: 100px; 
+  padding-right: 110px; 
+}
+.modal-slider-lft-con{
+  width: 49%;
+  float: left;
+  padding-top: 85px;
+  border-right: 1px dashed #3B3B3B;
+}
+.product-slider-wrp{
+  overflow: hidden;
+}
+.thumbSlider-wrp{
+  float: left;
+  width: 17%;
+  padding-right: 15px;
+  padding-top: 70px;
+  padding-bottom: 55px;
+  position: relative;
+}
+.bigViewSlider-wrp {
+  width: 83%;
+  float: right;
+}
+.bigViewSlider-item {
+  padding: 0 20px 0 20px;
+  position: relative;
+  text-align: center;
+}
+.bigViewSlider-item img {
+  margin: auto;
+}
+.thumbSlider-item-img { 
+  width: 92px;
+  height: 91px;
+  margin-bottom: 18px;
+  padding:0;
+  display: inline-block;
+  vertical-align: baseline;
+  border: 2px solid #0000;
+}
+.slick-current .thumbSlider-item-img{
+  border: 2px solid #000;
+  overflow: hidden;
+}
+.thumbSlider-item i {
+  display: block;
+  margin: 0 auto; 
+  width: 92px;
+  height: 91px;
+}
+.thumbSlider-item i img {
+  width: 100%;
+}
+.bigViewSlider .bigViewSlider-item,
+.thumbSlider .thumbSlider-item{
+  display: none !important;
+}
+.bigViewSlider .bigViewSlider-item:first-child,
+.thumbSlider .thumbSlider-item:first-child{
+  display: block !important;
+}
+.bigViewSlider.slick-initialized .bigViewSlider-item,
+.thumbSlider.slick-initialized .thumbSlider-item{
+  display: block !important;
+}
+.slider-pro-thumb-slider-wrp{
+  position: relative;
+}
+.thumbSlider-arrows > .leftArrow{
+  position: absolute;
+  top:0;
+  left: 43%;
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  z-index: 5;
+  cursor: pointer;
+  -ms-transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.thumbSlider-arrows > .rightArrow{
+  position: absolute;
+  bottom: 0;
+  left: 43%;
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  z-index: 5;
+  cursor: pointer;
+  -ms-transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.thumbSlider-arrows > .leftArrow img:last-child,
+.thumbSlider-arrows > .rightArrow img:last-child{
+  display: none;
+}
+.thumbSlider-arrows > .leftArrow:hover,
+.thumbSlider-arrows > .rightArrow:hover{
+  opacity: .6
+}
+
+.modal-des-rgt-con{
+  width: 51%;
+  float: left;
+  padding-top: 10px;
+  padding-left: 140px;
+}
