@@ -51,11 +51,22 @@ overons-two-part-sec-wrp
 .overons-two-part-rgt .hm-two-grid-dsc a{
 	margin-top: 5px;
 	border: 3px solid #F3BF00;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
 }
 .overons-two-part-rgt .hm-two-grid-dsc a:last-child{
 	background:#fff;
 	color: #F3BF00;
 	margin-left: 15px;
+}
+.overons-two-part-rgt .hm-two-grid-dsc a:hover:first-of-type{
+	background: #fff !important;
+	color: #F3BF00;
+}
+.overons-two-part-rgt .hm-two-grid-dsc a:hover:last-child{
+	background:#F3BF00;
+	color: #fff;
 }
 /*
 ---------------------
@@ -98,7 +109,7 @@ overons-service-sec-wrp
 .overons-service-wrp ul li{
 	float: left;
 	width: 33.3333%;
-	padding: 0 50px 50px;
+	padding: 15px 50px 50px;
 	border-right: 2px solid #eaeaea;
 }
 .overons-service-wrp ul li:last-child{
@@ -117,4 +128,11 @@ overons-service-sec-wrp
 	text-transform: uppercase;
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+.overons-de-post-sec .hm-de-kijker-post-wrp{
+	padding-top: 15px;
+}
+.overons-de-post-sec .hm-download-btn {
+    padding-top: 50px;
 }
