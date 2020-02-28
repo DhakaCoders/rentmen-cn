@@ -1,0 +1,102 @@
+/*===================
+  breadcrumbs design
+====================*/
+.breadcrumbs-sec{
+  background: #F6F6F6;
+  padding: 50px 0 48px;
+}
+.breadcrumbs-innr{
+  position: relative;
+  padding-left: 200px;
+}
+.breadcrumbs-innr > i{
+  display: inline-block;
+  vertical-align: baseline;
+  max-width: 181px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.breadcrumbs-innr > i img{
+  width: 100%;
+}
+.breadcrumbs-main ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.breadcrumbs-main ul::after,
+.breadcrumbs-main ul::before{
+  content: "";
+  display: table;
+  clear: both;
+}
+.breadcrumbs-main ul {
+  float: right;
+}
+.breadcrumbs-main ul li{
+  padding: 0;
+  padding-left: 11px;
+  padding-right: 43px;
+  position: relative;
+  float: left;
+}
+.breadcrumbs-main ul li a {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 22px;
+  color: #1E1E1E;
+}
+.breadcrumbs-main ul li a:hover{
+  color: #F3BF00;
+}
+.breadcrumbs-main ul li::after {
+  content: "";
+  width: 27px;
+  height: 8px;
+  background: url(../images/breadcrumbs-array.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.breadcrumbs-main ul li::before {
+  content: none;
+}
+.breadcrumbs-main ul li:last-child{
+  padding-right: 0;
+}
+.breadcrumbs-main ul li:first-child{
+  padding-left: 25px;
+}
+.breadcrumbs-main ul li:first-child::before{
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: url(../images/breadcrumbs-home.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.breadcrumbs-main ul li:last-child::after{
+  content: none;
+}
+
+
+
+
+

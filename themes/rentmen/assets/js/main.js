@@ -190,6 +190,76 @@ if( $('.product-slider-wrp').length ){
 
 
 
+
+//products counter
+if( $('.pro-counter .qty').length ){
+  $('.pro-counter .qty').each(function() {
+    var spinner = $(this),
+      input = spinner.find('input[type="number"]'),
+      btnUp = spinner.find('.plus'),
+      btnDown = spinner.find('.minus'),
+      min = 1,
+      max = input.attr('max');
+
+    btnUp.click(function() {
+      var oldValue = parseFloat(input.val());
+      if (oldValue <= max) {
+        var newVal = oldValue;
+      } else {
+        var newVal = oldValue + 1;
+      }
+      spinner.find("input").val(newVal);
+      spinner.find("input").trigger("change");
+    });
+
+    btnDown.click(function() {
+      var oldValue = parseFloat(input.val());
+      if (oldValue <= min) {
+        var newVal = oldValue;
+      } else {
+        var newVal = oldValue - 1;
+      }
+      spinner.find("input").val(newVal);
+      spinner.find("input").trigger("change");
+    });
+
+  });
+
+}
+
+//price renge slider
+if( $('.price-slider').length ){
+  var outputSpan = $('#spanOutput');
+  var sliderDiv = $('#slider');
+
+  sliderDiv.slider({
+    range: true,
+    min: 0,
+    max: 200,
+    values: [23.99, 119.99],
+    slide: function (event, ui) {
+      outputSpan.html(ui.values[0] + ' - ' + ui.values[1] + ' Years');
+      $('#minAmount').val(ui.values[0]);
+      $('#maxAmount').val(ui.values[1]);
+    }
+  });
+
+  outputSpan.html(sliderDiv.slider('values', 0) + ' - '
+    + sliderDiv.slider('values', 1) + ' Years');
+  $('#minAmount').val(sliderDiv.slider('values', 0));
+  $('#maxAmount').val(sliderDiv.slider('values', 1));
+
+}
+
+
+
+
+
+
+
+
+
+
 /*Rannojit*/
 
 

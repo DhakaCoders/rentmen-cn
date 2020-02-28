@@ -1,6 +1,6 @@
 /**
 Commons 
-*/
+*/ 
 *, *:focus,.btn,.btn:focus{
 	outline: 0!important;
 	text-decoration: none;
@@ -220,7 +220,7 @@ form .bootstrap-select .caret{
     right: 15px;
     line-height: 15px;
 }
-.bootstrap-select.open .dropdown-toggle::before{
+.bootstrap-select.show .dropdown-toggle::before{
 	content: "\f106"!important;
 }
 
