@@ -516,6 +516,30 @@ Gallery design
 .dfp-plate-one-img-bx{
 	position: relative;
 }
+.dfp-plate-one-img-bx .dft-blog-item-des-date{
+	right: -46px;
+	left: auto;
+}
+#nieuws-details-page-cntlr .dfp-tbl-wrap,
+#nieuws-details-variant-page-cntlr .dfp-tbl-wrap{
+	padding-bottom: 45px;
+}
+.dft-share-on.dft-share-on-bm{
+	margin-bottom: 0;
+}
+#nieuws-details-page-cntlr .default-page-con,
+#nieuws-details-variant-page-cntlr .default-page-con{
+	padding-bottom: 65px;
+}
+
+#nieuws-details-variant-page-cntlr .dfp-promo-module{
+	position: relative;
+	padding-bottom: 12px;
+}
+#nieuws-details-variant-page-cntlr .dft-blog-item-des-date{
+	left: -127px;
+	top: -27px;
+}
 
 @media(max-width: 1199px){
 	#main-content .default-page-con-inner{
