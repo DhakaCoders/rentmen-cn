@@ -401,20 +401,21 @@ html .price-slider .ui-button.ui-state-disabled:active {
 .pro-overview-grid-btm-lnc a:last-child:hover{
   opacity: .8
 }
+
+
+
+
 .pro-overview-grid-filter{
   padding: 50px 0 10px;
 }
-.pro-overview-grid-filter > span{
+.pro-overview-grid-filter .rm-selctpicker-ctlr > span{
   font-size: 14px;
   line-height: 19px;
 }
 .pro-overview-grid-filter .rm-selctpicker-ctlr{
   float: right;
 }
-.pro-overview-grid-filter .rm-selctpicker-ctlr button.btn {
-  border:0;
-  background: transparent;
-}
+.pro-overview-grid-filter .rm-selctpicker-ctlr button.btn,
 .pro-overview-grid-filter .rm-selctpicker-ctlr button.btn:hover {
   border:0;
   background: transparent;
