@@ -490,8 +490,29 @@ Gallery design
 
 
 /*news details */
-
-
+.dft-share-on{
+	display: flex;
+	align-items: center;
+	margin-bottom: 30px;
+}
+.dft-share-on span{
+	padding-right: 18px;
+}
+.dft-share-on a{
+	display: inline-block;
+	vertical-align: baseline;
+	margin-right: 12px;
+	width: 26px;
+	height: 26px;
+	border-radius: 100% 100%;
+	border: 1px solid #1E1E1E;
+	text-align: center;
+	padding-top: 3px;
+}
+.dft-share-on a i{
+	position: relative;
+	top: -4px;
+}
 
 
 @media(max-width: 1199px){
