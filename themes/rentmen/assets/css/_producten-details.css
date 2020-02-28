@@ -343,6 +343,7 @@
   float: left;
   width: 20%;
   padding: 0 5px 25px;
+  position: relative;
 }
 .organizePartySlider-img{
   min-height: 103px;
