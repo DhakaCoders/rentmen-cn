@@ -341,6 +341,14 @@ html .price-slider .ui-button.ui-state-disabled:active {
 }
 .pro-overview-grid-item-innr{
   background: #fff;
+  transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.pro-overview-grid-item-innr:hover{
+  -webkit-box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
+  -ms-box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
 }
 .pro-overview-grid-img{
   display: flex;
@@ -549,4 +557,57 @@ html .price-slider .ui-button.ui-state-disabled:active {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+
+
+}
+
+@media(max-width: 991px){
+
+  
+}
+
+@media(max-width: 767px){
+
+}
+
+@media(max-width: 575px){
+
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
+}
 
