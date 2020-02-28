@@ -513,7 +513,9 @@ Gallery design
 	position: relative;
 	top: -4px;
 }
-
+.dfp-plate-one-img-bx{
+	position: relative;
+}
 
 @media(max-width: 1199px){
 	#main-content .default-page-con-inner{
