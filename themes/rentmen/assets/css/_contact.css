@@ -1,0 +1,34 @@
+/*
+------------------
+------------------
+*/
+.contact-info-wrp {
+    background: #F3BF00;
+    margin-top: 38px;
+}
+.contact-info-wrp ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.contact-info-wrp ul li{
+	float: left;
+	width: 33.3333%;
+	padding: 65px 83px 145px;
+}
+.contact-info{
+	text-align: center;
+}
+.contact-info i{
+	display: block;
+}
+.contact-info a{
+	display: inline-block;
+	vertical-align: baseline;
+	text-decoration: none;
+	font-size: 30px;
+	line-height: 32px;
+	font-weight: 700;
+	color: #fff;
+	padding-top: 22px;
+}
