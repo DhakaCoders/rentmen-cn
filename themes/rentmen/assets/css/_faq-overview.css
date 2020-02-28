@@ -139,11 +139,7 @@
 .faq-pagination{
 	text-align: center;
 }
-.faq-pagination ul li{
-	display: inline-block;
-	padding-left: 10px;
-	padding-right: 10px;
-}
+
 .faq-pagination ul li a.page-numbers,
 .faq-pagination ul li span{
 	color: #BEBEBE;
@@ -163,4 +159,15 @@
 .faq-pagination ul li a.page-numbers:hover{
 	color: #1E1E1E;
 	border: 4px solid #F3BF00;
+}
+.faq-pagination ul{
+	padding-left: 0px;
+    padding-bottom: 0px;
+}
+.faq-pagination ul li{
+	display: inline-block;
+    padding: 0 10px;
+}
+.faq-pagination ul li::before {
+    display: none;
 }
