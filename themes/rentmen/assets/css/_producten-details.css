@@ -420,6 +420,16 @@
   overflow: hidden;
   min-height: 280px;
 }
+.interestedItemSlider-img a{
+  display: inline-block;
+  vertical-align: baseline;
+}
+.interestedItemSlider-item-innr:hover .interestedItemSlider-img img{
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
 .interestedItemSlider-des{
   padding: 0 22px 22px;
 }
