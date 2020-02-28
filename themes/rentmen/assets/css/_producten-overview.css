@@ -301,7 +301,8 @@ html .price-slider .ui-button.ui-state-disabled:active {
   color: #ACABAB;
 }
 .pro-overview-single-des-link a:last-child{
-  float: right
+  float: right;
+  padding-left: 15px;
 }
 .pro-overview-single-des-link a:last-child:hover{
   opacity: .8
@@ -406,7 +407,8 @@ html .price-slider .ui-button.ui-state-disabled:active {
   color: #F3BF00;
 }
 .pro-overview-grid-btm-lnc a:last-child{
-  float: right
+  float: right;
+  padding-left: 15px;
 }
 .pro-overview-grid-btm-lnc a:last-child:hover{
   opacity: .8

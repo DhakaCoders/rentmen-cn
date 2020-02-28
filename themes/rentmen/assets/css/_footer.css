@@ -10,6 +10,7 @@
   padding-bottom: 80px;
 }
 .ftr-top-head h2{
+  font-family: 'Open Sans', sans-serif;
   font-size: 36px;
   line-height: 42px;
   letter-spacing: 0.03em;
@@ -75,7 +76,7 @@
   width: 100%;
 }
 .ftr-col h6{
-  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
   line-height: 22px;
   text-transform: uppercase;
   color: #222020;
@@ -84,6 +85,7 @@
 .ftr-col ul li{ 
   padding: 0;
   margin-bottom: 25px;
+  font-weight: 600;
 }
 .ftr-col ul li a{
   color: #222020;
@@ -97,10 +99,14 @@
 .ftr-col.ftr-col-5 h6{
   margin-bottom: 15px;
 }
-.ftr-col-5 ul li{
+.ftr-col.ftr-col-5 ul li{
   position: relative;
   padding-left: 36px;
   margin-bottom: 23px;
+  font-weight: 400;
+}
+.ftr-col.ftr-col-5 ul li:first-child{
+  font-weight: 600;
 }
 .ftr-col-5 ul li i{
   position: absolute;
