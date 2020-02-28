@@ -2,19 +2,6 @@
 	overflow: hidden;
 	position: relative;
 }
-.innerpage-con-wrap:before{
-	content: "";
-	position: absolute;
-	background: url(../images/dot-icon-sky.png);
-	width: 12px;
-	height: 11px;
-	background-size: 100% 100%;
-	top: 30px;
-	left: 38%;
-	transform: translateX(-38%);
-	-ms-transform: translateX(-38%);
-	-webkit-transform: translateX(-38%);
-}
 .default-page-con {
 	padding-bottom: 125px;
 	padding-top: 72px;
@@ -226,16 +213,16 @@ ol li::before {
 	margin: 0 -32px!important;
 	padding-bottom: 23px;
 }
-.dft-blog-slide-item{
+.dft-blog-item{
 	padding: 0 32px 30px;
 }
-.dft-blog-slide-item-fea-img{
+.dft-blog-item-fea-img{
 	height: 280px;
 	background-size: cover!important;
 	background-position: center center!important;
 	background-repeat: no-repeat!important;
 }
-.dft-blog-slide-item-des{
+.dft-blog-item-des{
 	background: #FFFFFF;
 	box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
 	-ms-box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
@@ -243,14 +230,14 @@ ol li::before {
 	padding: 75px 25px 40px;
 	position: relative;
 }
-.dft-blog-slide-item-des > strong{
+.dft-blog-item-des > strong{
 	font-weight: 600;
 	font-size: 22px;
 	line-height: 30px;
 	display: block;
 	margin-bottom: 25px;
 }
-.dft-blog-slide-item-des-date{
+.dft-blog-item-des-date{
 	width: 96px;
 	height: 96px;
 	text-align: center;
@@ -266,18 +253,18 @@ ol li::before {
 	padding-left: 8px;
 	padding-right: 8px;
 }
-.dft-blog-slide-item-des-date *{
+.dft-blog-item-des-date *{
 	display: block;
 }
-.dft-blog-slide-item-des-date strong{
+.dft-blog-item-des-date strong{
 	padding-bottom: 7px;
 	font-weight: 700;
 }
-.dft-blog-slide-item-des-date span{
+.dft-blog-item-des-date span{
 	font-size: 24px;
 	text-transform: uppercase;
 }
-.dft-blog-slide-item-des a{
+.dft-blog-item-des a{
 	color: #ACABAB;
 	font-size: 16px;
 	line-height: 22px;
@@ -287,7 +274,7 @@ ol li::before {
 	padding: 0 30px 0 0;
 	position: relative;
 }
-.dft-blog-slide-item-des a:after{
+.dft-blog-item-des a:after{
 	content: "";
 	position: absolute;
 	top: 50%;
@@ -304,10 +291,10 @@ ol li::before {
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 }
-.dft-blog-slide-item-des a:hover{
+.dft-blog-item-des a:hover{
 	color: #F3BF00;
 }
-.dft-blog-slide-item-des a:hover:after{
+.dft-blog-item-des a:hover:after{
 	right: -3px;
 }
 .default-page-con hr{
@@ -406,9 +393,9 @@ Gallery design
 	-ms-box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
 	-webkit-box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
 }
-.table-dsc table thead{
-	border-left: 4px solid #F3BF00;
-	border-right: 4px solid #F3BF00;
+
+.table-dsc table tbody{
+
 }
 /*.table-dsc table tr th:nth-child(1){
 	padding: ;
@@ -434,8 +421,16 @@ Gallery design
 .table-dsc table tbody tr td:first-child span{
 	font-weight: 700;
 }
+.table-dsc table thead tr th:first-child,
+.table-dsc table tbody tr td:first-child{
+	padding-left: 25px;
+	padding-right: 25px;
+	width: 100px;
+	text-align: center;
+}
 .table-dsc table tbody tr td:first-child{
 	background: #F4F4F4;
+
 }
 .table-dsc table tr th {
 	border: none;
@@ -449,17 +444,17 @@ Gallery design
 	line-height: 25px;
 }
 .table-dsc table tr th span{
-	padding-top: 5px;
-	padding-bottom: 5px;
 	display: block;
 }
-.table-dsc table thead tr th:first-child span{
-	width: 55px;
+.table-dsc table thead th span{
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 30px
 }
 .table-dsc table thead tr th,
 .table-dsc table tbody tr td{
-	padding-left: 40px!important;
-	padding-right: 10px!important;
+	padding-left: 33px;
+	padding-right: 10px;
 }
 
 
@@ -469,25 +464,19 @@ Gallery design
 	padding-right: 30px;
 	font-weight: 700;
 }
-.table-dsc table thead tr th:first-child{
-	padding-left: 40px;
-}
+
 
 .table-dsc table tbody{
 	border-top: 0;
 	margin: 0 3px;
 }
 .table-dsc table tbody tr td{
-	padding-top: 18px;
-	padding-bottom: 18px;
-	padding-right: 10px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
-.table-dsc table tbody tr td:nth-child(2),
-.table-dsc table thead tr th:nth-child(2){
-	padding-left: 0;
-}
+
 .table-dsc table tbody tr:last-child{
-	border-bottom: 4px solid #F3F3F3;
+	border-bottom: none;
 }
 
 .table-dsc table tbody tr{
