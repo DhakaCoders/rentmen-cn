@@ -1,26 +1,32 @@
 /*
 ------------------
+contact-info-sec-wrp
 ------------------
 */
+.contact-info-sec-wrp{
+	padding-bottom: 110px;
+	padding-top: 50px;
+}
 .contact-info-wrp {
     background: #F3BF00;
     margin-top: 38px;
-}
-.contact-info-wrp ul{
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-.contact-info-wrp ul li{
-	float: left;
-	width: 33.3333%;
-	padding: 65px 83px 145px;
+    padding-top: 65px;
+    padding-bottom: 145px;
 }
 .contact-info{
 	text-align: center;
+	width: 33.3333%;
+	float: left;
 }
 .contact-info i{
 	display: block;
+	padding-bottom: 22px;
+}
+.contact-info a:hover i svg{
+	fill:#000; 
+}
+.contact-info a:hover{
+	color: #000;
 }
 .contact-info a{
 	display: inline-block;
@@ -30,5 +36,288 @@
 	line-height: 32px;
 	font-weight: 700;
 	color: #fff;
-	padding-top: 22px;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+
+.rm-contact-form-block{
+	max-width: 980px;
+	width: 100%;
+	margin: 0 auto;
+	background: #FFFFFF;
+	box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.05);
+	padding: 20px 35px 40px;
+	margin-top: -85px;
+}
+.rm-contact-form-tab{
+	border-bottom: 1px solid #F3F3F3;
+	padding-bottom: 15px;
+	margin-bottom: 40px;
+}
+.rm-contact-form-tab h4{
+	font-size: 22px;
+	line-height: 24px;
+	margin: 0;
+	color: #000000;
+	font-weight: 600;
+	float: left;
+	padding: 11px 35px 12px 0;
+	border-right: 1px solid #F3F3F3;
+}
+.rm-contact-form-tab ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	padding-left: 15px;
+}
+.rm-contact-form-tab ul li{
+	float: left;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 700;
+	padding: 17px 20px 16px;
+}
+.rm-contact-form-tab ul li a{
+	display: inline-block;
+	vertical-align: baseline;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #AEAEAE;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+.rm-contact-form-tab ul li a:hover,
+.rm-contact-form-tab ul li.active a{
+	color: #F3BF00;
+	text-decoration: underline;
+}
+.tabs{
+	display: none;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+.contact-form-prd{
+	padding-bottom: 30px;
+}
+
+/*
+---------------------
+ Contact Form
+---------------------
+*/
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field{
+	width: 50%;
+	float: left;
+	padding: 0 12px;
+	margin-bottom: 28px;
+	position: relative;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .subjectField{
+	width: 100%;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container{
+	margin: 0 -12px;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field label{
+	display: inline-block;
+	vertical-align: baseline;
+	width: 100%;
+	margin: 0;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #222020;
+	margin-bottom: 12px;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field input{
+	width: 100%;
+	height: 56px;
+	background: #FFFFFF;
+	border: 2px solid #F3F3F3;
+	box-sizing: border-box;
+	padding: 17px 18px 18px;
+	color: #ACABAB;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	border-radius: 0;
+}
+
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .StraatField{
+	width: 74%;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .NrField{
+	width: 26%;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field-textarea{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field-textarea textarea{
+	width: 100%;
+	height: 200px;
+	background: #FFFFFF;
+	border: 2px solid #F3F3F3;
+	box-sizing: border-box;
+	color: #ACABAB;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 400;
+	padding: 22px 18px;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	resize: none;
+	border-radius: 0;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field-textarea textarea:focus,
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field input:focus{
+	border-color: #F3BF00;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-submit-container button{
+	max-width: 200px;
+	width: 100%;
+	height: 60px;
+	border: 0;
+	box-sizing: border-box;
+	background: #F3BF00;
+	font-size: 16px;
+	line-height: 18px;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 700;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	cursor: pointer;
+	display: table;
+	margin: 0 auto;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-submit-container button:hover{
+	background: #dcad06;
+}
+
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-has-error label.wpforms-error {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 24px;
+    color: #DB4655;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    text-align: right;
+    width: auto;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-has-error input{
+    border: 1px solid #DB4655 !important;
+    position: relative;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-has-error{
+	position: relative;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-has-error:after {
+    content: "";
+    position: absolute;
+    right: 29px;
+    bottom: 20px;
+    background: url(../images/error-close-icon.svg);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    width: 14px;
+    height: 14px;
+}
+
+/*
+-----------------------
+ Contact map
+-----------------------
+*/
+.contact-google-map-wrp{
+	position: relative;
+}
+#googlemap{
+	height: 685px;
+}
+.google-map-dsc-wrp {
+    max-width: 978px;
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    padding: 22px 0 30px 35px;
+}
+.google-map-dsc-lft{
+	float: left;
+	width: 78%;
+	border-right: 1px solid #E4E4E4;
+	padding: 10px 0 13px;
+}
+.google-map-dsc-lft span{
+	display: inline-block;
+	vertical-align: baseline;
+	font-size: 24px;
+	line-height: 33px;
+	color:#222020;
+	font-weight: 400;
+	position: relative;
+	padding-left: 65px; 
+}
+.google-map-dsc-lft span i{
+	display: inline-block;
+	vertical-align: baseline;
+	position: absolute;
+	left: 0;
+	top: 13px;
+}
+.google-map-back-btn{
+	float: right;
+	width: 22%;
+	text-align: center;
+	padding: 32px 0;
+}
+.google-map-back-btn a{
+	display: inline-block;
+	vertical-align: baseline;
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 18px;
+	font-weight: 700;
+	color: #F3BF00;
+	position: relative;
+	padding-right: 30px;
+}
+.google-map-back-btn a:after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 3px;
+    background: url(../images/yello-arrows.svg);
+    background-repeat: no-repeat;
+    background-size: 16px 13px;
+    width: 16px;
+    height: 13px;
+    transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.google-map-back-btn a:hover{
+	color: #1E1E1E;
+}
+.google-map-back-btn a:hover:after{
+	background: url(../images/yello-arrows-hover.svg);
+    background-repeat: no-repeat;
+    background-size: 16px 13px;
+    right: -5px;
 }
