@@ -334,7 +334,7 @@
   line-height: 42px;
   letter-spacing: 0.03em;
   color: #222020;
-  margin-bottom: 20px;
+  margin-bottom: 23px;
 }
 .organize-party-head p{
   margin-bottom: 20px;
@@ -361,9 +361,10 @@
   vertical-align: middle!important;
 }
 .organizePartySlider-item h6{
+  font-family: 'Open Sans', sans-serif;
   line-height: 25px;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .organize-party-bg-wrp{
   margin-left: -8px;
