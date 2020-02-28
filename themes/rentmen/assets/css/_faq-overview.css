@@ -5,7 +5,7 @@
 .faq-cnt-inner{
 	text-align: center;
 }
-.faq-cnt-inner h1{
+.faq-cnt-inner h2{
 	font-size: 36px;
 	line-height: 1.4;
 	color: #222020;
@@ -32,23 +32,23 @@
 	padding-bottom: 60px;
 }
 
-.faq-btn{
+.faq-tabs{
 	text-align: center;
 	padding-bottom: 50px;
 	border-bottom: 3px solid #fff;
 }
-.faq-btn ul li{
+.faq-tabs ul li{
 	display: inline-block;
 	padding-left: 31px;
 	padding-right: 31px;
 }
-.faq-btn ul li a{
+.faq-tabs ul li a{
 	font-size: 14px;
 	line-height: 19px;
 	text-transform: uppercase;
 	font-weight: 700;
 }
-.faq-btn ul li.active a{
+.faq-tabs ul li.active a{
 	color: #F3BF00;
 	text-decoration: underline;
 }
@@ -68,6 +68,11 @@
 	padding-left: 26px;
 	padding-right: 26px;
 	margin-bottom: 85px;
+}
+.faq-grd-wrap ul li:nth-child(7),
+.faq-grd-wrap ul li:nth-child(8),
+.faq-grd-wrap ul li:nth-child(9){
+	margin-bottom: 70px;
 }
 .faq-grd-wrap ul li:nth-child(3n+1){
 	clear: left;
@@ -105,20 +110,20 @@
 	padding-right: 32px;
 	position: relative;
 }
-.faq-grd-item-des a:after{
+.faq-grd-item-des > a:after{
 	content: "";
 	background: url('../images/faq-right-arrow.svg');
-	background-size: cover;
-	background-position: center center;
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	height: 14px;
 	width: 16px;
-}
-.faq-grd-item-des a i{
 	position: absolute;
-	top: -1px;
+	top: 50%;
 	right: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
 }
+
 .faq-grd-item-des > a:hover{
 	color: #F3BF00;
 	padding-right: 40px;
@@ -139,19 +144,23 @@
 	padding-left: 10px;
 	padding-right: 10px;
 }
-.faq-pagination ul li a{
+.faq-pagination ul li a.page-numbers,
+.faq-pagination ul li span{
 	color: #BEBEBE;
 	font-weight: 700;
-	height: 46px;
-	width: 46px;
+	height: 48px;
+	width: 48px;
 	border: 4px solid #E2E2E2;
 	border-radius: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-.faq-pagination ul li.active a,
-.faq-pagination ul li a:hover{
+.faq-pagination ul li span.current{
+	color: #1E1E1E;
+	border: 4px solid #F3BF00;
+}
+.faq-pagination ul li a.page-numbers:hover{
 	color: #1E1E1E;
 	border: 4px solid #F3BF00;
 }
