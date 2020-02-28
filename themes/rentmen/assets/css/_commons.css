@@ -223,13 +223,9 @@ form .bootstrap-select .caret{
 .bootstrap-select.show .dropdown-toggle::before{
 	content: "\f106"!important;
 }
-
-
-
-
-form .open > .dropdown-toggle.btn-default:hover,
+form .show > .dropdown-toggle.btn-default:hover,
 form .btn-default.active, form .btn-default:active, 
-form .open > .dropdown-toggle.btn-default{
+form .show > .dropdown-toggle.btn-default{
     color: #710023;
     background-color: transparent;
     border: 0;
@@ -239,9 +235,9 @@ form .btn-default:focus,
 .btn-default.active.focus, .btn-default.active:focus, 
 .btn-default.active:hover, .btn-default:active.focus, 
 .btn-default:active:focus, .btn-default:active:hover, 
-.open>.dropdown-toggle.btn-default.focus, 
-.open>.dropdown-toggle.btn-default:focus,
-.open>.dropdown-toggle.btn-default:hover{
+.show>.dropdown-toggle.btn-default.focus, 
+.show>.dropdown-toggle.btn-default:focus,
+.show>.dropdown-toggle.btn-default:hover{
     color: #710023;
     background-color: transparent;
     border: 0;

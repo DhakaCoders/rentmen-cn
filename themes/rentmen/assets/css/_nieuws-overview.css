@@ -1,0 +1,37 @@
+.rm-nieuws-overview-entry-hdr-sec{
+	padding: 75px 0 55px;
+	text-align: center;
+}
+.rm-nieuws-overview-entry-hdr{
+	max-width: 855px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.rm-nieuws-overview-entry-hdr h3{
+	margin-bottom: 27px;
+}
+.rm-news-section{
+	overflow: hidden;
+}
+.rm-news-sec-inr ul{
+	margin-left: -25px;
+	margin-right: -25px;
+	padding-bottom: 30px;
+}
+.rm-news-sec-inr ul li{
+	float: left;
+	width: 33.3333%;
+	padding: 0 25px 60px; 
+}
+.rm-news-sec-inr ul li .dft-blog-item{
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+}
+
+.rm-news-section{
+	background: #F6F6F6;
+	padding-bottom: 80px;
+}
+
