@@ -5,7 +5,7 @@
 .faq-cnt-inner{
 	text-align: center;
 }
-.faq-cnt-inner h1{
+.faq-cnt-inner h2{
 	font-size: 36px;
 	line-height: 1.4;
 	color: #222020;
@@ -32,44 +32,49 @@
 	padding-bottom: 60px;
 }
 
-.faq-btn{
+.faq-tabs{
 	text-align: center;
 	padding-bottom: 50px;
 	border-bottom: 3px solid #fff;
 }
-.faq-btn ul li{
+.faq-tabs ul li{
 	display: inline-block;
 	padding-left: 31px;
 	padding-right: 31px;
 }
-.faq-btn ul li a{
+.faq-tabs ul li a{
 	font-size: 14px;
 	line-height: 19px;
 	text-transform: uppercase;
 	font-weight: 700;
 }
-.faq-btn ul li.active a{
+.faq-tabs ul li.active a{
 	color: #F3BF00;
 	text-decoration: underline;
 }
 
 
 
-.faq-grd-wrap{
+.faq-tabs-content{
 	margin-top: 100px;
 }
-.faq-grd-wrap ul{
+.faq-tabs-content ul{
 	margin-left: -26px;
 	margin-right: -26px;
 }
-.faq-grd-wrap ul li{
+.faq-tabs-content ul li{
 	float: left;
 	width: 33.3333%;
 	padding-left: 26px;
 	padding-right: 26px;
 	margin-bottom: 85px;
 }
-.faq-grd-wrap ul li:nth-child(3n+1){
+.faq-tabs-content ul li:nth-child(7),
+.faq-tabs-content ul li:nth-child(8),
+.faq-tabs-content ul li:nth-child(9){
+	margin-bottom: 70px;
+}
+.faq-tabs-content ul li:nth-child(3n+1){
 	clear: left;
 }
 .faq-grd-item{
@@ -142,8 +147,8 @@
 .faq-pagination ul li a{
 	color: #BEBEBE;
 	font-weight: 700;
-	height: 46px;
-	width: 46px;
+	height: 48px;
+	width: 48px;
 	border: 4px solid #E2E2E2;
 	border-radius: 100%;
 	display: flex;

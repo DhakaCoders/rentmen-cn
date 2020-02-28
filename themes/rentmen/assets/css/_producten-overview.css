@@ -1,6 +1,15 @@
 #overview-organize-party-sec{
   padding: 86px 0 55px;
 }
+#overview-organize-party-sec{
+  padding: 86px 0 55px;
+}
+#overview-organize-party-sec .organizePartySlider-item::after{
+  content: "";
+  background: url(../images/)no-repeat center center;
+}
+
+
 .pro-overview-main-sec{
   background: #F6F6F6;
   padding: 75px 0 50px;
@@ -301,7 +310,8 @@ html .price-slider .ui-button.ui-state-disabled:active {
   color: #ACABAB;
 }
 .pro-overview-single-des-link a:last-child{
-  float: right
+  float: right;
+  padding-left: 15px;
 }
 .pro-overview-single-des-link a:last-child:hover{
   opacity: .8
@@ -406,7 +416,8 @@ html .price-slider .ui-button.ui-state-disabled:active {
   color: #F3BF00;
 }
 .pro-overview-grid-btm-lnc a:last-child{
-  float: right
+  float: right;
+  padding-left: 15px;
 }
 .pro-overview-grid-btm-lnc a:last-child:hover{
   opacity: .8

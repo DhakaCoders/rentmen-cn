@@ -3,26 +3,21 @@
 ====================*/
 .breadcrumbs-sec{
   background: #F6F6F6;
-  padding: 50px 0 48px;
+  padding: 32px 0 36px;
 }
-.breadcrumbs-innr{
-  position: relative;
-  padding-left: 200px;
+.breadcrumbs-lft-text h1{
+  line-height: 53px;
+  margin-bottom: 0;
 }
-.breadcrumbs-innr > i{
-  display: inline-block;
-  vertical-align: baseline;
-  max-width: 181px;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
+.breadcrumbs-lft-text{
+  width: 25%;
+  float: left
 }
-.breadcrumbs-innr > i img{
-  width: 100%;
+.breadcrumbs-main{
+  width: 75%;
+  float: left;
+  padding-left: 20px;
+  padding-top: 18px;
 }
 .breadcrumbs-main ul{
   margin: 0;

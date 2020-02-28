@@ -13,6 +13,9 @@
 	top: -2px;
 	left: 0;
 }
+.rm-faq-backlink-sec-inr a:hover{
+	color: #F3BF00;
+}
 
 .rm-faq-content-sec{
 	background: #F6F6F6;
@@ -28,7 +31,8 @@
 .rm-faq-cnt-sec-des{
 	float: left;
 	width: 59.489%;
-	padding: 70px 102px 15px 40px;
+	padding: 62px 105px 30px 40px;
+	position: relative;
 }
 .rm-faq-cnt-sec-des h2{
 	font-size: 48px;
@@ -39,5 +43,11 @@
 }
 .rm-faq-cnt-sec-des p{
 	font-weight: normal;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
+}
+.rm-faq-cnt-sec-img{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
 }
