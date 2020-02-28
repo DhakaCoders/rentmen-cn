@@ -3,6 +3,9 @@
 hm-banner-sec-wrp
 ------------------
 */
+.hm-banner-sec-wrp{
+	position: relative;
+}
 .hm-banner-bg{
 	min-height: 670px !important;
 	background-repeat: no-repeat !important;
@@ -26,6 +29,7 @@ hm-banner-sec-wrp
 	font-family: 'Open Sans', sans-serif;
 	margin-bottom: 5px;
 }
+.hm-banner-dsc strong,
 .hm-banner-dsc h1{
 	margin: 0;
 	font-size: 60px;
@@ -33,6 +37,8 @@ hm-banner-sec-wrp
 	color: #fff;
 	font-family: 'Oswald',  sans-serif;
 	margin-bottom: 24px;
+	display: inline-block;
+	vertical-align: baseline;
 }
 .hm-banner-dsc p{
 	font-size: 20px;
@@ -55,11 +61,22 @@ hm-banner-sec-wrp
 	width: 100%;
 	text-align: center;
 	padding: 21px 20px;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
 }
 .hm-banner-dsc a:last-of-type{
 	color: #fff;
 	background: #f4bf01;
 	margin-left: 12px;
+}
+.hm-banner-dsc a:hover:first-of-type{
+	background: #f4bf01;
+	color: #fff;
+}
+.hm-banner-dsc a:hover:last-of-type{
+	background: #fff;
+	color: #1E1E1E;
 }
 /*
 ------------------------
@@ -68,7 +85,7 @@ hm-de-kijker-post-sec-wrp
 */
 .hm-de-kijker-post-sec-wrp{
 	padding-top: 70px;
-	padding-bottom: 80px;
+	padding-bottom: 90px;
 }
 .hm-de-kijker-head{
 	max-width: 860px;
@@ -215,6 +232,9 @@ hm-de-kijker-post-sec-wrp
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 }
 .hm-post-categorie-title span {
     display: inline-block;
@@ -225,14 +245,28 @@ hm-de-kijker-post-sec-wrp
     color: #1E1E1E;
     position: relative;
     padding-left: 40px;
-    padding-bottom: 2px;
+    padding-bottom: 1px;
+    transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 }
-.hm-post-categorie-title span i {
+.hm-post-categorie-title span i{
     position: absolute;
     left: 0;
-    top: -5px;
+    top: -4px;
+    transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 }
-
+.hm-post-categorie-title:hover{
+	background: #1E1E1E;
+}
+.hm-post-categorie-title:hover span{
+	color: #fff;
+}
+.hm-post-categorie-title:hover span i svg{
+	fill: #fff !important;
+}
 /*
 -------------------
 hm-two-grid-sec-wrp
@@ -362,6 +396,17 @@ hm-download-sec-wrp
     align-items: center;
     padding-left: 30px;
     padding-right: 40px;
+    cursor: pointer;
+    transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.hm-download-box:hover{
+	background: #1E1E1E;
+	border-color: #1E1E1E;
+}
+.hm-download-box:hover a{
+	color: #FFFFFF;
 }
 .hm-download-box a{
 	display: inline-block;
@@ -406,4 +451,7 @@ hm-download-sec-wrp
 	text-transform: uppercase;
 	background: #F3BF00;
 	padding: 16px 50px 15px;
+}
+.hm-download-btn a:hover{
+	background: #deb005;
 }

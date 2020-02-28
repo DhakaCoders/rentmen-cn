@@ -129,7 +129,9 @@ overons-service-sec-wrp
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-
+.overons-de-post-sec{
+	padding-bottom: 75px;
+}
 .overons-de-post-sec .hm-de-kijker-post-wrp{
 	padding-top: 15px;
 }
