@@ -89,6 +89,9 @@ ol li::before {
 .dfp-promo-module{
 	padding-bottom: 30px;
 }
+#nieuws-details-page-cntlr .dfp-promo-module{
+	padding-bottom: 25px;
+}
 .dfp-promo-module h1{
 	text-transform: uppercase;
 	font-weight: 700;
@@ -182,7 +185,10 @@ ol li::before {
 .dft-blockquote{
 	background: #F3BF00;
 	padding: 55px 108px 50px 77px;
-	margin-bottom: 63px;
+	margin-bottom: 60px;
+}
+#nieuws-details-page-cntlr .dft-blockquote{
+	margin-bottom: 55px;
 }
 .dft-blockquote blockquote{
 	font-weight: 600;
@@ -275,7 +281,7 @@ ol li::before {
 	font-size: 36px;
 	line-height: 24px;
 	border-radius: 100% 100%;
-	padding-top: 20px;
+	padding-top: 24px;
 	padding-left: 8px;
 	padding-right: 8px;
 }
@@ -535,6 +541,12 @@ Gallery design
 	text-align: center;
 	padding-top: 3px;
 }
+.dft-share-on a:hover{
+	border-color: #F3BF00;
+}
+.dft-share-on a:hover i svg{
+	fill: #F3BF00!important;
+}
 .dft-share-on a i{
 	position: relative;
 	top: -4px;
@@ -562,7 +574,7 @@ Gallery design
 	position: relative;
 	padding-bottom: 12px;
 }
-#nieuws-details-variant-page-cntlr .dft-blog-item-des-date{
+#nieuws-details-variant-page-cntlr .dfp-promo-module .dft-blog-item-des-date{
 	left: -127px;
 	top: -27px;
 }
