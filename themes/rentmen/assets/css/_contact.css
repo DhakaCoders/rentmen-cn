@@ -23,10 +23,10 @@ contact-info-sec-wrp
 	padding-bottom: 22px;
 }
 .contact-info a:hover i svg{
-	fill:#000; 
+	fill:#AEAEAE; 
 }
 .contact-info a:hover{
-	color: #000;
+	color: #AEAEAE;
 }
 .contact-info a{
 	display: inline-block;
@@ -88,11 +88,29 @@ contact-info-sec-wrp
 	transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
+	position: relative;
+}
+.rm-contact-form-tab ul li a:after{
+	content: "";
+	position: absolute;
+	left: 0;
+	background: #F3BF00;
+	width:0;
+	height: 1px;
+	bottom: 0;
+	transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+.rm-contact-form-tab ul li a:hover:after{
+	width: 100%;
+}
+.rm-contact-form-tab ul li.active a:after{
+	width: 100%;
 }
 .rm-contact-form-tab ul li a:hover,
 .rm-contact-form-tab ul li.active a{
 	color: #F3BF00;
-	text-decoration: underline;
 }
 .tabs{
 	display: none;
@@ -133,6 +151,9 @@ contact-info-sec-wrp
 	text-transform: uppercase;
 	color: #222020;
 	margin-bottom: 12px;
+}
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field label span{
+	color: #F3BF00;
 }
 .contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field input{
 	width: 100%;

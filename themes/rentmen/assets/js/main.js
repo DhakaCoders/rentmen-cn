@@ -168,6 +168,23 @@ $('.tabs-menu li').on('click',function(){
   $('.tabs').eq(index).show();
 });
 
+/* -- Contact page left border and right bg control --*/
+var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
+var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
+var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 );
+$('.hm-two-grid-sec-bg').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
+
+function flResize(){
+  $(window).on('resize', function(){
+    var windowWidth = $(window).width();
+    var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
+    var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
+    var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 );
+    $('.hm-two-grid-sec-wrp').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
+  });
+}
+flResize();
+
 
 /*
 -----------------------
