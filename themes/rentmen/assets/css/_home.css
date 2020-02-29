@@ -492,6 +492,19 @@ hm-download-sec-wrp
 		font-size: 28px;
 		line-height: 30px;
 	}
+	.hm-de-kijker-post-dsc {
+	    padding: 30px 15px;
+	}
+	.hm-de-kijker-post-sec-wrp {
+	    padding-top: 60px;
+	    padding-bottom: 70px;
+	}
+	.hm-post-categorie-wrp ul li{
+	    width: 20%;
+	}
+	.hm-post-categorie-wrp ul li:nth-child(5n+1){
+		clear: left;
+	}
 }
 
 @media(max-width: 991px){
@@ -506,6 +519,28 @@ hm-download-sec-wrp
 	.hm-banner-dsc h3{
 		font-size: 26px;
 		line-height: 28px;
+	}
+	.hm-de-kijker-post-wrp {
+	    padding-bottom: 5px;
+	}
+	.hm-de-kijker-post-wrp ul li{
+	    width: 33.3333%;
+	}
+	.hm-de-kijker-post-wrp ul li:nth-child(3n+1){
+		clear: left;
+	}
+	.hm-de-kijker-post-sec-wrp {
+	    padding-top: 50px;
+	    padding-bottom: 60px;
+	}
+	.hm-post-categorie-wrp ul li{
+	    width: 25%;
+	}
+	.hm-post-categorie-wrp ul li:nth-child(5n+1){
+		clear: none;
+	}
+	.hm-post-categorie-wrp ul li:nth-child(4n+1){
+		clear: left;
 	}
 	
 }
@@ -544,6 +579,44 @@ hm-download-sec-wrp
 	.hm-banner-dsc p{
 		margin-bottom: 28px;
 	}
+	.hm-de-kijker-post-wrp ul li{
+	    width: 50%;
+	}
+	.hm-de-kijker-post-wrp ul li:nth-child(3n+1){
+		clear: none;
+	}
+	.hm-de-kijker-post-wrp ul li:nth-child(2n+1){
+		clear: left;
+	}
+	.hm-de-kijker-post-sec-wrp {
+	    padding-top: 40px;
+	    padding-bottom: 35px;
+	}
+	.hm-de-kijker-head h2{
+		margin-bottom: 20px;
+	}
+	.hm-de-kijker-head p {
+	    margin-bottom: 15px;
+	}
+	.hm-de-kijker-head {
+	    max-width: 500px;
+	    width: 100%;
+	}
+	.hm-post-categorie-wrp ul li{
+	    width: 33.3333%;
+	}
+	.hm-post-categorie-wrp ul li:nth-child(5n+1){
+		clear: none;
+	}
+	.hm-post-categorie-wrp ul li:nth-child(4n+1){
+		clear: none;
+	}
+	.hm-post-categorie-wrp ul li:nth-child(3n+1){
+		clear: left;
+	}
+	.hm-post-categorie-wrp {
+	    padding-top: 40px;
+	}
 }
 
 @media(max-width: 575px){
@@ -558,6 +631,19 @@ hm-download-sec-wrp
 	.hm-banner-dsc h3{
 		font-size: 22px;
 		line-height: 24px;
+	}
+	.hm-de-kijker-post-wrp ul{
+		margin: 0;
+	}
+	.hm-de-kijker-post-wrp ul li{
+	    width: 100%;
+	    padding: 0;
+	}
+	.hm-de-kijker-post-wrp ul li:nth-child(3n+1){
+		clear: none;
+	}
+	.hm-de-kijker-post-wrp ul li:nth-child(2n+1){
+		clear: left;
 	}
 }
 
