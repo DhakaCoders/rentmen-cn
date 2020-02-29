@@ -1,5 +1,5 @@
 .innerpage-con-wrap{
-	overflow: hidden;
+	/*overflow: hidden;*/
 	position: relative;
 }
 .default-page-con {
@@ -168,6 +168,7 @@ ol li::before {
 	font-weight: 600;
 	font-size: 24px;
 	line-height: 30px;
+	display: block;
 }
 .dft-question-mark-slide-item-inr i{
 	position: absolute;
@@ -178,6 +179,10 @@ ol li::before {
 	position: absolute;
 	right:45px;
 	top: 58px;
+}
+.dft-question-mark-slide-item-inr span img{
+	display: inline-block;
+	vertical-align: baseline;
 }
 
 .dft-2grd-img-con-item{
@@ -585,20 +590,27 @@ Gallery design
 
 .dft-question-mark-slider .dft-question-mark-slide-item,
 .dft-blog-slider .dft-blog-item{
-	display: none!important;
+	display: none;
 }
 .dft-question-mark-slider .dft-question-mark-slide-item:first-child,
 .dft-blog-slider .dft-blog-item:first-child{
-	display: block!important;
+	display: block;
 }
 .dft-question-mark-slider.slick-initialized .dft-question-mark-slide-item,
 .dft-blog-slider.slick-initialized .dft-blog-item{
-	display: block!important;
+	display: block;
 }
 
 @media(max-width: 1199px){
 	#main-content .default-page-con-inner{
 		padding-right: 0;
+	}
+	.dft-blog-item {
+	    padding: 0 10px 30px;
+	}
+	.dft-blog-slider {
+	    margin: 0 -10px!important;
+	    padding-bottom: 20px;
 	}
 }
 
@@ -631,6 +643,25 @@ Gallery design
 	.dft-img-title-grd-col h4{
 		font-size: 20px;
 		line-height: 24px;
+	}
+	.dft-question-mark-slide-item-inr{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.dft-question-mark-slide-item-inr i{
+		position: static;
+		text-align: center;
+		display: block;
+		padding-bottom: 15px;
+	}
+	.dft-question-mark-slide-item-inr strong{
+		padding-bottom: 10px;
+		text-align: center;
+	}
+	.dft-question-mark-slide-item-inr span{
+		position: static;
+		display: block;
+		text-align: center;
 	}
 	
 }
@@ -688,7 +719,8 @@ Gallery design
 	    margin-bottom: 10px;
 	}
 	.default-page-con ol,
-	.default-page-con ul{
+	.default-page-con ul,
+	ol,ul{
 		padding-left: 0;
 	}
 	.fl-dft-lftimg-rgtdes-lft {
@@ -734,6 +766,17 @@ Gallery design
 	}
 	.dft-2grd-img-con-item-des h4{
 		margin-bottom: 15px;
+	}
+	.default-page-con p {
+	    margin-bottom: 20px;
+	}
+	.default-page-con ul li::before, ul li::before {
+	    width: 20px;
+	    height: 20px;
+	}
+	.default-page-con ul li, ul li {
+	    padding: 2px 0 14px 35px;
+	    line-height: 22px;
 	}
 }
 

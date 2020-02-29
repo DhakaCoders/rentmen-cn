@@ -101,7 +101,7 @@ Containers
 }
 
 .container-sm{
-	width: 935px;
+	max-width: 935px;
 }
 
 
