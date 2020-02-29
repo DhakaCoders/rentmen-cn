@@ -7,7 +7,7 @@
 }
 .faq-cnt-inner h2{
 	font-size: 36px;
-	line-height: 1.4;
+	line-height: 53px;
 	color: #222020;
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
@@ -29,7 +29,8 @@
 .faq-grd-sec{
 	background: #F6F6F6;
 	padding-top: 60px;
-	padding-bottom: 60px;
+	padding-bottom: 65px;
+	overflow: hidden;
 }
 
 .faq-tabs{
@@ -42,15 +43,42 @@
 	padding-left: 31px;
 	padding-right: 31px;
 }
+.faq-tabs ul li.active a{
+	color: #F3BF00;
+}
+.faq-tabs ul li.active a:after{
+	content: "";
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	left: 0;
+	height: 1px;
+	background: #F3BF00;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
 .faq-tabs ul li a{
 	font-size: 14px;
+	color: #1E1E1E;
 	line-height: 19px;
 	text-transform: uppercase;
 	font-weight: 700;
+	position: relative;
 }
-.faq-tabs ul li.active a{
-	color: #F3BF00;
-	text-decoration: underline;
+.faq-tabs ul li a:after{
+	content: "";
+	position: absolute;
+	top: 100%;
+	width: 0%;
+	left: 0;
+	height: 1px;
+	background: #F3BF00;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+}
+
+.faq-tabs ul li a:hover:after{
+	width: 100%
 }
 
 
@@ -91,7 +119,7 @@
 	padding-right: 20px;
 }
 .faq-grd-item-des h5{
-	line-height: 1.4;
+	line-height: 30px;
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
@@ -99,6 +127,9 @@
 }
 .faq-grd-item-des h5 a{
 	color: #1E1E1E;
+}
+.faq-grd-item-des h5 a:hover{
+	color: #F3BF00;
 }
 .faq-grd-item-des p{
 	margin-bottom: 25px;
