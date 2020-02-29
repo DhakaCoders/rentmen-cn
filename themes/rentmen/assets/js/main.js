@@ -144,12 +144,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
   cookise-close-btn js
 =======================
 */
-if ($('.cookie-btn').length) {
-  $('.cookie-btn').on('click', function(){
-    $('.cookie-policy-wrp').hide('slow');
-  });
-  $('.close-btn').on('click', function(){
-    $('.cookie-policy-wrp').hide('slow');
+if ($('#catapultCookie').length) {
+  $('#catapultCookie').on('click', function(){
+    $('#catapult-cookie-bar').hide('slow');
+    $('.catapult-close-btn').hide('slow');
   });
 }
 
@@ -344,19 +342,10 @@ if( $('.dft-question-mark-slider').length ){
       slidesToScroll: 1,
       responsive: [
         {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 600,
+          breakpoint: 768,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 2
+            slidesToScroll: 1
           }
         },
         {
@@ -383,19 +372,10 @@ if( $('.dft-blog-slider').length ){
       slidesToScroll: 1,
       responsive: [
         {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 600,
+          breakpoint: 768,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 2
+            slidesToScroll: 1
           }
         },
         {

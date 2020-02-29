@@ -147,6 +147,7 @@ hm-de-kijker-post-sec-wrp
 	padding-top: 35px;
 	border-bottom: 3px solid #F6F6F6;
 	padding-bottom: 20px;
+	overflow: hidden;
 }
 .hm-de-kijker-post-wrp ul{
 	padding: 0;
@@ -175,7 +176,7 @@ hm-de-kijker-post-sec-wrp
 	padding: 30px 20px;
 	text-align: center;
 }
-.hm-de-kijker-post-dsc h3{
+.hm-de-kijker-post-dsc a{
 	font-size: 20px;
 	line-height: 22px;
 	color: #222020;
@@ -189,7 +190,7 @@ hm-de-kijker-post-sec-wrp
 	display: inline-block;
 	vertical-align: baseline;
 }
-.hm-de-kijker-post-dsc h3:after{
+.hm-de-kijker-post-dsc a:after{
 	content: "";
 	position: absolute;
 	right: 0;
@@ -203,16 +204,10 @@ hm-de-kijker-post-sec-wrp
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 }
-.hm-de-kijker-post-dsc h3 a{
-	color: inherit;
-	display: inline-block;
-	vertical-align: baseline;
-	text-decoration: none;
-}
-.hm-de-kijker-post-dsc h3:hover a{
+.hm-de-kijker-post-dsc a:hover{
 	color: #f4bf01;
 }
-.hm-de-kijker-post-dsc h3:hover:after{
+.hm-de-kijker-post-dsc a:hover:after{
 	right: -5px;
 }
 .hm-post-categorie-wrp{
@@ -284,8 +279,7 @@ hm-two-grid-sec-wrp
 	padding-top: 115px;
 	padding-bottom: 95px;
 }
-.hm-two-grid-sec-wrp:after{
-	content: "";
+.hm-two-grid-sec-bg{
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -450,9 +444,12 @@ hm-download-sec-wrp
 	text-transform: uppercase;
 	background: #F3BF00;
 	padding: 16px 50px 15px;
+	border:2px solid #F3BF00;
 }
 .hm-download-btn a:hover{
-	background: #deb005;
+	background: #fff;
+	border-color: #F3BF00;
+	color: #F3BF00;
 }
 .hm-lates-news-post-sec-wrp{
 	background: #f6f6f6;
@@ -464,6 +461,25 @@ hm-download-sec-wrp
 }
 .hm-lates-news-post-sec-wrp .hm-download-btn{
 	padding-top: 0;
+}
+
+.hm-lates-news-post-sec-wrp .dft-blog-item-des h5{
+	margin: 0;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    display: block;
+    margin-bottom: 25px;
+}
+.hm-lates-news-post-sec-wrp .dft-blog-item-des h5 > a{
+	display: inline-block;
+	vertical-align: baseline;
+	text-decoration: none;
+	color: inherit;
+	padding-right: 0;
+}
+.hm-lates-news-post-sec-wrp .dft-blog-item-des h5 > a:hover{
+	color: #f4bf01;
 }
 
 

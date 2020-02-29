@@ -192,13 +192,20 @@ nav.main-nav ul.sub-menu li:hover:after {
 	display: inline-block;
 	vertical-align: baseline;
 	text-align: center;
-	line-height: 100%;
 }
-.hdr-social ul li a i{
-	font-size: 20px;
-	line-height: initial;
-	position: relative;
-	top: -3px;
+.hdr-social ul li a i {
+    position: relative;
+    top: -1px;
+    line-height: 10px;
+}
+.hdr-social ul li a:hover,
+.hdr-sign-up a:hover{
+	border-color: #BF211E!important;
+	color: #BF211E!important;
+}
+.hdr-social ul li a:hover i svg,
+.hdr-sign-up a:hover i svg{
+	fill: #BF211E!important;
 }
 .hdr-sign-up{
 	padding-left: 42px;
@@ -253,6 +260,7 @@ nav.main-nav ul.sub-menu li:hover:after {
 	text-transform: uppercase;
 	position: relative;
 	cursor: pointer;
+	font-weight: 700;
 }
 .rm-search-submit-btn button:before{
 	content: "";
@@ -268,6 +276,12 @@ nav.main-nav ul.sub-menu li:hover:after {
 }
 .rm-search-form form button:hover svg{
 	fill: #F3BF00!important;
+}
+.rm-search-submit-btn button:hover{
+	color: #F3BF00!important;
+}
+.rm-search-form input[type="search"]:focus{
+	border-color: #F3BF00!important;
 }
 .rm-search-form{
 	position: relative;
@@ -304,4 +318,7 @@ nav.main-nav ul.sub-menu li:hover:after {
 }
 .hdr-cart-btn a i{
 	padding-right: 10px;
+}
+.hdr-cart-btn a:hover{
+	background: #F3BF00;
 }
