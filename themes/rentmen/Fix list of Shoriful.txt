@@ -1,0 +1,34 @@
+Faq overview
+----------------
+Desktop-->
+
+1. https://www.screencast.com/t/WT0tdB5aI601
+	hover korle border ar sathe text ar color o orange hobe
+
+2. https://www.screencast.com/t/COuauZtS4jgZ
+	box-shadow missing
+
+3. https://www.screencast.com/t/5l1f0KaVz
+	ai paser button ar gap ta mileni. total ta check kore update korte hobe
+
+Faq details
+----------------
+Desktop-->
+
+1. https://www.screencast.com/t/daaV4nCFNxe
+	a tag a j transitin ta ache seta svg teo dte hobe hobe. tahole smoothly hover hobe
+
+
+N.B.-->
+ i) sprite gulo home page pest kore daw. jekhane comment kora ache tomar name. tar upore
+ 	https://www.screencast.com/t/fMY9gfMTXp5
+
+ ii) fix ses hole . sob browser a check kore dekhio j thik thak ache kina sob
+
+
+
+
+
+	
+
+
