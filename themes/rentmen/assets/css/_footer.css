@@ -8,7 +8,7 @@
 .ftr-top-head {
   max-width: 875px;
   padding-bottom: 80px;
-}
+} 
 .ftr-top-head h2{
   font-family: 'Open Sans', sans-serif;
   font-size: 36px;
@@ -62,10 +62,13 @@
 .ftr-logo-1{
   margin-bottom: 20px;
 }
-.ftr-logo-1 i{
+.ftr-logo-1 a{
   display: inline-block;
   vertical-align: baseline;
   max-width: 255px;
+}
+.ftr-logo-1 a:hover{
+  opacity: .8
 }
 .ftr-logo-2 i{
   display: inline-block;
@@ -101,19 +104,30 @@
 }
 .ftr-col.ftr-col-5 ul li{
   position: relative;
-  padding-left: 36px;
   margin-bottom: 23px;
   font-weight: 400;
+  padding-left: 36px;
 }
 .ftr-col.ftr-col-5 ul li:first-child{
   font-weight: 600;
 }
 .ftr-col-5 ul li i{
-  position: absolute;
   display: inline-block;
   vertical-align: baseline;
+  position: absolute;
   left: 0;
   top: 0;
+}
+.ftr-col-5 ul li:nth-child(4) i{
+  top: -1px;
+}
+.ftr-col-5 ul li i svg{
+  transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.ftr-col-5 ul li a:hover i svg{
+  fill: #F3BF00!important;
 }
 .ftr-btm{
   padding: 65px 0 70px;
@@ -141,19 +155,22 @@
   position: relative;
 }
 .ftr-btm-col-2 ul li::before{
-  content: "/";
+  content: none!important
+}
+.ftr-btm-col-2 ul li::after{
+  content: "/"!important;
   position: absolute;
   font-size: 16px;
   color: #1E1E1E;
   right: 0;
   top: 0;
-  left: auto;
+  left: auto;/* 
   background:none;
   width: initial;
-  height: initial;
+  height: initial; */
 }
-.ftr-btm-col-2 ul li:last-child::before{
-  content: none;
+.ftr-btm-col-2 ul li:last-child::after{
+  content: none!important;
 }
 .ftr-btm-col-2 ul li:first-child{
   padding-left: 0;

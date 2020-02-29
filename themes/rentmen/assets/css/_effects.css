@@ -1,12 +1,13 @@
 /**
 All Transitions
 */
-a,input,img,textarea,button,svg,.dft-blog-item-fea-img{
+a,input,img,textarea,button,svg,.dft-blog-item-fea-img,
+.dft-question-mark-slide-item-inr span{
 	transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 }
-.scale{
+.scale{ 
 	transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-webkit-transform: scale(1.1);

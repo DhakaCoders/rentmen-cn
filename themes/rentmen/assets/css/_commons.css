@@ -101,7 +101,7 @@ Containers
 }
 
 .container-sm{
-	width: 935px;
+	max-width: 935px;
 }
 
 
@@ -232,6 +232,11 @@ form .bootstrap-select .caret{
 }
 .bootstrap-select.show .dropdown-toggle::before{
 	content: "\f106"!important;
+}
+
+.btn-light.focus, 
+.btn-light:focus{
+	box-shadow: none!important;
 }
 form .show > .dropdown-toggle.btn-default:hover,
 form .btn-default.active, form .btn-default:active, 

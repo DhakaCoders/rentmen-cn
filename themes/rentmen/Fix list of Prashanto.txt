@@ -1,20 +1,20 @@
 Footer
-----------------
+---------------- 
 Desktop-->
 
 1. https://www.screencast.com/t/wYzeglb3
-	i) svg sprite hobe. 
-	ii) hover korle orange color hobe
+	i) svg sprite hobe.  --done
+	ii) hover korle orange color hobe --done
 
 2. https://www.screencast.com/t/G4bxmUjiN
-	ai logo te link hobe. 
+	ai logo te link hobe.  --done
 	then nicher logo te link hobe kina sure hote hobe. pore mone koray dio
 
 3. https://www.screencast.com/t/Xjty8o1mQVZ
-	href a tel and mail to diye daw, jate call and mail option ase click korle
+	href a tel and mail to diye daw, jate call and mail option ase click korle --done
 
 4. https://www.screencast.com/t/9TxuF85O
-		mail icon ta aktu upore uthbe
+		mail icon ta aktu upore uthbe --done
 
 
 
@@ -23,42 +23,43 @@ Producten Overview
 Desktop-->
 
 1. https://www.screencast.com/t/YW4sPZRVpF
-	sprit hobe
+	sprit hobe --done
 2. https://www.screencast.com/t/oKq4Eq7U5Ly
-	hover korle red color ta daw
+	hover korle red color ta daw --done
 
 3. https://www.screencast.com/t/7d7maUem
    https://www.screencast.com/t/6WxO2gxQQeaX
-   link daw
+   link daw --done
 
 4. https://www.screencast.com/t/yxemmBXK04tB
-	ai icon gulo after a hobena .  icon gulo upload korte parbe. up korte hole 2 ta img up korte hobe akta black and akta white .
+	ai icon gulo after a hobena .  icon gulo upload korte parbe. up korte hole 2 ta img up korte hobe akta black and akta white . --done
 
 5. https://www.screencast.com/t/B6RYjWISvGw
-	gap hobe
+	gap hobe --done
 
 6. https://www.screencast.com/t/BiobKgHq
-	ai bg ta solid hobena. niche opacity ache. to j color ta ase manage korte hobe
+	ai bg ta solid hobena. niche opacity ache. to j color ta ase manage korte hobe --done
 
 7. https://www.screencast.com/t/qDR78xibiQ
-	text center a hoyni
+	text center a hoyni --done
 
 8. https://www.screencast.com/t/ZFeNYe6M0I
-	checkbox a click korle,  ar valu 0 and 1 houar jonno ata jquery te use koro
+	checkbox a click korle,  ar valu 0 and 1 houar jonno ata jquery te use koro red
 
 9. https://www.screencast.com/t/9rxBDHnMFSuF
-	i) sprite hobe 
-	ii) hover korle orange color hobe
+	i) sprite hobe --done
+	ii) hover korle orange color hobe --done
 
 10. https://www.screencast.com/t/IbWbOz2l
-	img a mHc class ta use koro. besi long img hole jeno thik thak thake
+	img a mHc class ta use koro. besi long img hole jeno thik thak thake --done
 
 11. https://www.screencast.com/t/uzdFYiutV8Fn
-	Shoriful ar page thake ata copy kore niye bosao
+	Shoriful ar page thake ata copy kore niye bosao --done
 
 
 12. https://www.screencast.com/t/LIyE0Vvp2
-	upore niche aktu kom besi gap mone hosche. center hobe text gulo
+	upore niche aktu kom besi gap mone hosche. center hobe text gulo >> amar ekhne center ei lagche
+
 
 Producten Details
 ----------------
@@ -69,32 +70,32 @@ Desktop-->
 	ai gulo class tule diye push korba. tahole check korte easy hoy
 
 2. https://www.screencast.com/t/33iUdlKcK
-	shoriful ar page ta ata copy kore bosao
+	shoriful ar page ta ata copy kore bosao --done
 
 3. https://www.screencast.com/t/AwV4H3SkGb
-	hover korle black bg ta daw
+	hover korle black bg ta daw --done
 
 4. https://www.screencast.com/t/fqkc1JRdG
-	icon ta text borabor center a hoyni
+	icon ta text borabor center a hoyni --done
 
 5. https://www.screencast.com/t/rfucs1oW
-	ai iconta header a sprite kora ache . icon ta bosay fix korte paro. 
+	ai iconta header a sprite kora ache . icon ta bosay fix korte paro. --done
 
 6. https://www.screencast.com/t/xT73jkzkyWJ5
-	border ta thik nai
+	border ta thik nai >> 1920px e thik ache dekhtechi responsive e kete jai, pore thik kora jabe (https://prnt.sc/r9l6l5)
 
 
 7. https://www.screencast.com/t/tvRaDJV0gg3
-	ai khane 'ul' or 'ol' use korte pare, tai 2ta diye design kore rakhte hobe
+	ai khane 'ul' or 'ol' use korte pare, tai 2ta diye design kore rakhte hobe --done
 
-8. sprite hobe
+8. sprite hobe --done
 	https://www.screencast.com/t/ykoN1zhSJxkD
 
 9. https://www.screencast.com/t/E3ow85M9V
-	full width hobe
+	full width hobe --done
 	https://www.screencast.com/t/fjOyMIzayr
 	div ar vitore img tag dileo jeno img design ta thik thake kore rakhio to.
-	 full width to jeta valo dekhabe seta rakhte hobe
+	 full width to jeta valo dekhabe seta rakhte hobe red
 
 
 

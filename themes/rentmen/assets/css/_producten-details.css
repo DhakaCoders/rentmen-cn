@@ -1,5 +1,5 @@
 .single-pro-details-sec{
-  background: #F6F6F6;
+  background: #F6F6F6; 
   padding: 80px 0 80px;
 }
 .single-pro-lft-con{
@@ -159,7 +159,12 @@
   line-height: 19px;
   text-align: center;
   color: #1E1E1E;
+  -webkit-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
 }
+.feature-filter-btn input[type=radio] + label:hover,
+.feature-filter-btn input[type=checkbox] + label:hover,
 .feature-filter-btn input[type=radio]:checked + label,
 .feature-filter-btn input[type=checkbox]:checked + label{
   outline: 0;
@@ -176,6 +181,8 @@
   max-width: 32px;
   padding-right: 10px;
   cursor: pointer;
+  position: relative;
+  top: -1px;
 }
 .pro-calendar span{
   display: inline-block;
@@ -267,19 +274,34 @@
   font-weight: bold;
   font-size: 16px;
   line-height: 22px;
-  padding: 15px 10px
+  padding: 15px 10px;
+  border: 2px solid #BF211E;
+}
+.pro-cart-btn a:hover{
+  color: #BF211E;
+  background: #fff;
+
+}
+.pro-cart-btn a i{
+  display: inline-block;
+  vertical-align: baseline;
+  padding-right: 5px;
+}
+.pro-cart-btn a i svg{
+  transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+.pro-cart-btn a:hover i svg{
+  fill: #BF211E!important;
 }
 .pro-description-sec{
   padding-top: 80px;
 }
-
-
 .pro-description-innr{
   padding-bottom: 86px;
   border-bottom: 2px solid #F6F6F6;
 }
-
-
 .pro-description-lft{
   width: 67.75%;
   float: left;
@@ -514,10 +536,14 @@
   float: right;
   padding-left: 15px;
 }
-.interestedItemSlider-btm-lnc a:last-child:hover{
-  opacity: .8
+.interestedItemSlider-btm-lnc a:last-child svg{
+  transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
-
+.interestedItemSlider-btm-lnc a:last-child:hover svg{
+  fill: #F3BF00;
+}
 
 
 
