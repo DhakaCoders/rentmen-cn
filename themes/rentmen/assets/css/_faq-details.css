@@ -7,11 +7,15 @@
 	font-weight: 700;
 	padding-left: 40px;
 	position: relative;
+	transition: all 0.5s;
 }
 .rm-faq-backlink-sec-inr a i{
 	position: absolute;
 	top: -3px;
 	left: 0;
+}
+.rm-faq-backlink-sec-inr a i svg{
+	transition: all 0.5s;
 }
 .rm-faq-backlink-sec-inr a:hover{
 	color: #F3BF00;
