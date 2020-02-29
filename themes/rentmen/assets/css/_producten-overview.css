@@ -149,8 +149,6 @@ form .select-filter-right .dropdown-item {
 form .select-filter-right .dropdown-item.active{
   color: #fff!important;
 }
-
-
 .select-filter-left ::placeholder {
   color: #1E1E1E;
   opacity: 1;
@@ -163,7 +161,6 @@ form .select-filter-right .dropdown-item.active{
   color: #1E1E1E;
   opacity: 1;
 }
-
 .pro-overview-select-filter h6{
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -226,7 +223,6 @@ html .price-slider .ui-button.ui-state-disabled:active {
   padding: 0;
   background: transparent;
   line-height: normal;
-
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
