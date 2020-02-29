@@ -322,7 +322,9 @@ if( $('.price-slider').length ){
 
 
 
-
+$('input[type="checkbox"]').change(function(){
+  this.value = (Number(this.checked));
+});
 
 
 
