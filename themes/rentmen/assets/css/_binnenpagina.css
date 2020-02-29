@@ -3,7 +3,7 @@
 	position: relative;
 }
 .default-page-con {
-	padding-bottom: 125px;
+	padding-bottom: 80px;
 	padding-top: 72px;
 }
 
@@ -225,6 +225,16 @@ ol li::before {
 .dft-blog-item{
 	padding: 0 32px 30px;
 }
+.dft-blog-item:hover .dft-blog-item-fea-img{
+	transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-o-transform: scale(1.1);
+}
+.dft-blog-item-fea-img-cntlr{
+	overflow: hidden;
+	position: relative;
+}
 .dft-blog-item-fea-img{
 	height: 280px;
 	background-size: cover!important;
@@ -239,12 +249,19 @@ ol li::before {
 	padding: 75px 25px 40px;
 	position: relative;
 }
-.dft-blog-item-des > strong{
+.dft-blog-item-des h5{
 	font-weight: 600;
 	font-size: 22px;
 	line-height: 30px;
 	display: block;
 	margin-bottom: 25px;
+	font-family: 'Open Sans', sans-serif;
+}
+.dft-blog-item-des h5 a{
+	color: #1E1E1E;
+}
+.dft-blog-item-des h5 a:hover{
+	color: #F3BF00;
 }
 .dft-blog-item-des-date{
 	width: 96px;
@@ -273,7 +290,7 @@ ol li::before {
 	font-size: 24px;
 	text-transform: uppercase;
 }
-.dft-blog-item-des a{
+.dft-blog-item-des > a{
 	color: #ACABAB;
 	font-size: 16px;
 	line-height: 22px;
@@ -283,7 +300,7 @@ ol li::before {
 	padding: 0 30px 0 0;
 	position: relative;
 }
-.dft-blog-item-des a:after{
+.dft-blog-item-des > a:after{
 	content: "";
 	position: absolute;
 	top: 50%;
