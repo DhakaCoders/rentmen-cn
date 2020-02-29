@@ -375,40 +375,33 @@ hm-download-sec-wrp
 	padding-top: 75px;
 	padding-bottom: 80px;
 }
-.hm-download-sec-wrp .hm-de-kijker-head p {
+.hm-download-sec-wrp .hm-de-kijker-head p{
     margin-bottom: 38px;
 }
-.hm-download-wrp ul{
-	list-style: none;
+.hm-dw-slider-wrp{
 	margin: 0 -12px;
-	padding: 0;
 }
-.hm-download-wrp ul li{
+.hm-download-box-item{
 	width: 50%;
 	float: left;
 	padding: 0 12px 20px;
 }
 .hm-download-box{
     border: 3px solid #F3F3F3;
-    height: 152px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 30px;
-    padding-right: 40px;
-    cursor: pointer;
+    padding: 45px 40px 45px 30px;
     transition: all 0.5s;
     -ms-transition: all 0.5s;
     -webkit-transition: all 0.5s;
+    position: relative;
 }
 .hm-download-box:hover{
 	background: #1E1E1E;
 	border-color: #1E1E1E;
 }
-.hm-download-box:hover a{
+.hm-download-box:hover strong{
 	color: #FFFFFF;
 }
-.hm-download-box a{
+.hm-download-box strong{
 	display: inline-block;
 	vertical-align: baseline;
 	text-decoration: none;
@@ -420,7 +413,7 @@ hm-download-sec-wrp
 	position: relative;
 	padding-right: 70px;
 }
-.hm-download-box a:after{
+.hm-download-box strong:after{
 	content: "";
 	position: absolute;
 	right: 0;
@@ -431,7 +424,7 @@ hm-download-sec-wrp
 	background-size: 33px 27px;
 	background-repeat: no-repeat;
 }
-.hm-download-box a i{
+.hm-download-box strong i{
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -454,4 +447,15 @@ hm-download-sec-wrp
 }
 .hm-download-btn a:hover{
 	background: #deb005;
+}
+.hm-lates-news-post-sec-wrp{
+	background: #f6f6f6;
+	padding-top: 75px;
+	padding-bottom: 100px;
+}
+.hm-lates-news-post-sec-wrp .rm-news-sec-inr ul{
+	padding-bottom: 0;
+}
+.hm-lates-news-post-sec-wrp .hm-download-btn{
+	padding-top: 0;
 }
