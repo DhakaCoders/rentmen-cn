@@ -410,14 +410,14 @@ Gallery design
 	padding: 0;
 	background-color: #fff;
 	border-top: none;
+	box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
+	-ms-box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
+	-webkit-box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
 }
 .table-dsc table{
 	width: 100%;
 	padding: 20px;
 	border: none;
-	box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
-	-ms-box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
-	-webkit-box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
 }
 
 .table-dsc table tbody{
