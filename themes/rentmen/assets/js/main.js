@@ -144,12 +144,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
   cookise-close-btn js
 =======================
 */
-if ($('.cookie-btn').length) {
-  $('.cookie-btn').on('click', function(){
-    $('.cookie-policy-wrp').hide('slow');
-  });
-  $('.close-btn').on('click', function(){
-    $('.cookie-policy-wrp').hide('slow');
+if ($('#catapultCookie').length) {
+  $('#catapultCookie').on('click', function(){
+    $('#catapult-cookie-bar').hide('slow');
+    $('.catapult-close-btn').hide('slow');
   });
 }
 

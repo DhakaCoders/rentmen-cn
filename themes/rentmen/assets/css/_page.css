@@ -102,12 +102,13 @@
 cookie-policy
 ------------------
 */
-.cookie-policy-wrp{
-  position: absolute;
-  right: 110px;
-  bottom: -45px;
+.catapult-cookie-wrp{
+    position: fixed;
+    right: 110px;
+    top: 53%;
+    z-index: 10;
 }
-.cookie-policy-dsc{
+.catapult-cookie-bar{
   background: #F3BF00;
   box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.05);
   padding: 30px 40px 25px;
@@ -117,30 +118,33 @@ cookie-policy
   text-align: left;
   position: relative;
 }
-.cookie-policy-dsc span {
+.catapult-cookie-topbar strong{
     display: inline-block;
     vertical-align: baseline;
     position: absolute;
     right: 19px;
     top: 14px;
 }
-.cookie-policy-dsc span i{
+.catapult-cookie-topbar i{
   display: inline-block;
   vertical-align: baseline;
 }
-.cookie-policy-dsc p{
+.catapult-cookie-bar span{
+  display: block;
+}
+span.ctcc-left-side{
   margin-bottom: 22px;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
 }
-.cookie-policy-dsc h4{
+span.ctcc-left-side h4{
   margin: 0;
   margin-top: 18px;
   margin-bottom: 18px;
   font-family: 'Open Sans', sans-serif;
 }
-.cookie-policy-dsc > a {
+span.ctcc-left-side a {
   display: inline-block;
   vertical-align: baseline;
   text-decoration: none;
@@ -154,8 +158,9 @@ cookie-policy
   transition: all 0.5s;
   -ms-transition: all 0.5s;
   -webkit-transition: all 0.5s;
+  margin-top: 25px;
 }
-.cookie-policy-dsc > a:after{
+span.ctcc-left-side a:after{
   content: "";
   position: absolute;
   right: 0;
@@ -169,13 +174,13 @@ cookie-policy
   -ms-transition: all 0.5s;
   -webkit-transition: all 0.5s;
 }
-.cookie-policy-dsc > a:hover:after{
+span.ctcc-left-side a:hover:after{
   right: -5px;
 }
 .cookie-btn {
   margin-top: 20px;
 }
-.cookie-btn a{
+span.catapultCookieBtn button{
   display: inline-block;
   vertical-align: baseline;
   text-decoration: none;
@@ -185,7 +190,7 @@ cookie-policy
   padding: 14px 38px;
   text-transform: uppercase;
 }
-.cookie-btn a:hover{
+span.catapultCookieBtn button:hover{
   color: #f4bf01;
 }
 

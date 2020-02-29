@@ -186,7 +186,7 @@ contact-info-sec-wrp
 	max-width: 200px;
 	width: 100%;
 	height: 60px;
-	border: 0;
+	border: 2px solid#F3BF00;
 	box-sizing: border-box;
 	background: #F3BF00;
 	font-size: 16px;
@@ -202,7 +202,9 @@ contact-info-sec-wrp
 	margin: 0 auto;
 }
 .contact-form-wrp .wpforms-container .wpforms-form .wpforms-submit-container button:hover{
-	background: #dcad06;
+	background: #fff;
+	color: #F3BF00;
+	border-color: #F3BF00;
 }
 
 .contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-has-error label.wpforms-error {
