@@ -198,6 +198,15 @@ form .bootstrap-select button{
 form .bootstrap-select .caret{
 	border: 0;
 }
+
+.btn-light:not(:disabled):not(.disabled).active:focus, 
+.btn-light:not(:disabled):not(.disabled):active:focus, 
+.show>.btn-light.dropdown-toggle:focus{
+	box-shadow: none!important;
+}
+
+
+
 .dropdown-toggle{
 	position: relative;
 	background: transparent!important;

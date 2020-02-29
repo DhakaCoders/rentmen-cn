@@ -19,7 +19,8 @@
 	line-height: 1.1;
 }
 .default-page-con h2{
-	margin-bottom: 15px;
+	margin-bottom: 20px;
+	padding-top: 20px;
 }
 .dfp-text-module{
 	
@@ -114,7 +115,7 @@ ol li::before {
 .fl-dft-lftimg-rgtdes-rgt {
 	padding-left: 25px;
 	padding-bottom: 5px;
-	padding-top: 10px;
+	padding-top: 0;
 }
 .fl-dft-lftimg-rgtdes-rgt p:last-child{
 	margin-bottom: 0;
@@ -144,10 +145,18 @@ ol li::before {
 .dft-question-mark-slide-item{
 	padding: 0 8px;
 }
+.dft-question-mark-slide-item:hover .dft-question-mark-slide-item-inr{
+	background: #1E1E1E;
+	color: #fff;
+	border-color: #1E1E1E;
+}
 .dft-question-mark-slide-item-inr{
 	border: 3px solid #F3F3F3;
 	padding: 43px 133px 35px 115px;
 	position: relative;
+		transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
 }
 .dft-question-mark-slide-item-inr strong{
 	font-weight: 600;
@@ -539,6 +548,20 @@ Gallery design
 #nieuws-details-variant-page-cntlr .dft-blog-item-des-date{
 	left: -127px;
 	top: -27px;
+}
+
+
+.dft-question-mark-slider .dft-question-mark-slide-item,
+.dft-blog-slider .dft-blog-item{
+	display: none!important;
+}
+.dft-question-mark-slider .dft-question-mark-slide-item:first-child,
+.dft-blog-slider .dft-blog-item:first-child{
+	display: block!important;
+}
+.dft-question-mark-slider.slick-initialized .dft-question-mark-slide-item,
+.dft-blog-slider.slick-initialized .dft-blog-item{
+	display: block!important;
 }
 
 @media(max-width: 1199px){
