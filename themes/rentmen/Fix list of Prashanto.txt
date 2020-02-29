@@ -1,0 +1,101 @@
+Footer
+----------------
+Desktop-->
+
+1. https://www.screencast.com/t/wYzeglb3
+	i) svg sprite hobe. 
+	ii) hover korle orange color hobe
+
+2. https://www.screencast.com/t/G4bxmUjiN
+	ai logo te link hobe. 
+	then nicher logo te link hobe kina sure hote hobe. pore mone koray dio
+
+3. https://www.screencast.com/t/Xjty8o1mQVZ
+	href a tel and mail to diye daw, jate call and mail option ase click korle
+
+4. https://www.screencast.com/t/9TxuF85O
+		mail icon ta aktu upore uthbe
+
+
+
+Producten Overview
+----------------
+Desktop-->
+
+1. https://www.screencast.com/t/YW4sPZRVpF
+	sprit hobe
+2. https://www.screencast.com/t/oKq4Eq7U5Ly
+	hover korle red color ta daw
+
+3. https://www.screencast.com/t/7d7maUem
+   https://www.screencast.com/t/6WxO2gxQQeaX
+   link daw
+
+4. https://www.screencast.com/t/yxemmBXK04tB
+	ai icon gulo after a hobena .  icon gulo upload korte parbe. up korte hole 2 ta img up korte hobe akta black and akta white .
+
+5. https://www.screencast.com/t/B6RYjWISvGw
+	gap hobe
+
+6. https://www.screencast.com/t/BiobKgHq
+	ai bg ta solid hobena. niche opacity ache. to j color ta ase manage korte hobe
+
+7. https://www.screencast.com/t/qDR78xibiQ
+	text center a hoyni
+
+8. https://www.screencast.com/t/ZFeNYe6M0I
+	checkbox a click korle,  ar valu 0 and 1 houar jonno ata jquery te use koro
+
+9. https://www.screencast.com/t/9rxBDHnMFSuF
+	i) sprite hobe 
+	ii) hover korle orange color hobe
+
+10. https://www.screencast.com/t/IbWbOz2l
+	img a mHc class ta use koro. besi long img hole jeno thik thak thake
+
+11. https://www.screencast.com/t/uzdFYiutV8Fn
+	Shoriful ar page thake ata copy kore niye bosao
+
+
+Producten Details
+----------------
+Desktop-->
+
+1. https://www.screencast.com/t/W0bkhhCTlEs
+	https://www.screencast.com/t/nGVhVqzz9
+	ai gulo class tule diye push korba. tahole check korte easy hoy
+
+2. https://www.screencast.com/t/33iUdlKcK
+	shoriful ar page ta ata copy kore bosao
+
+3. https://www.screencast.com/t/AwV4H3SkGb
+	hover korle black bg ta daw
+
+4. https://www.screencast.com/t/fqkc1JRdG
+	icon ta text borabor center a hoyni
+
+5. https://www.screencast.com/t/rfucs1oW
+	ai iconta header a sprite kora ache . icon ta bosay fix korte paro. 
+
+6. https://www.screencast.com/t/xT73jkzkyWJ5
+	border ta thik nai
+
+
+7. https://www.screencast.com/t/tvRaDJV0gg3
+	ai khane 'ul' or 'ol' use korte pare, tai 2ta diye design kore rakhte hobe
+
+8. sprite hobe
+	https://www.screencast.com/t/ykoN1zhSJxkD
+
+9. https://www.screencast.com/t/E3ow85M9V
+	full width hobe
+	https://www.screencast.com/t/fjOyMIzayr
+	div ar vitore img tag dileo jeno img design ta thik thake kore rakhio to.
+	 full width to jeta valo dekhabe seta rakhte hobe
+
+
+
+
+	
+
+

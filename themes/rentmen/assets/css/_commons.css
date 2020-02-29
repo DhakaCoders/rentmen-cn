@@ -200,6 +200,7 @@ form .bootstrap-select .caret{
 }
 .dropdown-toggle{
 	position: relative;
+	background: transparent!important;
 }
 .dropdown-toggle::after{
 	content: none;
