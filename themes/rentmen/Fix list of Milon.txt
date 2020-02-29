@@ -1,0 +1,99 @@
+Home
+----------------
+Desktop-->
+
+1. https://www.screencast.com/t/NaHHymvBFVv7
+	i) banner section ar bahire cookie ta hobe.
+	ii) positin fixed hobe. then top and right a bolte hobe position ta
+	iii) https://www.screencast.com/t/x1wXwxW5Og
+		index.html a markup ta edit kore dichi with jquery. ata use kore css fix koro
+
+2. https://www.screencast.com/t/kS0giQRjz
+	akta scrollbar asteche. parent section tate overflow hidden dite hobe
+
+3. https://www.screencast.com/t/1dXwUuxq62
+	heading hobena. just 'a' tag hobe
+
+4. https://www.screencast.com/t/Q9maFephe
+	ai img gulo sprite hobena. bcoz upload hobe ai img gulo. i tag ar vitore svg img ta diye daw. tahole 2 ta img hobe. akta black img r akta white img. hover a white img ta show hobe
+
+5.  i) https://www.screencast.com/t/k1mx4v77um
+		ai bg ta after use na kore. container div ar upore , section div ar pore akta div niye use koro. 
+	ii) https://www.screencast.com/t/MRwgZgYF
+		boro window te ai bg ta sore jay
+	iii) https://www.screencast.com/t/agR402C64
+		text barle, img tao always cente a thakbe
+
+6. https://www.screencast.com/t/gfRVCsP71bz
+	and 
+	contact page- https://www.screencast.com/t/NaahTcYZaS4
+
+	ai button a hover korle amon koro -> 
+	https://www.screencast.com/t/gresmn70
+
+
+7. https://www.screencast.com/t/hddLzipd9pth
+	atate heading h5 daw. then heading ar vitore a tag.
+
+8. https://www.screencast.com/t/EPa9w2FWPY
+	img a link hove. total box a hover korle img ta scale effect ta hobe
+
+
+
+
+Over Ons
+----------------
+Desktop-->
+
+1. https://www.screencast.com/t/bmo3yJVcwX5Z
+	PD ar page thake aita copy kore daw
+
+2. https://www.screencast.com/t/7CzUamgOeiM
+	akta scrollbar aseteche
+
+3. https://www.screencast.com/t/bxOob7mvM
+	aktu text barle lege jay. left and right , top and bottom a padding diye rkahte hobe
+
+4. https://www.screencast.com/t/aHOKu3gCOk
+	ai text 2 ta onno hobe
+
+5. https://www.screencast.com/t/zXluKC0kYn
+	'i' tag .mHc class ta daw. bcoz akta lomba img up hole title gulo r ak label a thakbena 
+
+6. https://www.screencast.com/t/0IUklhGpN9
+	ai section ar fix ager motoi
+
+
+Contact
+----------------
+Desktop-->
+
+1. https://www.screencast.com/t/xqPuVk8yR4Z
+	breadcrumbs ta pest koro
+
+2. https://www.screencast.com/t/nz511DA3zjJE
+	hover korle ai color ta try kore dekhio to valo dekhay kina. black ta aktu hard hard lagteche
+
+3. https://www.screencast.com/t/vU2LeamEmcQd
+	hover korle border ta left thake right a transition hoye jabe
+
+4. https://www.screencast.com/t/wjefjJmX
+	ai star gulor color ki black hobe na orange ? sure hote hobe
+
+5. https://www.screencast.com/t/BfPnH8OfD
+	2nd tab ar email ta require hobena
+
+
+N.B.-->
+ i) sprite gulo home page pest kore daw. jekhane comment kora ache tomar name. tar upore
+ 	https://www.screencast.com/t/fMY9gfMTXp5
+
+ ii) fix ses hole . sob browser a check kore dekhio j thik thak ache kina sob
+
+
+
+
+
+	
+
+

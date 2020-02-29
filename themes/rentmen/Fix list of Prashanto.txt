@@ -57,6 +57,9 @@ Desktop-->
 	Shoriful ar page thake ata copy kore niye bosao
 
 
+12. https://www.screencast.com/t/LIyE0Vvp2
+	upore niche aktu kom besi gap mone hosche. center hobe text gulo
+
 Producten Details
 ----------------
 Desktop-->
@@ -95,8 +98,11 @@ Desktop-->
 
 
 
-N.B.---->  
-sob fix hoye gele. page gulo sob browser a check kore dekhio j thik thak ache kina
+N.B.-->
+ i) sprite gulo home page pest kore daw. jekhane comment kora ache tomar name. tar upore
+ 	https://www.screencast.com/t/fMY9gfMTXp5
+
+ ii) fix ses hole . sob browser a check kore dekhio j thik thak ache kina sob
 
 
 	
