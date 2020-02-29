@@ -114,14 +114,9 @@
 	box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
 }
 .faq-grd-item-inner{
-	display: flex;
-	align-items: center;
-	min-height: 290px;
+	padding: 72px 20px 35px 25px;
 }
-.faq-grd-item-des{
-	padding-left: 25px;
-	padding-right: 20px;
-}
+
 .faq-grd-item-des h5{
 	line-height: 30px;
 	margin: 0;
