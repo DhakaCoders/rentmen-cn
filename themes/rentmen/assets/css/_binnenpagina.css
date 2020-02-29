@@ -153,6 +153,9 @@ ol li::before {
 	color: #fff;
 	border-color: #1E1E1E;
 }
+.dft-question-mark-slide-item:hover  .dft-question-mark-slide-item-inr span{
+	right: 40px;
+}
 .dft-question-mark-slide-item-inr{
 	border: 3px solid #F3F3F3;
 	padding: 43px 133px 35px 115px;
