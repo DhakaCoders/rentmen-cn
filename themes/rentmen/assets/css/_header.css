@@ -19,6 +19,13 @@ header.header .hdr-topbar{
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 10;
+}
+.logo a{
+	display: inline-block;
+	vertical-align: baseline;
+	max-width: 347px;
+
 }
 .hdr-rgt{
 	display: flex;
