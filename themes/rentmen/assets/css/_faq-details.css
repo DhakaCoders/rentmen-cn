@@ -5,16 +5,19 @@
 	color: #1E1E1E;
 	text-transform: uppercase;
 	font-weight: 700;
-	padding-left: 42px;
+	padding-left: 40px;
 	position: relative;
 }
 .rm-faq-backlink-sec-inr a i{
 	position: absolute;
-	top: -2px;
+	top: -3px;
 	left: 0;
 }
 .rm-faq-backlink-sec-inr a:hover{
 	color: #F3BF00;
+}
+.rm-faq-backlink-sec-inr a:hover svg{
+	fill: #F3BF00;
 }
 
 .rm-faq-content-sec{
@@ -23,21 +26,31 @@
 }
 .rm-faq-cnt-sec-inr{
 	background: #fff;
+	box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
+	position: relative;
+	padding-bottom: 30px;
 }
 .rm-faq-cnt-sec-img{
 	float: right;
 	width: 40.5109%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-repeat: no-repeat!important;
+	background-size: cover!important;
+	background-position: center center!important;
+	border-radius: 8px;
 }
 .rm-faq-cnt-sec-des{
 	float: left;
 	width: 59.489%;
-	padding: 62px 105px 30px 40px;
-	position: relative;
+	padding: 62px 105px 0px 40px;
 }
 .rm-faq-cnt-sec-des h2{
 	font-size: 48px;
 	color:  #222020;
-	line-height: 1.5;
+	line-height: 71px;
 	margin: 0;
 	padding-bottom: 20px;
 }
@@ -45,9 +58,9 @@
 	font-weight: normal;
 	margin-bottom: 25px;
 }
-.rm-faq-cnt-sec-img{
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
+.rm-faq-cnt-sec-img img{
+	display: none;
+}
+.rm-faq-content-sec .rm-faq-cnt-sec-des ul {
+    padding-left: 0px;
 }
