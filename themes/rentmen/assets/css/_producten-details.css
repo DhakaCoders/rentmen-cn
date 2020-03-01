@@ -573,11 +573,12 @@
 .interestedItemSlider-btm-lnc a:last-child:hover svg{
   fill: #F3BF00;
 }
-
-
-
-
-
+.organizePartySlider.dft-slider-pagi .slick-dots {
+  top: -20px;
+}
+.organizePartySlider.dft-slider-pagi.slick-dotted{
+  margin-bottom: 10px!important;
+}
 
 
 

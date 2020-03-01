@@ -4,19 +4,27 @@
 #overview-organize-party-sec{
   padding: 86px 0 55px;
 }
-#overview-organize-party-sec .organizePartySlider-item::after{
-  content: "";
-  position: absolute;
-  right: -15px;
-  top: 38px;
-  background: url(../images/organize-party-indicator.svg)no-repeat center center;
-  background-size: 100% 100%;
-  width: 30px;
-  height: 9px;
+
+@media(min-width: 1199px){
+  #overview-organize-party-sec .organizePartySlider-item::after{
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 38px;
+    background: url(../images/organize-party-indicator.svg)no-repeat center center;
+    background-size: 100% 100%;
+    width: 30px;
+    height: 9px;
+  } 
+  #overview-organize-party-sec .organizePartySlider-item:nth-child(5)::after{
+    content: none!important;
+  }
+  #overview-organize-party-sec .slick-current+.slick-slide+.slick-slide+.slick-slide+.slick-slide .organizePartySlider-item::after {
+    content: none!important;  
+  }
 }
-#overview-organize-party-sec .organizePartySlider-item:last-child::after{
-  content: none;
-}
+
+
 .pro-overview-main-sec{
   background: #F6F6F6;
   padding: 75px 0 50px;
