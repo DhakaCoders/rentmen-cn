@@ -290,31 +290,39 @@ hm-two-grid-sec-wrp
 }
 .hm-two-grid-wrp{
 	min-height: 590px;
-}
-.hm-two-grid-rgt{
-	width: 42%;
-	float: right;
 	position: relative;
 }
 .hm-two-grid-lft {
-    float: left;
-    width: 58%;
-    padding-right: 125px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding-right: 51%;
+    right: 0;
 }
 .hm-two-grid-rgt-img{
-	height: 590px !important;
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position:center bottom !important;
 	position: absolute;
-	left: 0;
 	top: 0;
 	bottom: 0;
 	right: 0;
 	z-index: 1;
 	border-radius: 8px;
+	width: 42%;
+	float: right;
 }
-.hm-two-grid-rgt span {
+.hm-two-grid-dsc {
+    padding-top: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    width: 49%;
+}
+.hm-two-grid-rgt-img span {
     display: inline-block;
     vertical-align: baseline;
     position: absolute;
@@ -322,9 +330,7 @@ hm-two-grid-sec-wrp
     top: -50px;
     z-index: 1;
 }
-.hm-two-grid-dsc{
-	padding-top: 30px;
-}
+.ovr-two-grid-dsc span,
 .hm-two-grid-dsc span{
 	display: inline-block;
 	vertical-align: baseline;
@@ -333,12 +339,14 @@ hm-two-grid-sec-wrp
 	color: #BF211E;
 	font-weight: 300;
 }
+.ovr-two-grid-dsc h2,
 .hm-two-grid-dsc h2{
 	margin: 0;
 	font-size: 48px;
 	line-height: 1.1;
 	margin-bottom: 22px;
 }
+.ovr-two-grid-dsc p,
 .hm-two-grid-dsc p{
 	margin-bottom: 25px;
 }
@@ -346,6 +354,7 @@ hm-two-grid-sec-wrp
 	margin: 0;
 	padding: 0;
 }
+.ovr-two-grid-dsc a,
 .hm-two-grid-dsc a{
 	display: inline-block;
 	vertical-align: baseline;
@@ -463,24 +472,6 @@ hm-download-sec-wrp
 	padding-top: 0;
 }
 
-.hm-lates-news-post-sec-wrp .dft-blog-item-des h5{
-	margin: 0;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 30px;
-    display: block;
-    margin-bottom: 25px;
-}
-.hm-lates-news-post-sec-wrp .dft-blog-item-des h5 > a{
-	display: inline-block;
-	vertical-align: baseline;
-	text-decoration: none;
-	color: inherit;
-	padding-right: 0;
-}
-.hm-lates-news-post-sec-wrp .dft-blog-item-des h5 > a:hover{
-	color: #f4bf01;
-}
 
 
 @media(max-width: 1499px){

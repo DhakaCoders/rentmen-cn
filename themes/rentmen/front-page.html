@@ -69,7 +69,31 @@
   </symbol>
 
   <!-- end of Milon -->
+  <symbol id="contact-map-icon-svg" width="30" height="40" viewBox="0 0 30 40" xmlns="http://www.w3.org/2000/svg">
+  <path d="M14.9998 0C22.9877 0 29.4863 6.49859 29.4863 14.4864C29.4863 24.3995 16.5223 38.9526 15.9704 39.5673C15.452 40.1447 14.5468 40.1437 14.0293 39.5673C13.4773 38.9526 0.513359 24.3995 0.513359 14.4864C0.513515 6.49859 7.01203 0 14.9998 0ZM14.9998 21.7749C19.0188 21.7749 22.2883 18.5053 22.2883 14.4864C22.2883 10.4675 19.0187 7.19797 14.9998 7.19797C10.981 7.19797 7.71148 10.4676 7.71148 14.4865C7.71148 18.5054 10.981 21.7749 14.9998 21.7749Z"/>
+  </symbol>
+  <symbol id="contact-phone-icon-svg" width="36" height="36" viewBox="0 0 36 36"  xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0)">
+  <path d="M25.9078 36C19.5969 36 12.8575 33.681 7.58812 28.4118C2.32755 23.1512 0 16.4163 0 10.0922C0 4.51856 4.50928 0 10.0922 0C10.5235 0 10.9112 0.262547 11.0714 0.662977L15.5902 11.9599C15.8065 12.5007 15.5435 13.1145 15.0027 13.3308L10.0389 15.3163C10.39 21.027 14.974 25.6106 20.6837 25.9613L22.6692 20.9974C22.8851 20.4575 23.4986 20.1935 24.0402 20.4099L35.337 24.9286C35.7374 25.0888 36 25.4765 36 25.9078C36 31.4814 31.4907 36 25.9078 36Z"/>
+  </g>
+  <defs>
+  <clipPath id="clip0">
+  <rect width="36" height="36"/>
+  </clipPath>
+  </defs>
+  </symbol>
 
+  <symbol id="contact-mail-icon-svg" width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0)">
+  <path d="M21.0086 22.0566C20.113 22.6537 19.0726 22.9693 18 22.9693C16.9275 22.9693 15.8871 22.6537 14.9915 22.0566L0.239695 12.2218C0.157852 12.1672 0.0781172 12.1103 0 12.0518V28.1672C0 30.0149 1.49941 31.4813 3.31404 31.4813H32.6859C34.5336 31.4813 35.9999 29.9819 35.9999 28.1672V12.0518C35.9217 12.1104 35.8418 12.1674 35.7597 12.2221L21.0086 22.0566Z"/>
+  <path d="M1.40977 10.4664L16.1615 20.3013C16.72 20.6736 17.3599 20.8597 17.9999 20.8597C18.64 20.8597 19.28 20.6736 19.8385 20.3013L34.5902 10.4664C35.473 9.87827 36 8.89389 36 7.83147C36 6.00468 34.5138 4.51855 32.6871 4.51855H3.31291C1.4862 4.51863 0 6.00475 0 7.83323C0 8.89389 0.527062 9.87827 1.40977 10.4664Z"/>
+  </g>
+  <defs>
+  <clipPath id="clip0">
+  <rect width="36" height="36"/>
+  </clipPath>
+  </defs>
+  </symbol>
 
 
 
@@ -533,8 +557,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-two-grid-wrp clearfix">
-          <div class="hm-two-grid-rgt">
-            <div class="hm-two-grid-rgt-img" style="background:url(assets/images/hm-two-grid-rgt-img.png);"></div>
+          <div class="hm-two-grid-rgt-img" style="background:url(assets/images/hm-two-grid-rgt-img.png);">
             <span><img src="assets/images/hm-mv-icon.png"></span>
           </div>
           <div class="hm-two-grid-lft">
@@ -651,13 +674,18 @@
             <li>
               <div class="dft-blog-item">
                 <div class="dft-blog-item-inr">
-                  <div class="dft-blog-item-fea-img" style="background: url(assets/images/blog-fea-img-01.jpg);"></div>
-                  <div class="dft-blog-item-des">
+                  <div class="dft-blog-item-fea-img-cntlr">
+                    <a class="overlay-link" href="#"></a>
+                    <div class="dft-blog-item-fea-img" style="background: url(assets/images/blog-fea-img-01.jpg);"></div>
+                  </div>
+                  <div class="dft-blog-item-des mHc">
                     <div class="dft-blog-item-des-date">
                       <strong>07</strong>
                       <span>FEB</span>
                     </div>
-                    <h5><a href="#">Ut mi augue, auctor eu ante ac, feugiat blandit augue?</a></h5> 
+                    <h5>
+                     <a href="#">Ut mi augue, auctor eu ante ac, feugiat blandit augue?</a>
+                    </h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
                     <a href="#">Lees Meer</a>
                   </div>
@@ -667,13 +695,18 @@
             <li>
               <div class="dft-blog-item">
                 <div class="dft-blog-item-inr">
-                  <div class="dft-blog-item-fea-img" style="background: url(assets/images/blog-fea-img-02.jpg);"></div>
-                  <div class="dft-blog-item-des">
+                  <div class="dft-blog-item-fea-img-cntlr">
+                    <a class="overlay-link" href="#"></a>
+                    <div class="dft-blog-item-fea-img" style="background: url(assets/images/blog-fea-img-02.jpg);"></div>
+                  </div>
+                  <div class="dft-blog-item-des mHc">
                     <div class="dft-blog-item-des-date">
                       <strong>11</strong>
                       <span>FEB</span>
                     </div>
-                    <h5><a href="#">Ut mi augue, auctor eu ante ac, feugiat blandit augue?</a></h5>
+                    <h5>
+                     <a href="#">Ut mi augue, auctor eu ante ac, feugiat blandit augue?</a>
+                    </h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
                     <a href="#">Lees Meer</a>
                   </div>
@@ -683,13 +716,18 @@
             <li>
               <div class="dft-blog-item">
                 <div class="dft-blog-item-inr">
-                  <div class="dft-blog-item-fea-img" style="background: url(assets/images/blog-fea-img-03.jpg);"></div>
-                  <div class="dft-blog-item-des">
+                  <div class="dft-blog-item-fea-img-cntlr">
+                    <a class="overlay-link" href="#"></a>
+                    <div class="dft-blog-item-fea-img" style="background: url(assets/images/blog-fea-img-03.jpg);"></div>
+                  </div>
+                  <div class="dft-blog-item-des mHc">
                     <div class="dft-blog-item-des-date">
                       <strong>08</strong>
                       <span>FEB</span>
                     </div>
-                    <h5><a href="#">Ut mi augue, auctor eu ante ac, feugiat blandit augue?</a></h5>
+                    <h5>
+                     <a href="#">Ut mi augue, auctor eu ante ac, feugiat blandit augue?</a>
+                    </h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
                     <a href="#">Lees Meer</a>
                   </div>

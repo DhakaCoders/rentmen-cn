@@ -33,11 +33,11 @@ overons-two-part-sec-wrp
 	background-position: center center !important;
 	height: 920px !important
 }
-.overons-two-part-rgt .hm-two-grid-dsc{
+.ovr-two-grid-dsc{
 	padding-top: 65px;
 	padding-left: 15px;
 }
-.hm-two-grid-dsc blockquote{
+.ovr-two-grid-dsc blockquote{
 	border-left: 8px solid #F3BF00;
 	font-size: 24px;
 	line-height: 36px;
@@ -48,23 +48,23 @@ overons-two-part-sec-wrp
 	margin-bottom: 30px;
 	margin-top: 35px;
 }
-.overons-two-part-rgt .hm-two-grid-dsc a{
+.ovr-two-grid-dsc a{
 	margin-top: 5px;
 	border: 3px solid #F3BF00;
 	transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 }
-.overons-two-part-rgt .hm-two-grid-dsc a:last-child{
+.ovr-two-grid-dsc a:last-child{
 	background:#fff;
 	color: #F3BF00;
 	margin-left: 15px;
 }
-.overons-two-part-rgt .hm-two-grid-dsc a:hover:first-of-type{
+.ovr-two-grid-dsc a:hover:first-of-type{
 	background: #fff !important;
 	color: #F3BF00;
 }
-.overons-two-part-rgt .hm-two-grid-dsc a:hover:last-child{
+.ovr-two-grid-dsc a:hover:last-child{
 	background:#F3BF00;
 	color: #fff;
 }
@@ -78,18 +78,18 @@ overons-service-sec-wrp
 	position: relative;
 	padding-bottom: 100px;
 }
-.overons-justo-box{
-	max-width: 788px;
-	width: 100%;
-	background: linear-gradient(171.11deg, #F9DC5C -0.05%, rgba(255, 255, 255, 0) 100%), #F3BF00;
-	height: 224px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	left: 0;
-	top: -115px;
-	z-index: 1;
+.overons-justo-box {
+    max-width: 788px;
+    width: 100%;
+    background: linear-gradient(171.11deg, #F9DC5C -0.05%, rgba(255, 255, 255, 0) 100%), #F3BF00;
+    height: 224px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -110px;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
 }
 .overons-justo-box h2{
 	font-size: 48px;
@@ -97,9 +97,9 @@ overons-service-sec-wrp
 	color: #fff;
 	margin: 0;
 }
-.overons-service-wrp{
-	padding-top: 200px;
-	position: relative;
+.overons-service-wrp {
+    padding-top: 95px;
+    position: relative;
 }
 .overons-service-wrp ul{
 	list-style: none;
