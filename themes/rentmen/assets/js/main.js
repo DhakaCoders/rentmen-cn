@@ -362,25 +362,19 @@ $('input[type="checkbox"]').change(function(){
 
 if( $('.dft-question-mark-slider').length ){
     $('.dft-question-mark-slider').slick({
-      dots: true,
+      dots: false,
       infinite: false,
-      arrow: false,
+      arrows: false,
       speed: 300,
       slidesToShow: 2,
       slidesToScroll: 1,
       responsive: [
         {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 480,
+          breakpoint: 576,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            dots: true
           }
         }
         // You can unslick at a given breakpoint now by adding:
@@ -394,7 +388,7 @@ if( $('.dft-blog-slider').length ){
     $('.dft-blog-slider').slick({
       dots: true,
       infinite: false,
-      arrow: false,
+      arrows: false,
       speed: 300,
       slidesToShow: 2,
       slidesToScroll: 1,
@@ -402,15 +396,9 @@ if( $('.dft-blog-slider').length ){
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            dots: true
           }
         }
         // You can unslick at a given breakpoint now by adding:
