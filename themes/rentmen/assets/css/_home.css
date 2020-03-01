@@ -533,6 +533,10 @@ hm-download-sec-wrp
 	.hm-two-grid-dsc h2{
 		font-size: 43px;
 	}
+	.hm-download-box strong {
+	    padding-left: 75px;
+	    padding-right: 55px;
+	}
 }
 
 @media(max-width: 991px){
@@ -581,6 +585,16 @@ hm-download-sec-wrp
 	.hm-de-kijker-head {
 	    max-width: 615px;
 	    width: 100%;
+	}
+	.hm-dw-slider-wrp {
+	    margin: 0;
+	}
+	.hm-download-box-item {
+	    width: 100%;
+	    float: none;
+	    padding: 0 0 20px;
+	    max-width: 550px;
+	    margin: 0 auto;
 	}
 
 	
@@ -716,7 +730,7 @@ hm-download-sec-wrp
 	.categorie-xs-btn{
 		text-align: center;
 	}
-	.categorie-xs-btn a{
+	.categorie-xs-btn span{
 		display: inline-block;
 		vertical-align: baseline;
 		text-decoration: none;
@@ -735,12 +749,24 @@ hm-download-sec-wrp
 		-ms-transition: all 0.5s;
 		-webkit-transition: all 0.5s;
 	}
-	.categorie-xs-btn a:hover{
+	.categorie-xs-btn span:hover{
 		background: #f4bf01;
+	}
+	.hm-post-categorie-wrp ul li{
+	    width: 50%;
+	}
+	.hm-post-categorie-wrp ul li:nth-child(3n+1){
+		clear: none;
+	}
+	.hm-post-categorie-wrp ul li:nth-child(2n+1){
+		clear: left;
 	}
 	.ovr-two-grid-dsc h2,
 	.hm-two-grid-dsc h2{
 		font-size: 34px;
+	}
+	.hm-post-categorie-wrp{
+		display: none;
 	}
 }
 
@@ -770,6 +796,20 @@ hm-download-sec-wrp
 	.ovr-two-grid-dsc h2,
 	.hm-two-grid-dsc h2{
 		font-size: 30px;
+	}
+	.hm-post-categorie-wrp ul{
+		margin: 0;
+	}
+	.hm-post-categorie-wrp ul li {
+	    width: 100%;
+	    padding-left: 0;
+	    padding-right: 0;
+	    max-width: 330px;
+	    margin: 0 auto;
+	    float: none;
+	}
+	.hm-post-categorie-wrp ul li:nth-child(2n+1){
+		clear: none;
 	}
 }
 
