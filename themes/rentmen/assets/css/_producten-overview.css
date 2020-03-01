@@ -657,7 +657,7 @@ html .price-slider .ui-button.ui-state-disabled:active {
   padding-right: 12px;
 }
 .overview-feature-slider-item-innr {
-  padding: 72px 48px 20px;
+  padding: 72px 48px 55px;
 }
 .overview-feature-slider-item i{
   position: relative;
@@ -679,7 +679,10 @@ html .price-slider .ui-button.ui-state-disabled:active {
   margin-bottom: 15px;
 }
 
-
+.overview-feature-slider.dft-slider-pagi2 .slick-dots{
+  position: relative;
+  top: -60px;
+}
 
 
 
