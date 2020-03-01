@@ -169,7 +169,7 @@ $('.tabs-menu li').on('click',function(){
 });
 
 /* -- Contact page left border and right bg control --*/
-var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
+/*var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
 var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
 var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 )+330;
 $('.hm-two-grid-sec-bg').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
@@ -183,13 +183,27 @@ function flResize(){
     $('.hm-two-grid-sec-wrp').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
   });
 }
-flResize();
+flResize();*/
 
 
 if (windowWidth <= 575) {
   $('.categorie-xs-btn span').on('click',function(){
     $('.hm-post-categorie-wrp').slideToggle(500);
   });
+}
+
+
+if (windowWidth < 576) {
+  if( $('.dft-slider-pagi').length ){
+      $('.dft-slider-pagi').slick({
+        dots: true,
+        arrows: false,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
+  }
 }
 
 /*

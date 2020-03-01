@@ -402,7 +402,7 @@ contact-info-sec-wrp
 	    padding-top: 20px;
 	}
 	.contact-info-wrp {
-	    margin-top: 38px;
+	    margin-top: 30px;
 	    padding-top: 40px;
 	    padding-bottom: 140px;
 	}
@@ -470,6 +470,9 @@ contact-info-sec-wrp
 	    max-width: 430px;
 	    width: 100%;
 	    padding: 22px 15px 30px 15px;
+	}
+	.google-map-dsc-wrp{
+		bottom: 35px;
 	}
 }
 
