@@ -273,7 +273,18 @@ if( $('.product-slider-wrp').length ){
 }
 
 
+if( $('.interestedItemSlider').length ){
+  $('.interestedItemSlider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 700,
+    dots: true,
+    arrows: false,
+  });
 
+
+}
 
 //products counter
 if( $('.pro-counter .qty').length ){

@@ -194,24 +194,17 @@ span.catapultCookieBtn button:hover{
   color: #f4bf01;
 }
 
-
-
-
-
-
-
-
-
-
 .dft-slider-pagi .slick-dots{
   position: relative;
-  top: 30px;
+  top: 12px;
 }
 .dft-slider-pagi .slick-dots li{
-  background-image: url(../images/dft-slider-pagi-1.png);
+  background-image: url(../images/dft-slider-pagi-1.svg);
   background-size: 14px 14px;
   background-position: center center;
   background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
   padding: 0 5px;
   display: inline-block;
   vertical-align: baseline;
@@ -220,8 +213,8 @@ span.catapultCookieBtn button:hover{
 .dft-slider-pagi .slick-dots li,
 .dft-slider-pagi .slick-dots li button,
 .dft-slider-pagi .slick-dots li button::before{
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   margin: 1px;
   padding: 0;
 }
@@ -230,32 +223,12 @@ span.catapultCookieBtn button:hover{
 }
 .dft-slider-pagi .slick-dots li.slick-active,
 .dft-slider-pagi .slick-dots li:hover{
-  background-image: url(../images/dft-slider-pagi-2.png);
-  background-size: 30px 30px;
-  background-position: center center;
+  background-image: url(../images/dft-slider-pagi-2.svg);
   background-repeat: no-repeat;
-    -webkit-transition: all .25s ease;
-     -moz-transition: all .25s ease;
-      -ms-transition: all .25s ease;
-        -o-transition: all .25s ease;
-          transition: all .25s ease;
 }
-
-
-
-
-/* 
-
-.testimonialsSlider .testimonialsSlider-item{
-    display: none;
+.dft-slider-pagi .slick-dots li::before {
+  content: none!important;
 }
-.testimonialsSlider .testimonialsSlider-item:first-child{
-  display: block;
-}
-.testimonialsSlider.slick-initialized .testimonialsSlider-item{
-  display: block;
-} */
-
 
 
 
