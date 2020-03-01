@@ -194,6 +194,9 @@ span.catapultCookieBtn button:hover{
   color: #f4bf01;
 }
 
+/*
+  Slider Pagination
+*/
 .dft-slider-pagi .slick-dots{
   position: relative;
   top: 12px;
@@ -221,10 +224,16 @@ span.catapultCookieBtn button:hover{
 .dft-slider-pagi .slick-dots li button::before{
   content: "";
 }
-.dft-slider-pagi .slick-dots li.slick-active,
-.dft-slider-pagi .slick-dots li:hover{
+.dft-slider-pagi .slick-dots li.slick-active{
   background-image: url(../images/dft-slider-pagi-2.svg);
   background-repeat: no-repeat;
+}
+@media(min-width: 991px){
+  .dft-slider-pagi .slick-dots li:hover{
+    background-image: url(../images/dft-slider-pagi-2.svg);
+    background-repeat: no-repeat;
+  }
+
 }
 .dft-slider-pagi .slick-dots li::before {
   content: none!important;

@@ -260,7 +260,7 @@ if( $('.product-slider-wrp').length ){
     nextArrow: $('.thumbSlider-arrows .rightArrow'),
     responsive: [
       {
-        breakpoint: 1208,
+        breakpoint: 1200,
         settings: {
           vertical: false,
           verticalSwiping: false,
@@ -268,8 +268,6 @@ if( $('.product-slider-wrp').length ){
       }
     ]
   });
-
-
 }
 
 
@@ -281,10 +279,79 @@ if( $('.interestedItemSlider').length ){
     speed: 700,
     dots: true,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   });
-
-
 }
+
+
+
+if( $('.organizePartySlider').length ){
+  $('.organizePartySlider').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 700,
+    dots: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+}
+
+
+
+
+
+
+
+
 
 //products counter
 if( $('.pro-counter .qty').length ){
