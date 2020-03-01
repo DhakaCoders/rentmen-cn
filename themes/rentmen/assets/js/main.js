@@ -260,7 +260,7 @@ if( $('.product-slider-wrp').length ){
     nextArrow: $('.thumbSlider-arrows .rightArrow'),
     responsive: [
       {
-        breakpoint: 992,
+        breakpoint: 1208,
         settings: {
           vertical: false,
           verticalSwiping: false,
