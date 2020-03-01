@@ -17,8 +17,6 @@
 #overview-organize-party-sec .organizePartySlider-item:last-child::after{
   content: none;
 }
-
-
 .pro-overview-main-sec{
   background: #F6F6F6;
   padding: 75px 0 50px;
@@ -473,6 +471,7 @@ html .price-slider .ui-button.ui-state-disabled:active {
   transition: all 0.5s;
   -ms-transition: all 0.5s;
   -webkit-transition: all 0.5s;
+  position: relative;
 }
 .pro-overview-grid-item-innr:hover{
   -webkit-box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
@@ -572,6 +571,20 @@ html .price-slider .ui-button.ui-state-disabled:active {
 }
 .pro-overview-grid-btm-lnc a:last-child:hover svg{
   fill: #F3BF00;
+}
+.pro-new-tag{
+  display: inline-block;
+  vertical-align: baseline;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 12;
+  padding: 5px;
+  background: #F3BF00;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
 }
 .pro-overview-pagination{
   padding: 22px 10px 15px;
