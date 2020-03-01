@@ -83,7 +83,7 @@
 
 </head>
 <body>
-<header class="header">
+<header class="header" style="display: none;">
   <div class="hdr-topbar">
     <div class="container-lg">
       <div class="row">
@@ -201,7 +201,7 @@
 
 </header>
 
-<section class="breadcrumbs-sec">
+<section class="breadcrumbs-sec" style="display: none;">
   <div class="container-lg">
     <div class="row">
       <div class="col-12">
@@ -270,136 +270,138 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="rm-contact-form-block">
-          <div class="rm-contact-form-tab clearfix">
-            <h4>E-mail Ons</h4>
-            <ul class="reset-list tabs-menu clearfix">
-              <li><a href="#tabs">particulier</a></li>
-              <li><a href="#tabs">bedrijf</a></li>
-            </ul>
-          </div>
-          <div class="tabs">
-            <div class="contact-form-wrp clearfix">
-              <div class="wpforms-container">
-                <form class="wpforms-form">
-                  
-                  <div class="wpforms-field-container">
+        <div class="rm-contact-form-block-wrp">
+          <div class="rm-contact-form-block">
+            <div class="rm-contact-form-tab clearfix">
+              <h4>E-mail Ons</h4>
+              <ul class="reset-list tabs-menu clearfix">
+                <li><a href="#tabs">particulier</a></li>
+                <li><a href="#tabs">bedrijf</a></li>
+              </ul>
+            </div>
+            <div class="tabs">
+              <div class="contact-form-wrp clearfix">
+                <div class="wpforms-container">
+                  <form class="wpforms-form">
                     
-                    <div class="wpforms-field">
-                      <label class="wpforms-field-label">Voornaam <span class="wpforms-required-label">*</span> </label>
-                      <input type="text" name="name" placeholder="Steven" required>
-                    </div>
-                    <div class="wpforms-field">
-                      <label class="wpforms-field-label">Achternaam</label>
-                      <input type="text" name="name" placeholder="Ry |" required>
+                    <div class="wpforms-field-container">
+                      
+                      <div class="wpforms-field">
+                        <label class="wpforms-field-label">Voornaam <span class="wpforms-required-label">*</span> </label>
+                        <input type="text" name="name" placeholder="Steven" required>
+                      </div>
+                      <div class="wpforms-field">
+                        <label class="wpforms-field-label">Achternaam</label>
+                        <input type="text" name="name" placeholder="Ry |" required>
+                      </div>
+
+                      <div class="wpforms-field">
+                        <label class="wpforms-field-label">Telefoon <span class="wpforms-required-label">*</span></label>
+                        <input type="text" name="text" placeholder="Telefoon" required>
+                      </div>
+
+                      <div class="wpforms-field wpforms-has-error">
+                        <label class="wpforms-field-label">E-mailadres <span class="wpforms-required-label">*</span></label>
+                        <input type="email" name="email" placeholder="E-mailadres" class="form-control" required>
+                        <label class="wpforms-error">Onjuist ingevuld.</label>
+                      </div>
+
+                      <div class="wpforms-field subjectField">
+                        <label class="wpforms-field-label">onderwerpen</label>
+                        <input type="text" name="text" placeholder="Onderwerpen" required>
+                      </div>
+
+                      <div class="wpforms-field wpforms-field-textarea">
+                        <label class="wpforms-field-label">Bericht</label>
+                        <textarea name="message" placeholder="Bericht"></textarea>
+                      </div>
+                    </div><!-- end of .wpforms-field-container-->
+
+                    <div class="wpforms-submit-container">
+                      <button type="submit" name="submit" class="wpforms-submit">VERZENDEN</button>
                     </div>
 
-                    <div class="wpforms-field">
-                      <label class="wpforms-field-label">Telefoon <span class="wpforms-required-label">*</span></label>
-                      <input type="text" name="text" placeholder="Telefoon" required>
-                    </div>
-
-                    <div class="wpforms-field wpforms-has-error">
-                      <label class="wpforms-field-label">E-mailadres <span class="wpforms-required-label">*</span></label>
-                      <input type="email" name="email" placeholder="E-mailadres" class="form-control" required>
-                      <label class="wpforms-error">Onjuist ingevuld.</label>
-                    </div>
-
-                    <div class="wpforms-field subjectField">
-                      <label class="wpforms-field-label">onderwerpen</label>
-                      <input type="text" name="text" placeholder="Onderwerpen" required>
-                    </div>
-
-                    <div class="wpforms-field wpforms-field-textarea">
-                      <label class="wpforms-field-label">Bericht</label>
-                      <textarea name="message" placeholder="Bericht"></textarea>
-                    </div>
-                  </div><!-- end of .wpforms-field-container-->
-
-                  <div class="wpforms-submit-container">
-                    <button type="submit" name="submit" class="wpforms-submit">VERZENDEN</button>
-                  </div>
-
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="tabs">
-            <div class="contact-form-wrp contact-form-prd clearfix">
-              <div class="wpforms-container">
-                <form class="wpforms-form">
-                  
-                  <div class="wpforms-field-container">
+            <div class="tabs">
+              <div class="contact-form-wrp contact-form-prd clearfix">
+                <div class="wpforms-container">
+                  <form class="wpforms-form">
                     
-                    <div class="wpforms-field">
-                      <label class="wpforms-field-label">Voornaam *</label>
-                      <input type="text" name="name" placeholder="Steven" required>
-                    </div>
-                    <div class="wpforms-field">
-                      <label class="wpforms-field-label">Achternaam</label>
-                      <input type="text" name="name" placeholder="Ry |" required>
+                    <div class="wpforms-field-container">
+                      
+                      <div class="wpforms-field">
+                        <label class="wpforms-field-label">Voornaam</label>
+                        <input type="text" name="name" placeholder="Steven" required>
+                      </div>
+                      <div class="wpforms-field">
+                        <label class="wpforms-field-label">Achternaam</label>
+                        <input type="text" name="name" placeholder="Ry |" required>
+                      </div>
+
+                      <div class="wpforms-field">
+                        <label class="wpforms-field-label">Telefoon</label>
+                        <input type="text" name="text" placeholder="Telefoon" required>
+                      </div>
+
+                      <div class="wpforms-field">
+                        <label class="wpforms-field-label">E-mailadres</label>
+                        <input type="email" name="email" placeholder="E-mailadres" class="form-control" required>
+                      </div>
+
+                      <div class="wpforms-field subjectField">
+                        <label class="wpforms-field-label">onderwerpen</label>
+                        <input type="text" name="text" placeholder="Onderwerpen" required>
+                      </div>
+
+                      <div class="wpforms-field subjectField">
+                        <label class="wpforms-field-label">Naam bedrijf</label>
+                        <input type="text" name="text" placeholder="Naam bedrijf" required>
+                      </div>
+
+                      <div class="wpforms-field StraatField">
+                        <label class="wpforms-field-label">Straat</label>
+                        <input type="text" name="name" placeholder="Straat" required>
+                      </div>
+                      <div class="wpforms-field NrField">
+                        <label class="wpforms-field-label">Nummer</label>
+                        <input type="text" name="name" placeholder="Nummer" required>
+                      </div>
+
+                      <div class="wpforms-field">
+                        <label class="wpforms-field-label">Extra</label>
+                        <input type="text" name="text" placeholder="Extra" required>
+                      </div>
+
+                      <div class="wpforms-field">
+                        <label class="wpforms-field-label">Postcode</label>
+                        <input type="text" name="text" placeholder="Postcode" required>
+                      </div>
+
+                      <div class="wpforms-field">
+                        <label class="wpforms-field-label">Gemeente of stad</label>
+                        <input type="text" name="text" placeholder="Gemeente of Stad" required>
+                      </div>
+
+                      <div class="wpforms-field">
+                        <label class="wpforms-field-label">BTW nummer</label>
+                        <input type="text" name="text" placeholder="BTW nummer" required>
+                      </div>
+
+                      <div class="wpforms-field wpforms-field-textarea">
+                        <label class="wpforms-field-label">Bericht</label>
+                        <textarea name="message" placeholder="Bericht"></textarea>
+                      </div>
+                    </div><!-- end of .wpforms-field-container-->
+
+                    <div class="wpforms-submit-container">
+                      <button type="submit" name="submit" class="wpforms-submit">VERZENDEN</button>
                     </div>
 
-                    <div class="wpforms-field">
-                      <label class="wpforms-field-label">Telefoon *</label>
-                      <input type="text" name="text" placeholder="Telefoon" required>
-                    </div>
-
-                    <div class="wpforms-field">
-                      <label class="wpforms-field-label">E-mailadres *</label>
-                      <input type="email" name="email" placeholder="E-mailadres" class="form-control" required>
-                    </div>
-
-                    <div class="wpforms-field subjectField">
-                      <label class="wpforms-field-label">onderwerpen</label>
-                      <input type="text" name="text" placeholder="Onderwerpen" required>
-                    </div>
-
-                    <div class="wpforms-field subjectField">
-                      <label class="wpforms-field-label">Naam bedrijf</label>
-                      <input type="text" name="text" placeholder="Naam bedrijf" required>
-                    </div>
-
-                    <div class="wpforms-field StraatField">
-                      <label class="wpforms-field-label">Straat</label>
-                      <input type="text" name="name" placeholder="Straat" required>
-                    </div>
-                    <div class="wpforms-field NrField">
-                      <label class="wpforms-field-label">Nummer</label>
-                      <input type="text" name="name" placeholder="Nummer" required>
-                    </div>
-
-                    <div class="wpforms-field">
-                      <label class="wpforms-field-label">Extra</label>
-                      <input type="text" name="text" placeholder="Extra" required>
-                    </div>
-
-                    <div class="wpforms-field">
-                      <label class="wpforms-field-label">Postcode</label>
-                      <input type="text" name="text" placeholder="Postcode" required>
-                    </div>
-
-                    <div class="wpforms-field">
-                      <label class="wpforms-field-label">Gemeente of stad</label>
-                      <input type="text" name="text" placeholder="Gemeente of Stad" required>
-                    </div>
-
-                    <div class="wpforms-field">
-                      <label class="wpforms-field-label">BTW nummer</label>
-                      <input type="text" name="text" placeholder="BTW nummer" required>
-                    </div>
-
-                    <div class="wpforms-field wpforms-field-textarea">
-                      <label class="wpforms-field-label">Bericht</label>
-                      <textarea name="message" placeholder="Bericht"></textarea>
-                    </div>
-                  </div><!-- end of .wpforms-field-container-->
-
-                  <div class="wpforms-submit-container">
-                    <button type="submit" name="submit" class="wpforms-submit">VERZENDEN</button>
-                  </div>
-
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
