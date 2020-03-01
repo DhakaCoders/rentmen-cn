@@ -82,7 +82,7 @@ Desktop-->
 	ai iconta header a sprite kora ache . icon ta bosay fix korte paro. --done
 
 6. https://www.screencast.com/t/xT73jkzkyWJ5
-	border ta thik nai >> 1920px e thik ache dekhtechi responsive e kete jai, pore thik kora jabe (https://prnt.sc/r9l6l5)
+	border ta thik nai --done
 
 
 7. https://www.screencast.com/t/tvRaDJV0gg3
