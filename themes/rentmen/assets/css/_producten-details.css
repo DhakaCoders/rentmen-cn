@@ -367,7 +367,7 @@
 .organizePartySlider-item{
   float: left;
   width: 20%;
-  padding: 0 5px 25px;
+  padding: 0 10px 25px;
   position: relative;
 }
 .organizePartySlider-img{
@@ -392,8 +392,6 @@
   margin-bottom: 10px;
 }
 .organize-party-bg-wrp{
-  margin-left: -8px;
-  margin-right: -8px;
   padding-top: 38px;
 }
 .organize-party-bg{
@@ -401,6 +399,12 @@
   float: left;
   padding-left: 8px;
   padding-right: 8px;
+}
+.organize-party-bg:first-child{
+  padding-left: 0;
+}
+.organize-party-bg:last-child{
+  padding-right: 0;
 }
 .organize-party-bg-innr{
   position: relative;
@@ -574,8 +578,13 @@
   .pro-description-lft {
     width: 63%;
     float: left;
-    padding-right: 52px;
+    padding-right: 50px;
   }
+  .pro-description-rgt {
+    width: 37%;
+    float: left;
+  }
+
 }
 
 @media(max-width: 1299px){
@@ -628,7 +637,15 @@
   .single-pro-rgt-con {
     padding-left: 30px;
   }
-
+  .pro-description-bq {
+    background: #F3BF00;
+    padding: 40px 20px 40px;
+  }
+  .pro-description-bq p {
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 22px;
+  }
 }
 
 @media(max-width: 991px){
@@ -644,15 +661,30 @@
     float: left;
     padding: 30px 50px 20px;
   }
-
-
+  .pro-description-bq p {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 20px;
+  }
+  .pro-description-bq i {
+    margin-bottom: 15px;
+  }
+  .pro-description-lft {
+    padding-right: 30px;
+  }
+  .pro-description-sec {
+    padding-top: 50px;
+  }
+  .pro-description-innr {
+    padding-bottom: 50px;
+  }
 }
 
 @media(max-width: 767px){
-.bigViewSlider-wrp {
+  .bigViewSlider-wrp {
     background: #fff;
-}
-.thumbSlider-wrp {
+  }
+  .thumbSlider-wrp {
     width: 100%;
     margin: auto;
     max-width: initial;
@@ -661,11 +693,22 @@
     padding-left: 50px;
     padding-right: 50px;
     background: #fff;
-}
-.single-pro-lft-con {
+  }
+  .single-pro-lft-con {
     background: #735656;
+  }
+  .pro-description-lft {
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 30px;
+  }
+.pro-description-rgt {
+    width: 100%;
 }
-
+.pro-description-bq {
+    max-width: 500px;
+    margin: 0 auto;
+}
 }
 
 @media(max-width: 575px){
