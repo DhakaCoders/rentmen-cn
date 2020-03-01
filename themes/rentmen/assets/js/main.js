@@ -169,7 +169,7 @@ $('.tabs-menu li').on('click',function(){
 });
 
 /* -- Contact page left border and right bg control --*/
-/*var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
+var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
 var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
 var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 )+330;
 $('.hm-two-grid-sec-bg').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
@@ -183,7 +183,7 @@ function flResize(){
     $('.hm-two-grid-sec-wrp').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
   });
 }
-flResize();*/
+flResize();
 
 
 if (windowWidth <= 575) {
@@ -205,6 +205,7 @@ if (windowWidth < 576) {
       });
   }
 }
+
 
 /*
 -----------------------

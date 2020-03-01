@@ -741,6 +741,19 @@ hm-download-sec-wrp
 	    top: auto;
 	    bottom: 0;
 	}
+	.hm-lates-news-post-sec-wrp {
+	    padding-top: 40px;
+	    padding-bottom: 55px;
+	}
+	.hm-lates-news-post-sec-wrp .hm-de-kijker-head p {
+	    margin-bottom: 35px;
+	}
+	.hm-lates-news-post-sec-wrp .dft-blog-item-des{
+		padding-top: 65px;
+	}
+	.hm-lates-news-post-sec-wrp .dft-blog-item-des h5{
+		margin-bottom: 15px;
+	}
 	
 
 }
@@ -874,6 +887,12 @@ hm-download-sec-wrp
 	}
 	span.ctcc-left-side a{
 		margin-top: 15px;
+	}
+	.hm-lates-news-post-sec-wrp .rm-news-sec-inr ul li{
+		padding-bottom: 15px;
+	}
+	.hm-lates-news-post-sec-wrp .hm-download-btn {
+	    padding-top: 8px;
 	}
 }
 
