@@ -119,11 +119,11 @@ cookie-policy
   position: relative;
 }
 .catapult-cookie-topbar strong{
-    display: inline-block;
-    vertical-align: baseline;
-    position: absolute;
-    right: 19px;
-    top: 14px;
+  display: inline-block;
+  vertical-align: baseline;
+  position: absolute;
+  right: 19px;
+  top: 14px;
 }
 .catapult-cookie-topbar i{
   display: inline-block;
@@ -197,15 +197,17 @@ span.catapultCookieBtn button:hover{
 /*
   Slider Pagination
 */
+
+.dft-slider-pagi2 .slick-dots,
 .dft-slider-pagi .slick-dots{
   position: relative;
   top: 12px;
 }
 .dft-slider-pagi .slick-dots li{
   background-image: url(../images/dft-slider-pagi-1.svg);
-  background-size: 14px 14px;
-  background-position: center center;
   background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 14px 14px;
   width: 16px;
   height: 16px;
   padding: 0 5px;
@@ -213,6 +215,21 @@ span.catapultCookieBtn button:hover{
   vertical-align: baseline;
   float: none;
 }
+.dft-slider-pagi2 .slick-dots li{
+  background-image: url(../images/dft-slider-pagi-3.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 14px 14px;
+  width: 16px;
+  height: 16px;
+  padding: 0 5px;
+  display: inline-block;
+  vertical-align: baseline;
+  float: none;
+}
+.dft-slider-pagi2 .slick-dots li,
+.dft-slider-pagi2 .slick-dots li button,
+.dft-slider-pagi2 .slick-dots li button::before,
 .dft-slider-pagi .slick-dots li,
 .dft-slider-pagi .slick-dots li button,
 .dft-slider-pagi .slick-dots li button::before{
@@ -221,6 +238,7 @@ span.catapultCookieBtn button:hover{
   margin: 1px;
   padding: 0;
 }
+.dft-slider-pagi2 .slick-dots li button::before,
 .dft-slider-pagi .slick-dots li button::before{
   content: "";
 }
@@ -228,13 +246,21 @@ span.catapultCookieBtn button:hover{
   background-image: url(../images/dft-slider-pagi-2.svg);
   background-repeat: no-repeat;
 }
+.dft-slider-pagi2 .slick-dots li.slick-active{
+  background-image: url(../images/dft-slider-pagi-4.svg);
+  background-repeat: no-repeat;
+}
 @media(min-width: 991px){
   .dft-slider-pagi .slick-dots li:hover{
     background-image: url(../images/dft-slider-pagi-2.svg);
     background-repeat: no-repeat;
   }
-
+  .dft-slider-pagi2 .slick-dots li:hover{
+    background-image: url(../images/dft-slider-pagi-4.svg);
+    background-repeat: no-repeat;
+  }
 }
+.dft-slider-pagi2 .slick-dots li::before,
 .dft-slider-pagi .slick-dots li::before {
   content: none!important;
 }

@@ -438,11 +438,14 @@
   -o-transition: all .5s ease;
   transition: all .5s ease;
 }
-.organize-party-bg-innr:hover .organize-party-bg-main{
-  -webkit-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  -o-transform: scale(1.05);
-  transform: scale(1.05);
+
+@media(min-width: 991px){
+  .organize-party-bg-innr:hover .organize-party-bg-main{
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+  }
 }
 .interested-pro-item-sec{
   padding-top: 70px;
