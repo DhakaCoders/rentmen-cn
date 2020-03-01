@@ -119,11 +119,11 @@ cookie-policy
   position: relative;
 }
 .catapult-cookie-topbar strong{
-    display: inline-block;
-    vertical-align: baseline;
-    position: absolute;
-    right: 19px;
-    top: 14px;
+  display: inline-block;
+  vertical-align: baseline;
+  position: absolute;
+  right: 19px;
+  top: 14px;
 }
 .catapult-cookie-topbar i{
   display: inline-block;
@@ -203,9 +203,9 @@ span.catapultCookieBtn button:hover{
 }
 .dft-slider-pagi .slick-dots li{
   background-image: url(../images/dft-slider-pagi-1.svg);
-  background-size: 14px 14px;
-  background-position: center center;
   background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 14px 14px;
   width: 16px;
   height: 16px;
   padding: 0 5px;
@@ -231,9 +231,8 @@ span.catapultCookieBtn button:hover{
 @media(min-width: 991px){
   .dft-slider-pagi .slick-dots li:hover{
     background-image: url(../images/dft-slider-pagi-2.svg);
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
   }
-
 }
 .dft-slider-pagi .slick-dots li::before {
   content: none!important;
