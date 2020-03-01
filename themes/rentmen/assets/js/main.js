@@ -186,6 +186,12 @@ function flResize(){
 flResize();
 
 
+if (windowWidth <= 575) {
+  $('.categorie-xs-btn span').on('click',function(){
+    $('.hm-post-categorie-wrp').slideToggle(500);
+  });
+}
+
 /*
 -----------------------
 Start Contact Google Map ->> 

@@ -138,3 +138,157 @@ overons-service-sec-wrp
 .overons-de-post-sec .hm-download-btn {
     padding-top: 50px;
 }
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+	.overons-two-part-lft-img{
+		right: 80px;
+	}
+}
+
+@media(max-width: 1299px){
+	.overons-service-wrp ul li {
+	    padding: 15px 40px 50px;
+	}
+}
+
+@media(max-width: 1199px){
+	.overons-two-part-lft-img {
+	    right: 30px;
+	}
+	.ovr-two-grid-dsc {
+	    padding-top: 50px;
+	    padding-left: 0;
+	}
+	.ovr-two-grid-dsc a{
+		padding: 22px 50px;
+	}
+	.overons-justo-box h2{
+		font-size: 44px;
+		line-height: 48px;
+	}
+	.overons-service-wrp ul li {
+	    padding: 15px 30px 40px;
+	}
+	.overons-service-box-dsc h4 {
+	    margin-top: 15px;
+	    margin-bottom: 15px;
+	}
+}
+
+@media(max-width: 991px){
+	.overons-two-part-sec-wrp {
+	    height: auto;
+	    padding-bottom: 130px;
+	}
+	.overons-two-part-lft {
+	    width: 100%;
+	    position: static;
+	    padding: 0 15px;
+	}
+	.overons-two-part-lft-img {
+	    position: static;
+	    height: 600px !important;
+	}
+	.overons-two-part-rgt {
+	    float: right;
+	    width: 100%;
+	}
+	.overons-justo-box {
+	    max-width: 788px;
+	    width: 100%;
+	    height: 150px;
+	    margin-top: -70px;
+	}
+	.overons-justo-box h2{
+		font-size: 40px;
+		line-height: 44px;
+	}
+	.ovr-two-grid-dsc {
+	    padding-top: 40px;
+	}
+	.overons-service-wrp ul li {
+	    padding: 15px 10px 40px;
+	}
+	.overons-service-box-dsc h4 {
+	    font-size: 21px;
+	    line-height: 23px;
+	}
+	.overons-service-wrp {
+	    padding-top: 75px;
+	}
+	.overons-service-sec-wrp {
+	    padding-bottom: 80px;
+	}
+}
+
+@media(max-width: 767px){
+	.overons-justo-box h2 {
+	    font-size: 34px;
+	    line-height: 40px;
+	}
+	.ovr-two-grid-dsc a {
+	    padding: 15px 40px;
+	}
+	.overons-two-part-lft-img {
+	    height: 500px !important;
+	}
+	.overons-two-part-sec-wrp {
+	    padding-bottom: 110px;
+	    margin-top: 50px;
+	}
+	.overons-service-wrp {
+	    padding-top: 60px;
+	}
+	.overons-service-sec-wrp {
+	    padding-bottom: 40px;
+	}
+	.overons-service-wrp ul li {
+	    padding: 0 10px 20px;
+	    width: 100%;
+	    max-width: 400px;
+	    margin: 0 auto;
+	    float: none;
+	    border: 0;
+	}
+
+}
+
+@media(max-width: 575px){
+	.overons-justo-box h2{
+		font-size: 32px;
+		line-height: 36px;
+		text-align: center;
+	}
+	.overons-two-part-lft-img {
+	    height: 400px !important;
+	}
+}
+
+@media(max-width: 479px){
+	.overons-justo-box h2 {
+	    font-size: 30px;
+	    line-height: 36px;
+	    text-align: center;
+	}
+	.ovr-two-grid-dsc a {
+	    padding: 15px 40px;
+	    display: table;
+	    margin: 0 auto;
+	}
+	.ovr-two-grid-dsc a:last-child{
+		margin-left: auto;
+		margin-top: 20px;
+	}
+	.overons-two-part-lft-img {
+	    height: 350px !important;
+	}
+
+}
+
+@media(max-width: 359px){
+
+}
