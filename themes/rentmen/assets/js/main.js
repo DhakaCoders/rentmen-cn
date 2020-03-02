@@ -192,6 +192,21 @@ if (windowWidth <= 575) {
   });
 }
 
+
+if (windowWidth < 576) {
+  if( $('.dft-slider-pagi').length ){
+      $('.dft-slider-pagi').slick({
+        dots: true,
+        arrows: false,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
+  }
+}
+
+
 /*
 -----------------------
 Start Contact Google Map ->> 
