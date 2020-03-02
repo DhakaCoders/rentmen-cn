@@ -21,6 +21,8 @@
 .bigViewSlider-item > img{
   display: inline-block!important;
   vertical-align: middle;
+  max-width: 433px;
+  width: 100%;
 }
 .bigViewSlider .bigViewSlider-item{
   display: none !important;
@@ -727,20 +729,36 @@
     background: #fff;
   }
   .single-pro-lft-con {
-    background: #735656;
+    background: #F6F6F6;
   }
   .pro-description-lft {
     width: 100%;
     padding-right: 0;
     padding-bottom: 30px;
   }
-.pro-description-rgt {
+  .pro-description-rgt {
     width: 100%;
-}
-.pro-description-bq {
+  }
+  .pro-description-bq {
     max-width: 500px;
     margin: 0 auto;
-}
+  }
+  .single-pro-lft-con {
+    padding: 50px 0;
+  }
+  .thumbSlider-wrp-innr-con{
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .thumbSlider-item i img {
+    border: 0;
+  }
+  .bigViewSlider-item {
+    padding: 45px 20px;
+    position: relative;
+    text-align: center;
+  }
 }
 
 @media(max-width: 575px){
