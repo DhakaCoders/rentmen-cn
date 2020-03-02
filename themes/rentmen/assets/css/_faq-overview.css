@@ -201,3 +201,113 @@
 .faq-pagination ul li::before {
     display: none;
 }
+
+
+@media(max-width: 1499px){
+
+}
+
+@media(max-width: 1399px){
+
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+	.hide-lg{
+		display: none!important;
+	}
+	.show-lg{
+		display: block!important;
+	}
+	.faq-content {
+	    padding: 70px 0;
+	}
+	.faq-cnt-inner h2 {
+	    font-size: 34px;
+	    line-height: 50px;
+	    padding-bottom: 15px;
+	}
+	.faq-grd-sec {
+	    padding-top: 50px;
+	    padding-bottom: 50px;
+	}
+	.faq-tabs {
+	    padding-bottom: 40px;
+	}
+	.faq-tabs ul li {
+	    padding-left: 25px;
+	    padding-right: 25px;
+	}
+	.faq-grd-wrap {
+	    margin-top: 80px;
+	}
+	.faq-grd-item-inner {
+	    padding: 50px 20px 30px 25px;
+	}
+	.faq-grd-item-des h5 {
+	    padding-bottom: 20px;
+	}
+	.faq-grd-item-des p {
+	    margin-bottom: 20px;
+	}
+
+}
+
+@media(max-width: 991px){
+	.hide-md{
+		display: none!important;
+	}
+	.show-md{
+		display: block!important;
+	}
+	.faq-cnt-inner p br{
+	    display: none;
+	}
+	.faq-grd-wrap ul li {
+	    width: 50%;
+	}
+	.faq-grd-wrap ul li:nth-child(2n+1){
+	    clear: left !important;
+	}
+	.faq-grd-item-des h5 {
+	    padding-bottom: 15px;
+	    line-height: 26px;
+	    font-size: 18px;
+	}
+	.faq-grd-item-des p {
+	    font-size: 13px;
+	    line-height: 20px;
+	    margin-bottom: 15px;
+	}
+}
+
+@media(max-width: 767px){
+	.hide-sm{
+		display: none!important;
+	}
+	.show-sm{
+		display: block!important;
+	}
+}
+
+@media(max-width: 575px){
+	.hide-xs{
+		display: none!important;
+	}
+	.show-xs{
+		display: block!important;
+	}
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
+}
