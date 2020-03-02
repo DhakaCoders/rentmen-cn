@@ -253,6 +253,7 @@ hm-de-kijker-post-sec-wrp
     -ms-transition: all 0.5s;
     -webkit-transition: all 0.5s;
 }
+.hm-post-categorie-title span img.style-svg,
 .hm-post-categorie-title span i{
     position: absolute;
     left: 0;
@@ -260,6 +261,9 @@ hm-de-kijker-post-sec-wrp
     transition: all 0.5s;
     -ms-transition: all 0.5s;
     -webkit-transition: all 0.5s;
+}
+.hm-post-categorie-title span .style-svg{
+	display: none;
 }
 .hm-post-categorie-title:hover{
 	background: #1E1E1E;

@@ -444,6 +444,7 @@ nav.main-nav ul.sub-menu li:hover:after {
 }
 
 @media(max-width: 767px){
+	/*xs popup menu*/
 	.xs-menu-bar{
 		position: fixed;
 		bottom: 0;
@@ -483,6 +484,17 @@ nav.main-nav ul.sub-menu li:hover:after {
 		align-items: center;
 		justify-content: center;
 	}
+	.xs-pop-up-menu{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: #1E1E1E;
+		color: #fff;
+		z-index: 60;
+	}
+
+	/*end of xs popup menu*/
 }
 
 @media(max-width: 575px){
