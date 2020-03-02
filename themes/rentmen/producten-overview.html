@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
   <title>Producten Overview</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -78,12 +78,9 @@
 
 </svg>
 
-
-
-
 </head>
 <body>
-<header class="header">
+<header class="header d-none">
   <div class="hdr-topbar">
     <div class="container-lg">
       <div class="row">
@@ -222,6 +219,7 @@
   </div>    
 </section>
 
+
 <section class="organize-party-sec" id="overview-organize-party-sec">
   <div class="container">
     <div class="row">
@@ -232,7 +230,7 @@
             <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
           </div>
           <div class="organize-party-step-slider-wrp">
-            <div class="organizePartySlider clearfix">
+            <div class="organizePartySlider clearfix dft-slider-pagi">
               <div class="organizePartySlider-item">
                 <div class="organizePartySlider-img mHc">
                   <i><img src="assets/images/organize-party-step1.svg" alt=""></i>
@@ -283,171 +281,178 @@
       <div class="col-12">
         <div class="pro-overview-main-innr clearfix">
           <div class="pro-overview-sidebar-con">
-            <div class="pro-overview-sidebar-cat">
-              <div class="pro-overview-sidebar-head">
-                <h4>Categorieen</h4>
-              </div>
-              <ul class="ulc"> 
-                <li class="active">
-                  <a href="#">
-                    <i>
-                      <img src="assets/images/overview-sidebar-table.svg" alt="">
-                      <img src="assets/images/overview-sidebar-table-w.svg" alt="">
-                    </i>
-                    <span>Meubilair</span>
-                  </a>
-                </li> 
-                <li>
-                  <a href="#">
-                    <i>
-                      <img src="assets/images/overview-sidebar-table.svg" alt="">
-                      <img src="assets/images/overview-sidebar-table-w.svg" alt="">
-                    </i>
-                    <span>Gedekte Tafel</span>
-                  </a>
-                </li> 
-                <li>
-                  <a href="#">
-                    <i>
-                      <img src="assets/images/overview-sidebar-table.svg" alt="">
-                      <img src="assets/images/overview-sidebar-table-w.svg" alt="">
-                    </i>
-                    <span>Keukenmateriaal</span>
-                  </a>
-                </li> 
-                <li>
-                  <a href="#">
-                    <i>
-                      <img src="assets/images/overview-sidebar-table.svg" alt="">
-                      <img src="assets/images/overview-sidebar-table-w.svg" alt="">
-                    </i>
-                    <span>Partytenten</span>
-                  </a>
-                </li> 
-                <li>
-                  <a href="#">
-                    <i>
-                      <img src="assets/images/overview-sidebar-table.svg" alt="">
-                      <img src="assets/images/overview-sidebar-table-w.svg" alt="">
-                    </i>
-                    <span>Categorie Titel</span>
-                  </a>
-                </li> 
-                <li>
-                  <a href="#">
-                    <i>
-                      <img src="assets/images/overview-sidebar-table.svg" alt="">
-                      <img src="assets/images/overview-sidebar-table-w.svg" alt="">
-                    </i>
-                    <span>Categorie Titel</span>
-                  </a>
-                </li>  
-                <li>
-                  <a href="#">
-                    <i>
-                      <img src="assets/images/overview-sidebar-table.svg" alt="">
-                      <img src="assets/images/overview-sidebar-table-w.svg" alt="">
-                    </i>
-                    <span>Categorie Titel</span>
-                  </a>
-                </li>              
-              </ul>
+            <div class="pro-overview-sidebar-sm-con show-sm">
+              <span>Filter Producten</span>
+              <i><img src="assets/images/pro-sidebar-sm-filter-icon.svg" alt=""></i>
             </div>
-            <div class="pro-overview-sidebar-select">
-              <div class="pro-overview-sidebar-head">
-                <h4>Periode</h4>
-              </div>                
-              <div class="pro-overview-select-filter">
-                <form action="">
-                  <h6>van</h6>
-                  <div class="select-filter-frm-grup clearfix">
-                    <div class="select-filter-left">
-                      <input type="text" placeholder="01">
-                    </div>
-                    <div class="select-filter-right reset-list">
-                      <select class="selectpicker">
-                        <option selected="selected">Maart</option>
-                         <option>Maart 1</option>
-                         <option>Maart 2</option>
-                         <option>Maart 3</option>
-                         <option>Maart 4</option>
-                      </select>    
-                    </div>
-                  </div>
-                  <h6>Naar</h6>
-                  <div class="select-filter-frm-grup clearfix">
-                    <div class="select-filter-left">
-                      <input type="text" placeholder="04">
-                    </div>
-                    <div class="select-filter-right reset-list">
-                      <select class="selectpicker">
-                        <option selected="selected">Maart</option>
-                         <option>Maart 1</option>
-                         <option>Maart 2</option>
-                         <option>Maart 3</option>
-                         <option>Maart 4</option>
-                      </select>    
-                    </div>
-                  </div>
-                </form>
+
+            <div class="pro-overview-sidebar-con-innr">
+              <div class="pro-overview-sidebar-cat pro-filter-con">
+                <div class="pro-overview-sidebar-head">
+                  <h4>Categorieen</h4>
+                </div>
+                <ul class="ulc pro-filter-main"> 
+                  <li class="active">
+                    <a href="#">
+                      <i>
+                        <img src="assets/images/overview-sidebar-table.svg" alt="">
+                        <img src="assets/images/overview-sidebar-table-w.svg" alt="">
+                      </i>
+                      <span>Meubilair</span>
+                    </a>
+                  </li> 
+                  <li>
+                    <a href="#">
+                      <i>
+                        <img src="assets/images/overview-sidebar-table.svg" alt="">
+                        <img src="assets/images/overview-sidebar-table-w.svg" alt="">
+                      </i>
+                      <span>Gedekte Tafel</span>
+                    </a>
+                  </li> 
+                  <li>
+                    <a href="#">
+                      <i>
+                        <img src="assets/images/overview-sidebar-table.svg" alt="">
+                        <img src="assets/images/overview-sidebar-table-w.svg" alt="">
+                      </i>
+                      <span>Keukenmateriaal</span>
+                    </a>
+                  </li> 
+                  <li>
+                    <a href="#">
+                      <i>
+                        <img src="assets/images/overview-sidebar-table.svg" alt="">
+                        <img src="assets/images/overview-sidebar-table-w.svg" alt="">
+                      </i>
+                      <span>Partytenten</span>
+                    </a>
+                  </li> 
+                  <li>
+                    <a href="#">
+                      <i>
+                        <img src="assets/images/overview-sidebar-table.svg" alt="">
+                        <img src="assets/images/overview-sidebar-table-w.svg" alt="">
+                      </i>
+                      <span>Categorie Titel</span>
+                    </a>
+                  </li> 
+                  <li>
+                    <a href="#">
+                      <i>
+                        <img src="assets/images/overview-sidebar-table.svg" alt="">
+                        <img src="assets/images/overview-sidebar-table-w.svg" alt="">
+                      </i>
+                      <span>Categorie Titel</span>
+                    </a>
+                  </li>  
+                  <li>
+                    <a href="#">
+                      <i>
+                        <img src="assets/images/overview-sidebar-table.svg" alt="">
+                        <img src="assets/images/overview-sidebar-table-w.svg" alt="">
+                      </i>
+                      <span>Categorie Titel</span>
+                    </a>
+                  </li>              
+                </ul>
               </div>
-            </div>
-            <div class="pro-overview-sidebar-price">
-              <div class="pro-overview-sidebar-head">
-                <h4>Prijs</h4>
-              </div>                
-              <div class="price-slider">
-                <form action="">
-                  <div class="amount-show clearfix">
-                    <div class="min-amount">
-                      <label for="minAmount">€ </label>
-                      <input type="text" id="minAmount" />
+              <div class="pro-overview-sidebar-select pro-filter-con">
+                <div class="pro-overview-sidebar-head">
+                  <h4>Periode</h4>
+                </div>                
+                <div class="pro-overview-select-filter pro-filter-main">
+                  <form action="">
+                    <h6>van</h6>
+                    <div class="select-filter-frm-grup clearfix">
+                      <div class="select-filter-left">
+                        <input type="text" placeholder="01">
+                      </div>
+                      <div class="select-filter-right reset-list">
+                        <select class="selectpicker">
+                          <option selected="selected">Maart</option>
+                           <option>Maart 1</option>
+                           <option>Maart 2</option>
+                           <option>Maart 3</option>
+                           <option>Maart 4</option>
+                        </select>    
+                      </div>
                     </div>
-                    <div class="max-amount">
-                      <label for="maxAmount">€ </label>
-                      <input type="text" id="maxAmount" />
+                    <h6>Naar</h6>
+                    <div class="select-filter-frm-grup clearfix">
+                      <div class="select-filter-left">
+                        <input type="text" placeholder="04">
+                      </div>
+                      <div class="select-filter-right reset-list">
+                        <select class="selectpicker">
+                          <option selected="selected">Maart</option>
+                           <option>Maart 1</option>
+                           <option>Maart 2</option>
+                           <option>Maart 3</option>
+                           <option>Maart 4</option>
+                        </select>    
+                      </div>
                     </div>
-                  </div>
-                  <div id="slider"></div>
-                </form>
+                  </form>
+                </div>
               </div>
-            </div>
-            <div class="pro-overview-sidebar-filter">
-              <div class="pro-overview-sidebar-head">
-                <h4>Filter</h4>
-              </div> 
-              <div class="pro-check-box-filter"> 
-                <form>
-                  <div class="form-group">
-                    <input type="checkbox" name="percent" id="30%">
-                    <label for="30%">Lorem ipsum dolor</label>
-                  </div>
-                  <div class="form-group">
-                    <input type="checkbox" name="percent" id="40%">
-                    <label for="40%">Maecenas convallis nisi </label>
-                  </div>
-                  <div class="form-group">
-                    <input type="checkbox" name="percent" id="50%">
-                    <label for="50%">Suspendisse dignissim vulputate</label>
-                  </div>
-                  <div class="form-group">
-                    <input type="checkbox" name="percent" id="60%">
-                    <label for="60%">Donec feugiat lobortis</label>
-                  </div>
-                </form>
+              <div class="pro-overview-sidebar-price pro-filter-con">
+                <div class="pro-overview-sidebar-head">
+                  <h4>Prijs</h4>
+                </div>                
+                <div class="price-slider pro-filter-main">
+                  <form action="">
+                    <div class="amount-show clearfix">
+                      <div class="min-amount">
+                        <label for="minAmount">€ </label>
+                        <input type="text" id="minAmount" />
+                      </div>
+                      <div class="max-amount">
+                        <label for="maxAmount">€ </label>
+                        <input type="text" id="maxAmount" />
+                      </div>
+                    </div>
+                    <div id="slider"></div>
+                  </form>
+                </div>
               </div>
-            </div>
-            <div class="pro-overview-sidebar-color">
-              <div class="pro-overview-sidebar-head">
-                <h4>KLEUR</h4>
-              </div> 
-              <div class="pro-color-filter"> 
-                <img style="margin-top:20px" src="assets/images/pro-color-filter-img.png" alt="">
+              <div class="pro-overview-sidebar-filter pro-filter-con">
+                <div class="pro-overview-sidebar-head">
+                  <h4>Filter</h4>
+                </div> 
+                <div class="pro-check-box-filter pro-filter-main"> 
+                  <form>
+                    <div class="form-group">
+                      <input type="checkbox" name="percent" id="checkfilter1">
+                      <label for="checkfilter1">Lorem ipsum dolor</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" name="percent" id="checkfilter2">
+                      <label for="checkfilter2">Maecenas convallis nisi </label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" name="percent" id="checkfilter3">
+                      <label for="checkfilter3">Suspendisse dignissim vulputate</label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" name="percent" id="checkfilter4">
+                      <label for="checkfilter4">Donec feugiat lobortis</label>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="pro-overview-sidebar-color pro-filter-con">
+                <div class="pro-overview-sidebar-head">
+                  <h4>KLEUR</h4>
+                </div> 
+                <div class="pro-color-filter pro-filter-main"> 
+                  <img style="margin-top:20px" src="assets/images/pro-color-filter-img.png" alt="">
+                </div>
               </div>
             </div>
           </div>
           <div class="pro-overview-grid-con">
-            <div class="pro-overview-grid-head">
+            <div class="pro-overview-grid-head hide-sm">
               <h4>Producten</h4>
             </div>
             <div class="pro-overview-single-des-con clearfix">
@@ -502,7 +507,8 @@
                         </svg>
                       </a>
                     </div>
-                  </div>                
+                  </div>
+                  <span class="pro-new-tag">New</span>                
                 </div>  
               </div>
               <div class="pro-overview-grid-item">
@@ -524,7 +530,8 @@
                         </svg>
                       </a>
                     </div>
-                  </div>                
+                  </div>
+                  <span class="pro-new-tag">New</span>                  
                 </div>  
               </div>
               <div class="pro-overview-grid-item">
@@ -612,7 +619,8 @@
                         </svg>
                       </a>
                     </div>
-                  </div>                
+                  </div>
+                  <span class="pro-new-tag">New</span>                  
                 </div>  
               </div>
               <div class="pro-overview-grid-item">
@@ -656,7 +664,8 @@
                         </svg>
                       </a>
                     </div>
-                  </div>                
+                  </div> 
+                  <span class="pro-new-tag">New</span>                
                 </div>  
               </div>
               <div class="pro-overview-grid-item">
@@ -678,7 +687,7 @@
                         </svg>
                       </a>
                     </div>
-                  </div>                
+                  </div>                 
                 </div>  
               </div>
               <div class="pro-overview-grid-item">
@@ -770,8 +779,17 @@
     <div class="row">
       <div class="col-12">
         <div class="pro-overview-feature-innr">
-          <div class="overview-feature-slider clearfix">
-            <div class="overview-feature-slider-item">
+          <div class="overview-feature-slider clearfix dft-slider-pagi2">
+            <div class="overview-feature-slider-item mHc">
+              <div class="overview-feature-slider-item-innr">
+                <i>
+                  <img src="assets/images/pro-overview-feature-img1.svg" alt="">
+                </i>                
+                <h4>Auctor eu ante ac</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
+              </div>
+            </div>
+            <div class="overview-feature-slider-item mHc">
               <div class="overview-feature-slider-item-innr">
                 <i>
                   <img src="assets/images/pro-overview-feature-img1.svg" alt="">
@@ -780,7 +798,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
               </div>
             </div>  
-            <div class="overview-feature-slider-item">
+            <div class="overview-feature-slider-item mHc">
               <div class="overview-feature-slider-item-innr">
                 <i>
                   <img src="assets/images/pro-overview-feature-img2.svg" alt="">
@@ -788,16 +806,7 @@
                 <h4>Auctor eu ante ac</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
               </div>
-            </div>
-            <div class="overview-feature-slider-item">
-              <div class="overview-feature-slider-item-innr">
-                <i>
-                  <img src="assets/images/pro-overview-feature-img3.svg" alt="">
-                </i>                
-                <h4>Auctor eu ante ac</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-              </div>
-            </div>             
+            </div>            
           </div>
         </div>
       </div>
@@ -819,14 +828,14 @@
           <div class="ftr-col-main clearfix">
             <div class="ftr-col ftr-col-1">
               <div class="ftr-logo-1">
-                <i><img src="assets/images/ftr-logo-1.png" alt=""></i>
+                <a href="#"><img src="assets/images/ftr-logo-1.png" alt=""></a>
               </div>
               <div class="ftr-logo-2">
                 <i><img src="assets/images/ftr-logo-2.png" alt=""></i>
               </div>
             </div>
-            <div class="ftr-col ftr-col-2">
-              <h6>Navigatie</h6>
+            <div class="ftr-col ftr-col-2"> 
+              <h6><span>Navigatie</span></h6>
               <ul class="ulc">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Over Ons</a></li>
@@ -835,7 +844,7 @@
               </ul>
             </div>
             <div class="ftr-col ftr-col-3">
-              <h6>Categorieën</h6>
+              <h6><span>Categorieën</span></h6>
               <ul class="ulc">
                 <li><a href="#">Meubilair</a></li>
                 <li><a href="#">Gedekte tafel</a></li>
@@ -844,7 +853,7 @@
               </ul>              
             </div>
             <div class="ftr-col ftr-col-4">
-              <h6>mijn rekening</h6>
+              <h6><span>mijn rekening</span></h6>
               <ul class="ulc">
                 <li><a href="#">Aanmelden</a></li>
                 <li><a href="#">Inloggen</a></li>
@@ -852,23 +861,47 @@
               </ul>               
             </div>
             <div class="ftr-col ftr-col-5">
-              <h6>contact</h6>
+              <h6 class="active"><span>contact</span></h6>
               <ul class="ulc">
                 <li>
-                  <i><img src="assets/images/ftr-map-icon.svg" alt=""></i>
-                  <a href="#">Dagmoedstraat 88 poort 3 <br>9500 Geraardsbergen</a>
+                  <a href="#" target="_blank">
+                    <i>
+                      <svg class="ftr-map-icon-svg" width="19" height="19" viewBox="0 0 19 19" fill="#222020;">
+                        <use xlink:href="#ftr-map-icon-svg"></use>
+                      </svg> 
+                    </i>
+                    <span>Dagmoedstraat 88 poort 3<br>9500 Geraardsbergen</span>
+                  </a>
                 </li>
                 <li>
-                  <i><img src="assets/images/ftr-cell-icon.svg" alt=""></i>
-                  <a href="#">0478 87 08 45</a>
+                  <a href="tel:0478 87 08 45">
+                    <i>
+                      <svg class="ftr-cell-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#222020;">
+                        <use xlink:href="#ftr-cell-icon-svg"></use>
+                      </svg> 
+                    </i>
+                    <span>0478 87 08 45 </span>
+                  </a>
                 </li>
                 <li>
-                  <i><img src="assets/images/ftr-cell-icon.svg" alt=""></i>
-                  <a href="#">0476 65 90 22</a>
+                  <a href="tel:0476 65 90 22">
+                    <i>
+                      <svg class="ftr-cell-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#222020;">
+                        <use xlink:href="#ftr-cell-icon-svg"></use>
+                      </svg> 
+                    </i>
+                    <span>0476 65 90 22</span>
+                  </a>
                 </li>
                 <li>
-                  <i><img src="assets/images/ftr-mail-icon.svg" alt=""></i>
-                  <a href="#">info@rentmen.be</a>
+                  <a href="mailto:info@rentmen.be">
+                    <i>
+                      <svg class="ftr-mail-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#222020;">
+                        <use xlink:href="#ftr-mail-icon-svg"></use>
+                      </svg> 
+                    </i>
+                    <span>info@rentmen.be</span>
+                  </a>
                 </li>
               </ul>              
             </div>
@@ -901,8 +934,6 @@
     </div>
   </div>
 </footer>
-
-
 
 
 <script src="https://code.jquery.com/jquery-3.0.0.js"></script>

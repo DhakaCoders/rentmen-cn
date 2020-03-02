@@ -171,7 +171,7 @@ $('.tabs-menu li').on('click',function(){
 /* -- Contact page left border and right bg control --*/
 var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
 var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
-var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 );
+var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 )+330;
 $('.hm-two-grid-sec-bg').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
 
 function flResize(){
@@ -179,11 +179,32 @@ function flResize(){
     var windowWidth = $(window).width();
     var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
     var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
-    var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 );
+    var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 )+330;
     $('.hm-two-grid-sec-wrp').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
   });
 }
 flResize();
+
+
+if (windowWidth <= 575) {
+  $('.categorie-xs-btn span').on('click',function(){
+    $('.hm-post-categorie-wrp').slideToggle(500);
+  });
+}
+
+
+if (windowWidth < 576) {
+  if( $('.dft-slider-pagi').length ){
+      $('.dft-slider-pagi').slick({
+        dots: true,
+        arrows: false,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      });
+  }
+}
 
 
 /*
@@ -260,7 +281,7 @@ if( $('.product-slider-wrp').length ){
     nextArrow: $('.thumbSlider-arrows .rightArrow'),
     responsive: [
       {
-        breakpoint: 1208,
+        breakpoint: 1200,
         settings: {
           vertical: false,
           verticalSwiping: false,
@@ -268,8 +289,117 @@ if( $('.product-slider-wrp').length ){
       }
     ]
   });
+}
 
 
+if( $('.interestedItemSlider').length ){
+  $('.interestedItemSlider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 700,
+    dots: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+}
+
+
+
+if( $('.organizePartySlider').length ){
+  $('.organizePartySlider').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 700,
+    dots: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 476,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+}
+
+
+
+if( $('.overview-feature-slider').length ){
+  $('.overview-feature-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 700,
+    dots: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
 }
 
 
@@ -311,6 +441,7 @@ if( $('.pro-counter .qty').length ){
 
 }
 
+
 //price renge slider
 if( $('.price-slider').length ){
   var outputSpan = $('#spanOutput');
@@ -342,7 +473,27 @@ $('input[type="checkbox"]').change(function(){
 });
 
 
+// footer slide menu
+$('.ftr-col h6').on('click', function(){
+  $(this).toggleClass('active');
+  $(this).parent().siblings().find('h6').removeClass('active');
+  $(this).parent().find('ul').slideToggle(300);
+  $(this).parent().siblings().find('ul').slideUp(300);
+});
 
+
+// sidebar slide filter
+$('.pro-overview-sidebar-head').on('click', function(){
+  $(this).toggleClass('active');
+  $(this).parent().siblings().find('.pro-overview-sidebar-head').removeClass('active');
+  $(this).parent().find('.pro-filter-main').slideToggle(300);
+  $(this).parent().siblings().find('.pro-filter-main').slideUp(300);
+});
+
+$('.pro-overview-sidebar-sm-con').on('click', function(){
+  $(this).toggleClass('active');
+  $(this).next().slideToggle(300);
+});
 
 
 
@@ -351,25 +502,19 @@ $('input[type="checkbox"]').change(function(){
 
 if( $('.dft-question-mark-slider').length ){
     $('.dft-question-mark-slider').slick({
-      dots: true,
+      dots: false,
       infinite: false,
-      arrow: false,
+      arrows: false,
       speed: 300,
       slidesToShow: 2,
       slidesToScroll: 1,
       responsive: [
         {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 480,
+          breakpoint: 576,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            dots: true
           }
         }
         // You can unslick at a given breakpoint now by adding:
@@ -383,7 +528,7 @@ if( $('.dft-blog-slider').length ){
     $('.dft-blog-slider').slick({
       dots: true,
       infinite: false,
-      arrow: false,
+      arrows: false,
       speed: 300,
       slidesToShow: 2,
       slidesToScroll: 1,
@@ -391,15 +536,9 @@ if( $('.dft-blog-slider').length ){
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            dots: true
           }
         }
         // You can unslick at a given breakpoint now by adding:
