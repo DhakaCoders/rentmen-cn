@@ -169,7 +169,7 @@ $('.tabs-menu li').on('click',function(){
 });
 
 /* -- Contact page left border and right bg control --*/
-/*if (windowWidth >=768) {
+if (windowWidth >=768) {
   var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
   var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
   var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 )+330;
@@ -185,7 +185,7 @@ $('.tabs-menu li').on('click',function(){
     });
   }
   flResize();
-}*/
+}
 
 
 if (windowWidth <= 575) {
