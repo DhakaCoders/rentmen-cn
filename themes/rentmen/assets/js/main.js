@@ -169,21 +169,23 @@ $('.tabs-menu li').on('click',function(){
 });
 
 /* -- Contact page left border and right bg control --*/
-var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
-var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
-var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 )+330;
-$('.hm-two-grid-sec-bg').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
+if (windowWidth >=768) {
+  var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
+  var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
+  var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 )+330;
+  $('.hm-two-grid-sec-bg').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
 
-function flResize(){
-  $(window).on('resize', function(){
-    var windowWidth = $(window).width();
-    var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
-    var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
-    var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 )+330;
-    $('.hm-two-grid-sec-wrp').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
-  });
+  function flResize(){
+    $(window).on('resize', function(){
+      var windowWidth = $(window).width();
+      var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
+      var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
+      var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 )+330;
+      $('.hm-two-grid-sec-wrp').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
+    });
+  }
+  flResize();
 }
-flResize();
 
 
 if (windowWidth <= 575) {
@@ -403,6 +405,41 @@ if( $('.overview-feature-slider').length ){
 }
 
 
+if( $('.organize-party-bg-slider').length ){
+  $('.organize-party-bg-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 700,
+    dots: false,
+    arrows: true,
+    prevArrow: $('.organizeSlider-arrows .leftArrow'),
+    nextArrow: $('.organizeSlider-arrows .rightArrow'),
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+}
 
 
 //products counter
