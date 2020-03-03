@@ -281,9 +281,10 @@
   .ftr-top-head {
     padding-bottom: 55px;
   }
-}
 
-@media(max-width: 575px){
+
+
+
   .ftr-col{
     padding-left: 0;
     text-align: center;
@@ -353,10 +354,6 @@
   }
   .ftr-col-main .ftr-col:not(:last-child) {
     padding-right: 0;
-  }  
-  .ftr-top-head h2 {
-    font-size: 26px;
-    line-height: 32px;
   }
   .ftr-top-head {
     max-width: 875px;
@@ -371,7 +368,13 @@
     border-top: 0;
   }
 }
+@media(max-width: 575px){  
+  .ftr-top-head h2 {
+    font-size: 26px;
+    line-height: 32px;
+  }
 
+}
 @media(max-width: 479px){
   .ftr-btm-col-1, 
   .ftr-btm-col-2, 
