@@ -898,6 +898,9 @@ hm-download-sec-wrp
 	.hm-lates-news-post-sec-wrp .hm-download-btn {
 	    padding-top: 8px;
 	}
+	.hm-de-kijker-post-dsc {
+	    padding: 22px 15px 25px;
+	}
 }
 
 @media(max-width: 479px){
