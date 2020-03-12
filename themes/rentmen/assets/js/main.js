@@ -405,6 +405,41 @@ if( $('.overview-feature-slider').length ){
 }
 
 
+if( $('.organize-party-bg-slider').length ){
+  $('.organize-party-bg-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    speed: 700,
+    dots: false,
+    arrows: true,
+    prevArrow: $('.organizeSlider-arrows .leftArrow'),
+    nextArrow: $('.organizeSlider-arrows .rightArrow'),
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+}
 
 
 //products counter
@@ -549,6 +584,18 @@ if( $('.dft-blog-slider').length ){
       ]
     });
 }
+
+$('li.menu-item-has-children > a').on('click', function(){
+    $(this).toggleClass('xs-sub-menu-expend');
+    $('.sub-menu').slideToggle(300);
+});
+
+$('.xs-menu-bar-open').on('click', function(){
+    $('.xs-pop-up-menu').show();
+});
+$('.xs-menu-bar-close').on('click', function(){
+    $('.xs-pop-up-menu').hide();
+});
 
 
     new WOW().init();
