@@ -98,6 +98,58 @@
 }
 
 
+.breadcrumbs-left{
+  float: left;
+}
+.breadcrumbs-right{
+  float: right;
+}
+.breadcrumbs-left a{
+  font-size: 16px;
+  color: #1E1E1E;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-left: 25px;
+  position: relative;
+}
+.breadcrumbs-left a:before{
+  content: "";
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  background: url(../images/breadcrumbs-home.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+.breadcrumbs-right a{
+  font-size: 16px;
+  color: #1E1E1E;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-left: 40px;
+  position: relative;
+}
+.breadcrumbs-right a:before{
+  content: "";
+  height: 8px;
+  width: 28px;
+  position: absolute;
+  background: url(../images/breadcrumbs-left-arrow.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+
 /*
 -----------------
 Start sitemap
