@@ -49,26 +49,26 @@ New---->
 	text barle niche neme jashce then satha kheyal rkahte hobe https://www.screencast.com/t/agR402C64  text barle, img tao always cente a thakbe
 
 2. https://www.screencast.com/t/FOKyiUbchy5 ai button a hover korle amon koro -> 
-	https://prnt.sc/rfxsuh
+	https://prnt.sc/rfxsuh <----ok----->
 
 
 Responsive--->
-1. https://www.screencast.com/t/ktOxdR4OO0J
+1. https://www.screencast.com/t/ktOxdR4OO0J(ok)
 	ai grd gulor resonsive fix lista Over Ons page ar responsive fix no 2
 
-2. https://www.screencast.com/t/M0eXl4q2exdK
+2. https://www.screencast.com/t/M0eXl4q2exdK (ok)
 	1199px a 4 ta kore item daw
 	991px a 3 ta
-	639px a ai button ta https://www.screencast.com/t/iAxygyiMMdL
+	639px a ai button ta https://www.screencast.com/t/iAxygyiMMdL(ok)
 
 3. https://www.screencast.com/t/srd3Am8C
 	responsive tanle buja jasche na j responsive thik thak hoiche kina,
 	so amader k jquery window resize function use korte hobe jate responsive tanle valu ta auto update hoy, ate bar bar load dite hobena
 
-4. https://www.screencast.com/t/N7mAfU7rU8
+4. https://www.screencast.com/t/N7mAfU7rU8(ok)
 	767px a ai 2 ta apply koro  
 
-5. https://www.screencast.com/t/Rsx4bhquv2Pl
+5. https://www.screencast.com/t/Rsx4bhquv2Pl(ok)
 	ai blog gulo 767px thake slider diye daw
 
 
@@ -103,25 +103,25 @@ Desktop-->
 
 
 New--->
-1. https://www.screencast.com/t/zHkqy71Keiu
+1. https://www.screencast.com/t/zHkqy71Keiu(ok)
 	text bere gele left and right padding khub kharpa dekhasche, r katu besi jemon ta valo lage
 
 
 Responsive---->
 
-1. https://www.screencast.com/t/SKovBvcEgln
+1. https://www.screencast.com/t/SKovBvcEgln(ok)
 	767px a padding left and right 20px kore hobe
 
-2. i) https://www.screencast.com/t/xUAk8QdU5i
+2. i) https://www.screencast.com/t/xUAk8QdU5i(ok)
 		link bahire chole geche. left and right padding komao 1199px a;
 
-   ii) https://www.screencast.com/t/eXDIF8qnjT
+   ii) https://www.screencast.com/t/eXDIF8qnjT(ok)
    		767px bottom gap ta aktu besi daw, jate akta thake r akta alada buja jay
 
-   iii) https://www.screencast.com/t/dcrvpuZOu
+   iii) https://www.screencast.com/t/dcrvpuZOu(ok)
    		575px a akta max-width diye center a rakho. bcoz full width a img ta fete geche
 
-3. https://www.screencast.com/t/nBMFFXbCxTid
+3. https://www.screencast.com/t/nBMFFXbCxTid(ok)
 	ata 767px a slider hobe
 
 
@@ -150,14 +150,14 @@ Desktop-->
 
 
 New-->
-1. https://www.screencast.com/t/xka8iHVbmj
+1. https://www.screencast.com/t/xka8iHVbmj(ok)
 	ai placeholder ar name ta thik nai
 
 Responsive---->
-1. https://www.screencast.com/t/B3R6eTyMNPd
+1. https://www.screencast.com/t/B3R6eTyMNPd(ok)
 	break hoye jay. 'E-mail Ons' heading ta 575px thake center a dite paro
 
-2. https://www.screencast.com/t/PWWLtFgKr
+2. https://www.screencast.com/t/PWWLtFgKr(ok)
 	639px a sob field gulo full width kore daw
 
 
