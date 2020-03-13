@@ -219,11 +219,12 @@
 	cursor: pointer;
 	display: table;
 	margin: 0 auto;
+	padding: 19px 0 20px;
 }
 .contact-form-wrp .wpforms-container .wpforms-form .wpforms-submit-container button:hover{
 	background: #fff;
 	color: #F3BF00;
-	border-color: #F3BF00;
+	border-color: #F3BF00 !important;
 }
 
 .contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-has-error label.wpforms-error {
