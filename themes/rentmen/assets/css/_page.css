@@ -97,6 +97,56 @@
   content: none;
 }
 
+
+/*
+-----------------
+Start sitemap
+-----------------
+*/
+.sitemap{
+  padding:50px 0 80px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+.sitemap ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sitemap ul ul {
+   margin-left: 30px;
+  padding-top: 12px;
+}
+
+.sitemap ul li {
+  padding: 10px 0;
+}
+
+.sitemap ul li a{
+  display: inline-block;
+  vertical-align: baseline;
+  color: #1E1E1E;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  -ms-transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  padding-bottom: 15px;
+}
+.sitemap ul li a:hover{
+  color: #f4bf01;
+}
+.sitemap ul li a:focus{
+  text-decoration: underline;
+}
+.sitemap h2 {
+  margin: 0;
+  padding-bottom: 30px;
+}
+
+
 /*
 ------------------
 cookie-policy
@@ -106,7 +156,7 @@ cookie-policy
     position: fixed;
     right: 110px;
     top: 53%;
-    z-index: 10;
+    z-index: 12;
 }
 .catapult-cookie-bar{
   background: #F3BF00;
@@ -124,6 +174,7 @@ cookie-policy
   position: absolute;
   right: 19px;
   top: 14px;
+  cursor: pointer;
 }
 .catapult-cookie-topbar i{
   display: inline-block;
@@ -189,6 +240,7 @@ span.catapultCookieBtn button{
   background: #fff;
   padding: 14px 38px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 span.catapultCookieBtn button:hover{
   color: #f4bf01;

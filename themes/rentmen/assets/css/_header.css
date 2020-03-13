@@ -489,11 +489,84 @@ nav.main-nav ul.sub-menu li:hover:after {
 		bottom: 0;
 		left: 0;
 		right: 0;
-		background: #1E1E1E;
+		background: #272727;
 		color: #fff;
 		z-index: 60;
+		text-align: center;
+	}
+	.xs-pop-up-menu-inr{
+		position: relative;
+		padding: 50px 20px 64px;
+	}
+	.xs-pop-up-menu .xs-menu-bar{
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	.xs-sign-up{
+		padding: 20px 0 22px;
+		border-top: 2px solid #343434;
+	}
+	.hdr-sign-up{
+		padding-left: 0
+	}
+	.hdr-sign-up:before{
+		content: none;
+	}
+	.hdr-sign-up a strong{
+		color: #fff;
+	}
+	.hdr-social ul li a{
+		border-color: #fff;
+	}
+	.xs-social{
+		padding-top: 10px;
+		padding-bottom: 60px;
+	}
+	.xs-main-nav > ul > li{
+		padding-bottom: 22px;
+		padding-top: 22px;
+	}
+	.xs-main-nav ul li a{
+		color: #fff;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 25px;
+		text-transform: uppercase;
+	}
+	.xs-pop-up-menu{
+		overflow-y: scroll;
+	}
+	.sub-menu{
+		padding: 20px 0;
+		display: none;
+	}
+	li.menu-item-has-children > a{
+		position: relative;
+		padding-right: 20px;
+	}
+	li.menu-item-has-children > a:after{
+		content: "\f107"!important;
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 600;
+		text-decoration: inherit;
+		color: #fff;
+		font-size: 22px;
+		padding-right: 0;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		right: 0;
+		line-height: 15px;
 	}
 
+	li.menu-item-has-children > a.xs-sub-menu-expend:after{
+		content: "\f106"!important;
+	}
 	/*end of xs popup menu*/
 }
 

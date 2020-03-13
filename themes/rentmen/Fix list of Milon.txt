@@ -2,44 +2,56 @@ Home
 ----------------
 Desktop-->
 
-1. https://www.screencast.com/t/NaHHymvBFVv7
+1. https://www.screencast.com/t/NaHHymvBFVv7  <--ok
 	i) banner section ar bahire cookie ta hobe.
 	ii) positin fixed hobe. then top and right a bolte hobe position ta
 	iii) https://www.screencast.com/t/x1wXwxW5Og
 		index.html a markup ta edit kore dichi with jquery. ata use kore css fix koro
 
-2. https://www.screencast.com/t/kS0giQRjz
+2. https://www.screencast.com/t/kS0giQRjz <--ok
 	akta scrollbar asteche. parent section tate overflow hidden dite hobe
 
-3. https://www.screencast.com/t/1dXwUuxq62
+3. https://www.screencast.com/t/1dXwUuxq62 <--ok
 	heading hobena. just 'a' tag hobe
 
-4. https://www.screencast.com/t/Q9maFephe
+4. https://www.screencast.com/t/Q9maFephe <--ok
 	ai img gulo sprite hobena. bcoz upload hobe ai img gulo. i tag ar vitore svg img ta diye daw. tahole 2 ta img hobe. akta black img r akta white img. hover a white img ta show hobe
 
-5.  i) https://www.screencast.com/t/k1mx4v77um
+5.  i) https://www.screencast.com/t/k1mx4v77um <--ok
 		ai bg ta after use na kore. container div ar upore , section div ar pore akta div niye use koro. 
-	ii) https://www.screencast.com/t/MRwgZgYF
-		boro window te ai bg ta sore jay
-	iii) https://www.screencast.com/t/agR402C64
+	ii) https://www.screencast.com/t/MRwgZgYF 
+		boro window te ai bg ta sore jay <--ok
+
+	iii) https://www.screencast.com/t/agR402C64 <--ok
 		text barle, img tao always cente a thakbe
 
-6. https://www.screencast.com/t/gfRVCsP71bz
+6. https://www.screencast.com/t/gfRVCsP71bz <--ok
 	and 
-	contact page- https://www.screencast.com/t/NaahTcYZaS4
+	contact page- https://www.screencast.com/t/NaahTcYZaS4 <--ok
 
-	ai button a hover korle amon koro -> 
-	https://www.screencast.com/t/gresmn70
+	ai button a hover korle amon koro ->  <--ok
+	https://www.screencast.com/t/gresmn70 
 
 
-7. https://www.screencast.com/t/hddLzipd9pth
+7. https://www.screencast.com/t/hddLzipd9pth <--ok
 	atate heading h5 daw. then heading ar vitore a tag.
 
 8. https://www.screencast.com/t/EPa9w2FWPY
-	img a link hove. total box a hover korle img ta scale effect ta hobe
+	img a link hobe. total box a hover korle img ta scale effect ta hobe
+
+
+New---->
+
+1. i) https://www.screencast.com/t/nyfoK85gjt
+	text barle niche neme jashce then satha kheyal rkahte hobe https://www.screencast.com/t/agR402C64  text barle, img tao always cente a thakbe
+
+2. https://www.screencast.com/t/FOKyiUbchy5 ai button a hover korle amon koro -> 
+	https://prnt.sc/rfxsuh
 
 
 
+    
+			
 
 Over Ons
 ----------------
