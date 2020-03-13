@@ -36,8 +36,11 @@ Desktop-->
 7. https://www.screencast.com/t/hddLzipd9pth <--ok
 	atate heading h5 daw. then heading ar vitore a tag.
 
-8. https://www.screencast.com/t/EPa9w2FWPY
+8. https://www.screencast.com/t/EPa9w2FWPY <--ok
 	img a link hobe. total box a hover korle img ta scale effect ta hobe
+
+
+
 
 
 New---->
@@ -49,6 +52,26 @@ New---->
 	https://prnt.sc/rfxsuh
 
 
+Responsive--->
+1. https://www.screencast.com/t/ktOxdR4OO0J
+	ai grd gulor resonsive fix lista Over Ons page ar responsive fix no 2
+
+2. https://www.screencast.com/t/M0eXl4q2exdK
+	1199px a 4 ta kore item daw
+	991px a 3 ta
+	639px a ai button ta https://www.screencast.com/t/iAxygyiMMdL
+
+3. https://www.screencast.com/t/srd3Am8C
+	responsive tanle buja jasche na j responsive thik thak hoiche kina,
+	so amader k jquery window resize function use korte hobe jate responsive tanle valu ta auto update hoy, ate bar bar load dite hobena
+
+4. https://www.screencast.com/t/N7mAfU7rU8
+	767px a ai 2 ta apply koro  
+
+5. https://www.screencast.com/t/Rsx4bhquv2Pl
+	ai blog gulo 767px thake slider diye daw
+
+
 
     
 			
@@ -57,43 +80,88 @@ Over Ons
 ----------------
 Desktop-->
 
-1. https://www.screencast.com/t/bmo3yJVcwX5Z
+1. https://www.screencast.com/t/bmo3yJVcwX5Z <--ok
 	PD ar page thake aita copy kore daw
 
-2. https://www.screencast.com/t/7CzUamgOeiM
+2. https://www.screencast.com/t/7CzUamgOeiM <--ok
 	akta scrollbar aseteche
 
-3. https://www.screencast.com/t/bxOob7mvM
+3. https://www.screencast.com/t/bxOob7mvM <--ok
 	aktu text barle lege jay. left and right , top and bottom a padding diye rkahte hobe
 
-4. https://www.screencast.com/t/aHOKu3gCOk
+4. https://www.screencast.com/t/aHOKu3gC  <--ok
 	ai text 2 ta onno hobe
 
-5. https://www.screencast.com/t/zXluKC0kYn
+5. https://www.screencast.com/t/zXluKC0kYn  <--ok
 	'i' tag .mHc class ta daw. bcoz akta lomba img up hole title gulo r ak label a thakbena 
 
-6. https://www.screencast.com/t/0IUklhGpN9
+6. https://www.screencast.com/t/0IUklhGpN9 <--ok
 	ai section ar fix ager motoi
+
+
+
+
+
+New--->
+1. https://www.screencast.com/t/zHkqy71Keiu
+	text bere gele left and right padding khub kharpa dekhasche, r katu besi jemon ta valo lage
+
+
+Responsive---->
+
+1. https://www.screencast.com/t/SKovBvcEgln
+	767px a padding left and right 20px kore hobe
+
+2. i) https://www.screencast.com/t/xUAk8QdU5i
+		link bahire chole geche. left and right padding komao 1199px a;
+
+   ii) https://www.screencast.com/t/eXDIF8qnjT
+   		767px bottom gap ta aktu besi daw, jate akta thake r akta alada buja jay
+
+   iii) https://www.screencast.com/t/dcrvpuZOu
+   		575px a akta max-width diye center a rakho. bcoz full width a img ta fete geche
+
+3. https://www.screencast.com/t/nBMFFXbCxTid
+	ata 767px a slider hobe
+
 
 
 Contact
 ----------------
 Desktop-->
 
-1. https://www.screencast.com/t/xqPuVk8yR4Z
+1. https://www.screencast.com/t/xqPuVk8yR4Z <--ok
 	breadcrumbs ta pest koro
 
-2. https://www.screencast.com/t/nz511DA3zjJE
+2. https://www.screencast.com/t/nz511DA3zjJE <--ok
 	hover korle ai color ta try kore dekhio to valo dekhay kina. black ta aktu hard hard lagteche
 
-3. https://www.screencast.com/t/vU2LeamEmcQd
+3. https://www.screencast.com/t/vU2LeamEmcQd <--ok
 	hover korle border ta left thake right a transition hoye jabe
 
-4. https://www.screencast.com/t/wjefjJmX
+4. https://www.screencast.com/t/wjefjJmX <--ok
 	ai star gulor color ki black hobe na orange ? sure hote hobe
 
-5. https://www.screencast.com/t/BfPnH8OfD
+5. https://www.screencast.com/t/BfPnH8OfD <--ok
 	2nd tab ar email ta require hobena
+
+
+
+
+
+New-->
+1. https://www.screencast.com/t/xka8iHVbmj
+	ai placeholder ar name ta thik nai
+
+Responsive---->
+1. https://www.screencast.com/t/B3R6eTyMNPd
+	break hoye jay. 'E-mail Ons' heading ta 575px thake center a dite paro
+
+2. https://www.screencast.com/t/PWWLtFgKr
+	639px a sob field gulo full width kore daw
+
+
+
 
 
 N.B.-->
