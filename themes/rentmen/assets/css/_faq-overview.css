@@ -206,12 +206,6 @@
 
 
 @media(max-width: 1199px){
-	.hide-lg{
-		display: none!important;
-	}
-	.show-lg{
-		display: block!important;
-	}
 	.faq-content {
 	    padding: 70px 0;
 	}
@@ -247,12 +241,6 @@
 }
 
 @media(max-width: 991px){
-	.hide-md{
-		display: none!important;
-	}
-	.show-md{
-		display: block!important;
-	}
 	.faq-cnt-inner p br{
 	    display: none;
 	}
@@ -278,12 +266,6 @@
 }
 
 @media(max-width: 767px){
-	.hide-sm{
-		display: none!important;
-	}
-	.show-sm{
-		display: block!important;
-	}
 	.faq-grd-wrap ul li {
 	    padding-left: 20px;
 	    padding-right: 20px;
@@ -299,12 +281,6 @@
 }
 
 @media(max-width: 575px){
-	.hide-xs{
-		display: none!important;
-	}
-	.show-xs{
-		display: block!important;
-	}
 	.faq-content {
 	    padding: 50px 0;
 	}
