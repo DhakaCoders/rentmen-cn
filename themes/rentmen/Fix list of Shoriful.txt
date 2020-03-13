@@ -2,14 +2,20 @@ Faq overview
 ----------------
 Desktop-->
 
-1. https://www.screencast.com/t/WT0tdB5aI601
+1. https://www.screencast.com/t/WT0tdB5aI601 <--ok
 	hover korle border ar sathe text ar color o orange hobe
 
-2. https://www.screencast.com/t/COuauZtS4jgZ
+2. https://www.screencast.com/t/COuauZtS4jgZ <--ok
 	box-shadow missing
 
 3. https://www.screencast.com/t/5l1f0KaVz
 	ai paser button ar gap ta mileni. total ta check kore update korte hobe
+
+Responsive-->
+1. https://www.screencast.com/t/skB0qnOTqnh7
+	767px a bahire ber hoye geche. 20px ar besi deoa jabena. bcoz 767 te amara container ar padding ta 15 thake 20px kore dichi responsive.css a
+
+
 
 Faq details
 ----------------
@@ -17,6 +23,16 @@ Desktop-->
 
 1. https://www.screencast.com/t/daaV4nCFNxe
 	a tag a j transitin ta ache seta svg teo dte hobe hobe. tahole smoothly hover hobe
+
+Responsive---->
+1. https://www.screencast.com/t/ikRzOGicf
+	1199px a line-height r font-size komate hobe
+
+2. https://www.screencast.com/t/xvQMnIAO8OYQ
+	ai seciton ar responsvie ta jemne bujay dichi oivabe koro	
+
+3. https://www.screencast.com/t/e9kL9aU3s8gc
+	page text ta hobena just FAQ Details ta thakbe. kono page ai amon kora jabena
 
 
 N.B.-->
