@@ -56,6 +56,10 @@
   <path d="M29.626 14.938C24.295 14.938 21.8467 18.0972 21.8467 20.2296C21.8467 21.7697 23.1498 22.4805 24.216 22.4805C26.3484 22.4805 25.4797 19.4397 29.5076 19.4397C31.4819 19.4397 33.0616 20.3086 33.0616 22.1251C33.0616 24.2574 30.8502 25.4816 29.5471 26.5872C28.4018 27.5743 26.9013 29.1935 26.9013 32.5896C26.9013 34.643 27.4542 35.2353 29.0732 35.2353C31.008 35.2353 31.403 34.3666 31.403 33.6162C31.403 31.5628 31.4425 30.3781 33.6144 28.6801C34.6806 27.8509 38.0371 25.1655 38.0371 21.4536C38.0371 17.7417 34.6806 14.938 29.626 14.938Z"/>
   </symbol>
 
+  <symbol id="breadcrumbs-left-arrow-svg" width="28" height="8" viewBox="0 0 28 8" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0.472492 3.08605L4.55806 0.205728C5.29832 -0.31609 6.32145 0.215273 6.32145 1.12005V2.88171H25.9383C26.5561 2.88171 27.057 3.38257 27.057 4.00045C27.057 4.61832 26.5561 5.11911 25.9383 5.11911H6.32159V6.8807C6.32159 7.79144 5.29302 8.31288 4.55829 7.79502L0.472715 4.91469C-0.151199 4.47513 -0.163801 3.53561 0.472492 3.08605Z" fill="#F3BF00"/>
+  </symbol>
+
 
 
 </svg>
@@ -185,9 +189,9 @@
   <div class="container-lg">
     <div class="row">
       <div class="col-12">
-        <div class="breadcrumbs-innr clearfix">
+        <div class="breadcrumbs-innr hide-xs clearfix">
           <div class="breadcrumbs-lft-text">
-            <h1 class="page-title">Nieuws</h1>
+            <strong class="page-title">Nieuws</strong>
           </div>          
           <div class="breadcrumbs-main">
             <ul>           
@@ -195,6 +199,14 @@
               <li><a href="#">Binnenpagina</a></li>
               <li><a href="#">Binnenpagina</a></li>
             </ul>
+          </div>
+        </div>
+        <div class="breadcrumbs-innr show-xs clearfix">
+          <div class="breadcrumbs-left">
+            <a href="#">Home</a>
+          </div>
+          <div class="breadcrumbs-right">
+            <a href="javascript:history.go(-1)">Terug</a>
           </div>
         </div>
       </div>
