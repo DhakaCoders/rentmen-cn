@@ -5,6 +5,7 @@ hm-banner-sec-wrp
 */
 .hm-banner-sec-wrp{
 	position: relative;
+	overflow: hidden;
 }
 .hm-slider-wrp .hm-banner-bg{
 	display: none;
