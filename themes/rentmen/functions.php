@@ -22,7 +22,7 @@ if( !function_exists('cbv_theme_setup') ){
 		if(function_exists('add_theme_support')) {
 			add_theme_support('category-thumbnails');
 		}
-    //add_image_size( 'slidecapm', 438, 442, true );
+        add_image_size( 'faqfull', 534, 563, true );
 
 		
 		// add size to media uploader
@@ -113,6 +113,22 @@ return $query;
 }
  
 add_filter('pre_get_posts','searchfilter');
+
+
+$option_posts_per_page = get_option( 'posts_per_page' );
+add_action( 'init', 'my_modify_posts_per_page', 0);
+function my_modify_posts_per_page() {
+    add_filter( 'option_posts_per_page', 'my_option_posts_per_page' );
+}
+function my_option_posts_per_page( $value ) {
+    global $option_posts_per_page;
+    if ( is_tax( 'faq') ) {
+        return 1;
+    } else {
+        return $option_posts_per_page;
+    }
+}
+
 
 function defer_parsing_of_js ( $url ) {
     if ( FALSE === strpos( $url, '.js' ) ) return $url;
