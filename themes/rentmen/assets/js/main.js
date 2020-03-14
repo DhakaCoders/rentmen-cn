@@ -617,6 +617,10 @@ $('.xs-menu-bar-close').on('click', function(){
     $('.xs-pop-up-menu').hide();
 });
 
-
+if (windowWidth < 768) {
+  $('header .rm-search-submit-btn').on('click', function(){
+    $('.hdr-btmbar').toggleClass('hdr-btmbar-cntlr');
+  });
+}
 
 })(jQuery);
