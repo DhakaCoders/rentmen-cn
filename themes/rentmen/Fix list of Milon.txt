@@ -71,7 +71,14 @@ Responsive--->
 5. https://www.screencast.com/t/Rsx4bhquv2Pl(ok)
 	ai blog gulo 767px thake slider diye daw
 
+Responsive new--->
+1. https://www.screencast.com/t/2eBhd3I4srxi
+	575px a bottom shadow ta kata porche
 
+2. sob slider ar break gulo thik korte hobe
+
+3. https://www.screencast.com/t/M03NYhwWnY
+	767px a ai img ta chapa chapi hoye geche img ar height 100% deoa jabena. 
 
     
 			

@@ -233,10 +233,7 @@ html .price-slider .ui-button.ui-state-disabled:active {
   border: 0;
   background: #F3BF00
 }
-.price-slider .ui-slider-horizontal .ui-slider-handle {
-  top: -5px;
-  cursor: pointer;
-}
+
 .price-slider form label {
   line-height: normal;
   cursor: pointer;
@@ -290,6 +287,7 @@ html .price-slider .ui-button.ui-state-disabled:active {
   line-height: 22px;
   color: #1E1E1E;
   margin-bottom: 25px;
+  padding-left: 42px;
 }
 .pro-check-box-filter .form-group label:active{
   color:red!important;
@@ -302,6 +300,9 @@ html .price-slider .ui-button.ui-state-disabled:active {
 .pro-check-box-filter .form-group label:hover{
   color:#000!important;
   opacity: 1;    
+}
+.pro-check-box-filter .form-group{
+  position: relative;
 }
 .pro-check-box-filter .form-group label::before {
   content:'';
@@ -317,8 +318,9 @@ html .price-slider .ui-button.ui-state-disabled:active {
   background: #FFFFFF;
   border: 1px solid #E8E8E8;
   box-sizing: border-box;
-  position: relative;
-  top: -2px;
+  position: absolute;
+  top: -1px;
+  left: 0
 }
 .pro-check-box-filter .form-group input:checked + label::after {
   content: '';
