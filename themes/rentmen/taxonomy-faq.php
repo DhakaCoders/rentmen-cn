@@ -1,7 +1,4 @@
 <?php 
-/*
-  Template Name: FAQ
-*/
 get_header(); 
 $thisID = get_the_ID();
   $ccat = get_queried_object();
