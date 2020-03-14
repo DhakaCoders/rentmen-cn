@@ -44,3 +44,52 @@ a:hover{
 	color: #F3BF00;
 }
 
+
+/*
+========================
+ Animate 
+========================
+*/
+
+.hm-slider-wrp .slick-current .hm-banner-dsc h3{
+  -webkit-animation-name: fadeInUpShort;
+  animation-name: fadeInUpShort;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;	
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;	
+}
+.hm-slider-wrp .slick-current .hm-banner-dsc h1{
+  -webkit-animation-name: fadeInUpShort;
+  animation-name: fadeInUpShort;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;	
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;	
+}
+.hm-slider-wrp .slick-current .hm-banner-dsc p{
+  -webkit-animation-name: fadeInUpShort;
+  animation-name: fadeInUpShort;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;	
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+.hm-slider-wrp .slick-current .hm-banner-dsc a{
+  -webkit-animation-name: fadeInUpShort;
+  animation-name: fadeInUpShort;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;	
+  -webkit-animation-delay: 1.6s;
+  animation-delay: 1.6s;		
+}
+

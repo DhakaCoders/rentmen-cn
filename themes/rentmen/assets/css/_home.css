@@ -294,41 +294,28 @@ hm-two-grid-sec-wrp
 
 }
 .hm-two-grid-wrp{
-	min-height: 590px;
-	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .hm-two-grid-lft {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    padding-right: 51%;
-    right: 0;
+    width: 58%;
 }
 .hm-two-grid-rgt-img{
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position:center bottom !important;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	z-index: 1;
 	border-radius: 8px;
 	width: 42%;
-	float: right;
+	height: 590px;
+	position: relative;
 }
 .hm-two-grid-rgt-img > img{
 	display: none;
 }
 .hm-two-grid-dsc {
-    padding-top: 30px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    width: 49%;
+    padding-top: 20px;
+    padding-right: 135px;
 }
 .hm-two-grid-rgt-img span {
     display: inline-block;
@@ -378,9 +365,12 @@ hm-two-grid-sec-wrp
 	transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
+	border:2px solid #F3BF00;
 }
 .hm-two-grid-dsc a:hover{
-	background:#d9ab06;
+	background:transparent;
+	border-color: #F3BF00;
+	color: #F3BF00;
 }
 
 /*
@@ -479,12 +469,15 @@ hm-download-sec-wrp
 .hm-lates-news-post-sec-wrp .hm-download-btn{
 	padding-top: 0;
 }
+.categorie-xs-btn{
+	display: none;
+}
 
 
 
 @media(max-width: 1599px){
 	.hm-two-grid-rgt-img span {
-	    right: -15px;
+	    right: -10px;
 	    top: -40px;
 	    z-index: 1;
 	    max-width: 140px;
@@ -496,6 +489,10 @@ hm-download-sec-wrp
 	.hm-two-grid-rgt-img{
 		background-position: center right !important;
 	}
+	.hm-two-grid-dsc {
+	    padding-right: 100px;
+	}
+
 }
 
 @media(max-width: 1299px){
@@ -523,16 +520,10 @@ hm-download-sec-wrp
 	    padding-bottom: 70px;
 	}
 	.hm-post-categorie-wrp ul li{
-	    width: 20%;
+	    width: 25%;
 	}
-	.hm-post-categorie-wrp ul li:nth-child(5n+1){
+	.hm-post-categorie-wrp ul li:nth-child(4n+1){
 		clear: left;
-	}
-	.hm-two-grid-lft{
-		padding-right: 45%;
-	}
-	.hm-two-grid-dsc{
-		width: 55%;
 	}
 	.ovr-two-grid-dsc h2,
 	.hm-two-grid-dsc h2{
@@ -541,6 +532,15 @@ hm-download-sec-wrp
 	.hm-download-box strong {
 	    padding-left: 75px;
 	    padding-right: 55px;
+	}
+	.hm-de-kijker-post-wrp ul{
+		margin: 0 -10px;
+	}
+	.hm-de-kijker-post-wrp ul li {
+	    padding: 0 10px;
+	}
+	.hm-two-grid-dsc {
+	    padding-right: 60px;
 	}
 }
 
@@ -575,12 +575,12 @@ hm-download-sec-wrp
 	    padding-bottom: 60px;
 	}
 	.hm-post-categorie-wrp ul li{
-	    width: 25%;
-	}
-	.hm-post-categorie-wrp ul li:nth-child(5n+1){
-		clear: none;
+	    width: 33.3333%;
 	}
 	.hm-post-categorie-wrp ul li:nth-child(4n+1){
+		clear: none;
+	}
+	.hm-post-categorie-wrp ul li:nth-child(3n+1){
 		clear: left;
 	}
 	.ovr-two-grid-dsc h2,
@@ -617,6 +617,9 @@ hm-download-sec-wrp
 	.catapult-cookie-wrp {
 	    right: 70px;
 	    top: 53%;
+	}
+	.hm-two-grid-dsc {
+	    padding-right: 40px;
 	}
 	
 
@@ -695,23 +698,6 @@ hm-download-sec-wrp
 	.hm-post-categorie-wrp {
 	    padding-top: 40px;
 	}
-
-	.hm-two-grid-rgt-img {
-	    width: 100%;
-	    position: static;
-	    background: transparent !important;
-	    height: 450px;
-	}
-	.hm-two-grid-lft {
-	    padding-right: 0;
-	    position: static;
-	    float: left;
-	}
-	.hm-two-grid-dsc{
-		position: static;
-		width: 100%;
-		transform: none;
-	}
 	.ovr-two-grid-dsc h2,
 	.hm-two-grid-dsc h2{
 		font-size: 38px;
@@ -721,7 +707,19 @@ hm-download-sec-wrp
 	    padding-bottom: 55px;
 	}
 	.hm-two-grid-wrp {
-	    min-height: auto;
+	    display: block;
+	}
+	.hm-two-grid-rgt-img{
+	    background: transparent !important;
+	    width: 100%;
+	    height: 330px;
+	}
+	.hm-two-grid-lft {
+	    width: 100%;
+	}
+	.hm-two-grid-dsc {
+	    padding-right: 0;
+	    padding-top: 40px;
 	}
 	.hm-two-grid-rgt-img > img {
 	    display: block;
@@ -758,8 +756,51 @@ hm-download-sec-wrp
 	.hm-lates-news-post-sec-wrp .dft-blog-item-des h5{
 		margin-bottom: 15px;
 	}
+	.hm-download-box strong {
+		font-size: 22px;
+		line-height: 28px;
+	}
+	.hm-de-kijker-post-dsc {
+	    padding: 30px 15px 40px;
+	}
 	
 
+}
+@media(max-width: 639px){
+	.hm-de-kijker-post-wrp {
+	    padding-bottom: 0;
+	    border-bottom: 0;
+	}
+	.hm-post-categorie-wrp{
+		display: none;
+	}
+	.categorie-xs-btn{
+		text-align: center;
+		display: block;
+	}
+	.categorie-xs-btn span{
+		display: inline-block;
+		vertical-align: baseline;
+		text-decoration: none;
+		background: #1E1E1E;
+		max-width: 330px;
+		width: 100%;
+		margin: 0 auto;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 700;
+		text-align: center;
+		padding: 32px 20px 30px;
+		transition: all 0.5s;
+		-ms-transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		cursor: pointer;
+	}
+	.categorie-xs-btn span:hover{
+		background: #f4bf01;
+	}
 }
 
 @media(max-width: 575px){
@@ -788,36 +829,6 @@ hm-download-sec-wrp
 	.hm-de-kijker-post-wrp ul li:nth-child(2n+1){
 		clear: left;
 	}
-	.hm-de-kijker-post-wrp {
-	    padding-bottom: 0;
-	    border-bottom: 0;
-	}
-	.categorie-xs-btn{
-		text-align: center;
-	}
-	.categorie-xs-btn span{
-		display: inline-block;
-		vertical-align: baseline;
-		text-decoration: none;
-		background: #1E1E1E;
-		max-width: 330px;
-		width: 100%;
-		margin: 0 auto;
-		color: #fff;
-		text-transform: uppercase;
-		font-size: 14px;
-		line-height: 16px;
-		font-weight: 700;
-		text-align: center;
-		padding: 32px 20px 30px;
-		transition: all 0.5s;
-		-ms-transition: all 0.5s;
-		-webkit-transition: all 0.5s;
-		cursor: pointer;
-	}
-	.categorie-xs-btn span:hover{
-		background: #f4bf01;
-	}
 	.hm-post-categorie-wrp ul li{
 	    width: 50%;
 	}
@@ -831,9 +842,6 @@ hm-download-sec-wrp
 	.hm-two-grid-dsc h2{
 		font-size: 34px;
 	}
-	.hm-post-categorie-wrp{
-		display: none;
-	}
 	.hm-download-box-item {
 	    padding: 0 0 10px;
 	}
@@ -842,9 +850,6 @@ hm-download-sec-wrp
 	}
 	.hm-download-btn {
 	    padding-top: 5px;
-	}
-	.hm-two-grid-rgt-img {
-	    height: 350px;
 	}
 	.hm-two-grid-sec-wrp {
 	    padding-top: 55px;
@@ -901,6 +906,11 @@ hm-download-sec-wrp
 	.hm-de-kijker-post-dsc {
 	    padding: 22px 15px 25px;
 	}
+	.overons-de-post-sec .hm-de-kijker-post-wrp {
+	    max-width: 380px;
+	    width: 100%;
+	    margin: 0 auto;
+	}
 }
 
 @media(max-width: 479px){
@@ -943,6 +953,9 @@ hm-download-sec-wrp
 	}
 	.hm-post-categorie-wrp ul li:nth-child(2n+1){
 		clear: none;
+	}
+	.hm-two-grid-rgt-img{
+	    height: 280px;
 	}
 }
 

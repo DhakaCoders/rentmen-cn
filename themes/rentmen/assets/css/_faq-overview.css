@@ -266,6 +266,10 @@
 }
 
 @media(max-width: 767px){
+	.faq-grd-wrap ul {
+	    margin-left: -20px;
+	    margin-right: -20px;
+	}
 	.faq-grd-wrap ul li {
 	    padding-left: 20px;
 	    padding-right: 20px;

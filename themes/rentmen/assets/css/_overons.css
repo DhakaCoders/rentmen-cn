@@ -89,7 +89,7 @@ overons-service-sec-wrp
     margin-top: -110px;
     position: relative;
     z-index: 1;
-    padding: 10px;
+    padding: 10px 20px;
 }
 .overons-justo-box h2{
 	font-size: 48px;
@@ -187,7 +187,7 @@ overons-service-sec-wrp
 	.overons-two-part-lft {
 	    width: 100%;
 	    position: static;
-	    padding: 0 15px;
+	    padding: 0 20px;
 	}
 	.overons-two-part-lft-img {
 	    position: static;
@@ -247,12 +247,18 @@ overons-service-sec-wrp
 	    padding-bottom: 40px;
 	}
 	.overons-service-wrp ul li {
-	    padding: 0 10px 20px;
-	    width: 100%;
-	    max-width: 400px;
-	    margin: 0 auto;
+	    padding: 0 10px 0;
 	    float: none;
 	    border: 0;
+	}
+	.overons-service-box-dsc {
+	    text-align: center;
+	    max-width: 400px;
+	    width: 100%;
+	    margin: 0 auto;
+	}
+	.overons-service-wrp .dft-slider-pagi.slick-dotted.slick-slider {
+	    margin-bottom: 10px !important;
 	}
 
 }
