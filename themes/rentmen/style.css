@@ -14,5 +14,8 @@ Text Domain: rentman
 @import url('assets/css/main.css');
 
 
-
+/*.xs-menu-bar,
+.xs-pop-up-menu{
+	display: none!important;
+}*/
 
