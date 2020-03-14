@@ -495,7 +495,7 @@ nav.main-nav ul.sub-menu li:hover:after {
 		background: #1E1E1E;
 		color: #fff;
 		padding-left: 25px;
-		z-index: 70;
+		z-index: 59;
 		width: 100%;
 	}
 	.xs-menu-bar-inr{
@@ -611,6 +611,19 @@ nav.main-nav ul.sub-menu li:hover:after {
 	.xs-pop-menu-con{
 		overflow-y: scroll;
 	}
+	.xs-main-nav .sub-menu li{
+		padding-top: 5px;
+	}
+	.xs-main-nav .sub-menu{
+		padding-bottom: 0;
+	}
+	.xs-main-nav .sub-menu li a{
+		font-size: 16px;
+	}
+	.hdr-sign-up a strong{
+		display: inline-block;
+	}
+
 	/*end of xs popup menu*/
 }
 
