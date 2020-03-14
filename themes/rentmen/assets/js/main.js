@@ -173,33 +173,30 @@ $('.tabs-menu li').on('click',function(){
 });
 
 /* -- Contact page left border and right bg control --*/
-if (windowWidth >=768) {
-  var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
-  var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
-  var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 )+330;
-  $('.hm-two-grid-sec-bg').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
 
-  function flResize(){
-    $(window).on('resize', function(){
-      var windowWidth = $(window).width();
-      var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
-      var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
-      var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 )+330;
-      $('.hm-two-grid-sec-wrp').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
-    });
+
+function sectionResize(){
+  windowWidth = $(window).width();
+  if (windowWidth >=768) {
+    var hmTwoGridRgtHeight = $('.hm-two-grid-sec-wrp').outerHeight();
+    var containerWidth = $('.hm-two-grid-sec-wrp .container').width();
+    var LftOrRgtWidth = ( (windowWidth-containerWidth)/2 )+330;
+    $('.hm-two-grid-sec-bg').css({"height": hmTwoGridRgtHeight, "width":LftOrRgtWidth});
   }
-  flResize();
 }
+sectionResize();
+$(window).on('resize', function(){
+  sectionResize();
+});
 
-
-if (windowWidth <= 575) {
+if (windowWidth <= 639) {
   $('.categorie-xs-btn span').on('click',function(){
     $('.hm-post-categorie-wrp').slideToggle(500);
   });
 }
 
 
-if (windowWidth < 576) {
+if (windowWidth < 768) {
   if( $('.dft-slider-pagi').length ){
       $('.dft-slider-pagi').slick({
         dots: true,
@@ -210,6 +207,21 @@ if (windowWidth < 576) {
         slidesToScroll: 1
       });
   }
+}
+
+if( $('.hm-slider-wrp').length ){
+    $('.hm-slider-wrp').slick({
+      pauseOnHover: false,
+      autoplay: true,
+      autoplaySpeed: 6000,
+      arrows:false,
+      dots: false,
+      infinite: false,
+      speed: 1000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+    });
 }
 
 
