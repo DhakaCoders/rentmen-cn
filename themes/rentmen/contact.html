@@ -15,6 +15,7 @@
   <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/font-awesome.css">
   
   <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css">
   <link rel="stylesheet" type="text/css" href="assets/fancybox3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" type="text/css" href="assets/slick.slider/slick-theme.css">
   <link rel="stylesheet" type="text/css" href="assets/slick.slider/slick.css">
@@ -28,7 +29,7 @@
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->	
+  <![endif]-->  
 
 <svg style="display: none;">
 
@@ -50,8 +51,25 @@
   <symbol id="cart-icon-svg" width="26" height="24" viewBox="0 0 26 24" xmlns="http://www.w3.org/2000/svg">
   <path d="M24.9318 4.33873H4.60293L4.30075 0.972337C4.25133 0.421822 3.78995 0 3.23724 0H1.06778C0.478059 0 0 0.478059 0 1.06778C0 1.65749 0.478059 2.13555 1.06778 2.13555H2.26104C2.91315 9.4006 1.22779 -9.37686 3.48914 15.8178C3.57629 16.8039 4.10911 17.874 5.02699 18.6011C3.37209 20.7145 4.88416 23.8301 7.57613 23.8301C9.81042 23.8301 11.3863 21.6017 10.6201 19.4911H16.4642C15.699 21.599 17.2714 23.8301 19.5082 23.8301C21.2932 23.8301 22.7454 22.3778 22.7454 20.5928C22.7454 18.8078 21.2932 17.3556 19.5082 17.3556H7.58335C6.77224 17.3556 6.06543 16.8662 5.76035 16.1533L22.8248 15.1504C23.2907 15.123 23.6849 14.7962 23.7981 14.3434L25.9677 5.66547C26.1359 4.99257 25.6265 4.33873 24.9318 4.33873ZM7.57613 21.6945C6.96872 21.6945 6.47449 21.2003 6.47449 20.5928C6.47449 19.9854 6.96872 19.4911 7.57613 19.4911C8.18359 19.4911 8.67782 19.9854 8.67782 20.5928C8.67782 21.2003 8.18359 21.6945 7.57613 21.6945ZM19.5081 21.6945C18.9007 21.6945 18.4064 21.2003 18.4064 20.5928C18.4064 19.9854 18.9007 19.4911 19.5081 19.4911C20.1156 19.4911 20.6098 19.9854 20.6098 20.5928C20.6098 21.2003 20.1156 21.6945 19.5081 21.6945ZM21.9165 13.0645L5.47291 14.0309L4.79462 6.47423H23.5642L21.9165 13.0645Z">
   </symbol>
+  <symbol id="question-icon-svg" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <path d="M30 0C13.419 0 0 13.4175 0 30C0 46.5807 13.4175 60 30 60C46.581 60 60 46.5825 60 30C60 13.419 46.5825 0 30 0ZM30 55.8139C15.7662 55.8139 4.18605 44.2339 4.18605 30C4.18605 15.7661 15.7662 4.18605 30 4.18605C44.2339 4.18605 55.8139 15.7661 55.8139 30C55.8139 44.2339 44.2339 55.8139 30 55.8139Z"/>
+  <path d="M29.1125 37.96C27.4539 37.96 26.1113 39.3421 26.1113 41.0005C26.1113 42.6197 27.4145 44.0413 29.1125 44.0413C30.8105 44.0413 32.153 42.6197 32.153 41.0005C32.153 39.3421 30.7709 37.96 29.1125 37.96Z"/>
+  <path d="M29.626 14.938C24.295 14.938 21.8467 18.0972 21.8467 20.2296C21.8467 21.7697 23.1498 22.4805 24.216 22.4805C26.3484 22.4805 25.4797 19.4397 29.5076 19.4397C31.4819 19.4397 33.0616 20.3086 33.0616 22.1251C33.0616 24.2574 30.8502 25.4816 29.5471 26.5872C28.4018 27.5743 26.9013 29.1935 26.9013 32.5896C26.9013 34.643 27.4542 35.2353 29.0732 35.2353C31.008 35.2353 31.403 34.3666 31.403 33.6162C31.403 31.5628 31.4425 30.3781 33.6144 28.6801C34.6806 27.8509 38.0371 25.1655 38.0371 21.4536C38.0371 17.7417 34.6806 14.938 29.626 14.938Z"/>
+  </symbol>
+  <!-- end of Rannojit -->
 
-  <!-- Contact page -->
+  <symbol id="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20.6188 7.84709V5.94238H5.38124V7.84709H12.0477V20.545H9.82551V22.4497H16.1745V20.545H13.9524V7.84709H20.6188Z"/>
+  <path d="M24.588 11.6568L26 3.89098L24.126 3.55029L22.9984 9.75216H18.0792V11.6568H20.3013V20.5454H18.0792V22.4501H24.4281V20.5454H22.206V11.6568H24.588Z"/>
+  <path d="M7.92081 11.6568V9.75216H3.00153L1.87398 3.55029L0 3.89098L1.41192 11.6568H3.79402V20.5454H1.57188V22.4501H7.92081V20.5454H5.69872V11.6568H7.92081Z"/>
+  </symbol>
+  <symbol id="dw-question-icon-svg" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <path d="M30 0C13.419 0 0 13.4175 0 30C0 46.5807 13.4175 60 30 60C46.581 60 60 46.5825 60 30C60 13.419 46.5825 0 30 0ZM30 55.8139C15.7662 55.8139 4.18605 44.2339 4.18605 30C4.18605 15.7661 15.7662 4.18605 30 4.18605C44.2339 4.18605 55.8139 15.7661 55.8139 30C55.8139 44.2339 44.2339 55.8139 30 55.8139Z"/>
+  <path d="M29.1123 37.96C27.4538 37.96 26.1111 39.3421 26.1111 41.0005C26.1111 42.6197 27.4143 44.0413 29.1123 44.0413C30.8104 44.0413 32.1529 42.6197 32.1529 41.0005C32.1529 39.3421 30.7708 37.96 29.1123 37.96Z"/>
+  <path d="M29.6256 14.938C24.2945 14.938 21.8462 18.0972 21.8462 20.2296C21.8462 21.7697 23.1493 22.4805 24.2155 22.4805C26.3479 22.4805 25.4792 19.4397 29.5071 19.4397C31.4815 19.4397 33.0611 20.3086 33.0611 22.1251C33.0611 24.2574 30.8497 25.4816 29.5466 26.5872C28.4013 27.5743 26.9008 29.1935 26.9008 32.5896C26.9008 34.643 27.4537 35.2353 29.0727 35.2353C31.0076 35.2353 31.4025 34.3666 31.4025 33.6162C31.4025 31.5628 31.442 30.3781 33.6139 28.6801C34.6801 27.8509 38.0366 25.1655 38.0366 21.4536C38.0366 17.7417 34.6801 14.938 29.6256 14.938Z"/>
+  </symbol>
+
+  <!-- end of Milon -->
   <symbol id="contact-map-icon-svg" width="30" height="40" viewBox="0 0 30 40" xmlns="http://www.w3.org/2000/svg">
   <path d="M14.9998 0C22.9877 0 29.4863 6.49859 29.4863 14.4864C29.4863 24.3995 16.5223 38.9526 15.9704 39.5673C15.452 40.1447 14.5468 40.1437 14.0293 39.5673C13.4773 38.9526 0.513359 24.3995 0.513359 14.4864C0.513515 6.49859 7.01203 0 14.9998 0ZM14.9998 21.7749C19.0188 21.7749 22.2883 18.5053 22.2883 14.4864C22.2883 10.4675 19.0187 7.19797 14.9998 7.19797C10.981 7.19797 7.71148 10.4676 7.71148 14.4865C7.71148 18.5054 10.981 21.7749 14.9998 21.7749Z"/>
   </symbol>
@@ -79,12 +97,67 @@
   </symbol>
 
 
+
+  <symbol id="ftr-map-icon-svg" width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
+  <path d="M9.50002 0C13.2943 0 16.3811 3.08683 16.3811 6.88104C16.3811 11.5898 10.2232 18.5025 9.96103 18.7945C9.71478 19.0687 9.28483 19.0682 9.03901 18.7945C8.77684 18.5025 2.61894 11.5898 2.61894 6.88104C2.61902 3.08683 5.70581 0 9.50002 0ZM9.50002 10.3431C11.409 10.3431 12.962 8.79002 12.962 6.88104C12.962 4.97206 11.409 3.41904 9.50002 3.41904C7.59108 3.41904 6.03805 4.9721 6.03805 6.88108C6.03805 8.79006 7.59108 10.3431 9.50002 10.3431Z" />
+  </symbol>
+  <symbol id="ftr-cell-icon-svg" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0)">
+  <path d="M12.9539 18C9.79843 18 6.42874 16.8405 3.79406 14.2059C1.16378 11.5756 0 8.20814 0 5.04608C0 2.25928 2.25464 0 5.04608 0C5.26173 0 5.45562 0.131273 5.5357 0.331488L7.79509 5.97994C7.90327 6.25036 7.77175 6.55724 7.50136 6.66541L5.01943 7.65816C5.195 10.5135 7.48698 12.8053 10.3418 12.9806L11.3346 10.4987C11.4426 10.2287 11.7493 10.0967 12.0201 10.2049L17.6685 12.4643C17.8687 12.5444 18 12.7383 18 12.9539C18 15.7407 15.7454 18 12.9539 18Z" />
+  </g>
+  <defs>
+  <clipPath id="clip0">
+  <rect width="18" height="18" />
+  </clipPath>
+  </defs>
+  </symbol>  
+  <symbol id="ftr-mail-icon-svg" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0)">
+  <path d="M10.5043 11.0278C10.0565 11.3264 9.53631 11.4842 9 11.4842C8.46373 11.4842 7.94355 11.3264 7.49573 11.0278L0.119848 6.1104C0.0789258 6.08312 0.0390586 6.05468 0 6.02543V14.0831C0 15.007 0.749707 15.7402 1.65702 15.7402H16.3429C17.2668 15.7402 18 14.9904 18 14.0831V6.02539C17.9608 6.05471 17.9209 6.08322 17.8799 6.11054L10.5043 11.0278Z" />
+  <path d="M0.704883 5.23273L8.08077 10.1502C8.35998 10.3363 8.67997 10.4294 8.99996 10.4294C9.31999 10.4294 9.64002 10.3363 9.91923 10.1502L17.2951 5.23273C17.7365 4.93864 18 4.44646 18 3.91525C18 3.00185 17.2569 2.25879 16.3435 2.25879H1.65646C0.743098 2.25882 0 3.00189 0 3.91613C0 4.44646 0.263531 4.93864 0.704883 5.23273Z" />
+  </g>
+  <defs>
+  <clipPath id="clip0">
+  <rect width="18" height="18" />
+  </clipPath>
+  </defs>
+  </symbol>
+  <symbol id="pro-des-bq-svg" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M13.8677 22.0933L13.7638 22.0907C12.5126 22.0629 11.4735 23.048 11.4421 24.2989C11.4108 25.5497 12.3994 26.5892 13.6503 26.6206L13.7735 26.6235C18.6715 26.7183 22.6562 30.7827 22.6562 35.6836C22.6562 40.6807 18.5908 44.7461 13.5938 44.7461C8.59669 44.7461 4.53125 40.6807 4.53125 35.6836C4.53125 29.4421 6.01569 23.6826 8.94367 18.5651C11.1319 14.7402 13.3572 12.7198 13.3988 12.6824C14.332 11.854 14.4197 10.4258 13.5934 9.48926C12.7654 8.55118 11.3339 8.46157 10.3956 9.28932C10.2861 9.38606 7.68296 11.7078 5.12054 16.1241C2.78445 20.1503 0 26.8118 0 35.6836C0 43.1792 6.09816 49.2774 13.5938 49.2774C21.0893 49.2774 27.1875 43.1792 27.1875 35.6836C27.1875 32.0993 25.8046 28.7172 23.2936 26.1602C20.7876 23.6084 17.4401 22.1642 13.8677 22.0933Z" fill="white"/>
+  <path d="M54.1061 26.1602C51.6 23.6083 48.2527 22.164 44.68 22.0932L44.5763 22.0906C43.3292 22.0629 42.286 23.048 42.2546 24.2988C42.2232 25.5497 43.2119 26.5891 44.4628 26.6205L44.586 26.6235C49.484 26.7184 53.4688 30.7828 53.4688 35.6836C53.4688 40.6807 49.4033 44.7461 44.4062 44.7461C39.4092 44.7461 35.3438 40.6807 35.3438 35.6836C35.3438 29.442 36.8282 23.6825 39.7561 18.5652C41.9443 14.7403 44.1696 12.7199 44.2112 12.6825C45.1445 11.854 45.2321 10.4258 44.4058 9.48934C43.5779 8.55115 42.1463 8.46154 41.208 9.2894C41.0986 9.38614 38.4953 11.7078 35.9329 16.1242C33.597 20.1502 30.8125 26.8117 30.8125 35.6836C30.8125 43.1792 36.9107 49.2773 44.4062 49.2773C51.9018 49.2773 58 43.1792 58 35.6836C58 32.0993 56.6171 28.7171 54.1061 26.1602Z" fill="white"/>
+  </symbol>
+  <symbol id="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" xmlns="http://www.w3.org/2000/svg">
+  <path d="M28.7674 5.09795H5.31106L4.9624 1.14248C4.90537 0.495635 4.37301 0 3.73528 0H1.23205C0.551605 0 0 0.561712 0 1.25462C0 1.94753 0.551605 2.50924 1.23205 2.50924H2.60889C3.36132 11.0456 1.41668 -11.0177 4.02592 18.5857C4.12648 19.7443 4.74127 21.0017 5.80036 21.856C3.89087 24.3392 5.63556 28 8.74167 28C11.3197 28 13.138 25.3817 12.2539 22.9018H18.9971C18.1142 25.3785 19.9286 28 22.5094 28C24.569 28 26.2447 26.2937 26.2447 24.1963C26.2447 22.0989 24.569 20.3926 22.5094 20.3926H8.75C7.81412 20.3926 6.99856 19.8176 6.64655 18.9799L26.3363 17.8015C26.8738 17.7693 27.3286 17.3853 27.4593 16.8533L29.9627 6.65685C30.1568 5.8662 29.569 5.09795 28.7674 5.09795ZM8.74167 25.4908C8.04081 25.4908 7.47055 24.91 7.47055 24.1963C7.47055 23.4825 8.04081 22.9018 8.74167 22.9018C9.44259 22.9018 10.0129 23.4825 10.0129 24.1963C10.0129 24.91 9.44259 25.4908 8.74167 25.4908ZM22.5093 25.4908C21.8084 25.4908 21.2382 24.91 21.2382 24.1963C21.2382 23.4825 21.8084 22.9018 22.5093 22.9018C23.2103 22.9018 23.7805 23.4825 23.7805 24.1963C23.7805 24.91 23.2103 25.4908 22.5093 25.4908ZM25.2883 15.3507L6.31489 16.4861L5.53225 7.60713H27.1894L25.2883 15.3507Z" />
+  </symbol>
+  <symbol id="pro-cart-btn-svg" width="26" height="24" viewBox="0 0 26 24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M24.9318 4.33873H4.60293L4.30075 0.972337C4.25133 0.421822 3.78995 0 3.23724 0H1.06778C0.478059 0 0 0.478059 0 1.06778C0 1.65749 0.478059 2.13555 1.06778 2.13555H2.26104C2.91315 9.4006 1.22779 -9.37686 3.48914 15.8178C3.57629 16.8039 4.10911 17.874 5.02699 18.6011C3.37209 20.7145 4.88416 23.8301 7.57613 23.8301C9.81042 23.8301 11.3863 21.6017 10.6201 19.4911H16.4642C15.699 21.599 17.2714 23.8301 19.5082 23.8301C21.2932 23.8301 22.7454 22.3778 22.7454 20.5928C22.7454 18.8078 21.2932 17.3556 19.5082 17.3556H7.58335C6.77224 17.3556 6.06543 16.8662 5.76035 16.1533L22.8248 15.1504C23.2907 15.123 23.6849 14.7962 23.7981 14.3434L25.9677 5.66547C26.1359 4.99257 25.6265 4.33873 24.9318 4.33873ZM7.57613 21.6945C6.96872 21.6945 6.47449 21.2003 6.47449 20.5928C6.47449 19.9854 6.96872 19.4911 7.57613 19.4911C8.18359 19.4911 8.67782 19.9854 8.67782 20.5928C8.67782 21.2003 8.18359 21.6945 7.57613 21.6945ZM19.5081 21.6945C18.9007 21.6945 18.4064 21.2003 18.4064 20.5928C18.4064 19.9854 18.9007 19.4911 19.5081 19.4911C20.1156 19.4911 20.6098 19.9854 20.6098 20.5928C20.6098 21.2003 20.1156 21.6945 19.5081 21.6945ZM21.9165 13.0645L5.47291 14.0309L4.79462 6.47423H23.5642L21.9165 13.0645Z" />
+  </symbol>
+  <symbol id="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" xmlns="http://www.w3.org/2000/svg">
+  <path d="M28.7674 5.09795H5.31106L4.9624 1.14248C4.90537 0.495635 4.37301 0 3.73528 0H1.23205C0.551605 0 0 0.561712 0 1.25462C0 1.94753 0.551605 2.50924 1.23205 2.50924H2.60889C3.36132 11.0456 1.41668 -11.0177 4.02592 18.5857C4.12648 19.7443 4.74127 21.0017 5.80036 21.856C3.89087 24.3392 5.63556 28 8.74167 28C11.3197 28 13.138 25.3817 12.2539 22.9018H18.9971C18.1142 25.3785 19.9286 28 22.5094 28C24.569 28 26.2447 26.2937 26.2447 24.1963C26.2447 22.0989 24.569 20.3926 22.5094 20.3926H8.75C7.81412 20.3926 6.99856 19.8176 6.64655 18.9799L26.3363 17.8015C26.8738 17.7693 27.3286 17.3853 27.4593 16.8533L29.9627 6.65685C30.1568 5.8662 29.569 5.09795 28.7674 5.09795ZM8.74167 25.4908C8.04081 25.4908 7.47055 24.91 7.47055 24.1963C7.47055 23.4825 8.04081 22.9018 8.74167 22.9018C9.44259 22.9018 10.0129 23.4825 10.0129 24.1963C10.0129 24.91 9.44259 25.4908 8.74167 25.4908ZM22.5093 25.4908C21.8084 25.4908 21.2382 24.91 21.2382 24.1963C21.2382 23.4825 21.8084 22.9018 22.5093 22.9018C23.2103 22.9018 23.7805 23.4825 23.7805 24.1963C23.7805 24.91 23.2103 25.4908 22.5093 25.4908ZM25.2883 15.3507L6.31489 16.4861L5.53225 7.60713H27.1894L25.2883 15.3507Z" />
+  </symbol>
+  <!-- end of Prashanto -->
+
+  <symbol id="faq-right-arrow-svg" width="16" height="14" viewBox="0 0 16 14" xmlns="http://www.w3.org/2000/svg">
+  <path d="M15.7443 6.03377L9.9661 0.255478C9.80115 0.0905358 9.58132 0 9.34692 0C9.11225 0 8.89254 0.0906659 8.7276 0.255478L8.20299 0.780221C8.03818 0.944903 7.94738 1.16487 7.94738 1.3994C7.94738 1.63381 8.03818 1.86119 8.20299 2.02587L11.5739 5.40418H0.864383C0.381525 5.40418 0 5.7822 0 6.26518V7.00703C0 7.49002 0.381525 7.90615 0.864383 7.90615H11.6121L8.20312 11.3033C8.03831 11.4683 7.94751 11.6822 7.94751 11.9168C7.94751 12.1511 8.03831 12.3682 8.20312 12.533L8.72773 13.056C8.89267 13.221 9.11238 13.3108 9.34704 13.3108C9.58145 13.3108 9.80128 13.2198 9.96623 13.0549L15.7444 7.27669C15.9097 7.11123 16.0006 6.89035 16 6.65555C16.0005 6.41998 15.9097 6.19897 15.7443 6.03377Z" fill="#F3BF00"/>
+  </symbol>
+  <symbol id="faq-left-arrow-svg" width="28" height="8" viewBox="0 0 28 8" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0.472126 3.08605L4.5577 0.205728C5.29795 -0.31609 6.32108 0.215273 6.32108 1.12005V2.88171H25.9379C26.5557 2.88171 27.0566 3.38257 27.0566 4.00045C27.0566 4.61832 26.5557 5.11911 25.9379 5.11911H6.32123V6.8807C6.32123 7.79144 5.29266 8.31288 4.55792 7.79502L0.472349 4.91469C-0.151566 4.47513 -0.164167 3.53561 0.472126 3.08605Z"/>
+  </symbol>
+
   <symbol id="breadcrumbs-left-arrow-svg" width="28" height="8" viewBox="0 0 28 8" xmlns="http://www.w3.org/2000/svg">
   <path d="M0.472492 3.08605L4.55806 0.205728C5.29832 -0.31609 6.32145 0.215273 6.32145 1.12005V2.88171H25.9383C26.5561 2.88171 27.057 3.38257 27.057 4.00045C27.057 4.61832 26.5561 5.11911 25.9383 5.11911H6.32159V6.8807C6.32159 7.79144 5.29302 8.31288 4.55829 7.79502L0.472715 4.91469C-0.151199 4.47513 -0.163801 3.53561 0.472492 3.08605Z" fill="#F3BF00"/>
   </symbol>
+  
+
+
+
+  <!-- end of Shoriful -->
+
+
 
 
 </svg>
+
 
 </head>
 <body>
@@ -99,8 +172,10 @@
                 <a href="#"><img src="assets/images/logo.png"></a>
               </div>
             </div>
-            <div class="hdr-rgt">
-              <nav class="main-nav">
+            <div class="hdr-rgt clearfix">
+              
+              
+              <nav class="main-nav clearfix">
                 <ul class="clearfix reset-list">
                   <li class="current-menu-item"><a href="#">Home</a></li>
                   <li class="menu-item-has-children">
@@ -117,37 +192,39 @@
                   <li><a href="#">Contact</a></li>
                 </ul>
               </nav>
-              <div class="hdr-social">
-                <ul class="reset-list">
-                  <li>
-                    <a href="#">
-                      <i>
-                        <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;">
-                          <use xlink:href="#facebook-icon-svg"></use>
-                        </svg> 
-                      </i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i>
-                        <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;">
-                          <use xlink:href="#instagram-icon-svg"></use>
-                        </svg> 
-                      </i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="hdr-sign-up">
-                <a href="#">
-                  <i>
-                    <svg class="sign-up-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                      <use xlink:href="#sign-up-icon-svg"></use>
-                    </svg> 
-                  </i>
-                  <strong>Aanmelden</strong>
-                </a>
+              <div class="hdr-icons-cntlr clearfix">
+                <div class="hdr-social">
+                  <ul class="reset-list">
+                    <li>
+                      <a href="#">
+                        <i>
+                          <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;">
+                            <use xlink:href="#facebook-icon-svg"></use>
+                          </svg> 
+                        </i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i>
+                          <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;">
+                            <use xlink:href="#instagram-icon-svg"></use>
+                          </svg> 
+                        </i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="hdr-sign-up">
+                  <a href="#">
+                    <i>
+                      <svg class="sign-up-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
+                        <use xlink:href="#sign-up-icon-svg"></use>
+                      </svg> 
+                    </i>
+                    <strong>Aanmelden</strong>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -458,14 +535,14 @@
           <div class="ftr-col-main clearfix">
             <div class="ftr-col ftr-col-1">
               <div class="ftr-logo-1">
-                <i><img src="assets/images/ftr-logo-1.png" alt=""></i>
+                <a href="#"><img src="assets/images/logo.png" alt=""></a>
               </div>
               <div class="ftr-logo-2">
                 <i><img src="assets/images/ftr-logo-2.png" alt=""></i>
               </div>
             </div>
-            <div class="ftr-col ftr-col-2">
-              <h6>Navigatie</h6>
+            <div class="ftr-col ftr-col-2"> 
+              <h6><span>Navigatie</span></h6>
               <ul class="ulc">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Over Ons</a></li>
@@ -474,7 +551,7 @@
               </ul>
             </div>
             <div class="ftr-col ftr-col-3">
-              <h6>Categorieën</h6>
+              <h6><span>Categorieën</span></h6>
               <ul class="ulc">
                 <li><a href="#">Meubilair</a></li>
                 <li><a href="#">Gedekte tafel</a></li>
@@ -483,7 +560,7 @@
               </ul>              
             </div>
             <div class="ftr-col ftr-col-4">
-              <h6>mijn rekening</h6>
+              <h6><span>mijn rekening</span></h6>
               <ul class="ulc">
                 <li><a href="#">Aanmelden</a></li>
                 <li><a href="#">Inloggen</a></li>
@@ -491,23 +568,47 @@
               </ul>               
             </div>
             <div class="ftr-col ftr-col-5">
-              <h6>contact</h6>
+              <h6 class="active"><span>contact</span></h6>
               <ul class="ulc">
                 <li>
-                  <i><img src="assets/images/ftr-map-icon.svg" alt=""></i>
-                  <a href="#">Dagmoedstraat 88 poort 3 <br>9500 Geraardsbergen</a>
+                  <a href="#" target="_blank">
+                    <i>
+                      <svg class="ftr-map-icon-svg" width="19" height="19" viewBox="0 0 19 19" fill="#222020;">
+                        <use xlink:href="#ftr-map-icon-svg"></use>
+                      </svg> 
+                    </i>
+                    <span>Dagmoedstraat 88 poort 3<br>9500 Geraardsbergen</span>
+                  </a>
                 </li>
                 <li>
-                  <i><img src="assets/images/ftr-cell-icon.svg" alt=""></i>
-                  <a href="#">0478 87 08 45</a>
+                  <a href="tel:0478 87 08 45">
+                    <i>
+                      <svg class="ftr-cell-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#222020;">
+                        <use xlink:href="#ftr-cell-icon-svg"></use>
+                      </svg> 
+                    </i>
+                    <span>0478 87 08 45 </span>
+                  </a>
                 </li>
                 <li>
-                  <i><img src="assets/images/ftr-cell-icon.svg" alt=""></i>
-                  <a href="#">0476 65 90 22</a>
+                  <a href="tel:0476 65 90 22">
+                    <i>
+                      <svg class="ftr-cell-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#222020;">
+                        <use xlink:href="#ftr-cell-icon-svg"></use>
+                      </svg> 
+                    </i>
+                    <span>0476 65 90 22</span>
+                  </a>
                 </li>
                 <li>
-                  <i><img src="assets/images/ftr-mail-icon.svg" alt=""></i>
-                  <a href="#">info@rentmen.be</a>
+                  <a href="mailto:info@rentmen.be">
+                    <i>
+                      <svg class="ftr-mail-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#222020;">
+                        <use xlink:href="#ftr-mail-icon-svg"></use>
+                      </svg> 
+                    </i>
+                    <span>info@rentmen.be</span>
+                  </a>
                 </li>
               </ul>              
             </div>
@@ -516,7 +617,6 @@
       </div>
     </div>
   </div>
-
   <div class="ftr-btm">
     <div class="container">
       <div class="row">
@@ -542,6 +642,97 @@
   </div>
 </footer>
 
+<div class="xs-menu-bar xs-menu-bar-open">
+  <div class="xs-menu-bar-inr">
+    <div class="xs-humbergur-btn">
+      <span><img src="assets/images/xs-humbergar-icon.png"></span>
+      <strong>Menu</strong>
+    </div>
+    <div class="xs-menu-bar-cart">
+      <a href="#">
+        <img src="assets/images/xs-cart-icon.png">
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="show-sm">
+  <div class="xs-pop-up-menu">
+    <div class="xs-pop-up-menu-inr">
+      <div class="xs-pop-menu-con">
+        <nav class="xs-main-nav clearfix">
+          <ul class="clearfix reset-list">
+            <li class="current-menu-item"><a href="#">Home</a></li>
+            <li class="menu-item-has-children">
+              <a href="#">Over Ons</a>
+              <ul class="sub-menu">
+                <li><a href="#">sub menu item</a></li>
+                <li><a href="#">sub menu item</a></li>
+                <li><a href="#">sub menu item</a></li>
+                <li><a href="#">sub menu item</a></li>
+                <li><a href="#">sub menu item</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Nieuws</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="xs-social">
+          <div class="hdr-social">
+            <ul class="reset-list">
+              <li>
+                <a href="#">
+                  <i>
+                    <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#FFFFFF">
+                      <use xlink:href="#facebook-icon-svg"></use>
+                    </svg> 
+                  </i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i>
+                    <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#FFFFFF">
+                      <use xlink:href="#instagram-icon-svg"></use>
+                    </svg> 
+                  </i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="xs-sign-up">
+          <div class="hdr-sign-up">
+            <a href="#">
+              <i>
+                <svg class="sign-up-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#FFFFFF">
+                  <use xlink:href="#sign-up-icon-svg"></use>
+                </svg> 
+              </i>
+              <strong>Aanmelden</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="xs-menu-bar xs-menu-bar-close">
+        <div class="xs-menu-bar-inr">
+          <div class="xs-humbergur-btn">
+            <span><img src="assets/images/xs-close-icon.png"></span>
+            <strong>Sluit</strong>
+          </div>
+          <div class="xs-menu-bar-cart">
+            <a href="#">
+              <img src="assets/images/xs-cart-icon.png">
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
 <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
 <script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script>
 <script src="assets/js/popper.min.js"></script>
@@ -549,11 +740,11 @@
 <script src="assets/js/bootstrap-select.min.js"></script>
 <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 <script src="assets/fancybox3/dist/jquery.fancybox.min.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
 <script src="assets/slick.slider/slick.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo2-QJ7RdCkLw3NFZEu71mEKJ_8LczG-c"></script>
 <script src="assets/js/jquery.matchHeight-min.js"></script>
 <script src="assets/js/app.js"></script>
-<script src="assets/js/wow.min.js"></script>
 <script src="assets/js/main.js"></script>
 
 </body>

@@ -342,6 +342,9 @@ nav.main-nav ul.sub-menu li:hover:after {
 .hdr-icons-cntlr{
 	order: 2;
 }
+.xs-menu-bar{
+	display: none;
+}
 
 
 @media(max-width: 1499px){
@@ -452,6 +455,9 @@ nav.main-nav ul.sub-menu li:hover:after {
 }
 
 @media(max-width: 767px){
+	.xs-menu-bar{
+		display: block;
+	}
 	.hdr-rgt{
 		display: none;
 	}
@@ -474,7 +480,7 @@ nav.main-nav ul.sub-menu li:hover:after {
 		display: none;
 	}
 	.hdr-btmbar{
-		
+		padding-top: 0;
 	}
 	.hdr-topbar-inr{
 		padding-left: 0;
