@@ -197,17 +197,20 @@
 }
 .pro-calendar{
   padding: 32px 0 35px;
+  display: flex;
+  align-items: center;
 }
 .pro-calendar i{
   display: inline-block;
   vertical-align: baseline;
-  max-width: 32px;
-  padding-right: 10px;
+  width: 32px;
+  padding-right: 0;
   cursor: pointer;
   position: relative;
   top: -1px;
 }
 .pro-calendar span{
+  padding-left: 10px;
   display: inline-block;
   vertical-align: baseline;
   font-weight: 700;
@@ -463,7 +466,7 @@
   display: inline-block;
   vertical-align: baseline;
   text-align: center;
-  z-index: 5;
+  z-index: 15;
   cursor: pointer;
 }
 .organizeSlider-arrows .rightArrow{
@@ -479,7 +482,7 @@
   display: inline-block;
   vertical-align: baseline;
   text-align: center;
-  z-index: 5;
+  z-index: 15;
   cursor: pointer;
 }
 .organizeSlider-arrows i {
@@ -828,7 +831,7 @@
     text-align: center;
   }
   .organize-party-bg-main {
-    min-height: 290px;
+    min-height: 250px;
   }  
   .interested-pro-item-sec h2 {
     font-size: 30px;
@@ -842,6 +845,13 @@
     font-size: 30px;
     line-height: 35px;
   }  
+  .organize-party-bg-wrp{
+    overflow: hidden;
+  }
+  .organize-party-bg-wrp .organize-party-bg-slider{
+    margin-left: -8px;
+    margin-right: -8px;
+  }
 }
 
 @media(max-width: 575px){
@@ -874,7 +884,7 @@
     width: 130px;
   }
   .pro-cart-btn {
-    width: 155px;
+    width: 150px;
     float: left;
   }
   .pro-cart-btn a i svg {
