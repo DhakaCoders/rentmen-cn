@@ -45,7 +45,7 @@ Desktop-->
 
 New---->
 
-1. i) https://www.screencast.com/t/nyfoK85gjt
+1. i) https://www.screencast.com/t/nyfoK85gjt(ok)
 	text barle niche neme jashce then satha kheyal rkahte hobe https://www.screencast.com/t/agR402C64  text barle, img tao always cente a thakbe
 
 2. https://www.screencast.com/t/FOKyiUbchy5 ai button a hover korle amon koro -> 
@@ -61,7 +61,7 @@ Responsive--->
 	991px a 3 ta
 	639px a ai button ta https://www.screencast.com/t/iAxygyiMMdL(ok)
 
-3. https://www.screencast.com/t/srd3Am8C
+3. https://www.screencast.com/t/srd3Am8C(ok)
 	responsive tanle buja jasche na j responsive thik thak hoiche kina,
 	so amader k jquery window resize function use korte hobe jate responsive tanle valu ta auto update hoy, ate bar bar load dite hobena
 
