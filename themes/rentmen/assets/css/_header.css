@@ -537,6 +537,7 @@ nav.main-nav ul.sub-menu li:hover:after {
 		z-index: 60;
 		text-align: center;
 		display: none;
+		overflow-y: scroll;
 	}
 	.xs-pop-up-menu-inr{
 		position: relative;
@@ -608,9 +609,9 @@ nav.main-nav ul.sub-menu li:hover:after {
 	li.menu-item-has-children > a.xs-sub-menu-expend:after{
 		content: "\f106"!important;
 	}
-	.xs-pop-menu-con{
+	/*.xs-pop-menu-con{
 		overflow-y: scroll;
-	}
+	}*/
 	.xs-main-nav .sub-menu li{
 		padding-top: 5px;
 	}

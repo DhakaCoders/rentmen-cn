@@ -78,8 +78,7 @@ Responsive new--->
 2. sob slider ar break gulo thik korte hobe
 
 3. https://www.screencast.com/t/M03NYhwWnY
-	767px a ai img ta chapa chapi hoye geche img ar height 100% deoa jabena. div a use koro
-	https://www.screencast.com/t/dghkYnVuV ai bottom arrow kete after use korte paro. then xs a none kore dila. try kore dekho hoykina
+	767px a ai img ta chapa chapi hoye geche img ar height 100% deoa jabena. 
 
     
 			
