@@ -60,12 +60,23 @@
   width:  23.45%;
 }
 .ftr-logo-1{
-  margin-bottom: 20px;
+  margin-bottom: 27px;
 }
 .ftr-logo-1 a{
   display: inline-block;
   vertical-align: baseline;
   max-width: 255px;
+  position: relative;
+}
+.ftr-logo-1 a:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+    background: url(../images/logo-angle.png);
+    width: 24px;
+    height: 13px;
+    background-size: 100% auto;
 }
 .ftr-logo-1 a:hover{
   opacity: .8
@@ -233,14 +244,19 @@
   .ftr-col-3,
   .ftr-col-4,
   .ftr-col-5{
-    width: 33.333%;
+    width: 25%;
     margin-bottom: 25px;
+  }
+  .ftr-col-1{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 25px;
   }
   .ftr-col-main {
       padding-top: 50px;
   }  
-  .ftr-col:nth-child(3n+1){
-    clear: left;
+  .ftr-col.ftr-col-5 ul li{
+    padding-left: 0;
   }
   .ftr-logo-1 a {
     max-width: 190px;
@@ -268,6 +284,9 @@
   .ftr-top {
     padding: 50px 0 27px;
   }
+  .ftr-logo-1 a{
+    max-width: 200px;
+  }
 }
 
 @media(max-width: 767px){
@@ -282,7 +301,9 @@
     padding-bottom: 55px;
   }
 
-
+  .ftr-logo-1{
+    margin-bottom: 10px;
+  }
 
 
   .ftr-col{
@@ -366,6 +387,12 @@
   }
   .ftr-col-main {
     border-top: 0;
+  }
+  .ftr-logo-1 a:after{
+    display: none;
+  }
+  .ftr-col-1{
+    padding-bottom: 0;
   }
 }
 @media(max-width: 575px){  

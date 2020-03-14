@@ -615,7 +615,4 @@ $('.xs-menu-bar-close').on('click', function(){
 
 
 
-
-    new WOW().init();
-
 })(jQuery);

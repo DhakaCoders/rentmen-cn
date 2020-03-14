@@ -629,6 +629,9 @@ Gallery design
 		display: flex;
 		align-items: center;
 	}
+	.dft-share-on-xs-cntlr{
+		margin-bottom: 0!important;
+	}
 }
 
 
@@ -756,6 +759,11 @@ Gallery design
 	.fl-dft-lftimg-rgtdes.fl-dft-rgtimg-lftdes .fl-dft-lftimg-rgtdes-rgt{
 		padding-right: 0;
 	}
+	.dft-question-mark-slide-item-inr strong{
+		max-width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 
@@ -827,7 +835,7 @@ Gallery design
 		padding: 45px 0 40px
 	}
 	.default-page-con{
-		padding-bottom: 55px;
+		padding-bottom: 50px;
 	}
 	.dft-2grd-img-con-item-des h4{
 		margin-bottom: 15px;
