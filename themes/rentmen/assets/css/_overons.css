@@ -260,6 +260,15 @@ overons-service-sec-wrp
 	.overons-service-wrp .dft-slider-pagi.slick-dotted.slick-slider {
 	    margin-bottom: 10px !important;
 	}
+	.dft-slider-pagi > li{
+		display: none !important;
+	}
+	.dft-slider-pagi > li:first-child{
+		display: block !important;
+	}
+	.dft-slider-pagi.slick-initialized > li{
+		display: block !important;
+	}
 
 }
 
