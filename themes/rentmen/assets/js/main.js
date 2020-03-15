@@ -200,7 +200,7 @@ if (windowWidth <= 639) {
 }
 
 
-if (windowWidth < 768) {
+/*if (windowWidth < 768) {
   if( $('.dft-slider-pagi-2').length ){
       $('.dft-slider-pagi-2').slick({
         dots: true,
@@ -211,7 +211,7 @@ if (windowWidth < 768) {
         slidesToScroll: 1
       });
   }
-}
+}*/
 
 if( $('.hm-slider-wrp').length ){
     $('.hm-slider-wrp').slick({
@@ -313,7 +313,7 @@ if( $('.product-slider-wrp').length ){
   });
 }
 
-
+if (windowWidth > 767) {
 if( $('.interestedItemSlider').length ){
   $('.interestedItemSlider').slick({
     slidesToShow: 3,
@@ -342,11 +342,10 @@ if( $('.interestedItemSlider').length ){
     ]
   });
 }
+}
 
-
-if (windowWidth > 767) {
-  if( $('.organizePartySlider').length ){
-    $('.organizePartySlider').slick({
+  if( $('.organizePartySlider-1').length ){
+    $('.organizePartySlider-1').slick({
       slidesToShow: 5,
       slidesToScroll: 1,
       infinite: true,
@@ -374,7 +373,9 @@ if (windowWidth > 767) {
           breakpoint: 768,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            dots: true,
+            arrows: false
           }
         },
         {
@@ -387,7 +388,55 @@ if (windowWidth > 767) {
       ]
     });
   }
-}
+
+
+
+  if( $('.organizePartySlider-2').length ){
+    $('.organizePartySlider-2').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      infinite: true,
+      speed: 700,
+      dots: true,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: false
+          }
+        },
+        {
+          breakpoint: 476,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  }
+
+
 
 
 if( $('.overview-feature-slider').length ){
@@ -410,7 +459,9 @@ if( $('.overview-feature-slider').length ){
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false
         }
       },
       {
