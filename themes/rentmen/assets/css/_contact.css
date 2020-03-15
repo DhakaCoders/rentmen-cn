@@ -125,6 +125,15 @@
  Contact Form
 ---------------------
 */
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container:after,
+.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container:before{
+	content: "";
+	clear: both;
+	display: table;
+}
+.contact-form-wrp  div.wpforms-container-full .wpforms-form .wpforms-field{
+	clear: initial;
+}
 .contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field{
 	width: 50%;
 	float: left;
@@ -155,6 +164,7 @@
 }
 .contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field input{
 	width: 100%;
+	max-width: 100%;
 	height: 56px;
 	background: #FFFFFF;
 	border: 2px solid #F3F3F3;

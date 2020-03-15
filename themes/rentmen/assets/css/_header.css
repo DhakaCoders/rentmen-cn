@@ -709,6 +709,9 @@ nav.main-nav ul.sub-menu li:hover:after {
 		color: #000;
 		display: block;
 	}
+	.rm-search-submit-btn button:before{
+		content: none;
+	}
 
 }
 
