@@ -343,6 +343,7 @@ hm-two-grid-sec-wrp
     top: -50px;
     z-index: 1;
 }
+
 .ovr-two-grid-dsc span,
 .hm-two-grid-dsc span,
 .hm-two-grid-dsc-title span,
@@ -364,6 +365,7 @@ hm-two-grid-sec-wrp
 	margin-bottom: 22px;
 	font-weight: 700;
 	font-family: 'Oswald',  sans-serif;	
+	display: block;
 }
 .ovr-two-grid-dsc p,
 .hm-two-grid-dsc p{

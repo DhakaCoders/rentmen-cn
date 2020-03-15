@@ -1,18 +1,25 @@
 /**
 All heading
 */ 
-h1,h2,h3,h4,h5,h6{  
+h1,h2,h3,h4,h5,h6,.rm-nieuws-overview-entry-hdr-title{  
 	line-height: 1.2;
 	font-weight: 700;
 	font-family: 'Oswald',  sans-serif;
 } 
-h1{ 
+h1,
+.dfp-promo-module-title{ 
 	font-size: 48px; 
+	display: block;
+}
+.dfp-promo-module-title{
+	font-size: 48px!important; 
+	line-height: 1.2!important;
+	display: block;
 }
 h2{ 
 	font-size: 40px;
 }
-h3{
+h3,.rm-nieuws-overview-entry-hdr-title{
 	font-size: 36px;
 }
 h4{

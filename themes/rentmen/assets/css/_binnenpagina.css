@@ -11,6 +11,7 @@
 	overflow: hidden;
 }
 .default-page-con h1,
+.dfp-promo-module-title,
 .default-page-con h2,
 .default-page-con h3,
 .default-page-con h4,
@@ -92,9 +93,11 @@ ol li::before {
 #nieuws-details-page-cntlr .dfp-promo-module{
 	padding-bottom: 25px;
 }
-.dfp-promo-module h1{
+.dfp-promo-module h1,
+.dfp-promo-module-title{
 	text-transform: uppercase;
 	font-weight: 700;
+	font-family: 'Oswald',  sans-serif;
 }
 .dftPromoModuleSlider{
 	margin-bottom: 0!important;
@@ -163,6 +166,11 @@ ol li::before {
 		transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
+}
+.dft-question-mark-slide-item-title{
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
 }
 .dft-question-mark-slide-item-inr strong{
 	font-weight: 600;
