@@ -1,6 +1,6 @@
 (function($) {
 var windowWidth = $(window).width();
-/*Google Map*/
+/*Google Map Style*/
 var CustomMapStyles  = [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
 
 $('.navbar-toggle').on('click', function(){
@@ -11,20 +11,6 @@ $('.navbar-toggle').on('click', function(){
 if($('.mHc').length){
   $('.mHc').matchHeight();
 };
-
-//$('[data-toggle="tooltip"]').tooltip();
-
-//banner animation
-$(window).scroll(function() {
-  var scroll = $(window).scrollTop();
-  $('.page-banner-bg').css({
-    '-webkit-transform' : 'scale(' + (1 + scroll/2000) + ')',
-    '-moz-transform'    : 'scale(' + (1 + scroll/2000) + ')',
-    '-ms-transform'     : 'scale(' + (1 + scroll/2000) + ')',
-    '-o-transform'      : 'scale(' + (1 + scroll/2000) + ')',
-    'transform'         : 'scale(' + (1 + scroll/2000) + ')'
-  });
-});
 
 
 if($('.fancybox').length){
@@ -48,53 +34,6 @@ Responsive on 767px
 
 
 // }
-
-
-
-// http://codepen.io/norman_pixelkings/pen/NNbqgG
-// https://stackoverflow.com/questions/38686650/slick-slides-on-pagination-hover
-
-
-/**
-Slick slider
-*/
-if( $('.responsive-slider').length ){
-    $('.responsive-slider').slick({
-      dots: true,
-      infinite: false,
-      speed: 300,
-      slidesToShow: 4,
-      slidesToScroll: 4,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ]
-    });
-}
 
 
 
@@ -129,15 +68,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 }
 
-
-/*Shoriful*/
-
-
-
-
-
-
-/*Milon*/
 
 /*
 =======================
@@ -200,19 +130,6 @@ if (windowWidth <= 639) {
 }
 
 
-/*if (windowWidth < 768) {
-  if( $('.dft-slider-pagi-2').length ){
-      $('.dft-slider-pagi-2').slick({
-        dots: true,
-        arrows: false,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 1,
-        slidesToScroll: 1
-      });
-  }
-}*/
-
 if( $('.hm-slider-wrp').length ){
     $('.hm-slider-wrp').slick({
       pauseOnHover: false,
@@ -268,10 +185,6 @@ if( $('#googlemap').length ){
 }
 
 
-
-
-
-/*Prashanto*/
 
 //slick slider
 
@@ -606,10 +519,6 @@ if (windowWidth < 768) {
 
   
 }
-
-
-/*Rannojit*/
-
 
 if( $('.dft-question-mark-slider').length ){
     $('.dft-question-mark-slider').slick({
