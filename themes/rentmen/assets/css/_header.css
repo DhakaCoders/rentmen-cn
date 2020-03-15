@@ -682,7 +682,7 @@ nav.main-nav ul.sub-menu li:hover:after {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding-right: 18px;
+		padding-right: 0;
 		position: relative;
 		z-index: 20;
 	}

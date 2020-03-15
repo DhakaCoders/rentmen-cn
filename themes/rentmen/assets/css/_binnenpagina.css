@@ -263,7 +263,8 @@ ol li::before {
 	padding: 75px 25px 40px;
 	position: relative;
 }
-.dft-blog-item-des h5{
+.dft-blog-item-des h5,
+.dft-blog-item-des .dft-blog-item-title{
 	font-weight: 600;
 	font-size: 22px;
 	line-height: 30px;
@@ -274,10 +275,12 @@ ol li::before {
 .dft-blog-item-des p{
 	margin-bottom: 25px;
 }
-.dft-blog-item-des h5 a{
+.dft-blog-item-des h5 a,
+.dft-blog-item-des .dft-blog-item-title a{
 	color: #1E1E1E;
 }
-.dft-blog-item-des h5 a:hover{
+.dft-blog-item-des h5 a:hover,
+.dft-blog-item-des .dft-blog-item-title a:hover{
 	color: #F3BF00;
 }
 .dft-blog-item-des-date{
