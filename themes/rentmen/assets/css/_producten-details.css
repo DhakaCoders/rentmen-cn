@@ -127,10 +127,13 @@
   display: block;
   margin-bottom: 3px;
 }
-.single-pro-rgt-con > h2{
+.single-pro-rgt-con > h2,
+.pro-details-pro-title strong{
+  display: block;
   font-family: 'Open Sans', sans-serif;
   font-size: 48px;
   line-height: 45px;
+  margin-bottom: 10px;
 }
 .single-pro-rgt-con > span{
   font-weight: 700;
@@ -409,7 +412,8 @@
   display: inline-block!important;
   vertical-align: middle!important;
 }
-.organizePartySlider-item h6{
+.organizePartySlider-item h6,
+.order-process-title{
   font-family: 'Open Sans', sans-serif;
   line-height: 25px;
   text-transform: uppercase;
@@ -770,7 +774,8 @@
     line-height: 38px;
     margin-bottom: 30px;
   }
-  .single-pro-rgt-con > h2 {
+  .single-pro-rgt-con > h2,
+  .pro-details-pro-title strong {
     font-size: 45px;
     line-height: 42px
   }
@@ -837,7 +842,8 @@
     font-size: 30px;
     line-height: 35px;
   }  
-  .single-pro-rgt-con > h2 {
+  .single-pro-rgt-con > h2 ,
+  .pro-details-pro-title strong{
     font-size: 40px;
     line-height: 40px
   }
@@ -865,7 +871,8 @@
     font-size: 26px;
     line-height: 32px;
   } 
-  .single-pro-rgt-con > h2 {
+  .single-pro-rgt-con > h2,
+  .pro-details-pro-title strong {
     font-size: 33px;
     line-height: 33px
   }

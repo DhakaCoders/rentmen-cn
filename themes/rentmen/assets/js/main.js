@@ -344,50 +344,50 @@ if( $('.interestedItemSlider').length ){
 }
 
 
-
-if( $('.organizePartySlider').length ){
-  $('.organizePartySlider').slick({
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    infinite: true,
-    speed: 700,
-    dots: true,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
+if (windowWidth > 767) {
+  if( $('.organizePartySlider').length ){
+    $('.organizePartySlider').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      infinite: true,
+      speed: 700,
+      dots: true,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 476,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
         }
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 476,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  });
+      ]
+    });
+  }
 }
-
 
 
 if( $('.overview-feature-slider').length ){
@@ -540,18 +540,21 @@ $('.ftr-col h6').on('click', function(){
 
 
 // sidebar slide filter
-$('.pro-overview-sidebar-head').on('click', function(){
-  $(this).toggleClass('active');
-  $(this).parent().siblings().find('.pro-overview-sidebar-head').removeClass('active');
-  $(this).parent().find('.pro-filter-main').slideToggle(300);
-  $(this).parent().siblings().find('.pro-filter-main').slideUp(300);
-});
+if (windowWidth < 768) {
+  $('.pro-overview-sidebar-sm-con').on('click', function(){
+    $(this).toggleClass('active');
+    $(this).next().slideToggle(300);
+  });
+  
+  $('.pro-overview-sidebar-head').on('click', function(){
+    $(this).toggleClass('active');
+    $(this).parent().siblings().find('.pro-overview-sidebar-head').removeClass('active');
+    $(this).parent().find('.pro-filter-main').slideToggle(300);
+    $(this).parent().siblings().find('.pro-filter-main').slideUp(300);
+  });
 
-$('.pro-overview-sidebar-sm-con').on('click', function(){
-  $(this).toggleClass('active');
-  $(this).next().slideToggle(300);
-});
-
+  
+}
 
 
 /*Rannojit*/

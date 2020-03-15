@@ -39,7 +39,7 @@ while ( have_posts() ) :
         <article class="default-page-con">
           <div class="dfp-promo-module clearfix">
           <?php 
-            if( !empty(get_the_title()) ) printf('<h1>%s</h1>', get_the_title());
+            if( !empty(get_the_title()) ) printf('<div><strong class="dfp-promo-module-title">%s</div>', get_the_title());
             while ( have_rows('inhoud') ) : the_row(); 
             if( get_row_layout() == 'introductietekst' ){
               $afbeelding = get_sub_field('afbeelding');
@@ -150,7 +150,7 @@ while ( have_posts() ) :
                       <use xlink:href="#question-icon-svg"></use>
                     </svg> 
                   </i>';
-                    printf('<strong>%s</strong>', $usp['titel']);
+                    printf('<h3 class="dft-question-mark-slide-item-title"><strong>%s</strong></h3>', $usp['titel']);
                     echo '<span><img src="'.THEME_URI.'/assets/images/arrow-orange.svg"></span>';
                   echo "</div></div>";
                 endforeach;
@@ -202,7 +202,7 @@ while ( have_posts() ) :
                         echo '<div class="dft-blog-item-des-date"><strong>'.get_the_date('d').'</strong>';
                         echo '<span>'.get_the_date('M').'</span>';
                         echo '</div>';
-                        printf('<h5><a href="%s">%s</a></h5>', get_the_permalink(), get_the_title());
+                        printf('<h3 class="dft-blog-item-title"><a href="%s">%s</a></h3>', get_the_permalink(), get_the_title());
                         echo wpautop( get_the_excerpt(), true );;
                         echo '<a href="'.get_the_permalink().'">Lees Meer</a>';
                         echo '</div>';

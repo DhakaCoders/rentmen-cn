@@ -21,19 +21,19 @@
 	.dfp-promo-module-title{ 
 		font-size: 45px!important; 
 	}
-	h2{ 
+	h2,.contact-page-entry-title{ 
 		font-size: 38px;
 	}
 	h3,.rm-nieuws-overview-entry-hdr-title{
 		font-size: 32px;
 	}
-	h4{
+	h4,.sidebar-widget-title,.overview-feature-box-title{
 		font-size: 24px;
 	}
-	h5{
+	h5,.pro-overview-title,.faq-grd-title{
 		font-size: 22px;
 	} 
-	h6{
+	h6,.order-process-title{
 		font-size: 18px;
 	}
 }
@@ -51,19 +51,19 @@
 	.dfp-promo-module-title{ 
 		font-size: 40px!important; 
 	}
-	h2{ 
+	h2,.contact-page-entry-title{ 
 		font-size: 36px;
 	}
 	h3,.rm-nieuws-overview-entry-hdr-title{
 		font-size: 30px;
 	}
-	h4{
+	h4,.sidebar-widget-title,.overview-feature-box-title{
 		font-size: 24px;
 	}
-	h5{
+	h5,.pro-overview-title,.faq-grd-title{
 		font-size: 22px;
 	}
-	h6{
+	h6,.order-process-title{
 		font-size: 18px;
 	}
 	.container,
@@ -95,19 +95,19 @@
 	.dfp-promo-module-title{ 
 		font-size: 33px!important; 
 	}
-	h2{ 
+	h2,.contact-page-entry-title{ 
 		font-size: 30px;
 	}
 	h3,.rm-nieuws-overview-entry-hdr-title{
 		font-size: 26px;
 	}
-	h4{
+	h4,.sidebar-widget-title,.overview-feature-box-title{
 		font-size: 23px;
 	}
-	h5{
+	h5,.pro-overview-title,.faq-grd-title{
 		font-size: 20px;
 	}
-	h6{
+	h6,.order-process-title{
 		font-size: 18px;
 	}
 }
