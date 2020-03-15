@@ -345,7 +345,8 @@ hm-two-grid-sec-wrp
 }
 .ovr-two-grid-dsc span,
 .hm-two-grid-dsc span,
-.hm-two-grid-dsc-title span{
+.hm-two-grid-dsc-title span,
+.ovr-two-grid-dsc-title span{
 	display: block;
 	font-size: 24px;
 	line-height: 26px;
@@ -355,7 +356,8 @@ hm-two-grid-sec-wrp
 }
 .ovr-two-grid-dsc h2,
 .hm-two-grid-dsc h2,
-.hm-two-grid-dsc-title strong{
+.hm-two-grid-dsc-title strong,
+.ovr-two-grid-dsc-title strong{
 	margin: 0;
 	font-size: 48px;
 	line-height: 1.1;
@@ -556,7 +558,8 @@ hm-download-sec-wrp
 	}
 	.ovr-two-grid-dsc h2,
 	.hm-two-grid-dsc h2,
-	.hm-two-grid-dsc-title strong{
+	.hm-two-grid-dsc-title strong,
+	.ovr-two-grid-dsc-title strong{
 		font-size: 43px;
 	}
 	.hm-download-box strong {
@@ -617,7 +620,8 @@ hm-download-sec-wrp
 	}
 	.ovr-two-grid-dsc h2,
 	.hm-two-grid-dsc h2,
-	.hm-two-grid-dsc-title strong{
+	.hm-two-grid-dsc-title strong,
+	.ovr-two-grid-dsc-title strong{
 		font-size: 40px;
 	}
 	.hm-de-kijker-head {
@@ -735,7 +739,8 @@ hm-download-sec-wrp
 	}
 	.ovr-two-grid-dsc h2,
 	.hm-two-grid-dsc h2,
-	.hm-two-grid-dsc-title strong{
+	.hm-two-grid-dsc-title strong,
+	.ovr-two-grid-dsc-title strong{
 		font-size: 38px;
 	}
 	.hm-download-sec-wrp {
@@ -895,7 +900,8 @@ hm-download-sec-wrp
 	}
 	.ovr-two-grid-dsc h2,
 	.hm-two-grid-dsc h2,
-	.hm-two-grid-dsc-title strong{
+	.hm-two-grid-dsc-title strong,
+	.ovr-two-grid-dsc-title strong{
 		font-size: 34px;
 	}
 	.hm-download-box-item {
@@ -913,7 +919,8 @@ hm-download-sec-wrp
 	}
 	.ovr-two-grid-dsc span,
 	.hm-two-grid-dsc span,
-	.hm-two-grid-dsc-title span{
+	.hm-two-grid-dsc-title span,
+	.ovr-two-grid-dsc-title span{
 		padding-bottom: 5px;
 	}
 	.hm-two-grid-dsc a {
@@ -999,7 +1006,8 @@ hm-download-sec-wrp
 	}
 	.ovr-two-grid-dsc h2,
 	.hm-two-grid-dsc h2,
-	.hm-two-grid-dsc-title strong{
+	.hm-two-grid-dsc-title strong,
+	.ovr-two-grid-dsc-title strong{
 		font-size: 30px;
 	}
 	.hm-post-categorie-wrp ul{
