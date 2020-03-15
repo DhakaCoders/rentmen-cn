@@ -23,6 +23,8 @@ if( !function_exists('cbv_theme_setup') ){
 			add_theme_support('category-thumbnails');
 		}
         add_image_size( 'faqfull', 534, 563, true );
+        add_image_size( 'bloggrid', 422, 280, true );
+        add_image_size( 'gallerygrid', 440, 272, true );
 
 		
 		// add size to media uploader
