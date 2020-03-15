@@ -8,8 +8,12 @@
 	margin-left: auto;
 	margin-right: auto;
 }
-.rm-nieuws-overview-entry-hdr h3{
+.rm-nieuws-overview-entry-hdr h3,
+.rm-nieuws-overview-entry-hdr-title{
 	margin-bottom: 27px;
+	font-weight: 700;
+	font-family: 'Oswald',  sans-serif;
+	display: block;
 }
 .rm-news-section{
 	overflow: hidden;
@@ -91,7 +95,8 @@
 	.rm-news-sec-inr ul li:nth-child(2n+1){
 		clear: left;
 	}
-	.rm-nieuws-overview-entry-hdr h3{
+	.rm-nieuws-overview-entry-hdr h3,
+	.rm-nieuws-overview-entry-hdr-title{
 		margin-bottom: 24px;
 	}
 }
@@ -112,7 +117,8 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
-	.rm-nieuws-overview-entry-hdr h3{
+	.rm-nieuws-overview-entry-hdr h3,
+	.rm-nieuws-overview-entry-hdr-title{
 		margin-bottom: 20px;
 	}
 }

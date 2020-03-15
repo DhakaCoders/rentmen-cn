@@ -201,8 +201,8 @@ if (windowWidth <= 639) {
 
 
 if (windowWidth < 768) {
-  if( $('.dft-slider-pagi').length ){
-      $('.dft-slider-pagi').slick({
+  if( $('.dft-slider-pagi-2').length ){
+      $('.dft-slider-pagi-2').slick({
         dots: true,
         arrows: false,
         infinite: false,
