@@ -94,7 +94,8 @@
     </div>
   </div>
 </footer>
-
+<script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/popper.min.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/bootstrap.min.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/bootstrap-select.min.js"></script>
