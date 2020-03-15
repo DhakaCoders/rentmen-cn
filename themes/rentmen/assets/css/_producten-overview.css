@@ -933,6 +933,25 @@ html .price-slider .ui-button.ui-state-disabled:active {
     margin-bottom: 50px;
     font-weight: 700;
     font-family: 'Oswald',  sans-serif;
+    letter-spacing: 0.03em;
+  }
+  .pro-cat-single-top-title-xs{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .pro-cat-single-top-title-xs strong{
+    display: block;
+    font-weight: 700;
+    font-size: 36px;
+    font-family: 'Oswald',  sans-serif;
+    letter-spacing: 0.03em;
+  }
+  .single-pro-details-sec{
+    padding-top: 30px!important;
+  }
+  .single-pro-lft-con{
+    padding-top: 0!important;
   }
 }
 
