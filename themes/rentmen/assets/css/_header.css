@@ -474,7 +474,7 @@ nav.main-nav ul.sub-menu li:hover:after {
 		border-top: 8px solid #F3BF00;
 		padding-top: 25px;
 		padding-bottom: 25px;
-		border-bottom: 1px solid #E5E5E5;
+		border-bottom: 2px solid #E5E5E5;
 	}
 	.hdr-cart-btn{
 		display: none;
@@ -626,6 +626,90 @@ nav.main-nav ul.sub-menu li:hover:after {
 	}
 
 	/*end of xs popup menu*/
+	.hdr-btmbar-inr{
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-right: 120px;
+		min-height: 64px;
+	}
+	.hdr-btmbar{
+		padding-bottom: 0;
+	}
+	header .hdr-search-form{
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    bottom: 0;
+	    max-width: initial;
+	    width: 100px;;
+	    padding-right: 0;
+	    padding-left: 0;
+	}
+	header .rm-search-form-xs input[type="search"]{
+		border-top: none;
+		width: 0;
+		display: none;
+		padding: 20px 120px 15px 20px;
+		font-weight: 700;
+	}
+	header .hdr-btm-select-filter {
+	    width: 100%;
+	}
+	header .rm-search-form{
+		padding-right: 0;
+		height: 100%;
+	}
+	header .rm-search-submit-btn{
+		width: 100px;
+		border-left: 2px solid #E3E3E3;
+		position: absolute!important;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+	.hdr-btm-select-filter .rm-selctpicker-ctlr button.btn{
+		border: none;
+	}
+	.rm-search-submit-btn button span{
+		display: none;
+	}
+	.rm-search-form input[type="search"]{
+		background: #fff;
+
+	}
+
+	header .rm-search-submit-btn{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-right: 0;
+		position: relative;
+		z-index: 20;
+	}
+	header .rm-search-form-xs,
+	header .rm-search-submit-btn,
+	.rm-search-form-xs,
+	header .rm-search-submit-btn,
+	.rm-search-form-xs form{
+		height: 100%;
+	}
+	.hdr-btmbar.hdr-btmbar-cntlr .hdr-search-form{
+		width: 100%;
+		background: #fff;
+		width: 100%;
+		left: 0;
+	}
+	.rm-search-form-xs{
+		position: relative;
+		z-index: 20;
+		background: #fff;
+	}
+	header .hdr-btmbar.hdr-btmbar-cntlr .rm-search-form-xs input[type="search"]{
+		width: 100%;
+		color: #000;
+		display: block;
+	}
+
 }
 
 @media(max-width: 575px){

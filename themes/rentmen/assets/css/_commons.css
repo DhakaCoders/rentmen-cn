@@ -286,6 +286,12 @@ form .dropdown-menu li a{
 .bootstrap-select .dropdown-toggle:focus{
 	outline: none!important;
 }
+.dropdown-menu.show{
+	width: 100%;
+}
+.dropup .dropdown-toggle::after{
+	content: none!important;
+}
 
 
 

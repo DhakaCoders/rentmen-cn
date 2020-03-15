@@ -51,7 +51,8 @@ a:hover{
 ========================
 */
 
-.hm-slider-wrp .slick-current .hm-banner-dsc h3{
+.hm-slider-wrp .slick-current .hm-banner-dsc h3,
+.hm-slider-wrp .slick-current .hm-banner-dsc .hm-bnr-title-1{
   -webkit-animation-name: fadeInUpShort;
   animation-name: fadeInUpShort;
   -webkit-animation-duration: 1s;
@@ -61,7 +62,8 @@ a:hover{
   -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;	
 }
-.hm-slider-wrp .slick-current .hm-banner-dsc h1{
+.hm-slider-wrp .slick-current .hm-banner-dsc h1,
+.hm-slider-wrp .slick-current .hm-banner-dsc .hm-bnr-title-2{
   -webkit-animation-name: fadeInUpShort;
   animation-name: fadeInUpShort;
   -webkit-animation-duration: 1s;
