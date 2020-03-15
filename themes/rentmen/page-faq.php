@@ -42,7 +42,9 @@ $thisID = get_the_ID();
     <div class="row">
       <div class="col-sm-12">
         <div class="faq-cnt-inner">
-          <h2><?php the_title(); ?></h2>
+          <div>
+            <strong class="faw-page-entry-title"><?php the_title(); ?></strong>
+          </div>
           <?php the_content(); ?>
           <div class="rm-search-form">
             <form>
@@ -108,7 +110,7 @@ $terms = get_terms( array(
                 <div class="faq-grd-item mHc">
                   <div class="faq-grd-item-inner">
                     <div class="faq-grd-item-des">
-                      <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                      <h3 class="faq-grd-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                       <?php the_excerpt(); ?>
                       <a href="<?php the_permalink(); ?>">Lees Meer</a>
                     </div>
