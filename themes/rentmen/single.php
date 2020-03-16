@@ -39,7 +39,7 @@ while ( have_posts() ) :
         <article class="default-page-con">
           <div class="dfp-promo-module clearfix">
           <?php 
-            if( !empty(get_the_title()) ) printf('<div><strong class="dfp-promo-module-title">%s</div>', get_the_title());
+            if( !empty(get_the_title()) ) printf('<div><strong class="dfp-promo-module-title">%s</strong></div>', get_the_title());
             while ( have_rows('inhoud') ) : the_row(); 
             if( get_row_layout() == 'introductietekst' ){
               $afbeelding = get_sub_field('afbeelding');
