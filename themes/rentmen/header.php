@@ -192,37 +192,39 @@
                 wp_nav_menu( $mmenuOptions ); 
               ?>
               </nav>
-              <div class="hdr-social">
-                <ul class="reset-list">
-                  <li>
-                    <a href="#">
-                      <i>
-                        <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;">
-                          <use xlink:href="#facebook-icon-svg"></use>
-                        </svg> 
-                      </i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i>
-                        <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;">
-                          <use xlink:href="#instagram-icon-svg"></use>
-                        </svg> 
-                      </i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="hdr-sign-up">
-                <a href="#">
-                  <i>
-                    <svg class="sign-up-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                      <use xlink:href="#sign-up-icon-svg"></use>
-                    </svg> 
-                  </i>
-                  <strong>Aanmelden</strong>
-                </a>
+              <div class="hdr-icons-cntlr clearfix">
+                <div class="hdr-social">
+                  <ul class="reset-list">
+                    <li>
+                      <a href="#">
+                        <i>
+                          <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;">
+                            <use xlink:href="#facebook-icon-svg"></use>
+                          </svg> 
+                        </i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i>
+                          <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;">
+                            <use xlink:href="#instagram-icon-svg"></use>
+                          </svg> 
+                        </i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="hdr-sign-up">
+                  <a href="#">
+                    <i>
+                      <svg class="sign-up-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
+                        <use xlink:href="#sign-up-icon-svg"></use>
+                      </svg> 
+                    </i>
+                    <strong>Aanmelden</strong>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

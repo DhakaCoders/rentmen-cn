@@ -1,48 +1,28 @@
 <?php 
 get_header(); 
-$thisID = get_the_ID();
+$thisID = get_option( 'page_for_posts' );
+get_template_part('templates/page', 'banner');
 ?>
-<section class="breadcrumbs-sec">
-  <div class="container-lg">
-    <div class="row">
-      <div class="col-12">
-        <div class="breadcrumbs-innr hide-xs clearfix">
-          <div class="breadcrumbs-lft-text">
-            <strong class="page-title">Nieuws</strong>
-          </div>          
-          <div class="breadcrumbs-main">
-            <ul>           
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="breadcrumbs-innr show-xs clearfix">
-          <div class="breadcrumbs-left">
-            <a href="#">Home</a>
-          </div>
-          <div class="breadcrumbs-right">
-            <a href="javascript:history.go(-1)">Terug</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>    
-</section>
-
+<?php  
+  $showhidenews = get_field('showhidenews', $thisID);
+  $introsec = get_field('introsec', $thisID);
+  if($showhidenews):
+?>
 <section class="rm-nieuws-overview-entry-hdr-sec">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="rm-nieuws-overview-entry-hdr">
-          <div class="rm-nieuws-overview-entry-hdr-title">Laatste Nieuws</div>
-          <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
+          <?php 
+            if( !empty($introsec['titel']) ) printf('<div class="rm-nieuws-overview-entry-hdr-title">%s</div>', $introsec['titel']);
+            if( !empty($introsec['beschrijving']) ) echo wpautop( $introsec['beschrijving'] );
+          ?>
         </div>
       </div>
     </div>
   </div>
 </section>
+<?php endif; ?>
 <?php if(have_posts()): ?>
 <section class="rm-news-section">
   <div class="container">
