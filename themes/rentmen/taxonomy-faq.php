@@ -46,7 +46,7 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
       <div class="col-sm-12">
         <div class="faq-cnt-inner">
           <?php 
-            if( isset($ccat->name) && !empty($ccat->name)) printf('<h2>%s</h2>', $ccat->name);
+            if( isset($ccat->name) && !empty($ccat->name)) printf('<div><strong class="faw-page-entry-title">%s</strong></div>', $ccat->name);
             if( isset($ccat->description) && !empty($ccat->description))
               echo wpautop( $ccat->description, true );
           ?>
@@ -111,7 +111,7 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
                 <div class="faq-grd-item mHc">
                   <div class="faq-grd-item-inner">
                     <div class="faq-grd-item-des">
-                      <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                      <h3 class="faq-grd-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                       <?php the_excerpt(); ?>
                       <a href="<?php the_permalink(); ?>">Lees Meer</a>
                     </div>

@@ -36,7 +36,7 @@ $thisID = get_the_ID();
     <div class="row">
       <div class="col-md-12">
         <div class="rm-nieuws-overview-entry-hdr">
-          <h3>Laatste Nieuws</h3>
+          <div class="rm-nieuws-overview-entry-hdr-title">Laatste Nieuws</div>
           <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
         </div>
       </div>
@@ -72,9 +72,9 @@ $thisID = get_the_ID();
                       <strong><?php echo get_the_date('d'); ?></strong>
                       <span><?php echo get_the_date('M'); ?></span>
                     </div>
-                    <h5>
+                    <h3 class="dft-blog-item-title">
                      <a href="<?php the_permalink();?>"><?php the_title();?></a>
-                    </h5>
+                    </h3>
                     <?php the_excerpt();?>
                     <a href="<?php the_permalink();?>">Lees Meer</a>
                   </div>

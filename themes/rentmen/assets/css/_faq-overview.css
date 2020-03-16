@@ -5,7 +5,9 @@
 .faq-cnt-inner{
 	text-align: center;
 }
-.faq-cnt-inner h2{
+.faq-cnt-inner h2,
+.faw-page-entry-title{
+	display: block;
 	font-size: 36px;
 	line-height: 53px;
 	color: #222020;
@@ -13,6 +15,8 @@
 	text-transform: uppercase;
 	margin: 0;
 	padding-bottom: 20px;
+	font-weight: 700;
+	font-family: 'Oswald',  sans-serif;
 }
 .faq-cnt-inner p{
 	margin-bottom: 28px;
@@ -117,17 +121,20 @@
 	padding: 72px 20px 35px 25px;
 }
 
-.faq-grd-item-des h5{
+.faq-grd-item-des h5,
+.faq-grd-title{
 	line-height: 30px;
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	padding-bottom: 25px;
 }
-.faq-grd-item-des h5 a{
+.faq-grd-item-des h5 a,
+.faq-grd-title a{
 	color: #1E1E1E;
 }
-.faq-grd-item-des h5 a:hover{
+.faq-grd-item-des h5 a:hover,
+.faq-grd-title a:hover{
 	color: #F3BF00;
 }
 .faq-grd-item-des p{
@@ -209,7 +216,8 @@
 	.faq-content {
 	    padding: 70px 0;
 	}
-	.faq-cnt-inner h2 {
+	.faq-cnt-inner h2,
+	.faw-page-entry-title {
 	    font-size: 34px;
 	    line-height: 50px;
 	    padding-bottom: 15px;
@@ -231,7 +239,8 @@
 	.faq-grd-item-inner {
 	    padding: 50px 20px 30px 25px;
 	}
-	.faq-grd-item-des h5 {
+	.faq-grd-item-des h5,
+	.faq-grd-title {
 	    padding-bottom: 20px;
 	}
 	.faq-grd-item-des p {
@@ -253,7 +262,8 @@
 	.faq-grd-wrap ul li:nth-child(2n+1){
 	    clear: left !important;
 	}
-	.faq-grd-item-des h5 {
+	.faq-grd-item-des h5,
+	.faq-grd-title {
 	    padding-bottom: 15px;
 	    line-height: 26px;
 	    font-size: 18px;
@@ -274,7 +284,8 @@
 	    padding-left: 20px;
 	    padding-right: 20px;
 	}
-	.faq-grd-item-des h5 {
+	.faq-grd-item-des h5,
+	.faq-grd-title {
 	    line-height: 22px;
 	    font-size: 15px;
 	}
@@ -288,7 +299,8 @@
 	.faq-content {
 	    padding: 50px 0;
 	}
-	.faq-cnt-inner h2 {
+	.faq-cnt-inner h2,
+	.faw-page-entry-title {
 	    font-size: 30px;
 	    line-height: 40px;
 	    padding-bottom: 10px;
@@ -320,7 +332,8 @@
 	.faq-grd-item-inner {
 	    padding: 50px 25px 30px 25px;
 	}
-	.faq-grd-item-des h5 {
+	.faq-grd-item-des h5,
+	.faq-grd-title {
 	    line-height: 24px;
 	    font-size: 17px;
 	}
@@ -348,7 +361,8 @@
 }
 
 @media(max-width: 359px){
-	.faq-grd-item-des h5 {
+	.faq-grd-item-des h5,
+	.faq-grd-title {
 	    line-height: 22px;
 	    font-size: 16px;
 	}

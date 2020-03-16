@@ -105,12 +105,14 @@ hm-de-kijker-post-sec-wrp
 	margin: 0 auto;
 	text-align: center;
 }
-.hm-de-kijker-head h2{
+.hm-de-kijker-head h2,
+.hm-de-kijker-head .contact-page-entry-title{
 	margin: 0;
 	color: #222020;
 	letter-spacing: 0.03em;
 	font-family: 'Oswald',  sans-serif;
 	margin-bottom: 24px;
+	display: block;
 }
 .hm-de-kijker-head p{
 	margin-bottom: 28px;
@@ -715,7 +717,8 @@ hm-download-sec-wrp
 	    padding-top: 40px;
 	    padding-bottom: 35px;
 	}
-	.hm-de-kijker-head h2{
+	.hm-de-kijker-head h2,
+	.hm-de-kijker-head .contact-page-entry-title{
 		margin-bottom: 20px;
 	}
 	.hm-de-kijker-head p {
