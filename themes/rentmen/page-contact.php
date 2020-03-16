@@ -71,7 +71,7 @@ $google_map = $gmap['maps'];
                   <use xlink:href="#contact-phone-icon-svg"></use>
                 </svg> 
               </i>
-              <?php echo $telefoon; ?>
+              <?php echo $show_telefoon; ?>
             </a>
           </div>
           <?php endif; ?>
@@ -95,7 +95,7 @@ $google_map = $gmap['maps'];
                   <use xlink:href="#contact-phone-icon-svg"></use>
                 </svg> 
               </i>
-              <?php echo $telefoon1; ?>
+              <?php echo $show_telefoon1; ?>
             </a>
           </div>
           <?php endif; ?>

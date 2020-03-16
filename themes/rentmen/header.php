@@ -158,6 +158,10 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php 
+  $logoObj = get_field('logo_header', 'options');
+  $smedias = get_field('sociale_media', 'options');
+?>
 <header class="header">
   <div class="hdr-topbar">
     <div class="container-lg">
@@ -166,26 +170,27 @@
           <div class="hdr-topbar-inr clearfix">
             <div class="hdr-lft">
               <div class="logo">
-                <a href="#"><img src="<?php echo THEME_URI; ?>/assets/images/logo.png"></a>
+                <?php 
+                if( is_array($logoObj) ){
+                    $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
+                ?>
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                  <?php echo $logo_tag; ?>
+                </a>
+                <?php } ?>
               </div>
             </div>
             <div class="hdr-rgt">
               <nav class="main-nav">
-                <ul class="clearfix reset-list">
-                  <li class="current-menu-item"><a href="#">Home</a></li>
-                  <li class="menu-item-has-children">
-                    <a href="#">Over Ons</a>
-                    <ul class="sub-menu">
-                      <li><a href="#">sub menu item</a></li>
-                      <li><a href="#">sub menu item</a></li>
-                      <li><a href="#">sub menu item</a></li>
-                      <li><a href="#">sub menu item</a></li>
-                      <li><a href="#">sub menu item</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Nieuws</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
+              <?php 
+                $mmenuOptions = array( 
+                    'theme_location' => 'cbv_main_menu', 
+                    'menu_class' => 'clearfix reset-list',
+                    'container' => 'mnav',
+                    'container_class' => 'mnav'
+                  );
+                wp_nav_menu( $mmenuOptions ); 
+              ?>
               </nav>
               <div class="hdr-social">
                 <ul class="reset-list">

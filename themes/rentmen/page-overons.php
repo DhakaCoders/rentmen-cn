@@ -33,10 +33,17 @@ $thisID = get_the_ID();
     </div>
   </div>    
 </section>
-
+<?php
+  $showhide_intro = get_field('showhide_intro', $thisID);
+  if( $showhide_intro ):
+    $introsec = get_field('introsec', $thisID);
+    $deshoversrc = '';
+    if(!empty($introsec['afbeelding']))
+      $deshoversrc = cbv_get_image_src($introsec['afbeelding'], 'hovers');
+?>
 <section class="overons-two-part-sec-wrp clearfix">
   <div class="overons-two-part-lft clearfix">
-    <div class="overons-two-part-lft-img" style="background:url(<?php echo THEME_URI; ?>/assets/images/overons-two-part-lft-img.png);">
+    <div class="overons-two-part-lft-img" style="background:url(<?php echo $deshoversrc; ?>);">
     </div>
   </div>
   <div class="container">
@@ -45,73 +52,84 @@ $thisID = get_the_ID();
           <div class="overons-two-part-rgt">
             <div class="ovr-two-grid-dsc">
               <div class="ovr-two-grid-dsc-title">
-                <span>Mauris lacinia malesuada</span>
-                <strong>LOREM IPSUM DOLOR</strong>
+                <?php 
+                if( !empty($introsec['subtitel']) ) printf('<span>%s</span>', $introsec['subtitel']);
+                if( !empty($introsec['titel']) ) printf('<strong>%s</strong>', $introsec['titel']);
+                ?>
               </div>
-              <p>Suspendisse ligula augue, maximus eget sem ut, tempor malesuada odio. Aliquam facilisis massa vitae arcu malesuada molestie. Mauris lacinia malesuada elit, nec rhoncus dui vehicula id. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-              <p>Ut mi augue, auctor eu ante ac, feugiat blandit augue. Nullam luctus dolor velit, ac porttitor tortor convallis at. Duis blandit lorem nisi, vitae maximus.</p>
-              <blockquote>
-                Mauris in erat volutpat id morbi. Pulvinar et pretium odio turpis. Libero ipsum commodo senectus purus.
-              </blockquote>
-              <p>Vitae fringilla neque pulvinar non adipiscing feugiat. A tristique tristique vitae integer donec nisl enim ipsum aenean. Mauris in erat volutpat id morbi. Pulvinar et pretium odio turpis. Libero ipsum commodo senectus purus, nibh vitae. Pharetra, lobortis volutpat lectus lacus massa commodo cursus aliquam ut. </p>
-              <a href="#">Producten</a>
-              <a href="#">Contacteer ons</a>
+              <?php
+              if( !empty($introsec['beschrijving']) ) echo wpautop( $introsec['beschrijving'] );
+              $knop1 = $introsec['knop_1'];
+              $knop2 = $introsec['knop_2'];
+              if( is_array( $knop1 ) &&  !empty( $knop1['url'] ) ){
+                  printf('<a href="%s" target="%s">%s</a>', $knop1['url'], $knop1['target'], $knop1['title']); 
+              }
+              if( is_array( $knop2 ) &&  !empty( $knop2['url'] ) ){
+                  printf('<a href="%s" target="%s">%s</a>', $knop2['url'], $knop2['target'], $knop2['title']); 
+              }
+            ?> 
             </div>
           </div>
         </div>
       </div>
   </div>    
 </section>
-
+<?php endif; ?>
+<?php
+  $showhide_usp = get_field('showhide_usp', $thisID);
+  if( $showhide_usp ):
+    $uspssec = get_field('uspssec', $thisID);
+    $husps = $uspssec['alle_usps'];
+?>
 <section class="overons-service-sec-wrp">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="overons-justo-box">
-          <h2>Cras ut justo porta nisl rutrum porta.</h2>
+          <?php if( !empty($uspssec['titel']) ) printf('<h2>%s</h2>', $uspssec['titel']); ?>
         </div>
       </div>
     </div>
+    <?php if( $husps ): ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="overons-service-wrp clearfix">
           <ul class="reset-list dft-slider-pagi clearfix">
+             <?php foreach( $husps as $husp ): ?>
             <li>
               <div class="overons-service-box-dsc">
-                <i class="mHc"><img src="<?php echo THEME_URI; ?>/assets/images/overons-service-icon-1.svg"></i>
-                <h4>Auctor eu ante ac</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
+                <?php if( !empty($husp['icon']) ): ?>
+                <i class="mHc"><img src="<?php echo $husp['icon']; ?>" alt="<?php echo cbv_get_image_alt( $husp['icon'] ); ?>"></i>
+                <?php endif; ?>
+                <?php
+                  if( !empty($husp['titel']) ) printf('<h3 class="overons-service-box-dsc-title">%s</h3>', $husp['titel']);
+                  if( !empty($husp['beschrijving']) ) echo wpautop( $husp['beschrijving'] );
+                ?>
               </div>
             </li>
-            <li>
-              <div class="overons-service-box-dsc">
-                <i class="mHc"><img src="<?php echo THEME_URI; ?>/assets/images/overons-service-icon-2.svg"></i>
-                <h4>Maecenas dolor</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-              </div>
-            </li>
-            <li>
-              <div class="overons-service-box-dsc">
-                <i class="mHc"><img src="<?php echo THEME_URI; ?>/assets/images/overons-service-icon-3.svg"></i>
-                <h4>Lobortis et odio</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-              </div>
-            </li>
+            <?php endforeach; ?>
           </ul>
         </div>
       </div>
     </div>
+  <?php endif; ?>
   </div>
 </section>
-
+<?php endif; ?>
+<?php
+  $showhide_pcat = get_field('showhide_pcat', $thisID);
+  if( $showhide_pcat ):
+    $prcats = get_field('producten_cats', $thisID);
+?>
 <section class="hm-de-kijker-post-sec-wrp overons-de-post-sec">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-de-kijker-head">
-          <h2>Producten In De Kijker</h2>
-          <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
+          <?php 
+            if( !empty($prcats['titel']) ) printf('<h2>%s</h2>', $prcats['titel']);
+            if( !empty($prcats['beschrijving']) ) echo wpautop( $prcats['beschrijving'] );
+          ?>
         </div>
       </div>
     </div>
@@ -126,7 +144,7 @@ $thisID = get_the_ID();
                   <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-1.png);"></div>
                 </div>
                 <div class="hm-de-kijker-post-dsc">
-                  <a href="#">Meubilair</a>
+                  <h3 class="hm-de-kijker-post-dsc-link"><a href="#">Meubilair</a></h3>
                 </div>
               </div>
             </li>
@@ -137,7 +155,7 @@ $thisID = get_the_ID();
                   <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-2.png);"></div>
                 </div>
                 <div class="hm-de-kijker-post-dsc">
-                  <a href="#">Gedekte tafel</a>
+                  <h3 class="hm-de-kijker-post-dsc-link"><a href="#">Gedekte tafel</a></h3>
                 </div>
               </div>
             </li>
@@ -148,7 +166,7 @@ $thisID = get_the_ID();
                   <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-3.png);"></div>
                 </div>
                 <div class="hm-de-kijker-post-dsc">
-                  <a href="#">Keukenmateriaal</a>
+                  <h3 class="hm-de-kijker-post-dsc-link"><a href="#">Keukenmateriaal</a></h3>
                 </div>
               </div>
             </li>
@@ -159,7 +177,7 @@ $thisID = get_the_ID();
                   <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-4.png);"></div>
                 </div>
                 <div class="hm-de-kijker-post-dsc">
-                  <a href="#">Partytenten</a>
+                  <h3 class="hm-de-kijker-post-dsc-link"><a href="#">Partytenten</a></h3>
                 </div>
               </div>
             </li>
@@ -172,4 +190,5 @@ $thisID = get_the_ID();
     </div>
   </div>
 </section>
+<?php endif; ?>
 <?php get_footer(); ?>

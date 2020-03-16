@@ -1,54 +1,46 @@
 <?php get_header(); ?>
+<?php  
+  $hshowhide_slide = get_field('showhide_slider', HOMEID);
+  $hslides = get_field('home_slider', HOMEID);
+  if($hshowhide_slide):
+?>
 <section class="hm-banner-sec-wrp">
+  <?php if($hslides){ ?>
   <div class="hm-slider-wrp">
-    <div class="hm-banner-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/home-page-banner-img.jpg);">
+    <?php
+      $i = 1;
+      foreach( $hslides as $hslide ): 
+      $slideposter = !empty($hslide['afbeelding'])? $hslide['afbeelding']: '';
+    ?>
+    <div class="hm-banner-bg" style="background: url(<?php echo $slideposter; ?>);">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <div class="hm-banner-dsc">
-              <h3>Welkom bij Rentmen Verhuur</h3>
-              <h1>Verhuur Feestmateriaal</h1>
-              <p>Springkastelen, tenten, tafels, stoelen, bestek,... Alles wat je maar nodig hebt om je evenement kracht bij te zetten.</p>
-              <a href="#">Over Ons</a>
-              <a href="#">onze producten</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hm-banner-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/home-page-banner-img.jpg);">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="hm-banner-dsc">
-              <h3>Welkom bij Rentmen Verhuur</h3>
-              <h1>Verhuur Feestmateriaal</h1>
-              <p>Springkastelen, tenten, tafels, stoelen, bestek,... Alles wat je maar nodig hebt om je evenement kracht bij te zetten.</p>
-              <a href="#">Over Ons</a>
-              <a href="#">onze producten</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hm-banner-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/home-page-banner-img.jpg);">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="hm-banner-dsc">
-              <h3>Welkom bij Rentmen Verhuur</h3>
-              <h1>Verhuur Feestmateriaal</h1>
-              <p>Springkastelen, tenten, tafels, stoelen, bestek,... Alles wat je maar nodig hebt om je evenement kracht bij te zetten.</p>
-              <a href="#">Over Ons</a>
-              <a href="#">onze producten</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>    
-</section>
+              <?php
+                if( !empty($hslide['subtitel']) ) printf('<h3>%s</h3>', $hslide['subtitel']);
+                if( !empty($hslide['titel']) ) printf('<h1>%s</h1>', $hslide['titel']);
+                if( !empty($hslide['beschrijving']) ) echo wpautop( $hslide['beschrijving'] );
 
+                $knop = $hslide['knop'];
+                $knop1 = $hslide['knop2'];
+                if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
+                    printf('<a href="%s" target="%s">%s</a>', $knop['url'], $knop['target'], $knop['title']); 
+                }
+                if( is_array( $knop1 ) &&  !empty( $knop1['url'] ) ){
+                    printf('<a href="%s" target="%s">%s</a>', $knop1['url'], $knop1['target'], $knop1['title']); 
+                } 
+              ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php $i++; endforeach; ?>
+  </div>    
+  <?php } ?>
+</section>
+<?php endif; ?>
 <div class="catapult-cookie-wrp">
   <div id="catapult-cookie-bar" class="catapult-cookie-bar clearfix">
     <div class="catapult-cookie-topbar">
@@ -67,16 +59,25 @@
     </span>
   </div>
 </div>
-
-
+<?php
+  $hshowhide_cases = get_field('showhide_cases', HOMEID);
+  $hcasesgrp = get_field('cases_in_de_kijker', HOMEID);
+  $hcasesids = $hcasesgrp['cases'];
+  if( $hshowhide_cases ):
+?>
 <section class="hm-de-kijker-post-sec-wrp">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-de-kijker-head">
-          <h2>In De Kijker</h2>
-          <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
-          <a href="#">Ontdek ons geheel aanbod</a>
+          <?php 
+            if( !empty($hcasesgrp['titel']) ) printf('<h2>%s</h2>', $hcasesgrp['titel']);
+            if( !empty($hcasesgrp['beschrijving']) ) echo wpautop( $hcasesgrp['beschrijving'] );
+            $knop2 = $hcasesgrp['knop'];
+            if( is_array( $knop2 ) &&  !empty( $knop2['url'] ) ){
+                printf('<a href="%s" target="%s">%s</a>', $knop2['url'], $knop2['target'], $knop2['title']); 
+            } 
+          ?>
         </div>
       </div>
     </div>
@@ -325,33 +326,50 @@
     </div>
   </div>
 </section>
+<?php endif; ?>
+<?php
+  $hshowhide_overons = get_field('showhide_overons', HOMEID);
+  $hoverons = get_field('home_overons', HOMEID);
+  if( $hshowhide_overons ):
+    $deshoversrc = '';
+    if(!empty($hoverons['afbeelding']))
+      $deshoversrc = cbv_get_image_src($hoverons['afbeelding'], 'hovers');
 
+?>
 <section class="hm-two-grid-sec-wrp">
   <div class="hm-two-grid-sec-bg"></div>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-two-grid-wrp clearfix">
-          <div class="hm-two-grid-rgt-img order-2" style="background:url(<?php echo THEME_URI; ?>/assets/images/hm-two-grid-rgt-img.png);">
-            <img src="<?php echo THEME_URI; ?>/assets/images/hm-two-grid-rgt-img-xs.png">
+          <div class="hm-two-grid-rgt-img order-2" style="background:url(<?php echo $deshoversrc; ?>);">
+            <?php if( !empty($hoverons['mobiel_afbeelding']) )
+                echo cbv_get_image_tag($hoverons['mobiel_afbeelding']);
+            ?>
             <span>
-              <img class="hide-sm" src="<?php echo THEME_URI; ?>/assets/images/hm-mv-icon.png">
-              <img class="show-sm" src="<?php echo THEME_URI; ?>/assets/images/hm-mv-icon-xs.png">
+              <?php if( !empty($hoverons['logo']) ): 
+                $hoverlogo = cbv_get_image_src($hoverons['logo']);
+              ?>
+              <img class="hide-sm" src="<?php echo $hoverlogo; ?>" alt="<?php echo cbv_get_image_alt($hoverlogo); ?>">
+              <?php endif; ?>
+              <?php if( !empty($hoverons['mobiel_logo']) ): 
+                $mhoverlogo = cbv_get_image_src($hoverons['mobiel_logo']);
+              ?>
+              <img class="show-sm" src="<?php echo $mhoverlogo; ?>" alt="<?php echo cbv_get_image_alt($mhoverlogo); ?>">
+              <?php endif; ?>
             </span>
           </div>
           <div class="hm-two-grid-lft order-1">
             <div class="hm-two-grid-dsc">
-              <span>Mauris lacinia malesuada</span>
-              <h2>LOREM IPSUM DOLOR</h2>
-              <p>Suspendisse ligula augue, maximus eget sem ut, tempor malesuada odio. Aliquam facilisis massa vitae arcu malesuada molestie. Mauris lacinia malesuada elit, nec rhoncus dui vehicula id. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <p>Ut mi augue, auctor eu ante ac, feugiat blandit augue. Nullam luctus dolor velit, ac porttitor tortor convallis at. Duis blandit lorem nisi, vitae maximus.</p>
-              <ul>
-                <li>Aliquam facilisis massa vitae arcu malesuada molestie. </li>
-                <li>Maecenas hendrerit luctus enim at volutpat.</li>
-                <li>Sed a augue hendrerit, suscipit enim.</li>
-                <li>Morbi sit amet nulla sit amet ligula varius viverra nec aliquam elit.</li>
-              </ul>
-              <a href="#">over ons</a>
+            <?php
+              if( !empty($hoverons['subtitel']) ) printf('<span>%s</span>', $hoverons['subtitel']);
+              if( !empty($hoverons['titel']) ) printf('<h2>%s</h2>', $hoverons['titel']);
+              if( !empty($hoverons['beschrijving']) ) echo wpautop( $hoverons['beschrijving'] );
+              $knop4 = $hoverons['knop'];
+              if( is_array( $knop4 ) &&  !empty( $knop4['url'] ) ){
+                  printf('<a href="%s" target="%s">%s</a>', $knop4['url'], $knop4['target'], $knop4['title']); 
+              }
+            ?>     
             </div>
           </div>
         </div>
@@ -359,160 +377,132 @@
     </div>
   </div>
 </section>
+<?php endif; ?>
+<?php
+  $showhidegv = get_field('showhidegv', HOMEID);
+  $gvsec = get_field('gvsec', HOMEID);
+  $vragenIDs = $gvsec['select_gestelde_vragen'];
+  if(!empty($vragenIDs) && $vragenIDs > 0)
+    $vragenIDs = $vragenIDs;
+  else
+    $vragenIDs = array();
 
-
+  if( $showhidegv ):
+  $query = new WP_Query(array( 
+      'post_type'=> 'faqs',
+      'post_status' => 'publish',
+      'posts_per_page' => 4,
+      'orderby' => 'date',
+      'order'=> 'desc',
+      'post__in' => $vragenIDs
+    ) 
+  );
+?>
 <section class="hm-download-sec-wrp">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-de-kijker-head">
-          <h2>Veel Gestelde Vragen</h2>
-          <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
+          <?php
+            if( !empty($gvsec['titel']) ) printf('<h2>%s</h2>', $gvsec['titel']);
+            if( !empty($gvsec['beschrijving']) ) echo wpautop( $gvsec['beschrijving'] );
+          ?>  
         </div>
+        <?php if($query->have_posts()): ?>
         <div class="hm-dw-slider-wrp dft-slider-pagi clearfix">
+          <?php while($query->have_posts()): $query->the_post(); ?>
           <div class="hm-download-box-item">
             <div class="hm-download-box">
-              <a href="#" class="overlay-link"></a>
+              <a href="<?php the_permalink(); ?>" class="overlay-link"></a>
               <strong>
                 <i>
                   <svg class="dw-question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2">
                     <use xlink:href="#dw-question-icon-svg"></use>
                   </svg> 
                 </i>
-                Donec varius enim sed odio porttitor, a venenatis nunc?
+                <?php the_title(); ?>
               </strong>
             </div>
           </div>
-          <div class="hm-download-box-item">
-            <div class="hm-download-box">
-              <a href="#" class="overlay-link"></a>
-              <strong>
-                <i>
-                  <svg class="dw-question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2">
-                    <use xlink:href="#dw-question-icon-svg"></use>
-                  </svg> 
-                </i>
-                Donec varius enim sed odio porttitor, a venenatis nunc?
-              </strong>
-            </div>
-          </div>
-          <div class="hm-download-box-item">
-            <div class="hm-download-box">
-              <a href="#" class="overlay-link"></a>
-              <strong>
-                <i>
-                  <svg class="dw-question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2">
-                    <use xlink:href="#dw-question-icon-svg"></use>
-                  </svg> 
-                </i>
-                Donec varius enim sed odio porttitor, a venenatis nunc?
-              </strong>
-            </div>
-          </div>
-          <div class="hm-download-box-item">
-            <div class="hm-download-box">
-              <a href="#" class="overlay-link"></a>
-              <strong>
-                <i>
-                  <svg class="dw-question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2">
-                    <use xlink:href="#dw-question-icon-svg"></use>
-                  </svg> 
-                </i>
-                Donec varius enim sed odio porttitor, a venenatis nunc?
-              </strong>
-            </div>
-          </div>
+          <?php endwhile; ?>
         </div>
+        <?php endif; wp_reset_postdata(); ?>
       </div>
     </div>
+    <?php if($query->have_posts()): ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-download-btn">
-          <a href="#">BEKIJK ALLES</a>
+          <a href="<?php echo esc_url( home_url('faq') );?>">BEKIJK ALLES</a>
         </div>
       </div>
     </div>
+    <?php endif; wp_reset_postdata(); ?>
   </div>
 </section>
-
-
+<?php endif; ?>
+<?php
+  $showhidenews = get_field('showhidenews', HOMEID);
+  $newssec = get_field('newssec', HOMEID);
+  $blg_query = new WP_Query(array( 
+    'post_type'=> 'post',
+    'post_status' => 'publish',
+    'posts_per_page' => 3,
+    'orderby' => 'date',
+    'order'=> 'desc'
+    ) 
+  );
+  if( $showhidenews ):
+?>
 <section class="hm-lates-news-post-sec-wrp">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-de-kijker-head">
-          <h2>Laatste Nieuws</h2>
-          <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
+          <?php
+            if( !empty($newssec['titel']) ) printf('<h2>%s</h2>', $newssec['titel']);
+            if( !empty($newssec['beschrijving']) ) echo wpautop( $newssec['beschrijving'] );
+          ?> 
         </div>
       </div>
     </div>
+    <?php if($blg_query->have_posts()): ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="rm-news-sec-inr">
           <ul class="clearfix reset-list dft-slider-pagi">
+            <?php 
+              $blog_src = '';
+              while($blg_query->have_posts()): $blg_query->the_post();
+                
+                $attach_id = get_post_thumbnail_id(get_the_ID());
+                if( !empty($attach_id) )
+                  $blog_src = cbv_get_image_src($attach_id,'bloggrid');
+                else
+                  $blog_src = '';
+            ?>
             <li>
               <div class="dft-blog-item">
                 <div class="dft-blog-item-inr">
                   <div class="dft-blog-item-fea-img-cntlr">
                     <a class="overlay-link" href="#"></a>
-                    <div class="dft-blog-item-fea-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/blog-fea-img-01.jpg);"></div>
+                    <div class="dft-blog-item-fea-img" style="background: url(<?php echo $blog_src; ?>);"></div>
                   </div>
                   <div class="dft-blog-item-des mHc">
                     <div class="dft-blog-item-des-date">
-                      <strong>07</strong>
-                      <span>FEB</span>
+                      <strong><?php echo get_the_date('d'); ?></strong>
+                      <span><?php echo get_the_date('M'); ?></span>
                     </div>
                     <h5>
-                     <a href="#">Ut mi augue, auctor eu ante ac, feugiat blandit augue?</a>
+                     <a href="<?php the_permalink();?>"><?php the_title();?></a>
                     </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-                    <a href="#">Lees Meer</a>
+                    <?php the_excerpt();?>
+                    <a href="<?php the_permalink();?>">Lees Meer</a>
                   </div>
                 </div>
               </div>
             </li>
-            <li>
-              <div class="dft-blog-item">
-                <div class="dft-blog-item-inr">
-                  <div class="dft-blog-item-fea-img-cntlr">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="dft-blog-item-fea-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/blog-fea-img-02.jpg);"></div>
-                  </div>
-                  <div class="dft-blog-item-des mHc">
-                    <div class="dft-blog-item-des-date">
-                      <strong>11</strong>
-                      <span>FEB</span>
-                    </div>
-                    <h5>
-                     <a href="#">Ut mi augue, auctor eu ante ac, feugiat blandit augue?</a>
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-                    <a href="#">Lees Meer</a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="dft-blog-item">
-                <div class="dft-blog-item-inr">
-                  <div class="dft-blog-item-fea-img-cntlr">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="dft-blog-item-fea-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/blog-fea-img-03.jpg);"></div>
-                  </div>
-                  <div class="dft-blog-item-des mHc">
-                    <div class="dft-blog-item-des-date">
-                      <strong>08</strong>
-                      <span>FEB</span>
-                    </div>
-                    <h5>
-                     <a href="#">Ut mi augue, auctor eu ante ac, feugiat blandit augue?</a>
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-                    <a href="#">Lees Meer</a>
-                  </div>
-                </div>
-              </div>
-            </li>
+            <?php endwhile; ?>
           </ul>
         </div>
       </div>
@@ -520,10 +510,15 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-download-btn">
-          <a href="#">BEKIJK ALLES</a>
+          <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">BEKIJK ALLES</a>
         </div>
       </div>
     </div>
+    <?php 
+      endif;  
+      wp_reset_postdata();
+    ?>
   </div>
 </section>
+<?php endif; ?>
 <?php get_footer(); ?>
