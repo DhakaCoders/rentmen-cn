@@ -162,7 +162,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo2-QJ7RdCkLw3NFZEu71mEKJ_8LczG-c"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/jquery.matchHeight-min.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/app.js"></script>
-<script src="<?php echo THEME_URI; ?>/assets/js/wow.min.js"></script>
 <script src="<?php echo THEME_URI; ?>/assets/js/main.js"></script>
 <?php wp_footer(); ?>
 </body>

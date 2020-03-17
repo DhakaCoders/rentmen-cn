@@ -1,11 +1,61 @@
 <?php 
-get_header(); 
-$thisID = get_the_ID();
+  get_header(); 
+  $thisID = get_the_ID();
   $ccat = get_queried_object();
-  if( isset($_GET['q']) && !empty($_GET['q']) )
-    $keyword = $_GET['q'];
-  else
-    $keyword = '';
+  if ( ! empty( $ccat ) && ! is_wp_error( $ccat ) ):
+  $sorting = 'DESC';
+  $keyword = $gtags = '';
+  $termQuery = array();
+  if( isset($_GET['p']) && !empty($_GET['p']) ){
+    $keyword = $_GET['p'];
+  }
+  if ( isset($_GET['tags']) && !empty($_GET['tags']) ){
+    $gtags = $_GET['tags'];
+    $termQuery = array(
+	'relation' => 'AND',
+	array(
+	'taxonomy' => 'product_cat',
+	'field' => 'term_id',
+	'terms' => $ccat->term_id
+	),
+	array(
+	'taxonomy' => 'product_tag',
+	'field' => 'slug',
+	'terms' => $gtags
+	)
+    );
+  } else {
+  	$termQuery = array(
+	array(
+	'taxonomy' => 'product_cat',
+	'field' => 'term_id',
+	'terms' => $ccat->term_id
+	)
+	);
+  }
+
+
+  if(isset($_COOKIE['sorting']) && !empty($_COOKIE['sorting'])) {
+    $sorting = $_COOKIE['sorting'];
+  }
+  $per_page = 1;
+
+	$terms = get_terms( array(
+	  'taxonomy' => 'product_cat',
+	  'orderby' => 'name',
+	  'order' => 'ASC',
+	  'hide_empty' => false,
+	) );
+
+  $query = new WP_Query(array( 
+    'post_type'=> 'product',
+    'posts_per_page' => 1,
+    'paged' => $paged,
+    'order'=> $sorting,
+    's' => $keyword,
+    'tax_query' => $termQuery
+  ) 
+  );
 ?>
 <section class="breadcrumbs-sec">
   <div class="container-lg">
@@ -16,7 +66,7 @@ $thisID = get_the_ID();
             <?php if( isset($ccat->name) && !empty($ccat->name)) printf('<h1>%s</h1>', $ccat->name); ?>
           </div>          
           <div class="breadcrumbs-main">
-            <?php cbv_breadcrumbs(); ?>
+            <?php //cbv_breadcrumbs(); ?>
           </div>
         </div>
         <div class="breadcrumbs-innr show-xs clearfix">
@@ -88,7 +138,7 @@ $thisID = get_the_ID();
   </div>    
 </section>
 
-
+<?php if($query->have_posts()): ?>
 <section class="pro-overview-main-sec">
   <div class="container">
     <div class="row">
@@ -101,76 +151,32 @@ $thisID = get_the_ID();
             </div>
 
             <div class="pro-overview-sidebar-con-innr">
+              <?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){ ?>
               <div class="pro-overview-sidebar-cat pro-filter-con">
                 <div class="pro-overview-sidebar-head">
                   <h3 class="sidebar-widget-title">Categorieen</h3>
                 </div>
                 <ul class="ulc pro-filter-main"> 
-                  <li class="active">
-                    <a href="#">
+                  <?php 
+                    foreach ( $terms as $term ) {
+                    $thumbnail_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
+                    $hoverid = get_field( 'hover_thumbnail', $term );
+                  ?>
+                  <li <?php echo ($ccat->term_id == $term->term_id)? 'class="active"': ''; ?>>
+                    <a href="<?php echo esc_url( get_term_link( $term ) ); ?>">
+                      <?php if( !empty($thumbnail_id) ): ?>
                       <i>
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table.svg" alt="">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table-w.svg" alt="">
+                        <?php echo cbv_get_image_tag($thumbnail_id); ?>
+                        <?php echo cbv_get_image_tag($hoverid); ?>
                       </i>
-                      <span>Meubilair</span>
+                      <?php endif; ?>
+                      <span><?php echo $term->name; ?></span>
                     </a>
                   </li> 
-                  <li>
-                    <a href="#">
-                      <i>
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table.svg" alt="">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table-w.svg" alt="">
-                      </i>
-                      <span>Gedekte Tafel</span>
-                    </a>
-                  </li> 
-                  <li>
-                    <a href="#">
-                      <i>
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table.svg" alt="">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table-w.svg" alt="">
-                      </i>
-                      <span>Keukenmateriaal</span>
-                    </a>
-                  </li> 
-                  <li>
-                    <a href="#">
-                      <i>
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table.svg" alt="">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table-w.svg" alt="">
-                      </i>
-                      <span>Partytenten</span>
-                    </a>
-                  </li> 
-                  <li>
-                    <a href="#">
-                      <i>
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table.svg" alt="">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table-w.svg" alt="">
-                      </i>
-                      <span>Categorie Titel</span>
-                    </a>
-                  </li> 
-                  <li>
-                    <a href="#">
-                      <i>
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table.svg" alt="">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table-w.svg" alt="">
-                      </i>
-                      <span>Categorie Titel</span>
-                    </a>
-                  </li>  
-                  <li>
-                    <a href="#">
-                      <i>
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table.svg" alt="">
-                        <img src="<?php echo THEME_URI; ?>/assets/images/overview-sidebar-table-w.svg" alt="">
-                      </i>
-                      <span>Categorie Titel</span>
-                    </a>
-                  </li>              
+                  <?php } ?>             
                 </ul>
               </div>
+            <?php } ?>
               <div class="pro-overview-sidebar-select pro-filter-con">
                 <div class="pro-overview-sidebar-head">
                   <h3 class="sidebar-widget-title">Periode</h3>
@@ -230,92 +236,118 @@ $thisID = get_the_ID();
                   </form>
                 </div>
               </div>
+              <?php 
+                $tags = get_terms( array(
+                    'orderby'    => 'name',
+                    'show_count' => true,
+                    'hide_empty' => false,
+                    'number' => 10,
+                    'taxonomy'   => 'product_tag' //i guess campaign_action  is your  taxonomy 
+                ) );
+              ?>
+              <?php if ( ! empty( $tags ) && ! is_wp_error( $tags ) ): ?>
               <div class="pro-overview-sidebar-filter pro-filter-con">
                 <div class="pro-overview-sidebar-head">
                   <h3 class="sidebar-widget-title">Filter</h3>
                 </div> 
                 <div class="pro-check-box-filter pro-filter-main"> 
-                  <form>
+                  
+                  <form id="formName" action="" method="get">
+                    <?php $i = 1; foreach( $tags as $tag ): ?>
                     <div class="form-group">
-                      <input type="checkbox" name="percent" id="checkfilter1">
-                      <label for="checkfilter1">Lorem ipsum dolor</label>
+                      <input type="checkbox" name="tags" value="<?php echo $tag->slug; ?>" id="checkfilter<?php echo $i; ?>" <?php echo ($gtags == $tag->slug)? 'checked': ''; ?> onchange="document.getElementById('formName').submit()">
+                      <label for="checkfilter<?php echo $i; ?>"><?php echo $tag->name; ?></label>
+
                     </div>
-                    <div class="form-group">
-                      <input type="checkbox" name="percent" id="checkfilter2">
-                      <label for="checkfilter2">Maecenas convallis nisi </label>
-                    </div>
-                    <div class="form-group">
-                      <input type="checkbox" name="percent" id="checkfilter3">
-                      <label for="checkfilter3">Suspendisse dignissim vulputate</label>
-                    </div>
-                    <div class="form-group">
-                      <input type="checkbox" name="percent" id="checkfilter4">
-                      <label for="checkfilter4">Donec feugiat lobortis</label>
-                    </div>
+                    <?php $i++; endforeach; ?>
                   </form>
                 </div>
               </div>
-              <div class="pro-overview-sidebar-color pro-filter-con">
-                <div class="pro-overview-sidebar-head">
-                  <h3 class="sidebar-widget-title">KLEUR</h3>
-                </div> 
-                <div class="pro-color-filter pro-filter-main"> 
-                  <img style="margin-top:20px" src="<?php echo THEME_URI; ?>/assets/images/pro-color-filter-img.png" alt="">
-                </div>
-              </div>
+              <?php endif; ?>
             </div>
           </div>
           <div class="pro-overview-grid-con">
             <div class="pro-overview-grid-head hide-sm">
               <h2 class="producten-sec-title">Producten</h2>
             </div>
+            <?php if($query->have_posts()): ?>
             <div class="pro-overview-single-des-con clearfix">
+              <?php 
+              while($query->have_posts()): $query->the_post(); 
+                global $product;
+                $excludeID = get_the_ID();
+                $thumb_id = get_post_thumbnail_id(get_the_ID());
+              ?>
               <div class="pro-overview-single-img mHc">
+                <?php if (!empty($thumb_id)){ ?>
+                  <?php echo cbv_get_image_tag($thumb_id, 'prodgrid'); ?>
+                <?php } else {?>
                 <span><img src="<?php echo THEME_URI; ?>/assets/images/pro-overview-single-img.png" alt=""></span>
-                <a href="#" class="overlay-link"></a>
+                <?php } ?>
+                <a href="<?php the_permalink();?>" class="overlay-link"></a>
               </div>
               <div class="pro-overview-single-des text-white mHc">
                 <h4>In De Kijker</h4>
-                <h3 class="pro-overview-title-fea"><a href="#">Producten Titel</a></h3>
-                <strong class="price">€ 29.99 / stuk</strong>
-                <p>Cras in ultrices diam. Aliquam pharetra porttitor elit eget congue. Duis a tellus porta, mattis velit sagittis, sodales tellus.</p>
+                <h3 class="pro-overview-title-fea"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+                <strong class="price"><?php echo $product->get_price_html(); ?> / stuk</strong>
+                <?php the_excerpt();?>
                 <div class="pro-overview-single-des-link clearfix">
-                  <a href="#">Meer Info</a>
-                  <a href="#">
+                  <a href="<?php the_permalink();?>">Meer Info</a>
+                  <a href="?add-to-cart=<?php echo get_the_ID(); ?>" data-quantity="1" class="button rentbtn product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo get_the_ID(); ?>" data-product_sku="" aria-label="Add “Producten Titel” to your cart" rel="nofollow">
                     <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="white">
                       <use xlink:href="#overview-single-des-cart-svg"></use>
                     </svg>
                   </a>
                 </div>
               </div>
+              <?php endwhile; ?>
             </div>
+            <?php endif; wp_reset_postdata(); ?>
             <div class="pro-overview-grid-filter clearfix">              
               <div class="rm-selctpicker-ctlr reset-list clearfix">
                 <span>Sorteer op: </span>
-                <select class="selectpicker">
-                  <option selected="selected">Prijs laag naar hoog </option>
-                 <option>Prijs laag naar hoog 1</option>
-                 <option>Prijs laag naar hoog 2</option>
-                 <option>Prijs laag naar hoog 3</option>
-                 <option>Prijs laag naar hoog 4</option>
+                <select class="selectpicker" id="sortproduct" data-url="<?php echo home_url('shop'); ?>">
+                  <option value="desc" <?php echo ($sorting == 'desc')? 'selected="selected"': '';?>>DESC</option>
+                 <option value="asc" <?php echo ($sorting == 'asc')? 'selected="selected"': '';?>>ASC</option>
                 </select>
               </div>
             </div>
             <div class="pro-overview-grid-innr-wrp clearfix">
+              <?php 
+              $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+              $equery = new WP_Query(array( 
+                'post_type'=> 'product',
+                'posts_per_page' => $per_page,
+                'post__not_in' => array($excludeID),
+                'paged' => $paged,
+                'order'=> $sorting,
+                's' => $keyword,
+                'tax_query' => $termQuery
+              ) 
+              );
+              while($equery->have_posts()): $equery->the_post(); 
+                global $product;
+                $product_thumb = '';
+                $thumb_id = get_post_thumbnail_id(get_the_ID());
+              ?>
               <div class="pro-overview-grid-item">
                 <div class="pro-overview-grid-item-innr">
                   <div class="pro-overview-grid-img mHc">
-                    <a href="#">
+                    <a href="<?php the_permalink();?>">
+                    <?php if (!empty($thumb_id)){ ?>
+                      <?php echo cbv_get_image_tag($thumb_id, 'prodgrid'); ?>
+                    <?php } else {?>
                       <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-1.png" alt="">
+                    <?php } ?>
                     </a>
                   </div>
                   <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#">Producten Titel</a></h4>
+                    <h4 class="pro-overview-title"><a href="#"><?php the_title(); ?></a></h4>
                     <span>Lorem ipsum dolor sit amet</span>
-                    <strong class="price">€ 29.99 / stel</strong>
+                    <strong class="price"><?php echo $product->get_price_html(); ?> / stel</strong>
                     <div class="pro-overview-grid-btm-lnc clearfix">
-                      <a href="#">Meer Info</a>
-                      <a href="#">
+                      <a href="<?php the_permalink();?>">Meer Info</a>
+                      <a href="?add-to-cart=<?php echo get_the_ID(); ?>" data-quantity="1" class="button rentbtn product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo get_the_ID(); ?>" data-product_sku="" aria-label="Add “Producten Titel” to your cart" rel="nofollow">
                         <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="#ACABAB">
                           <use xlink:href="#overview-single-des-cart-svg"></use>
                         </svg>
@@ -325,259 +357,26 @@ $thisID = get_the_ID();
                   <span class="pro-new-tag">New</span>                
                 </div>  
               </div>
-              <div class="pro-overview-grid-item">
-                <div class="pro-overview-grid-item-innr">
-                  <div class="pro-overview-grid-img mHc">
-                    <a href="#">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-2.png" alt="">
-                    </a>
-                  </div>
-                  <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#">Producten Titel</a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
-                    <strong class="price">€ 29.99 / stel</strong>
-                    <div class="pro-overview-grid-btm-lnc clearfix">
-                      <a href="#">Meer Info</a>
-                      <a href="#">
-                        <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="#ACABAB">
-                          <use xlink:href="#overview-single-des-cart-svg"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <span class="pro-new-tag">New</span>                  
-                </div>  
-              </div>
-              <div class="pro-overview-grid-item">
-                <div class="pro-overview-grid-item-innr">
-                  <div class="pro-overview-grid-img mHc">
-                    <a href="#">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-3.png" alt="">
-                    </a>
-                  </div>
-                  <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#">Producten Titel</a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
-                    <strong class="price">€ 29.99 / stel</strong>
-                    <div class="pro-overview-grid-btm-lnc clearfix">
-                      <a href="#">Meer Info</a>
-                      <a href="#">
-                        <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="#ACABAB">
-                          <use xlink:href="#overview-single-des-cart-svg"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>                
-                </div>  
-              </div>
-              <div class="pro-overview-grid-item">
-                <div class="pro-overview-grid-item-innr">
-                  <div class="pro-overview-grid-img mHc">
-                    <a href="#">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-3.png" alt="">
-                    </a>
-                  </div>
-                  <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#">Producten Titel</a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
-                    <strong class="price">€ 29.99 / stel</strong>
-                    <div class="pro-overview-grid-btm-lnc clearfix">
-                      <a href="#">Meer Info</a>
-                      <a href="#">
-                        <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="#ACABAB">
-                          <use xlink:href="#overview-single-des-cart-svg"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>                
-                </div>  
-              </div>
-              <div class="pro-overview-grid-item">
-                <div class="pro-overview-grid-item-innr">
-                  <div class="pro-overview-grid-img mHc">
-                    <a href="#">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-2.png" alt="">
-                    </a>
-                  </div>
-                  <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#">Producten Titel</a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
-                    <strong class="price">€ 29.99 / stel</strong>
-                    <div class="pro-overview-grid-btm-lnc clearfix">
-                      <a href="#">Meer Info</a>
-                      <a href="#">
-                        <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="#ACABAB">
-                          <use xlink:href="#overview-single-des-cart-svg"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>                
-                </div>  
-              </div>
-              <div class="pro-overview-grid-item">
-                <div class="pro-overview-grid-item-innr">
-                  <div class="pro-overview-grid-img mHc">
-                    <a href="#">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-1.png" alt="">
-                    </a>
-                  </div>
-                  <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#">Producten Titel</a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
-                    <strong class="price">€ 29.99 / stel</strong>
-                    <div class="pro-overview-grid-btm-lnc clearfix">
-                      <a href="#">Meer Info</a>
-                      <a href="#">
-                        <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="#ACABAB">
-                          <use xlink:href="#overview-single-des-cart-svg"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                  <span class="pro-new-tag">New</span>                  
-                </div>  
-              </div>
-              <div class="pro-overview-grid-item">
-                <div class="pro-overview-grid-item-innr">
-                  <div class="pro-overview-grid-img mHc">
-                    <a href="#">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-1.png" alt="">
-                    </a>
-                  </div>
-                  <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#">Producten Titel</a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
-                    <strong class="price">€ 29.99 / stel</strong>
-                    <div class="pro-overview-grid-btm-lnc clearfix">
-                      <a href="#">Meer Info</a>
-                      <a href="#">
-                        <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="#ACABAB">
-                          <use xlink:href="#overview-single-des-cart-svg"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>                
-                </div>  
-              </div>
-              <div class="pro-overview-grid-item">
-                <div class="pro-overview-grid-item-innr">
-                  <div class="pro-overview-grid-img mHc">
-                    <a href="#">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-2.png" alt="">
-                    </a>
-                  </div>
-                  <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#">Producten Titel</a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
-                    <strong class="price">€ 29.99 / stel</strong>
-                    <div class="pro-overview-grid-btm-lnc clearfix">
-                      <a href="#">Meer Info</a>
-                      <a href="#">
-                        <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="#ACABAB">
-                          <use xlink:href="#overview-single-des-cart-svg"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div> 
-                  <span class="pro-new-tag">New</span>                
-                </div>  
-              </div>
-              <div class="pro-overview-grid-item">
-                <div class="pro-overview-grid-item-innr">
-                  <div class="pro-overview-grid-img mHc">
-                    <a href="#">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-3.png" alt="">
-                    </a>
-                  </div>
-                  <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#">Producten Titel</a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
-                    <strong class="price">€ 29.99 / stel</strong>
-                    <div class="pro-overview-grid-btm-lnc clearfix">
-                      <a href="#">Meer Info</a>
-                      <a href="#">
-                        <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="#ACABAB">
-                          <use xlink:href="#overview-single-des-cart-svg"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>                 
-                </div>  
-              </div>
-              <div class="pro-overview-grid-item">
-                <div class="pro-overview-grid-item-innr">
-                  <div class="pro-overview-grid-img mHc">
-                    <a href="#">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-3.png" alt="">
-                    </a>
-                  </div>
-                  <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#">Producten Titel</a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
-                    <strong class="price">€ 29.99 / stel</strong>
-                    <div class="pro-overview-grid-btm-lnc clearfix">
-                      <a href="#">Meer Info</a>
-                      <a href="#">
-                        <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="#ACABAB">
-                          <use xlink:href="#overview-single-des-cart-svg"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>                
-                </div>  
-              </div>
-              <div class="pro-overview-grid-item">
-                <div class="pro-overview-grid-item-innr">
-                  <div class="pro-overview-grid-img mHc">
-                    <a href="#">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-2.png" alt="">
-                    </a>
-                  </div>
-                  <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#">Producten Titel</a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
-                    <strong class="price">€ 29.99 / stel</strong>
-                    <div class="pro-overview-grid-btm-lnc clearfix">
-                      <a href="#">Meer Info</a>
-                      <a href="#">
-                        <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="#ACABAB">
-                          <use xlink:href="#overview-single-des-cart-svg"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>                
-                </div>  
-              </div>
-              <div class="pro-overview-grid-item">
-                <div class="pro-overview-grid-item-innr">
-                  <div class="pro-overview-grid-img mHc">
-                    <a href="#">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-1.png" alt="">
-                    </a>
-                  </div>
-                  <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#">Producten Titel</a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
-                    <strong class="price">€ 29.99 / stel</strong>
-                    <div class="pro-overview-grid-btm-lnc clearfix">
-                      <a href="#">Meer Info</a>
-                      <a href="#">
-                        <svg class="overview-single-des-cart-svg" width="30" height="28" viewBox="0 0 30 28" fill="#ACABAB">
-                          <use xlink:href="#overview-single-des-cart-svg"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>                
-                </div>  
-              </div>
+              <?php endwhile; ?>
             </div>
             <div class="pro-overview-pagination">
               <div class="faq-pagination">
-                <ul>
-                  <li><span class="page-numbers current">1</span></li>
-                  <li><a class="page-numbers" href="#">2</a></li>
-                  <li><a class="page-numbers" href="#">3</a></li>
-                </ul>
+              <?php 
+                if( $equery->max_num_pages > 1 ):
+                $big = 999999999; // need an unlikely integer
+                echo paginate_links( array(
+                  'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                  'format' => '?paged=%#%',
+                  'current' => max( 1, get_query_var('paged') ),
+                  'total' => $equery->max_num_pages,
+                  'type'  => 'list',
+                  'show_all' => true,
+                  'prev_next' => false
+                ) );
+                else:
+                  echo '<div class="hasgap"></div>';
+                endif; 
+              ?>
               </div>  
             </div>  
           </div>
@@ -586,7 +385,7 @@ $thisID = get_the_ID();
     </div>
   </div>    
 </section>
-
+<?php endif; wp_reset_postdata(); ?>
 
 <section class="pro-overview-feature-sec">
   <div class="container">
@@ -627,4 +426,5 @@ $thisID = get_the_ID();
     </div>
   </div>    
 </section>
+<?php endif; ?>
 <?php get_footer(); ?>
