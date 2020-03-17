@@ -698,8 +698,18 @@ html .price-slider .ui-button.ui-state-disabled:active {
     margin-bottom: 0!important;
 }
 
-
-
+strong.price span {
+    display: inline-block;
+    margin: 0;
+}
+span.woocommerce-Price-currencySymbol {
+    padding-right: 5px;
+}
+.button.rentbtn{
+    background: transparent !important;
+    color: transparent !important;
+    padding: 0 !important;
+}
 
 
 

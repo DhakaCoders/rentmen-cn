@@ -232,39 +232,63 @@
       </div>
     </div>    
   </div>
+  <?php 
+
+    $terms = get_terms( array(
+      'taxonomy' => 'product_cat',
+      'orderby' => 'name',
+      'order' => 'ASC',
+      'hide_empty' => false,
+    ) );
+  if( isset($_GET['p']) && !empty($_GET['p']) )
+    $keyword = $_GET['p'];
+  else
+    $keyword = '';
+  ?>
   <div class="hdr-btmbar">
     <div class="container-lg">
       <div class="row">
         <div class="col-md-12">
           <div class="hdr-btmbar-inr">
+            
               <div class="hdr-btm-select-filter">
                 <div class="rm-selctpicker-ctlr reset-list">
-                  <select class="selectpicker">
-                    <option selected="selected">Categorieën</option>
-                     <option>Categorieën 1</option>
-                     <option>Categorieën 2</option>
-                     <option>Categorieën 3</option>
-                     <option>Categorieën 4</option>
+                  <select class="selectpicker" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                    <?php 
+                      if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+                        $term_selected = '';
+                        $ccat = get_queried_object();
+                     ?>
+                      <?php 
+                      foreach ( $terms as $term ) { 
+                      
+                        if($term->slug != 'uncategorized'):
+                      ?>
+                      <option value="<?php echo esc_url( get_term_link($term) );?>" <?php echo( (@$ccat->term_id == $term->term_id) && is_tax('product_cat') )? 'selected': ''; ?>><?php echo $term->name; ?></option>
+                      <?php endif; } ?>
+                    <?php } ?>
                   </select>
                 </div>
               </div>
+              
               <div class="hdr-search-form">
+                <form action="" method="get">
                 <div class="rm-search-form">
-                  <form>
-                    <input type="search" name="" placeholder="Zoek een artikel om je event kracht bij te zetten">
-                    <div class="rm-search-submit-btn">
-                      <button>
-                        <i>
-                          <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#1E1E1E;">
-                            <use xlink:href="#search-icon-svg"></use>
-                          </svg> 
-                        </i>
-                        Zoeken
-                      </button>
-                    </div>
-                  </form>
+                  <input type="search" name="p" value="<?php echo $keyword; ?>" placeholder="Zoek een artikel om je event kracht bij te zetten">
+                  <div class="rm-search-submit-btn">
+                    <button>
+                      <i>
+                        <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#1E1E1E;">
+                          <use xlink:href="#search-icon-svg"></use>
+                        </svg> 
+                      </i>
+                      Zoeken
+                    </button>
+                  </div>
                 </div>
+                </form>
               </div>
+              
               <div class="hdr-cart-btn">
                 <a href="#">
                   <i>

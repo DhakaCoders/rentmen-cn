@@ -112,8 +112,12 @@ add_filter('use_block_editor_for_post', '__return_false');
 
 function searchfilter($query) {
     if (is_search() && $query->is_main_query() && !is_admin() ) {
-        //$query->set('post_type',array('post'));
-        $query->set( 'posts_per_page', 2 );
+        $query->set('post_type',array('product'));
+        $query->set( 'posts_per_page', 1 );
+        $query->set( 'orderby', 'modified' );
+    }elseif(is_archive() && $query->is_main_query() && !is_admin()){
+        $query->set('post_type',array('product'));
+        $query->set( 'posts_per_page', 1 );
         $query->set( 'orderby', 'modified' );
     }
 return $query;

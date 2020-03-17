@@ -68,6 +68,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 }
 
+$('#sortproduct').on('change', function(){               
+  var campSort = $(this).val();
+  var URL = $('#sortproduct').data('url');
+  setCookie('sorting', campSort, 1);
+  window.location.href = URL;
+});
 
 /*
 =======================
@@ -586,4 +592,13 @@ if (windowWidth < 768) {
   });
 }
 
+
 })(jQuery);
+
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
