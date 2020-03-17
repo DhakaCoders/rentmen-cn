@@ -9,19 +9,15 @@ $thisID = get_the_ID();
       <div class="col-12">
         <div class="breadcrumbs-innr hide-xs clearfix">
           <div class="breadcrumbs-lft-text">
-            <h1>FAQ</h1>
+            <strong class="page-title">FAQ</strong>
           </div>          
           <div class="breadcrumbs-main">
-            <ul>           
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-            </ul>
+            <?php cbv_breadcrumbs(); ?>
           </div>
         </div>
         <div class="breadcrumbs-innr show-xs clearfix">
           <div class="breadcrumbs-left">
-            <a href="#">Home</a>
+            <a href="<?php echo esc_url( home_url() );?>"></a>
           </div>
           <div class="breadcrumbs-right">
             <a href="javascript:history.go(-1)">Terug</a>
@@ -31,8 +27,6 @@ $thisID = get_the_ID();
     </div>
   </div>    
 </section>
-
-
 <section class="rm-faq-backlink-sec">
   <div class="container">
     <div class="row">

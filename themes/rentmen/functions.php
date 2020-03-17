@@ -77,7 +77,9 @@ function cbv_theme_scripts(){
 Includes->>
 */
 include_once(THEME_DIR .'/inc/widgets-area.php');
+include_once(THEME_DIR .'/inc/breadcrumbs.php');
 include_once(THEME_DIR .'/inc/cbv-functions.php');
+include_once(THEME_DIR .'/inc/wc-functions.php');
 /**
 ACF Option pages->>
 */

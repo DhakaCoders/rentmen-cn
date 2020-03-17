@@ -2,36 +2,8 @@
 get_header();
 while ( have_posts() ) :
   the_post();
+  get_template_part('templates/page', 'banner');
 ?>
-<section class="breadcrumbs-sec">
-  <div class="container-lg">
-    <div class="row">
-      <div class="col-12">
-        <div class="breadcrumbs-innr hide-xs clearfix">
-          <div class="breadcrumbs-lft-text">
-            <strong class="page-title">Nieuws</strong>
-          </div>          
-          <div class="breadcrumbs-main">
-            <ul>           
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="breadcrumbs-innr show-xs clearfix">
-          <div class="breadcrumbs-left">
-            <a href="#">Home</a>
-          </div>
-          <div class="breadcrumbs-right">
-            <a href="javascript:history.go(-1)">Terug</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>    
-</section>
-
 <section class="innerpage-con-wrap" id="nieuws-details-page-cntlr">
   <div class="container-sm">
     <div class="row">
@@ -39,7 +11,7 @@ while ( have_posts() ) :
         <article class="default-page-con">
           <div class="dfp-promo-module clearfix">
           <?php 
-            if( !empty(get_the_title()) ) printf('<div><strong class="dfp-promo-module-title">%s</div>', get_the_title());
+            if( !empty(get_the_title()) ) printf('<div><strong class="dfp-promo-module-title">%s</strong></div>', get_the_title());
             while ( have_rows('inhoud') ) : the_row(); 
             if( get_row_layout() == 'introductietekst' ){
               $afbeelding = get_sub_field('afbeelding');
@@ -230,6 +202,23 @@ while ( have_posts() ) :
             }
           
            endwhile;?>
+           <div class="dft-share-on dft-share-on-bm">
+              <span>Deel op:</span>
+              <a href="#">
+                <i>
+                  <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;">
+                    <use xlink:href="#facebook-icon-svg"></use>
+                  </svg> 
+                </i>
+              </a>
+              <a href="#">
+                <i>
+                  <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;">
+                    <use xlink:href="#instagram-icon-svg"></use>
+                  </svg> 
+                </i>
+              </a>
+            </div>
         </article>
       </div>
     </div>

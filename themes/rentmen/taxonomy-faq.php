@@ -2,6 +2,10 @@
 get_header(); 
 $thisID = get_the_ID();
   $ccat = get_queried_object();
+  if( isset($_GET['q']) && !empty($_GET['q']) )
+    $keyword = $_GET['q'];
+  else
+    $keyword = '';
 ?>
 <section class="breadcrumbs-sec">
   <div class="container-lg">
@@ -12,16 +16,12 @@ $thisID = get_the_ID();
             <?php if( isset($ccat->name) && !empty($ccat->name)) printf('<h1>%s</h1>', $ccat->name); ?>
           </div>          
           <div class="breadcrumbs-main">
-            <ul>           
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-            </ul>
+            <?php cbv_breadcrumbs(); ?>
           </div>
         </div>
         <div class="breadcrumbs-innr show-xs clearfix">
           <div class="breadcrumbs-left">
-            <a href="#">Home</a>
+            <a href="<?php echo esc_url( home_url() );?>"></a>
           </div>
           <div class="breadcrumbs-right">
             <a href="javascript:history.go(-1)">Terug</a>
@@ -51,8 +51,8 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
               echo wpautop( $ccat->description, true );
           ?>
           <div class="rm-search-form">
-            <form>
-              <input type="search" name="" placeholder="Typ je vraag hier">
+            <form action="" method="get">
+              <input type="search" name="q" value="<?php echo $keyword; ?>" placeholder="Typ je vraag hier">
               <div class="rm-search-submit-btn">
                 <button>
                   <i>
@@ -92,6 +92,7 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
                 'posts_per_page' => 1,
                 'orderby' => 'date',
                 'order'=> 'desc',
+                's' => $keyword,
                 'paged' => $paged,
                 'tax_query' => array(
                   array(

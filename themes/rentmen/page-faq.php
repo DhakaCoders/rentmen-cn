@@ -5,50 +5,31 @@
 get_header(); 
 while( have_posts() ): the_post();
 $thisID = get_the_ID();
+get_template_part('templates/page', 'banner');
+if( isset($_GET['q']) && !empty($_GET['q']) )
+  $keyword = $_GET['q'];
+else
+  $keyword = '';
+
 ?>
-<section class="breadcrumbs-sec">
-  <div class="container-lg">
-    <div class="row">
-      <div class="col-12">
-        <div class="breadcrumbs-innr hide-xs clearfix">
-          <div class="breadcrumbs-lft-text">
-            <h1><?php the_title(); ?></h1>
-          </div>          
-          <div class="breadcrumbs-main">
-            <ul>           
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="breadcrumbs-innr show-xs clearfix">
-          <div class="breadcrumbs-left">
-            <a href="#">Home</a>
-          </div>
-          <div class="breadcrumbs-right">
-            <a href="javascript:history.go(-1)">Terug</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>    
-</section>
-
-
-
 <section class="faq-content">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="faq-cnt-inner">
-          <div>
-            <strong class="faw-page-entry-title"><?php the_title(); ?></strong>
-          </div>
-          <?php the_content(); ?>
+          <?php  
+            $showhidenews = get_field('showhidenews', $thisID);
+            $introsec = get_field('introsec', $thisID);
+            if($showhidenews):
+          ?>
+          <?php 
+            if( !empty($introsec['titel']) ) printf('<div><strong class="faw-page-entry-title">%s</strong></div>', $introsec['titel']);
+            if( !empty($introsec['beschrijving']) ) echo wpautop( $introsec['beschrijving'] );
+          ?>
+          <?php endif; ?>
           <div class="rm-search-form">
-            <form>
-              <input type="search" name="" placeholder="Typ je vraag hier">
+            <form action="" method="get">
+              <input type="search" name="q" value="<?php echo $keyword; ?>" placeholder="Typ je vraag hier">
               <div class="rm-search-submit-btn">
                 <button>
                   <i>
@@ -98,6 +79,7 @@ $terms = get_terms( array(
                 'posts_per_page' => 1,
                 'orderby' => 'date',
                 'order'=> 'desc',
+                's' => $keyword,
                 'paged' => $paged
               ) 
             );
@@ -123,6 +105,8 @@ $terms = get_terms( array(
               <?php endwhile; ?>
             </ul>
           </div>
+          <?php else: ?>
+            <div>Geen resultaten</div>
         <?php endif; wp_reset_postdata(); ?>
         </div>
       </div>

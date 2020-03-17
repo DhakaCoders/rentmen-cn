@@ -28,12 +28,12 @@ add_action('woocommerce_after_main_content', 'get_custom_wc_output_content_wrapp
 function get_custom_wc_output_content_wrapper(){
 
 	if(is_shop() OR is_product_category()){ $customClass = ' product-cat-sec'; $controlClass = ' cat-controller product-des-controller';}elseif(is_product()){$customClass = ' product-des-sec';$controlClass = ' product-des-controller'; }else{ $customClass = ''; $controlClass = '';}
-	echo '<section class="main-content-sec-wrp'.$customClass.'"><div class="container"><div class="row"><div class="col-12"><div class="main-content-wrp'.$controlClass.' clearfix">';
+	echo '<section class="pro-overview-main-sec'.$customClass.'"><div class="container"><div class="row"><div class="col-12"><div class="pro-overview-main-innr clearfix'.$controlClass.' clearfix">';
     echo '<div class="main-content-lft hide-sm"><div class="main-content-lft-dsc clearfix">';
     if ( is_active_sidebar( 'dshop-widget' ) ) dynamic_sidebar( 'dshop-widget' );
     echo '</div></div>';
 
-    echo '<div class="main-content-rgt">';
+    echo '<div class="pro-overview-grid-con">';
     if(is_product_category()):
         $cate = get_queried_object();
         $gettop_content = get_field('tcontent', 'product_cat' . '_' . $cate->term_id);

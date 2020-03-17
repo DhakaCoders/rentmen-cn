@@ -44,7 +44,7 @@ get_template_part('templates/page', 'banner');
               <div class="dft-blog-item">
                 <div class="dft-blog-item-inr">
                   <div class="dft-blog-item-fea-img-cntlr">
-                    <a class="overlay-link" href="#"></a>
+                    <a class="overlay-link" href="<?php the_permalink();?>"></a>
                     <div class="dft-blog-item-fea-img" style="background: url(<?php echo $blog_src; ?>);"></div>
                   </div>
                   <div class="dft-blog-item-des mHc">
