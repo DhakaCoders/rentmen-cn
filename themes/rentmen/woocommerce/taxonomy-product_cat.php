@@ -177,45 +177,6 @@
                 </ul>
               </div>
             <?php } ?>
-              <div class="pro-overview-sidebar-select pro-filter-con">
-                <div class="pro-overview-sidebar-head">
-                  <h3 class="sidebar-widget-title">Periode</h3>
-                </div>                
-                <div class="pro-overview-select-filter pro-filter-main">
-                  <form action="">
-                    <h6>van</h6>
-                    <div class="select-filter-frm-grup clearfix">
-                      <div class="select-filter-left">
-                        <input type="text" placeholder="01">
-                      </div>
-                      <div class="select-filter-right reset-list">
-                        <select class="selectpicker">
-                          <option selected="selected">Maart</option>
-                           <option>Maart 1</option>
-                           <option>Maart 2</option>
-                           <option>Maart 3</option>
-                           <option>Maart 4</option>
-                        </select>    
-                      </div>
-                    </div>
-                    <h6>Naar</h6>
-                    <div class="select-filter-frm-grup clearfix">
-                      <div class="select-filter-left">
-                        <input type="text" placeholder="04">
-                      </div>
-                      <div class="select-filter-right reset-list">
-                        <select class="selectpicker">
-                          <option selected="selected">Maart</option>
-                           <option>Maart 1</option>
-                           <option>Maart 2</option>
-                           <option>Maart 3</option>
-                           <option>Maart 4</option>
-                        </select>    
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
               <div class="pro-overview-sidebar-price pro-filter-con">
                 <div class="pro-overview-sidebar-head">
                   <h3 class="sidebar-widget-title">Prijs</h3>
@@ -255,7 +216,7 @@
                   <form id="formName" action="" method="get">
                     <?php $i = 1; foreach( $tags as $tag ): ?>
                     <div class="form-group">
-                      <input type="checkbox" name="tags" value="<?php echo $tag->slug; ?>" id="checkfilter<?php echo $i; ?>" <?php echo ($gtags == $tag->slug)? 'checked': ''; ?> onchange="document.getElementById('formName').submit()">
+                      <input type="checkbox" name="tags[]" value="<?php echo $tag->slug; ?>" id="checkfilter<?php echo $i; ?>" <?php echo ($gtags == $tag->slug)? 'checked': ''; ?> onchange="document.getElementById('formName').submit()">
                       <label for="checkfilter<?php echo $i; ?>"><?php echo $tag->name; ?></label>
 
                     </div>

@@ -216,7 +216,7 @@
                   </ul>
                 </div>
                 <div class="hdr-sign-up">
-                  <a href="#">
+                  <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
                     <i>
                       <svg class="sign-up-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
                         <use xlink:href="#sign-up-icon-svg"></use>
@@ -290,7 +290,7 @@
               </div>
               
               <div class="hdr-cart-btn">
-                <a href="#">
+                <a href="<?php echo wc_get_cart_url(); ?>">
                   <i>
                     <svg class="cart-icon-svg" width="26" height="24" viewBox="0 0 26 24" fill="#FFFFFF">
                       <use xlink:href="#cart-icon-svg"></use>
