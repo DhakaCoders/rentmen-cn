@@ -107,6 +107,10 @@ ol li::before {
 .dfp-plate-one-img-bx img{
 	width: 100%;
 }
+.notopimg .dft-blog-item-des-date{
+	position: static;
+	margin-bottom: 10px;
+}
 
 
 .fl-dft-lftimg-rgtdes {
@@ -642,6 +646,16 @@ Gallery design
 	}
 	.dft-share-on-xs-cntlr{
 		margin-bottom: 0!important;
+	}
+	.notopimg .dft-blog-item-des-date{
+		margin-right: 10px;
+		margin-bottom: 0;
+	}
+	.notopimg .dft-share-on{
+		margin-bottom: 0;
+	}
+	.notopimg .dft-date-xs-cntlr{
+		padding-bottom: 15px;
 	}
 }
 
