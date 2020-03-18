@@ -657,6 +657,16 @@ Gallery design
 	.notopimg .dft-date-xs-cntlr{
 		padding-bottom: 15px;
 	}
+	.dft-blog-item-des-date.show-xs{
+		position: static;
+	}
+	#nieuws-details-page-cntlr .dft-date-xs-cntlr .dft-share-on{
+		margin-bottom: 0;
+		margin-left: 15px;
+	}
+	#nieuws-details-page-cntlr .dft-date-xs-cntlr{
+		padding-bottom: 20px;
+	}
 }
 
 
