@@ -9,17 +9,14 @@ while ( have_posts() ) :
     <div class="row">
       <div class="col-md-12">
         <article class="default-page-con">
-          
-          <?php
+          <div class="dfp-promo-module clearfix">
+          <?php 
+            if( !empty(get_the_title()) ) printf('<div><strong class="dfp-promo-module-title">%s</strong></div>', get_the_title());
             while ( have_rows('inhoud') ) : the_row(); 
-              if( get_row_layout() == 'introductietekst' ){
+            if( get_row_layout() == 'introductietekst' ){
               $afbeelding = get_sub_field('afbeelding');
               if( !empty($afbeelding) ){
             ?>
-            <?php 
-              if( !empty(get_the_title()) ) printf('<div><strong class="dfp-promo-module-title">%s</strong></div>', get_the_title());
-            ?>
-            <div class="dfp-promo-module clearfix">
             <div class="dft-share-on">
               <span>Deel op:</span>
               <a href="#">
@@ -42,47 +39,40 @@ while ( have_posts() ) :
                 <strong><?php echo get_the_date('d'); ?></strong>
                 <span><?php echo get_the_date('M'); ?></span>
               </div>
-              <?php if( !empty($afbeelding) ): echo cbv_get_image_tag($afbeelding); endif;?>
+              <?php echo cbv_get_image_tag($afbeelding); ?>
             </div>
-            </div>
-            <?php
-            }
-            }else{
-              if( empty($afbeelding) ){
-            ?>
-          <div class="dfp-promo-module notopimg clearfix">
-          <?php 
-            if( !empty(get_the_title()) ) printf('<div><strong class="dfp-promo-module-title">%s</strong></div>', get_the_title());
-          ?>
-          <div class="dft-date-xs-cntlr">
+            <?php } break; }else{ ?>
+            <div class="dft-date-xs-cntlr">
               <div class="dft-blog-item-des-date">
                 <strong><?php echo get_the_date('d'); ?></strong>
                 <span><?php echo get_the_date('M'); ?></span>
               </div>
-          <div class="dft-share-on">
-            <span>Deel op:</span>
-            <a href="#">
-              <i>
-                <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;">
-                  <use xlink:href="#facebook-icon-svg"></use>
-                </svg> 
-              </i>
-            </a>
-            <a href="#">
-              <i>
-                <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;">
-                  <use xlink:href="#instagram-icon-svg"></use>
-                </svg> 
-              </i>
-            </a>
-          </div>
-          </div>
-          <hr>
-        </div>
-              <?php
+              <div class="dft-share-on dft-share-on-xs-cntlr">
+                <span>Deel op:</span>
+                <a href="#">
+                  <i>
+                    <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;">
+                      <use xlink:href="#facebook-icon-svg"></use>
+                    </svg> 
+                  </i>
+                </a>
+                <a href="#">
+                  <i>
+                    <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;">
+                      <use xlink:href="#instagram-icon-svg"></use>
+                    </svg> 
+                  </i>
+                </a>
+              </div>
+            </div>
+            <hr>
+            <?php
             }
-            }
-
+            endwhile;
+            ?>
+            </div>
+            <?php
+            while ( have_rows('inhoud') ) : the_row(); 
             if( get_row_layout() == 'teksteditor' ){
               $beschrijving = get_sub_field('fc_teksteditor');
               echo '<div class="dfp-text-module clearfix">';
