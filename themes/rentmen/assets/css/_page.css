@@ -351,6 +351,9 @@ span.catapultCookieBtn button:hover{
   background-image: url(../images/dft-slider-pagi-4.svg);
   background-repeat: no-repeat;
 }
+.dfp-promo-module.notopimg {
+    position: relative;
+}
 @media(min-width: 991px){
   .dft-slider-pagi .slick-dots li:hover{
     background-image: url(../images/dft-slider-pagi-2.svg);
