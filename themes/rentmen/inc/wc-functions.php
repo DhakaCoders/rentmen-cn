@@ -15,50 +15,6 @@ function woo_hide_page_title() {
 	
 }
 
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
-
-
-/**
- * Add wc custom content wrapper
- */
-add_action('woocommerce_before_main_content', 'get_custom_wc_output_content_wrapper', 10);
-add_action('woocommerce_after_main_content', 'get_custom_wc_output_content_wrapper_end', 10, 1);
-
-function get_custom_wc_output_content_wrapper(){
-
-	if(is_shop() OR is_product_category()){ $customClass = ' product-cat-sec'; $controlClass = ' cat-controller product-des-controller';}elseif(is_product()){$customClass = ' product-des-sec';$controlClass = ' product-des-controller'; }else{ $customClass = ''; $controlClass = '';}
-	echo '<section class="pro-overview-main-sec'.$customClass.'"><div class="container"><div class="row"><div class="col-12"><div class="pro-overview-main-innr clearfix'.$controlClass.' clearfix">';
-    echo '<div class="main-content-lft hide-sm"><div class="main-content-lft-dsc clearfix">';
-    if ( is_active_sidebar( 'dshop-widget' ) ) dynamic_sidebar( 'dshop-widget' );
-    echo '</div></div>';
-
-    echo '<div class="pro-overview-grid-con">';
-    if(is_product_category()):
-        $cate = get_queried_object();
-        $gettop_content = get_field('tcontent', 'product_cat' . '_' . $cate->term_id);
-        echo '<div class="main-content-top">';
-            if(!empty($gettop_content)) echo wpautop( $gettop_content );
-        echo '</div>';
-
-        echo '<div class="product-select show-sm"> <div class="news-grid-select-3">';
-        pcategory_dropdown();
-        echo '</div></div>';
-    endif;
-}
-
-function get_custom_wc_output_content_wrapper_end(){
-    if(is_product_category()):
-        $cate = get_queried_object();
-        $getbtm_content = get_field('bcontent', 'product_cat' . '_' . $cate->term_id);
-        echo '<div class="main-content-btm">';
-            if(!empty($getbtm_content)) echo wpautop( $getbtm_content );
-        echo '</div>';
-    endif;
-	echo '</div></div></div></div></div></section>';
-}
-
-
 /*Loop Hooks*/
 
 
@@ -144,24 +100,32 @@ if (!function_exists('add_custom_box_product_summary')) {
     function add_custom_box_product_summary() {
         global $product, $woocommerce, $post;
         $sh_desc = '';
+        if( !empty($sh_desc) ) $sh_desc = $sh_desc;
         $sh_desc = $product->get_short_description();
-        
-        echo '<div class="summary-grid">';
-        echo '<div class="summary-des-box">';
-        echo '<h1 class="product_title entry-title">'.$product->get_title().'</h1><div class="shortdes">'; 
-        if( !empty($sh_desc) ) echo $sh_desc;  
-        echo '</div><div class="single-price">';
-        echo $product->get_price_html();
-        echo '</div></div>';
-        woocommerce_template_single_add_to_cart();
+        echo '<strong class="price">'.$product->get_price_html().' / stuk</strong>';
+        echo '<div class="pro-details-pro-title">';
+        echo '<strong>'.$product->get_title().'</strong>';
         echo '</div>';
+        echo '<span>Totaal beschikbare producten: 129</span>';
+        echo wpautop( $sh_desc, true );
+        echo '<div class="pro-calendar">';
+        echo '<i><img src="'.THEME_URI.'/assets/images/pro-calendar.svg" alt=""></i>';
+        echo '<span>selecteer datum en controleer beschikbaarheid</span>';
+        echo '</div>';
+        echo'<div class="pro-counter-wrp clearfix">';
+        woocommerce_template_single_add_to_cart();
+        echo'</div>';
     }
 }
 
 
-add_action('woocommerce_after_single_product_summary', 'add_custom_long_text', 20);
 
 
+function single_add_to_cart_text(){
+    echo '<i><svg class="pro-cart-btn-svg" width="26" height="24" viewBox="0 0 26 24" fill="#fff"><use xlink:href="#pro-cart-btn-svg"></use></svg></i>';
+    echo '<span>winkel nu</span>';
+}
+//add_action('woocommerce_after_single_product_summary', 'add_custom_long_text', 20);
 function add_custom_long_text(){
     global $product;
     $sh_desc = $product->get_description();
