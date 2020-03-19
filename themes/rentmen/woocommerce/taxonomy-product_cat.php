@@ -303,7 +303,7 @@
                     </a>
                   </div>
                   <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="#"><?php the_title(); ?></a></h4>
+                    <h4 class="pro-overview-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h4>
                     <span>Lorem ipsum dolor sit amet</span>
                     <strong class="price"><?php echo $product->get_price_html(); ?> / stel</strong>
                     <div class="pro-overview-grid-btm-lnc clearfix">
