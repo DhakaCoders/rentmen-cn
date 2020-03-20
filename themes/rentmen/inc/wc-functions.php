@@ -125,59 +125,48 @@ function single_add_to_cart_text(){
     echo '<i><svg class="pro-cart-btn-svg" width="26" height="24" viewBox="0 0 26 24" fill="#fff"><use xlink:href="#pro-cart-btn-svg"></use></svg></i>';
     echo '<span>winkel nu</span>';
 }
-//add_action('woocommerce_after_single_product_summary', 'add_custom_long_text', 20);
-function add_custom_long_text(){
-    global $product;
-    $sh_desc = $product->get_description();
-    if(empty($sh_desc)) return;
-    echo '<div class="wclong-desc bottom-content  clearfix">';
-    echo $sh_desc;
-    echo '</div>';
+
+function mj_taxonomy_add_custom_meta_field() {
+?>
+<div class="form-field">
+    <label for="term_meta[custom_titel_term_meta]"><?php _e( 'Category Custom Titel', 'MJ' ); ?></label>
+    <input type="text" name="term_meta[custom_titel_term_meta]" id="term_meta[custom_titel_term_meta]" value="">
+</div>
+<?php
 }
+add_action( 'product_cat_add_form_fields', 'mj_taxonomy_add_custom_meta_field', 0, 0 );
 
+function mj_taxonomy_edit_custom_meta_field($term) {
 
-/**
- * Get HTML for a gallery image.
- *
- * Woocommerce_gallery_thumbnail_size, woocommerce_gallery_image_size and woocommerce_gallery_full_size accept name based image sizes, or an array of width/height values.
- *
- * @since 3.3.2
- * @param int  $attachment_id Attachment ID.
- * @param bool $main_image Is this the main image or a thumbnail?.
- * @return string
- */
-if (!function_exists('cbv_wc_get_gallery_image_html')) {
-function cbv_wc_get_gallery_image_html( $attachment_id, $main_image = false ) {
-    $flexslider        = (bool) apply_filters( 'woocommerce_single_product_flexslider_enabled', get_theme_support( 'wc-product-gallery-slider' ) );
-    $gallery_thumbnail = wc_get_image_size( 'gallery_thumbnail' );
-    $thumbnail_size    = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
-    $image_size        = apply_filters( 'woocommerce_gallery_image_size', $flexslider || $main_image ? 'woocommerce_single' : $thumbnail_size );
-    $full_size         = apply_filters( 'woocommerce_gallery_full_size', apply_filters( 'woocommerce_product_thumbnails_large_size', 'full' ) );
-    $thumbnail_src     = wp_get_attachment_image_src( $attachment_id, $thumbnail_size );
-    $full_src          = wp_get_attachment_image_src( $attachment_id, $full_size );
-    $alt_text          = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) );
-    $image             = wp_get_attachment_image(
-        $attachment_id,
-        $image_size,
-        false,
-        apply_filters(
-            'woocommerce_gallery_image_html_attachment_image_params',
-            array(
-                'title'                   => _wp_specialchars( get_post_field( 'post_title', $attachment_id ), ENT_QUOTES, 'UTF-8', true ),
-                'data-caption'            => _wp_specialchars( get_post_field( 'post_excerpt', $attachment_id ), ENT_QUOTES, 'UTF-8', true ),
-                'data-src'                => esc_url( $full_src[0] ),
-                'data-large_image'        => esc_url( $full_src[0] ),
-                'data-large_image_width'  => esc_attr( $full_src[1] ),
-                'data-large_image_height' => esc_attr( $full_src[2] ),
-                'class'                   => esc_attr( $main_image ? 'wp-post-image' : '' ),
-            ),
-            $attachment_id,
-            $image_size,
-            $main_image
-        )
-    );
+        $t_id = $term->term_id;
+        $term_meta = get_option( "taxonomy_$t_id" ); 
+       ?>
+        <tr class="form-field">
+        <th scope="row" valign="top"><label for="term_meta[custom_titel_term_meta]"><?php _e( 'Category Custom Titel', 'MJ' ); ?></label></th>
+            <td>
+                <input type="text" name="term_meta[custom_titel_term_meta]" id="term_meta[custom_titel_term]" value="<?php echo esc_attr( $term_meta['custom_titel_term_meta'] ) ? esc_attr( $term_meta['custom_titel_term_meta'] ) : ''; ?>">
+            </td>
+        </tr>
+    <?php
+    }
 
-    return '<div data-thumb="' . esc_url( $thumbnail_src[0] ) . '" data-thumb-alt="' . esc_attr( $alt_text ) . '" class="woocommerce-product-gallery__image"><a rel="fancybox" data-fancybox="gallery" class="woocommerce-main-image zoom fancybox" href="' . esc_url( $full_src[0] ) . '">' . $image . '</a></div>';
-}
+add_action( 'product_cat_edit_form_fields','mj_taxonomy_edit_custom_meta_field', 10, 2 );
 
-}
+function mj_save_taxonomy_custom_meta_field( $term_id ) {
+        if ( isset( $_POST['term_meta'] ) ) {
+
+            $t_id = $term_id;
+            $term_meta = get_option( "taxonomy_$t_id" );
+            $cat_keys = array_keys( $_POST['term_meta'] );
+            foreach ( $cat_keys as $key ) {
+                if ( isset ( $_POST['term_meta'][$key] ) ) {
+                    $term_meta[$key] = $_POST['term_meta'][$key];
+                }
+            }
+            // Save the option array.
+            update_option( "taxonomy_$t_id", $term_meta );
+        }
+
+    }  
+add_action( 'edited_product_cat', 'mj_save_taxonomy_custom_meta_field', 10, 2 );  
+add_action( 'create_product_cat', 'mj_save_taxonomy_custom_meta_field', 10, 2 );

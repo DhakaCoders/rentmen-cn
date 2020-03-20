@@ -87,51 +87,42 @@
       <div class="col-12">
         <div class="organize-party-innr text-center">
           <div class="pro-cat-top-title-xs show-sm">
-            <strong>Meubilair</strong>
+            <?php if( !empty($ccat->name) ) printf( '<strong>%s</strong>', $ccat->name);  ?>
           </div>
+
           <div class="organize-party-head m-auto">
-            <h2>Organiseer uw feest in een paar snelle stappen</h2>
-            <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
+          	<?php if( !empty($ccat->term_id) ): 
+	          $customTitel = get_option('taxonomy_'.$ccat->term_id);
+	        if( !empty($customTitel) ) printf('<h2>%s</h2>', $customTitel['custom_titel_term_meta']); 
+		    endif; 
+		    if( !empty($ccat->description) ) echo wpautop( $ccat->description, true );  
+		    ?>
           </div>
+			<?php  
+			  $showhide_delivery = get_field('showhide_delivery', 'option');
+			  $dproceses = get_field('dfleveringsproces', 'option');
+			  if($showhide_delivery):
+			  	if($dproceses):
+			?>
           <div class="organize-party-step-slider-wrp">
-            <div class="organizePartySlider organizePartySlider-1 clearfix dft-slider-pagi dft-slider-pagi-2">
+            <div class="organizePartySlider organizePartySlider-2 clearfix dft-slider-pagi dft-slider-pagi-2">
+              <?php foreach( $dproceses as $dproces ): ?>
               <div class="organizePartySlider-item">
                 <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step1.svg" alt=""></i>
+                   <?php if( !empty($dproces['icon']) ): ?>
+                  <i><?php echo cbv_get_image_tag( $dproces['icon'] ); ?></i>
+              		<?php endif; ?>
                 </div>
-                <h4 class="order-process-title">Lobortis et odio</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+                <?php 
+                if( !empty($dproces['titel']) ) printf('<h5 class="order-process-title">%s</h5>', $dproces['titel']); 
+                if( !empty($dproces['beschrijving']) ) echo wpautop( $dproces['beschrijving'], true );
+                ?>
               </div>
-              <div class="organizePartySlider-item">
-                <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step2.svg" alt=""></i>
-                </div>                
-                <h4 class="order-process-title">Maecenas congue</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
-              </div>
-              <div class="organizePartySlider-item">
-                <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step3.svg" alt=""></i>
-                </div>
-                <h4 class="order-process-title">dapibus enim</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
-              </div>
-              <div class="organizePartySlider-item">
-                <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step4.svg" alt=""></i>
-                </div>
-                <h4 class="order-process-title">ante tortor</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
-              </div>
-              <div class="organizePartySlider-item">
-                <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step5.svg" alt=""></i>
-                </div>
-                <h4 class="order-process-title">suspendisse nulla</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
-              </div>
+          	   <?php endforeach; ?>
             </div>
           </div>
+          <?php endif; endif; ?>
+
         </div>
       </div>
     </div>
@@ -347,45 +338,41 @@
   </div>    
 </section>
 <?php endif; wp_reset_postdata(); ?>
-
+<?php
+  $showhide_usp = get_field('showhide_usp', 'option');
+  if( $showhide_usp ):
+    $uspssec = get_field('uspssec', 'option');
+    $husps = $uspssec['alle_usps'];
+?>
+<?php if( $husps ): ?>
 <section class="pro-overview-feature-sec">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="pro-overview-feature-innr">
           <div class="overview-feature-slider clearfix dft-slider-pagi dft-slider-pagi-2">
+          	<?php foreach( $husps as $husp ): ?>
             <div class="overview-feature-slider-item mHc">
               <div class="overview-feature-slider-item-innr">
+              	<?php if( !empty($husp['icon']) ): ?>
                 <i>
-                  <img src="<?php echo THEME_URI; ?>/assets/images/pro-overview-feature-img1.svg" alt="">
-                </i>                
-                <h3 class="overview-feature-box-title">Auctor eu ante ac</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
+                  <img src="<?php echo $husp['icon']; ?>" alt="<?php echo cbv_get_image_alt( $husp['icon'] ); ?>">
+                </i>  
+                <?php endif; ?>              
+                <?php
+                  if( !empty($husp['titel']) ) printf('<h3 class="overview-feature-box-title">%s</h3>', $husp['titel']);
+                  if( !empty($husp['beschrijving']) ) echo wpautop( $husp['beschrijving'] );
+                ?>
               </div>
             </div>
-            <div class="overview-feature-slider-item mHc">
-              <div class="overview-feature-slider-item-innr">
-                <i>
-                  <img src="<?php echo THEME_URI; ?>/assets/images/pro-overview-feature-img1.svg" alt="">
-                </i>                
-                <h3 class="overview-feature-box-title">Auctor eu ante ac</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-              </div>
-            </div>  
-            <div class="overview-feature-slider-item mHc">
-              <div class="overview-feature-slider-item-innr">
-                <i>
-                  <img src="<?php echo THEME_URI; ?>/assets/images/pro-overview-feature-img2.svg" alt="">
-                </i>                
-                <h3 class="overview-feature-box-title">Auctor eu ante ac</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-              </div>
-            </div>            
+			<?php endforeach; ?>           
           </div>
         </div>
       </div>
     </div>
   </div>    
 </section>
+<?php endif; ?>
+<?php endif; ?>
 <?php endif; ?>
 <?php get_footer(); ?>

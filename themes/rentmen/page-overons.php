@@ -92,7 +92,7 @@ get_template_part('templates/page', 'banner');
 <?php
   $showhide_pcat = get_field('showhide_pcat', $thisID);
   if( $showhide_pcat ):
-    $prcats = get_field('producten_cats', $thisID);
+    $prcats = get_field('productenkijker', $thisID);
 ?>
 <section class="hm-de-kijker-post-sec-wrp overons-de-post-sec">
   <div class="container">
@@ -106,61 +106,57 @@ get_template_part('templates/page', 'banner');
         </div>
       </div>
     </div>
+    <?php  
+      $showhide_cknop = get_field('showhide_cknop', HOMEID);
+      $hknops = get_field('home_knops', HOMEID);
+      if($showhide_cknop):
+        if( $hknops ): 
+    ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-de-kijker-post-wrp clearfix">
           <ul class='reset-list clearfix'>
+            <?php 
+            foreach( $hknops as $hknop ): 
+              $h_knop = $hknop['knop'];
+              
+            ?>
             <li>
               <div class="hm-de-kijker-post-innr">
                 <div class="hm-de-kijker-post-img-overflow">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-1.png);"></div>
+                  <?php 
+                    if( is_array( $h_knop ) &&  !empty( $h_knop['url'] ) ){
+                      printf('<a class="overlay-link" href="%s" target="%s"></a>', $h_knop['url'], $h_knop['target']); 
+                    } 
+                  ?>
+                  <?php if(!empty($hknop['afbeelding'])): $hknopsrc = cbv_get_image_src($hknop['afbeelding'], 'knopgrid');?>
+                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo $hknopsrc; ?>);"></div>
+                  <?php endif; ?>
                 </div>
                 <div class="hm-de-kijker-post-dsc">
-                  <h3 class="hm-de-kijker-post-dsc-link"><a href="#">Meubilair</a></h3>
+                  <h3 class="hm-de-kijker-post-dsc-link">
+                  <?php 
+                    if( is_array( $h_knop ) &&  !empty( $h_knop['url'] ) ){
+                      printf('<a href="%s" target="%s">%s</a>', $h_knop['url'], $h_knop['target'], $h_knop['title']); 
+                    } 
+                  ?>
+                  </h3>
                 </div>
               </div>
             </li>
-            <li>
-              <div class="hm-de-kijker-post-innr">
-                <div class="hm-de-kijker-post-img-overflow">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-2.png);"></div>
-                </div>
-                <div class="hm-de-kijker-post-dsc">
-                  <h3 class="hm-de-kijker-post-dsc-link"><a href="#">Gedekte tafel</a></h3>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="hm-de-kijker-post-innr">
-                <div class="hm-de-kijker-post-img-overflow">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-3.png);"></div>
-                </div>
-                <div class="hm-de-kijker-post-dsc">
-                  <h3 class="hm-de-kijker-post-dsc-link"><a href="#">Keukenmateriaal</a></h3>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="hm-de-kijker-post-innr">
-                <div class="hm-de-kijker-post-img-overflow">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-4.png);"></div>
-                </div>
-                <div class="hm-de-kijker-post-dsc">
-                  <h3 class="hm-de-kijker-post-dsc-link"><a href="#">Partytenten</a></h3>
-                </div>
-              </div>
-            </li>
+            <?php endforeach; ?>
           </ul>
         </div>
-        <div class="hm-download-btn">
-          <a href="#">BEKIJK ALLES</a>
-        </div>
+        <?php 
+          $pknop = $prcats['knop'];
+          if( is_array( $pknop ) &&  !empty( $pknop['url'] ) ){
+            printf('<div class="hm-download-btn"><a href="%s" target="%s">%s</a></div>', $pknop['url'], $pknop['target'], $pknop['title']); 
+          } 
+        ?>
       </div>
     </div>
+     <?php endif; ?>
+    <?php endif; ?>
   </div>
 </section>
 <?php endif; ?>

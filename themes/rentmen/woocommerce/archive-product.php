@@ -332,43 +332,40 @@
 </section>
 <?php endif; wp_reset_postdata(); ?>
 
+<?php
+  $showhide_usp = get_field('showhide_usp', 'option');
+  if( $showhide_usp ):
+    $uspssec = get_field('uspssec', 'option');
+    $husps = $uspssec['alle_usps'];
+?>
+<?php if( $husps ): ?>
 <section class="pro-overview-feature-sec">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="pro-overview-feature-innr">
           <div class="overview-feature-slider clearfix dft-slider-pagi dft-slider-pagi-2">
+            <?php foreach( $husps as $husp ): ?>
             <div class="overview-feature-slider-item mHc">
               <div class="overview-feature-slider-item-innr">
+                <?php if( !empty($husp['icon']) ): ?>
                 <i>
-                  <img src="<?php echo THEME_URI; ?>/assets/images/pro-overview-feature-img1.svg" alt="">
-                </i>                
-                <h3 class="overview-feature-box-title">Auctor eu ante ac</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
+                  <img src="<?php echo $husp['icon']; ?>" alt="<?php echo cbv_get_image_alt( $husp['icon'] ); ?>">
+                </i>  
+                <?php endif; ?>              
+                <?php
+                  if( !empty($husp['titel']) ) printf('<h3 class="overview-feature-box-title">%s</h3>', $husp['titel']);
+                  if( !empty($husp['beschrijving']) ) echo wpautop( $husp['beschrijving'] );
+                ?>
               </div>
             </div>
-            <div class="overview-feature-slider-item mHc">
-              <div class="overview-feature-slider-item-innr">
-                <i>
-                  <img src="<?php echo THEME_URI; ?>/assets/images/pro-overview-feature-img1.svg" alt="">
-                </i>                
-                <h3 class="overview-feature-box-title">Auctor eu ante ac</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-              </div>
-            </div>  
-            <div class="overview-feature-slider-item mHc">
-              <div class="overview-feature-slider-item-innr">
-                <i>
-                  <img src="<?php echo THEME_URI; ?>/assets/images/pro-overview-feature-img2.svg" alt="">
-                </i>                
-                <h3 class="overview-feature-box-title">Auctor eu ante ac</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-              </div>
-            </div>            
+      <?php endforeach; ?>           
           </div>
         </div>
       </div>
     </div>
   </div>    
 </section>
+<?php endif; ?>
+<?php endif; ?>
 <?php get_footer(); ?>
