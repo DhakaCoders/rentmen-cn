@@ -231,9 +231,7 @@ body.woocommerce-order-received h2.woocommerce-column__title {
 .woocommerce-order-received #wccheckout-wrapper .woocommerce-order-details td span{
 	font-weight: 500!important;
 }
-.woocommerce-account .innerpage-con-wrap{
-    padding: 60px 0 100px;
-}
+
 .woocommerce-MyAccount-navigation ul{
     list-style: none;
 }
