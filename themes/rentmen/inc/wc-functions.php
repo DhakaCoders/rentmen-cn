@@ -128,7 +128,7 @@ function product_option_custom_field(){
                  <div class="feature-filter-btn">';
                  foreach( $pa_colors as $pa_color ) {
                 echo '<input type="radio" id="'.$pa_color->slug.'" name="radios" value="'.$pa_color->name.'">';
-                echo '<label for="'.$pa_color->slug.'">'.$pa_color->name.'</label>';
+                echo '<label style="background:'.$pa_color->slug.'" for="'.$pa_color->slug.'">'.$pa_color->name.'</label>';
               }
             echo '</div></div>';
              
