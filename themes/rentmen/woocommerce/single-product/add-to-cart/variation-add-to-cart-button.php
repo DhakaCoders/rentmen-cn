@@ -17,6 +17,9 @@ global $product;
 	<?php
 	do_action( 'woocommerce_before_add_to_cart_quantity' );
 	?>
+	<div class="single-pro-filteraz">
+		<?php product_option_custom_field(); ?>
+	</div>
 	<div class="pro-counter clearfix">
 	<div class="qty"> 
 	<?php
