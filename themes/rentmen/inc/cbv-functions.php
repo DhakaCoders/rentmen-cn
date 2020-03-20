@@ -110,3 +110,15 @@ function cbv_table( $table){
     echo '</div>';
   }  
 }
+
+function cbv_get_excerpt($limit = 8, $dot = ''){
+  $excerpt = explode(' ', get_the_excerpt(), $limit);
+  if (count($excerpt)>=$limit) {
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt);
+  } else {
+    $excerpt = implode(" ",$excerpt);
+  } 
+  $excerpt = preg_replace('`\[[^\]]*\]`',$dot,$excerpt);
+  return $excerpt;
+}

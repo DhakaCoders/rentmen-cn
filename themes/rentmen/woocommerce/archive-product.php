@@ -77,45 +77,31 @@
             <h2>Organiseer uw feest in een paar snelle stappen</h2>
             <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
           </div>
+
+          <?php  
+            $showhide_delivery = get_field('showhide_delivery', 'option');
+            $dproceses = get_field('dfleveringsproces', 'option');
+            if($showhide_delivery):
+              if($dproceses):
+          ?>
           <div class="organize-party-step-slider-wrp">
-            <div class="organizePartySlider organizePartySlider-1 clearfix dft-slider-pagi dft-slider-pagi-2">
+            <div class="organizePartySlider organizePartySlider-2 clearfix dft-slider-pagi dft-slider-pagi-2">
+              <?php foreach( $dproceses as $dproces ): ?>
               <div class="organizePartySlider-item">
                 <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step1.svg" alt=""></i>
+                   <?php if( !empty($dproces['icon']) ): ?>
+                  <i><?php echo cbv_get_image_tag( $dproces['icon'] ); ?></i>
+                  <?php endif; ?>
                 </div>
-                <h4 class="order-process-title">Lobortis et odio</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+                <?php 
+                if( !empty($dproces['titel']) ) printf('<h5 class="order-process-title">%s</h5>', $dproces['titel']); 
+                if( !empty($dproces['beschrijving']) ) echo wpautop( $dproces['beschrijving'], true );
+                ?>
               </div>
-              <div class="organizePartySlider-item">
-                <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step2.svg" alt=""></i>
-                </div>                
-                <h4 class="order-process-title">Maecenas congue</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
-              </div>
-              <div class="organizePartySlider-item">
-                <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step3.svg" alt=""></i>
-                </div>
-                <h4 class="order-process-title">dapibus enim</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
-              </div>
-              <div class="organizePartySlider-item">
-                <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step4.svg" alt=""></i>
-                </div>
-                <h4 class="order-process-title">ante tortor</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
-              </div>
-              <div class="organizePartySlider-item">
-                <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step5.svg" alt=""></i>
-                </div>
-                <h4 class="order-process-title">suspendisse nulla</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
-              </div>
+               <?php endforeach; ?>
             </div>
           </div>
+          <?php endif; endif; ?>
         </div>
       </div>
     </div>
@@ -222,6 +208,13 @@
                 global $product;
                 $excludeID = get_the_ID();
                 $thumb_id = get_post_thumbnail_id(get_the_ID());
+                $sterms = get_the_terms( get_the_ID(), 'product_cat' );
+                $stermname = '';
+                if( !empty($sterms) && !is_wp_error($sterms) ){
+                  foreach( $sterms  as $sterm ){
+                    $stermname = $sterm->name;
+                  }
+                }
               ?>
               <div class="pro-overview-single-img mHc">
                 <?php if (!empty($thumb_id)){ ?>
@@ -232,7 +225,7 @@
                 <a href="<?php the_permalink();?>" class="overlay-link"></a>
               </div>
               <div class="pro-overview-single-des text-white mHc">
-                <h4>In De Kijker</h4>
+                <?php if( !empty($stermname) ) printf('<h4>%s</h4>', $stermname); ?>
                 <h3 class="pro-overview-title-fea"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                 <strong class="price"><?php echo $product->get_price_html(); ?> / stuk</strong>
                 <?php the_excerpt();?>
@@ -274,6 +267,7 @@
                 global $product;
                 $product_thumb = '';
                 $thumb_id = get_post_thumbnail_id(get_the_ID());
+                $status = get_field('status', get_the_ID());
               ?>
               <div class="pro-overview-grid-item">
                 <div class="pro-overview-grid-item-innr">
@@ -288,7 +282,7 @@
                   </div>
                   <div class="pro-overview-grid-des">
                     <h4 class="pro-overview-title"><a href="#"><?php the_title(); ?></a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
+                    <span><?php echo cbv_get_excerpt(); ?></span>
                     <strong class="price"><?php echo $product->get_price_html(); ?> / stel</strong>
                     <div class="pro-overview-grid-btm-lnc clearfix">
                       <a href="<?php the_permalink();?>">Meer Info</a>
@@ -299,7 +293,7 @@
                       </a>
                     </div>
                   </div>
-                  <span class="pro-new-tag">New</span>                
+                  <?php if( !empty($status) ) printf( '<span class="pro-new-tag">%s</span>', $status); ?>            
                 </div>  
               </div>
               <?php endwhile; ?>

@@ -229,6 +229,13 @@
                 global $product;
                 $excludeID = get_the_ID();
                 $thumb_id = get_post_thumbnail_id(get_the_ID());
+                $sterms = get_the_terms( get_the_ID(), 'product_cat' );
+                $stermname = '';
+                if( !empty($sterms) && !is_wp_error($sterms) ){
+                  foreach( $sterms  as $sterm ){
+                    $stermname = $sterm->name;
+                  }
+                }
               ?>
               <div class="pro-overview-single-img mHc">
                 <?php if (!empty($thumb_id)){ ?>
@@ -239,7 +246,7 @@
                 <a href="<?php the_permalink();?>" class="overlay-link"></a>
               </div>
               <div class="pro-overview-single-des text-white mHc">
-                <h4>In De Kijker</h4>
+                <?php if( !empty($stermname) ) printf('<h4>%s</h4>', $stermname); ?>
                 <h3 class="pro-overview-title-fea"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                 <strong class="price"><?php echo $product->get_price_html(); ?> / stuk</strong>
                 <?php the_excerpt();?>
@@ -281,6 +288,7 @@
                 global $product;
                 $product_thumb = '';
                 $thumb_id = get_post_thumbnail_id(get_the_ID());
+                $status = get_field('status', get_the_ID());
               ?>
               <div class="pro-overview-grid-item">
                 <div class="pro-overview-grid-item-innr">
@@ -295,7 +303,7 @@
                   </div>
                   <div class="pro-overview-grid-des">
                     <h4 class="pro-overview-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h4>
-                    <span>Lorem ipsum dolor sit amet</span>
+                    <span><?php echo cbv_get_excerpt(); ?></span>
                     <strong class="price"><?php echo $product->get_price_html(); ?> / stel</strong>
                     <div class="pro-overview-grid-btm-lnc clearfix">
                       <a href="<?php the_permalink();?>">Meer Info</a>
@@ -306,7 +314,7 @@
                       </a>
                     </div>
                   </div>
-                  <span class="pro-new-tag">New</span>                
+                  <?php if( !empty($status) ) printf( '<span class="pro-new-tag">%s</span>', $status); ?>               
                 </div>  
               </div>
               <?php endwhile; ?>
