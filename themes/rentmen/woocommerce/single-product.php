@@ -147,6 +147,11 @@ if( !empty($terms) && !is_wp_error($terms) ){
             <?php echo $sh_desc; ?>
           </div>
       	  <?php } ?>
+      	    <?php  
+			  $showhide_review = get_field('showhide_review', get_the_ID());
+			  $stestimonial = get_field('stestimonial', get_the_ID());
+			  if($showhide_review):
+			?>
           <div class="pro-description-rgt">
             <div class="pro-description-bq text-white">
               <i>
@@ -154,10 +159,11 @@ if( !empty($terms) && !is_wp_error($terms) ){
                   <use xlink:href="#pro-des-bq-svg"></use>
                 </svg> 
               </i>
-              <p>Libero ipsum commodo senectus purus, nibh vitae. Pharetra, lobortis volutpat lectus lacus massa commodo cursus aliquam ut. Sem scelerisque nullam ac nisl sit in eu, a, pretium.</p>
-              <strong>- Steven Rym, Client</strong>
+              <?php if( !empty($stestimonial['tekst']) ) echo wpautop($stestimonial['tekst']); ?>
+              <?php if( !empty($stestimonial['name']) ) printf('<strong>- %s, %s</strong>', $stestimonial['name'], $stestimonial['positie']); ?>
             </div>
           </div>
+      	 <?php endif; ?>
         </div>
       </div>
     </div>
