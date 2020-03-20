@@ -108,17 +108,51 @@ if (!function_exists('add_custom_box_product_summary')) {
         echo '</div>';
         echo '<span>Totaal beschikbare producten: 129</span>';
         echo wpautop( $sh_desc, true );
-        echo '<div class="pro-calendar">';
-        echo '<i><img src="'.THEME_URI.'/assets/images/pro-calendar.svg" alt=""></i>';
-        echo '<span>selecteer datum en controleer beschikbaarheid</span>';
-        echo '</div>';
         echo'<div class="pro-counter-wrp clearfix">';
         woocommerce_template_single_add_to_cart();
         echo'</div>';
     }
 }
 
+function product_option_custom_field(){
+    global $product, $woocommerce;
+    if( !$product->is_type('variable') ){
+        $attributes = $product->get_attributes(); //get all attributes
+        if( !empty($attributes) && $attributes ):
+        echo '<div class="single-pro-filter-wrp">';
+        foreach( $attributes as $attribute ){
+          if( $attribute['name'] == 'pa_color' || $attribute['name'] == 'color' ) {
+            $pa_colors = get_the_terms( $product->get_id(), $attribute['name']);
+            echo '<div class="color-filter">
+                <h6>beschikbare kleur</h6>
+                 <div class="feature-filter-btn">';
+                 foreach( $pa_colors as $pa_color ) {
+                echo '<input type="radio" id="'.$pa_color->slug.'" name="radios" value="'.$pa_color->name.'">';
+                echo '<label for="'.$pa_color->slug.'">'.$pa_color->name.'</label>';
+              }
+            echo '</div></div>';
+             
+          } elseif($attribute['name'] == 'pa_variabelen') {
+              $pa_variabelens = get_the_terms( $product->get_id(), $attribute['name']);
+              echo '<div class="variables-filter">
+              <h6>variabelen</h6>
+              <div class="feature-filter-btn">';
+              foreach( $pa_variabelens as $pa_variabelen ) {
+                echo '<input type="radio" id="'.$pa_variabelen->slug.'" name="radios" value="'.$pa_variabelen->name.'">';
+                echo '<label for="'.$pa_variabelen->slug.'">'.$pa_variabelen->name.'</label>';
+              }
+              echo '</div></div>';
+          }
+        }
+        echo '</div>';
+        endif;
+    }
+    echo '<div class="pro-calendar">';
+    echo '<i><img src="'.THEME_URI.'/assets/images/pro-calendar.svg" alt=""></i>';
+    echo '<span>selecteer datum en controleer beschikbaarheid</span>';
+    echo '</div>';
 
+}
 
 
 function single_add_to_cart_text(){
