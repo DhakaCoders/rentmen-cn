@@ -36,6 +36,9 @@ if ( $product->is_in_stock() ) : ?>
 		do_action( 'woocommerce_before_add_to_cart_quantity' );
 
 			?>
+	<div class="single-pro-filteraz">
+		<?php product_option_custom_field(); ?>
+	</div>
 	<div class="pro-counter clearfix">
 	<div class="qty"> 
 	<?php
@@ -55,7 +58,7 @@ if ( $product->is_in_stock() ) : ?>
 
 		do_action( 'woocommerce_after_add_to_cart_quantity' );
 		?>
-
+		
 		<div class="pro-cart-btn"><button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt"><?php echo single_add_to_cart_text(); ?></button></div>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>

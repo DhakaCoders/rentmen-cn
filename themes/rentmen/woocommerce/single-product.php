@@ -22,11 +22,13 @@ global $product;
 get_header( 'shop' ); 
 
 $terms = get_the_terms( get_the_ID(), 'product_cat' );
-$termid = $termname = '';
+
+$termid = $termname = $termdes ='';
 if( !empty($terms) && !is_wp_error($terms) ){
 	foreach( $terms  as $term ){
 		$termid = $term->term_id;
 		$termname = $term->name;
+		$termdes = $term->description;
 	}
 }
 ?>
@@ -145,6 +147,11 @@ if( !empty($terms) && !is_wp_error($terms) ){
             <?php echo $sh_desc; ?>
           </div>
       	  <?php } ?>
+      	    <?php  
+			  $showhide_review = get_field('showhide_review', get_the_ID());
+			  $stestimonial = get_field('stestimonial', get_the_ID());
+			  if($showhide_review):
+			?>
           <div class="pro-description-rgt">
             <div class="pro-description-bq text-white">
               <i>
@@ -152,77 +159,68 @@ if( !empty($terms) && !is_wp_error($terms) ){
                   <use xlink:href="#pro-des-bq-svg"></use>
                 </svg> 
               </i>
-              <p>Libero ipsum commodo senectus purus, nibh vitae. Pharetra, lobortis volutpat lectus lacus massa commodo cursus aliquam ut. Sem scelerisque nullam ac nisl sit in eu, a, pretium.</p>
-              <strong>- Steven Rym, Client</strong>
+              <?php if( !empty($stestimonial['tekst']) ) echo wpautop($stestimonial['tekst']); ?>
+              <?php if( !empty($stestimonial['name']) ) printf('<strong>- %s, %s</strong>', $stestimonial['name'], $stestimonial['positie']); ?>
             </div>
           </div>
+      	 <?php endif; ?>
         </div>
       </div>
     </div>
   </div>    
 </section>
+
 <section class="organize-party-sec">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="organize-party-innr text-center">
+          <?php if( !empty($termid) ): 
+          	$customTitel = get_option('taxonomy_'.$termid);
+          ?>
           <div class="organize-party-head m-auto">
-            <h2>Organiseer uw feest in een paar snelle stappen</h2>
-            <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
+            <?php 
+            if( !empty($customTitel) ) printf('<h2>%s</h2>', $customTitel['custom_titel_term_meta']);
+            if( !empty($termdes) ) echo wpautop( $termdes, true );  
+            ?>
           </div>
+      	  <?php endif; ?>
+
+			<?php  
+			  $showhide_delivery = get_field('showhide_delivery', 'option');
+			  $dproceses = get_field('dfleveringsproces', 'option');
+			  if($showhide_delivery):
+			  	if($dproceses):
+			?>
           <div class="organize-party-step-slider-wrp">
             <div class="organizePartySlider organizePartySlider-2 clearfix dft-slider-pagi dft-slider-pagi-2">
+              <?php foreach( $dproceses as $dproces ): ?>
               <div class="organizePartySlider-item">
                 <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step1.svg" alt=""></i>
+                   <?php if( !empty($dproces['icon']) ): ?>
+                  <i><?php echo cbv_get_image_tag( $dproces['icon'] ); ?></i>
+              		<?php endif; ?>
                 </div>
-                <h5 class="order-process-title">Lobortis et odio</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+                <?php 
+                if( !empty($dproces['titel']) ) printf('<h5 class="order-process-title">%s</h5>', $dproces['titel']); 
+                if( !empty($dproces['beschrijving']) ) echo wpautop( $dproces['beschrijving'], true );
+                ?>
               </div>
-              <div class="organizePartySlider-item">
-                <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step2.svg" alt=""></i>
-                </div>                
-                <h5 class="order-process-title">Maecenas congue</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
-              </div>
-              <div class="organizePartySlider-item">
-                <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step3.svg" alt=""></i>
-                </div>
-                <h5 class="order-process-title">dapibus enim</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
-              </div>
-              <div class="organizePartySlider-item">
-                <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step4.svg" alt=""></i>
-                </div>
-                <h6>ante tortor</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
-              </div>
-              <div class="organizePartySlider-item">
-                <div class="organizePartySlider-img mHc">
-                  <i><img src="<?php echo THEME_URI; ?>/assets/images/organize-party-step5.svg" alt=""></i>
-                </div>
-                <h5 class="order-process-title">suspendisse nulla</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
-              </div>
+          	   <?php endforeach; ?>
             </div>
           </div>
+          <?php endif; endif; ?>
         </div>
       </div>
     </div>
   </div>
+  <?php  
+	  $showhide_pslider = get_field('showhide_pslider', 'option');
+	  $pslides = get_field('pslider', 'option');
+	  if($showhide_pslider):
+	  	if($pslides):
+	?>
   <div class="organize-party-bg-wrp clearfix">
-
-<!--     <div class="thumbSlider-arrows">
-      <span class="leftArrow">
-        <i class="fas fa-angle-up"></i>
-      </span>
-      <span class="rightArrow">
-        <i class="fas fa-angle-down"></i>
-      </span>
-    </div> -->
 
     <div class="organizeSlider-arrows">
       <span class="leftArrow">
@@ -233,26 +231,21 @@ if( !empty($terms) && !is_wp_error($terms) ){
       </span>
     </div>
     <div class="organize-party-bg-slider">
+    	<?php 
+    	foreach( $pslides as $pslide ): 
+    	?>
       <div class="organize-party-bg-slider-item">
         <div class="organize-party-bg-innr">
-          <div class="organize-party-bg-main" style="background: url('<?php echo THEME_URI; ?>/assets/images/organize-party-bg-1.jpg')"></div>
-          <a href="#" class="overlay-link"></a>                
+          <?php if( $pslide['afbeelding'] ): $slidesrc = cbv_get_image_src( $pslide['afbeelding'], 'productslide' );?>
+          <div class="organize-party-bg-main" style="background: url('<?php echo $slidesrc; ?>')"></div>
+          <a href="#" class="overlay-link"></a> 
+          <?php endif; ?>               
         </div>
       </div>
-      <div class="organize-party-bg-slider-item">
-        <div class="organize-party-bg-innr">
-          <div class="organize-party-bg-main" style="background: url('<?php echo THEME_URI; ?>/assets/images/organize-party-bg-2.jpg')"></div>
-          <a href="#" class="overlay-link"></a>                
-        </div>
-      </div>
-      <div class="organize-party-bg-slider-item">
-        <div class="organize-party-bg-innr">
-          <div class="organize-party-bg-main" style="background: url('<?php echo THEME_URI; ?>/assets/images/organize-party-bg-3.jpg')"></div>
-          <a href="#" class="overlay-link"></a>
-        </div>
-      </div>
+  	  <?php endforeach; ?>
     </div>
   </div>  
+	<?php endif; endif; ?>
 </section>
 <?php 
 if( !empty($termid) ): 

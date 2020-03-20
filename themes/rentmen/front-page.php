@@ -59,14 +59,14 @@
     </span>
   </div>
 </div>
-<?php
-  $hshowhide_cases = get_field('showhide_cases', HOMEID);
-  $hcasesgrp = get_field('cases_in_de_kijker', HOMEID);
-  $hcasesids = $hcasesgrp['cases'];
-  if( $hshowhide_cases ):
-?>
+
 <section class="hm-de-kijker-post-sec-wrp">
   <div class="container">
+    <?php
+      $hshowhide_cases = get_field('showhide_cases', HOMEID);
+      $hcasesgrp = get_field('cases_in_de_kijker', HOMEID);
+      if( $hshowhide_cases ):
+    ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-de-kijker-head">
@@ -81,252 +81,93 @@
         </div>
       </div>
     </div>
+    <?php endif; ?>
+    <?php  
+      $showhide_cknop = get_field('showhide_cknop', HOMEID);
+      $hknops = get_field('home_knops', HOMEID);
+      if($showhide_cknop):
+        if( $hknops ): 
+    ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-de-kijker-post-wrp clearfix">
           <ul class='reset-list clearfix'>
+            <?php 
+            foreach( $hknops as $hknop ): 
+              $h_knop = $hknop['knop'];
+              
+            ?>
             <li>
               <div class="hm-de-kijker-post-innr">
                 <div class="hm-de-kijker-post-img-overflow">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-1.png);"></div>
-                </div>
+                  <?php if(!empty($hknop['afbeelding'])): $hknopsrc = cbv_get_image_src($hknop['afbeelding'], 'knopgrid');?>
+                    <?php 
+                      if( is_array( $h_knop ) &&  !empty( $h_knop['url'] ) ){
+                        printf('<a class="overlay-link" href="%s" target="%s"></a>', $h_knop['url'], $h_knop['target']); 
+                      } 
+                    ?>
+                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo $hknopsrc; ?>);"></div>
+                  </div>
+                  <?php endif; ?>
                 <div class="hm-de-kijker-post-dsc">
-                  <a href="#">Meubilair</a>
+                  <?php 
+                    if( is_array( $h_knop ) &&  !empty( $h_knop['url'] ) ){
+                      printf('<a href="%s" target="%s">%s</a>', $h_knop['url'], $h_knop['target'], $h_knop['title']); 
+                    } 
+                  ?>
                 </div>
               </div>
             </li>
-            <li>
-              <div class="hm-de-kijker-post-innr">
-                <div class="hm-de-kijker-post-img-overflow">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-2.png);"></div>
-                </div>
-                <div class="hm-de-kijker-post-dsc">
-                  <a href="#">Gedekte tafel</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="hm-de-kijker-post-innr">
-                <div class="hm-de-kijker-post-img-overflow">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-3.png);"></div>
-                </div>
-                <div class="hm-de-kijker-post-dsc">
-                  <a href="#">Keukenmateriaal</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="hm-de-kijker-post-innr">
-                <div class="hm-de-kijker-post-img-overflow">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-4.png);"></div>
-                </div>
-                <div class="hm-de-kijker-post-dsc">
-                  <a href="#">Partytenten</a>
-                </div>
-              </div>
-            </li>
+            <?php endforeach; ?>
           </ul>
         </div>
       </div>
     </div>
+    <?php endif; ?>
+    <?php endif; ?>
+    <?php  
+      $showhide_pcats = get_field('showhide_pcats', HOMEID);
+      $cats= get_field('categorie_selecteren', HOMEID);
+      if($showhide_pcats):
+    ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="categorie-xs-btn">
           <span>meer categorieën</span>
         </div>
+        <?php if( $cats ): ?>
         <div class="hm-post-categorie-wrp clearfix">
           <ul class="reset-list">
+            <?php foreach( $cats as $cat ): 
+              $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
+              $hoverid = get_field( 'hover_thumbnail', $cat );
+              ?>
             <li>
-              <a href="#">
+              <a href="<?php echo esc_url( get_term_link( $cat ) ); ?>">
                <div class="hm-post-categorie-title">
                   <span>
+                    <?php if( !empty($thumbnail_id) ): $catimg = cbv_get_image_src($thumbnail_id); ?>
                     <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
+                      <img class="style-svg" src="<?php echo $catimg; ?>" alt="<?php echo $cat->name; ?>">
                       <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
                         <use xlink:href="#post-cty-table-icon-svg"></use>
                       </svg> 
                     </i>
-                    Categorie Titel
+                    <?php endif; ?>
+                    <?php echo $cat->name; ?>
                   </span>
                 </div>
               </a>
            </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
+            <?php endforeach; ?>
           </ul>
         </div>
+        <?php endif; ?>
       </div>
     </div>
+    <?php endif; ?>
   </div>
 </section>
-<?php endif; ?>
 <?php
   $hshowhide_overons = get_field('showhide_overons', HOMEID);
   $hoverons = get_field('home_overons', HOMEID);

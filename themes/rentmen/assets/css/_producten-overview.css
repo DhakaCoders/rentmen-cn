@@ -244,15 +244,17 @@ html .price-slider .ui-button.ui-state-disabled:active {
   color: #F3BF00;
 }
 .price-slider input{
-  width:65px;
-  height:40px;
-  padding: 0;
-  background: transparent;
-  line-height: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
+  width:65px!important;
+  height:40px!important;
+  padding: 0!important;
+  background: transparent!important;
+  line-height: normal!important;
+  font-weight: 700!important;
+  font-size: 16px!important;
+  line-height: 22px!important;
   color: #F3BF00;
+  border: none!important;
+  color: #F3BF00!important;
 }
 .price-slider .min-amount,
 .price-slider .max-amount{
@@ -543,6 +545,10 @@ html .price-slider .ui-button.ui-state-disabled:active {
   display: block;
   font-size: 16px;
   line-height: 22px;
+  color: #BF211E;
+}
+.pro-overview-grid-des strong .woocommerce-Price-amount.amount,
+.pro-overview-grid-des strong .woocommerce-Price-amount.amount .woocommerce-Price-currencySymbol{
   color: #BF211E;
 }
 .pro-overview-grid-btm-lnc{

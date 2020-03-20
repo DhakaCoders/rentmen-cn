@@ -40,18 +40,28 @@
 }
 .thumbSlider-item-img { 
   margin-bottom: 7px;
-  padding:0;
-  display: inline-block;
-  vertical-align: baseline;
+  padding: 10px;
+  width: 129px;
+  height: 129px;
+  border: 2px solid #F6F6F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .thumbSlider-item i {
-  display: block;
-  margin: 0 auto; 
-  max-width: 132px;
+ position: relative;
+
 }
 .thumbSlider-item i img {
-  width: 100%;
-  border: 2px solid #F6F6F6;
+  max-height: 110px;
+/*  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);*/
+  display: inline-block;
+  vertical-align: baseline;
   /* border: 2px solid #f11; */
 }
 .slider-pro-thumb-slider-wrp{

@@ -25,6 +25,8 @@ if( !function_exists('cbv_theme_setup') ){
         add_image_size( 'faqfull', 534, 563, true );
         add_image_size( 'bloggrid', 422, 280, true );
         add_image_size( 'gallerygrid', 440, 272, true );
+        add_image_size( 'productslide', 442, 440, true );
+        add_image_size( 'knopgrid', 298, 220, true );
 
 		
 		// add size to media uploader
