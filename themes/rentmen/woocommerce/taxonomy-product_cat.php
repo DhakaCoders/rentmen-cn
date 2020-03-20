@@ -66,7 +66,7 @@
             <?php if( isset($ccat->name) && !empty($ccat->name)) printf('<h1>%s</h1>', $ccat->name); ?>
           </div>          
           <div class="breadcrumbs-main">
-            <?php //cbv_breadcrumbs(); ?>
+            <?php cbv_custom_both_breadcrump(); ?>
           </div>
         </div>
         <div class="breadcrumbs-innr show-xs clearfix">

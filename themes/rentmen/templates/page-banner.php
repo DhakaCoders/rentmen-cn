@@ -17,7 +17,7 @@ $pageTitle = get_the_title($thisID);
             <?php endif; ?>
           </div>          
           <div class="breadcrumbs-main">
-            <?php cbv_breadcrumbs(); ?>
+            <?php cbv_custom_both_breadcrump(); ?>
           </div>
         </div>
         <div class="breadcrumbs-innr show-xs clearfix">

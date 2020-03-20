@@ -42,6 +42,14 @@
   padding-right: 43px;
   position: relative;
   float: left;
+
+}
+.breadcrumbs-main ul li.wclist{
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 22px;
+    color: #1E1E1E;
 }
 .breadcrumbs-main ul li a {
   display: block;
