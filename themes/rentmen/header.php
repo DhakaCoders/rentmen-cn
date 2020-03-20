@@ -193,29 +193,21 @@
                 wp_nav_menu( $mmenuOptions ); 
               ?>
               </nav>
+
               <div class="hdr-icons-cntlr clearfix">
+                <?php if(!empty($smedias)): ?>
                 <div class="hdr-social">
                   <ul class="reset-list">
+                    <?php foreach($smedias as $smedia):  ?>
                     <li>
-                      <a href="#">
-                        <i>
-                          <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;">
-                            <use xlink:href="#facebook-icon-svg"></use>
-                          </svg> 
-                        </i>
+                      <a target="_blank" href="<?php echo $smedia['url']; ?>">
+                        <?php echo $smedia['icon']; ?>
                       </a>
                     </li>
-                    <li>
-                      <a href="#">
-                        <i>
-                          <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;">
-                            <use xlink:href="#instagram-icon-svg"></use>
-                          </svg> 
-                        </i>
-                      </a>
-                    </li>
+                    <?php endforeach; ?>
                   </ul>
                 </div>
+                <?php endif; ?>
                 <div class="hdr-sign-up">
                   <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
                     <i>

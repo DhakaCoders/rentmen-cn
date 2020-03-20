@@ -118,27 +118,37 @@ function product_option_custom_field(){
     global $product, $woocommerce;
     if( !$product->is_type('variable') ){
         $attributes = $product->get_attributes(); //get all attributes
-        if( !empty($attributes) && $attributes ):
+        if ( !empty($attributes) && $attributes ):
         echo '<div class="single-pro-filter-wrp">';
-        foreach( $attributes as $attribute ){
-          if( $attribute['name'] == 'pa_color' || $attribute['name'] == 'color' ) {
+        foreach ( $attributes as $attribute ){
+          if ( $attribute['name'] == 'pa_color' || $attribute['name'] == 'color' ) {
             $pa_colors = get_the_terms( $product->get_id(), $attribute['name']);
             echo '<div class="color-filter">
                 <h6>beschikbare kleur</h6>
                  <div class="feature-filter-btn">';
-                 foreach( $pa_colors as $pa_color ) {
-                echo '<input type="radio" id="'.$pa_color->slug.'" name="radios" value="'.$pa_color->name.'">';
+                 foreach ( $pa_colors as $pa_color ) {
+                echo '<input type="radio" id="'.$pa_color->slug.'" name="kleur" value="'.$pa_color->name.'">';
                 echo '<label style="background:'.$pa_color->slug.'" for="'.$pa_color->slug.'">'.$pa_color->name.'</label>';
               }
             echo '</div></div>';
              
-          } elseif($attribute['name'] == 'pa_variabelen') {
+          } elseif ($attribute['name'] == 'pa_variabelen') {
               $pa_variabelens = get_the_terms( $product->get_id(), $attribute['name']);
               echo '<div class="variables-filter">
               <h6>variabelen</h6>
               <div class="feature-filter-btn">';
               foreach( $pa_variabelens as $pa_variabelen ) {
-                echo '<input type="radio" id="'.$pa_variabelen->slug.'" name="radios" value="'.$pa_variabelen->name.'">';
+                echo '<input type="radio" id="'.$pa_variabelen->slug.'" name="variabelen" value="'.$pa_variabelen->name.'">';
+                echo '<label for="'.$pa_variabelen->slug.'">'.$pa_variabelen->name.'</label>';
+              }
+              echo '</div></div>';
+          } elseif ( ($attribute['name'] == 'pa_size') || ($attribute['name'] == 'size') ) {
+              $pa_variabelens = get_the_terms( $product->get_id(), $attribute['name']);
+              echo '<div class="variables-filter">
+              <h6>Size</h6>
+              <div class="feature-filter-btn">';
+              foreach( $pa_variabelens as $pa_variabelen ) {
+                echo '<input type="radio" id="'.$pa_variabelen->slug.'" name="size" value="'.$pa_variabelen->name.'">';
                 echo '<label for="'.$pa_variabelen->slug.'">'.$pa_variabelen->name.'</label>';
               }
               echo '</div></div>';
@@ -151,6 +161,79 @@ function product_option_custom_field(){
     echo '<i><img src="'.THEME_URI.'/assets/images/pro-calendar.svg" alt=""></i>';
     echo '<span>selecteer datum en controleer beschikbaarheid</span>';
     echo '</div>';
+
+}
+
+// Front: Calculate new item price and add it as custom cart item data
+add_filter('woocommerce_add_cart_item_data', 'add_custom_product_data', 10, 3);
+function add_custom_product_data( $cart_item_data, $product_id, $variation_id ) {
+    $status = false;
+    if ( isset($_POST['kleur']) && !empty($_POST['kleur'])) {
+        $cart_item_data['color_val'] = $_POST['kleur'];
+        $cart_item_data['color_label'] = 'Beschikbare Kleur';
+        $status = true;
+    }
+    if ( isset($_POST['variabelen']) && !empty($_POST['variabelen'])) {
+        $cart_item_data['variabe_val'] = $_POST['variabelen'];
+        $cart_item_data['variabe_label'] = 'Variabelen';
+        $status = true;
+    }
+    if ( isset($_POST['size']) && !empty($_POST['size'])) {
+        $cart_item_data['size_val'] = $_POST['size'];
+        $cart_item_data['size_label'] = 'Size';
+        $status = true;
+    }
+    if($status){
+       $cart_item_data['unique_key'] = md5(microtime().rand()); 
+    }
+    
+    return $cart_item_data;
+}
+
+// Front: Display option in cart item
+add_filter('woocommerce_get_item_data', 'display_custom_item_data', 10, 2);
+
+function display_custom_item_data($cart_item_data, $cart_item) {
+    if ( isset($cart_item['color_val']) && isset($cart_item['color_label']) ) {
+        $cart_item_data[] = array(
+            'name' => __($cart_item['color_label'], "woocommerce"),
+            'value' => strip_tags($cart_item['color_val'])
+        );
+
+        
+    }
+
+    if( isset($cart_item['variabe_val']) && isset($cart_item['variabe_label']) ) {
+        $cart_item_data[] = array(
+            'name' => __($cart_item['variabe_label'], "woocommerce"),
+            'value' => strip_tags($cart_item['variabe_val'])
+        );
+    }
+    if( isset($cart_item['size_val']) && isset($cart_item['size_label']) ) {
+        $cart_item_data[] = array(
+            'name' => __($cart_item['size_label'], "woocommerce"),
+            'value' => strip_tags($cart_item['size_val'])
+        );
+    }
+
+    return $cart_item_data;
+}
+
+
+// Save and display custom fields in order item meta
+add_action( 'woocommerce_add_order_item_meta', 'add_custom_fields_order_item_meta', 20, 3 );
+function add_custom_fields_order_item_meta( $item_id, $cart_item, $cart_item_key ) {
+
+    if ( isset($cart_item['color_val']) && isset($cart_item['color_label']) ) {
+        wc_add_order_item_meta($item_id, $cart_item['color_label'], $cart_item['color_val']);
+        
+    }
+    if( isset($cart_item['variabe_val']) && isset($cart_item['variabe_label']) ) {
+        wc_add_order_item_meta($item_id, $cart_item['variabe_label'], $cart_item['variabe_val']);
+    }
+    if( isset($cart_item['size_val']) && isset($cart_item['size_label']) ) {
+        wc_add_order_item_meta($item_id, $cart_item['size_label'], $cart_item['size_val']);
+    }
 
 }
 
