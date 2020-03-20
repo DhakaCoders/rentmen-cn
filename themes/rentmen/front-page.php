@@ -41,25 +41,6 @@
   <?php } ?>
 </section>
 <?php endif; ?>
-<div class="catapult-cookie-wrp">
-  <div id="catapult-cookie-bar" class="catapult-cookie-bar clearfix">
-    <div class="catapult-cookie-topbar">
-      <i><img src="<?php echo THEME_URI; ?>/assets/images/cookie-icon.svg"></i>
-      <strong class="catapult-close-btn">
-       <img src="<?php echo THEME_URI; ?>/assets/images/cookie-close-icon.svg">
-      </strong>
-    </div>
-    <span class="ctcc-left-side">
-      <h4>Deze website maakt gebruik van cookies.</h4>
-      Phasellus ac tortor mi. Aliquam eget volutpat elit. Duis dapibus dolor sit amet arcu porttitor laoreet. Mauris eget massa nulla. 
-      <a class="ctcc-more-info-link" tabindex="0"  href="#">Meer Info</a>
-    </span>
-    <span class="catapultCookieBtn">
-      <button id="catapultCookie" tabindex="0" onclick="catapultAcceptCookies();">ok, bedankt</button>
-    </span>
-  </div>
-</div>
-
 <section class="hm-de-kijker-post-sec-wrp">
   <div class="container">
     <?php
