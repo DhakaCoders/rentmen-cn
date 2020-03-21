@@ -469,37 +469,6 @@ if( $('.pro-counter .qty').length ){
 }
 
 
-//price renge slider
-if( $('.price-slider').length ){
-  var outputSpan = $('#spanOutput');
-  var sliderDiv = $('#slider');
-
-  sliderDiv.slider({
-    range: true,
-    min: 0,
-    max: 200,
-    values: [23.99, 119.99],
-    slide: function (event, ui) {
-      outputSpan.html(ui.values[0] + ' - ' + ui.values[1] + ' Years');
-      $('#minAmount').val(ui.values[0]);
-      $('#maxAmount').val(ui.values[1]);
-    }
-  });
-
-  outputSpan.html(sliderDiv.slider('values', 0) + ' - '
-    + sliderDiv.slider('values', 1) + ' Years');
-  $('#minAmount').val(sliderDiv.slider('values', 0));
-  $('#maxAmount').val(sliderDiv.slider('values', 1));
-
-}
-
-
-
-$('input[type="checkbox"]').change(function(){
-  this.value = (Number(this.checked));
-});
-
-
 // footer slide menu
 $('.ftr-col h6').on('click', function(){
   $(this).toggleClass('active');
@@ -592,6 +561,157 @@ if (windowWidth < 768) {
   });
 }
 
+/**
+* Sidebar Filter
+*/
+var tags = [];
+var tagsNow = [];
+var allTags = [];
+var pMin = parseInt( $('#minAmount').val());
+var pMax = parseInt($('#maxAmount').val());
+var pMinNow = 0;
+var pMaxNow = 0;
+if( $('.price-slider').length ){
+  $("#slider").slider({
+      range: true,
+      min: 0,
+      max: 500,
+      step: 1,
+      values: [pMin, pMax],
+      animate: 'slow',
+      create: function(event, ui) {
+          $('#min').appendTo($('#slider span.ui-slider-handle').get(0));
+          $('#max').appendTo($('#slider span.ui-slider-handle').get(1));
+          pMinNow = parseInt(pMin);
+          pMaxNow = parseInt(pMax);
+      },
+      slide: function(event, ui) { 
+        $(ui.handle).find('i').html('€' + ui.value); 
+        $('#minAmount').val(ui.values[0]);
+        $('#maxAmount').val(ui.values[1]);
+      },
+      stop: function( event, ui ) {
+        $('#minAmount').val(ui.values[0]);
+        $('#maxAmount').val(ui.values[1]);
+        if( ui.values[0] != pMinNow ){
+          pMinNow = parseInt(ui.values[0]);
+          setupRequest();
+        }
+        if( ui.values[1] != pMaxNow ){
+          pMaxNow = parseInt(ui.values[1]);
+          setupRequest();
+        }      
+      }
+  });
+  // only initially needed
+  $('#min').html('€' + $('#slider').slider('values', 0)).position({
+      my: 'center top',
+      at: 'center top',
+      of: $('#slider span.ui-slider-handle:eq(0)'),
+      offset: "0, 10"
+  });
+
+  $('#max').html('€' + $('#slider').slider('values', 1)).position({
+      my: 'center top',
+      at: 'center top',
+      of: $('#slider span.ui-slider-handle:eq(1)'),
+      offset: "0, 10"
+  });
+}
+
+$('.filterCheckboxs input[type=checkbox]').each(function(){
+  var id = $(this).val();
+  if($(this).is(':checked')){
+    tagsNow.push(id);
+    //tagsNow.push(id);
+  }
+});
+
+$('.filterCheckboxs').on('change', 'input[type=checkbox]', function() {
+  var id = $(this).val(); // this gives me null
+  var index = tagsNow.indexOf(id);
+  
+  if($(this).is(':checked')){
+    tagsNow.push(id);
+  }
+  else{
+    if (index > -1) {
+      tagsNow.splice(index, 1);
+    }
+  }
+  //tagsNow.concat(tags); 
+  setupRequest();
+});
+
+function setupRequest(){
+  var isReq = false;
+  var rqtURL = '';
+  var rqtURL1 = '';
+  var rqtURL2 = '';
+  var rqtTo = $('#thisURL').attr('data-url');
+  
+  //Prices
+  if( 0 != pMinNow || 500 != pMaxNow ){
+    isReq = true;
+    rqtURL1 = 'price='+pMinNow+','+pMaxNow;
+  }else{
+    rqtURL1 = '';
+  }
+
+  //Tags
+  hasTags = isEqual(tags, tagsNow);
+  if( tagsNow.length ){
+    isReq = true;
+    ftags = arraySeparator(tagsNow, ',');
+    rqtURL2 = 'tags='+ftags;
+  }
+
+  if( rqtURL1 != '' ){
+    rqtURL = '?'+rqtURL1;
+    if( rqtURL2 != '' ){
+      rqtURL = '?'+rqtURL1+'&'+rqtURL2;
+    }
+  }else{
+    rqtURL = '?'+rqtURL2;
+  }
+
+  if( isReq ){
+    var genRqURL = rqtTo+rqtURL;
+    window.location.href = genRqURL;
+  }else{
+    window.location.href = rqtTo;
+  }
+// '/?price=12,20&tags=tag1,tag2';
+// '/shop/?min_price=20&max_price=30';
+}
+
+function arraySeparator(arr, sep){
+  var string = '';
+  if( arr.length ){
+    for(var i=0; i<arr.length; i++){
+      string += arr[i]
+      if( i < arr.length - 1 ){ string += sep }
+    }
+  }
+  return string;
+}
+
+function isEqual(a, b){
+  var isEqual = true;
+  if(a.length != b.length) {
+    isEqual = false; 
+  }else{
+    //comapring each element of array 
+    for(var i=0; i<a.length; i++){
+      aVal = a[i];
+      index = b.indexOf(aVal); 
+      if (index == -1) {
+        isEqual = false;
+      }
+    }
+  }
+  return isEqual;
+}
 
 })(jQuery);
 

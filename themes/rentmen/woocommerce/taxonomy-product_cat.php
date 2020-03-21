@@ -2,15 +2,22 @@
   get_header(); 
   $thisID = get_the_ID();
   $ccat = get_queried_object();
+
   if ( ! empty( $ccat ) && ! is_wp_error( $ccat ) ):
   $sorting = 'DESC';
-  $keyword = $gtags = '';
+  $gtags = array();
+  $price = array();
+  $keyword = '';
   $termQuery = array();
   if( isset($_GET['p']) && !empty($_GET['p']) ){
     $keyword = $_GET['p'];
   }
+  if( isset($_GET['price']) && !empty($_GET['price']) ){
+    $price = explode(",",$_GET['price']);
+    printr($price);
+  }
   if ( isset($_GET['tags']) && !empty($_GET['tags']) ){
-    $gtags = $_GET['tags'];
+    $gtags = explode(",",$_GET['tags']);
     $termQuery = array(
 	'relation' => 'AND',
 	array(
@@ -57,6 +64,7 @@
   ) 
   );
 ?>
+<div id="thisURL" data-url="<?php echo home_url( $wp->request ); ?>/"></div>
 <section class="breadcrumbs-sec">
   <div class="container-lg">
     <div class="row">
@@ -174,17 +182,15 @@
                 </div>                
                 <div class="price-slider pro-filter-main">
                   <form action="">
-                    <div class="amount-show clearfix">
-                      <div class="min-amount">
-                        <label for="minAmount">€ </label>
-                        <input type="text" id="minAmount" />
-                      </div>
-                      <div class="max-amount">
-                        <label for="maxAmount">€ </label>
-                        <input type="text" id="maxAmount" />
-                      </div>
-                    </div>
+                    <?php 
+                    $min = isset( $price[0] ) ? $price[0] : 0;
+                    $max = isset( $price[1] ) ? $price[1] : 500;
+                    ?>
+                    <input type="hidden" name="minAmount" id="minAmount" value="<?php echo $min; ?>">
+                    <input type="hidden" name="maxAmount" id="maxAmount" value="<?php echo $max; ?>">
                     <div id="slider"></div>
+                    <i id="min"></i>
+                    <i id="max"></i>
                   </form>
                 </div>
               </div>
@@ -202,17 +208,17 @@
                 <div class="pro-overview-sidebar-head">
                   <h3 class="sidebar-widget-title">Filter</h3>
                 </div> 
-                <div class="pro-check-box-filter pro-filter-main"> 
-                  
+                <div class="pro-check-box-filter pro-filter-main filterCheckboxs"> 
+                  <div class="filterData" data-key="tags" data-delim=","></div>
                   <form id="formName" action="" method="get">
                     <?php $i = 1; foreach( $tags as $tag ): ?>
                     <div class="form-group">
-                      <input type="checkbox" name="tags[]" value="<?php echo $tag->slug; ?>" id="checkfilter<?php echo $i; ?>" <?php echo ($gtags == $tag->slug)? 'checked': ''; ?> onchange="document.getElementById('formName').submit()">
+                      <input type="checkbox" name="tag" value="<?php echo $tag->slug; ?>" id="checkfilter<?php echo $i; ?>" <?php echo ( in_array($tag->slug, $gtags) )? 'checked': ''; ?>>
                       <label for="checkfilter<?php echo $i; ?>"><?php echo $tag->name; ?></label>
-
                     </div>
                     <?php $i++; endforeach; ?>
                   </form>
+
                 </div>
               </div>
               <?php endif; ?>

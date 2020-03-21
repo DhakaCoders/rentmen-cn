@@ -4,23 +4,29 @@
 #overview-organize-party-sec{
   padding: 86px 0 55px;
 }
-@media(min-width: 1199px){
-  #overview-organize-party-sec .organizePartySlider-item::after{
-    content: "";
-    position: absolute;
-    right: -15px;
-    top: 38px;
-    background: url(../images/organize-party-indicator.svg)no-repeat center center;
-    background-size: 100% 100%;
-    width: 30px;
-    height: 9px;
-  } 
-  #overview-organize-party-sec .organizePartySlider-item:nth-child(5)::after{
-    content: none!important;
-  }
-  #overview-organize-party-sec .slick-current+.slick-slide+.slick-slide+.slick-slide+.slick-slide .organizePartySlider-item::after {
-    content: none!important;  
-  }
+#slider 
+{
+    width: 80%;
+    margin-left: 1em;
+}
+
+#slider a {
+    text-decoration: none;
+    outline: none;
+}
+
+#min, #max {
+    width: 60px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    top: -30px!important;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #F3BF00;
+    position: absolute!important;
 }
 .pro-overview-main-sec{
   background: #F6F6F6;
@@ -107,11 +113,6 @@
   display: inline-block;
 }
 
-
-
-
-
-
 .pro-overview-select-filter{
   padding: 23px 0 50px
 }
@@ -191,8 +192,8 @@ s.pro-overview-sidebar-price{
   margin-bottom: 5px
 }
 .price-slider {
-  padding-top: 10px;
-  padding-bottom: 68px;
+    padding-top: 60px;
+    padding-bottom: 68px;
 }
 .price-slider .ui-state-default, 
 .price-slider .ui-widget-content .ui-state-default, 
@@ -367,6 +368,24 @@ html .price-slider .ui-button.ui-state-disabled:active {
   -webkit-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s;
+}
+@media(min-width: 1199px){
+  #overview-organize-party-sec .organizePartySlider-item::after{
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 38px;
+    background: url(../images/organize-party-indicator.svg)no-repeat center center;
+    background-size: 100% 100%;
+    width: 30px;
+    height: 9px;
+  } 
+  #overview-organize-party-sec .organizePartySlider-item:nth-child(5)::after{
+    content: none!important;
+  }
+  #overview-organize-party-sec .slick-current+.slick-slide+.slick-slide+.slick-slide+.slick-slide .organizePartySlider-item::after {
+    content: none!important;  
+  }
 }
 @media(min-width: 991px){
   .pro-overview-single-img:hover img{
