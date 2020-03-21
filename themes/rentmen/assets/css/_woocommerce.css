@@ -47,6 +47,9 @@ ul.select2-results__options li{
 	background: #fff!important;
 	color: #F3BF00!important;
 }
+body.single-product .pro-cart-btn button:hover svg{
+	fill: #F3BF00!important;
+}
 .woocommerce .cart_totals > h2{
 	font-size: 27px;
 } 
