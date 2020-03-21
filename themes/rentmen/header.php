@@ -9,22 +9,6 @@
   <link rel="shortcut icon" href="<?php echo $favicon; ?>" />
   <?php } ?>
 
-  <link rel="stylesheet" href="<?php echo THEME_URI; ?>/assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?php echo THEME_URI; ?>/assets/css/bootstrap-select.min.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo THEME_URI; ?>/assets/fonts/font-awesome/font-awesome.css">
-  
-  <link rel="stylesheet" type="text/css" href="<?php echo THEME_URI; ?>/assets/css/animate.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo THEME_URI; ?>/assets/css/jquery-ui.min.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo THEME_URI; ?>/assets/fancybox3/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo THEME_URI; ?>/assets/slick.slider/slick-theme.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo THEME_URI; ?>/assets/slick.slider/slick.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" type="text/css" href="<?php echo THEME_URI; ?>/assets/fonts/custom-fonts.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo THEME_URI; ?>/style.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo THEME_URI; ?>/assets/css/responsive.css">
-
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -193,29 +177,21 @@
                 wp_nav_menu( $mmenuOptions ); 
               ?>
               </nav>
+
               <div class="hdr-icons-cntlr clearfix">
+                <?php if(!empty($smedias)): ?>
                 <div class="hdr-social">
                   <ul class="reset-list">
+                    <?php foreach($smedias as $smedia):  ?>
                     <li>
-                      <a href="#">
-                        <i>
-                          <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;">
-                            <use xlink:href="#facebook-icon-svg"></use>
-                          </svg> 
-                        </i>
+                      <a target="_blank" href="<?php echo $smedia['url']; ?>">
+                        <?php echo $smedia['icon']; ?>
                       </a>
                     </li>
-                    <li>
-                      <a href="#">
-                        <i>
-                          <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;">
-                            <use xlink:href="#instagram-icon-svg"></use>
-                          </svg> 
-                        </i>
-                      </a>
-                    </li>
+                    <?php endforeach; ?>
                   </ul>
                 </div>
+                <?php endif; ?>
                 <div class="hdr-sign-up">
                   <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">
                     <i>

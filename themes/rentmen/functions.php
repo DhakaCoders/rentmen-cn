@@ -60,19 +60,16 @@ function cbv_theme_scripts(){
     include_once( THEME_DIR . '/enq-scripts/popper.php' );
     include_once( THEME_DIR . '/enq-scripts/bootstrap.php' );
     include_once( THEME_DIR . '/enq-scripts/fonts.php' );
-    include_once( THEME_DIR . '/enq-scripts/stick.sidebar.php' );
     include_once( THEME_DIR . '/enq-scripts/fancybox.php' );
     include_once( THEME_DIR . '/enq-scripts/slick.php' );
     include_once( THEME_DIR . '/enq-scripts/google.maps.php' );
     include_once( THEME_DIR . '/enq-scripts/matchheight.php' );
     include_once( THEME_DIR . '/enq-scripts/app.php' );
-    include_once( THEME_DIR . '/enq-scripts/nav.php' );
     include_once( THEME_DIR . '/enq-scripts/jquery.ui.php' );
-    include_once( THEME_DIR . '/enq-scripts/packery.php' );
     include_once( THEME_DIR . '/enq-scripts/theme.default.php' );
 }
 
-//add_action( 'wp_enqueue_scripts', 'cbv_theme_scripts');
+add_action( 'wp_enqueue_scripts', 'cbv_theme_scripts');
 
 
 /**
@@ -234,3 +231,45 @@ function printr($args){
 	print_r ($args);
 	echo '</pre>';
 }
+
+function cookieset(){
+  $output = '<div class="catapult-cookie-wrp">
+  <div id="catapult-cookie-bar" class="catapult-cookie-bar clearfix">
+    <div class="catapult-cookie-topbar">
+      <i><img src="'.THEME_URI.'/assets/images/cookie-icon.svg"></i>
+      <strong class="catapult-close-btn">
+       <img src="'.THEME_URI.'/assets/images/cookie-close-icon.svg">
+      </strong>
+    </div>
+    <span class="ctcc-left-side">
+      <h4>Deze website maakt gebruik van cookies.</h4>
+      Phasellus ac tortor mi. Aliquam eget volutpat elit. Duis dapibus dolor sit amet arcu porttitor laoreet. Mauris eget massa nulla. 
+      <a class="ctcc-more-info-link" tabindex="0"  href="#">Meer Info</a>
+    </span>
+    <span class="catapultCookieBtn">
+      <a role="button" tabindex="0" data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button">ok, bedankt</a>
+    </span>
+  </div>
+</div>';
+$output .= '<style>
+#cookie-law-info-bar {
+    border: 0;
+    font-size: initial;
+    margin: 0 auto;
+    padding: 0 !important;
+    position: inherit;
+    width: initial;
+
+    box-shadow: transparent;
+}
+.cli-plugin-button, .cli-plugin-button:visited {
+    text-decoration: none;
+    position: inherit !important;
+    background-color: transparent !important;
+    display: none !important;
+}
+</style>';
+return $output;
+}
+
+add_shortcode('getcookie', 'cookieset' );

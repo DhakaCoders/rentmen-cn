@@ -38,11 +38,7 @@ if( !empty($terms) && !is_wp_error($terms) ){
       <div class="col-12">
         <div class="breadcrumbs-innr hide-xs clearfix">         
           <div class="breadcrumbs-main">
-            <ul>           
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-            </ul>
+            <?php cbv_custom_both_breadcrump(); ?>
           </div>
           <?php if( !empty($termname) ): ?>
           <div class="breadcrumbs-lft-text">
@@ -52,7 +48,7 @@ if( !empty($terms) && !is_wp_error($terms) ){
         </div>
         <div class="breadcrumbs-innr show-xs clearfix">
           <div class="breadcrumbs-left">
-            <a href="#">Home</a>
+            <a href="<?php echo esc_url( home_url() );?>"></a>
           </div>
           <div class="breadcrumbs-right">
             <a href="javascript:history.go(-1)">Terug</a>
