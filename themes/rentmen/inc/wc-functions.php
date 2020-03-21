@@ -139,10 +139,13 @@ function product_option_custom_field(){
             $pa_colors = get_the_terms( $product->get_id(), $attribute['name']);
             echo '<div class="color-filter">
                 <h6>beschikbare kleur</h6>
-                 <div class="feature-filter-btn">';
+                 <div class="feature-filter-btn clor">';
                  foreach ( $pa_colors as $pa_color ) {
+                    $color_code = get_field('akleur', $pa_color);
+                    $bgcolr = $pa_color->slug;
+                    if( !empty($color_code) ) $bgcolr = $color_code; 
                 echo '<input type="radio" id="'.$pa_color->slug.'" name="kleur" value="'.$pa_color->name.'">';
-                echo '<label style="background:'.$pa_color->slug.'" for="'.$pa_color->slug.'">'.$pa_color->name.'</label>';
+                echo '<label style="background:'.$bgcolr.'" for="'.$pa_color->slug.'">'.$pa_color->name.'</label>';
               }
             echo '</div></div>';
              

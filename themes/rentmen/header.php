@@ -249,7 +249,7 @@
               </div>
               
               <div class="hdr-search-form">
-                <form action="" method="get">
+                <form action="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" method="get">
                 <div class="rm-search-form">
                   <input type="search" name="p" value="<?php echo $keyword; ?>" placeholder="Zoek een artikel om je event kracht bij te zetten">
                   <div class="rm-search-submit-btn">
