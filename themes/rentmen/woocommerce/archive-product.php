@@ -6,18 +6,26 @@
   $gtags = array();
   $price = array();
   $keyword = '';
-  $termQuery = array();
+  $termQuery = $metaQuery = array();
 
   if( isset($_GET['p']) && !empty($_GET['p']) ){
     $keyword = $_GET['p'];
   }
   if( isset($_GET['price']) && !empty($_GET['price']) ){
     $price = explode(",",$_GET['price']);
-    printr($price);
+    //printr($price);
+    $metaQuery = array(
+        array(
+            'key' => '_price',
+            'value' => array($price[0], $price[1]),
+            'compare' => 'BETWEEN',
+            'type' => 'NUMERIC'
+        )
+      );
+
   }
   if( isset($_GET['tags']) && !empty($_GET['tags']) ){
     $gtags = explode(",",$_GET['tags']);
-    printr($gtags);
     $termQuery = array(
       array(
         'taxonomy' => 'product_tag',
@@ -25,6 +33,29 @@
         'terms' => $gtags
       )
     );
+  }
+  if( 
+    isset($_GET['price']) && !empty($_GET['price']) && 
+    isset($_GET['tags']) && !empty($_GET['tags'])
+  ){
+    $price = explode(",",$_GET['price']);
+    $gtags = explode(",",$_GET['tags']);
+    $metaQuery = array(
+        array(
+            'key' => '_price',
+            'value' => array($price[0], $price[1]),
+            'compare' => 'BETWEEN',
+            'type' => 'NUMERIC'
+        )
+      );
+    $termQuery = array(
+      array(
+        'taxonomy' => 'product_tag',
+        'field' => 'slug',
+        'terms' => $gtags
+      )
+    );
+
   }
 
   if(isset($_COOKIE['sorting']) && !empty($_COOKIE['sorting'])) {
@@ -45,7 +76,8 @@
     'paged' => $paged,
     'order'=> $sorting,
     's' => $keyword,
-    'tax_query' => $termQuery
+    'tax_query' => $termQuery,
+    'meta_query' => $metaQuery
   ) 
   );
 ?>
@@ -117,7 +149,6 @@
   </div>    
 </section>
 
-<?php if($query->have_posts()): ?>
 <section class="pro-overview-main-sec">
   <div class="container">
     <div class="row">
@@ -208,7 +239,7 @@
             <div class="pro-overview-grid-head hide-sm">
               <h2 class="producten-sec-title">Producten</h2>
             </div>
-            <?php if($query->have_posts()): ?>
+            <?php $excludeID = ''; if($query->have_posts()): ?>
             <div class="pro-overview-single-des-con clearfix">
               <?php 
               while($query->have_posts()): $query->the_post(); 
@@ -248,6 +279,23 @@
               <?php endwhile; ?>
             </div>
             <?php endif; wp_reset_postdata(); ?>
+            <?php 
+              $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+              $equery = new WP_Query(array( 
+                'post_type'=> 'product',
+                'posts_per_page' => $per_page,
+                'post__not_in' => array($excludeID),
+                'paged' => $paged,
+                'order'=> $sorting,
+                's' => $keyword,
+                'tax_query' => $termQuery,
+                'meta_query' => $metaQuery
+              ) 
+              );
+              if( $equery->have_posts() || $query->have_posts() ):
+
+                if($equery->have_posts()):
+            ?>
             <div class="pro-overview-grid-filter clearfix">              
               <div class="rm-selctpicker-ctlr reset-list clearfix">
                 <span>Sorteer op: </span>
@@ -257,19 +305,9 @@
                 </select>
               </div>
             </div>
+            <?php endif; ?>
             <div class="pro-overview-grid-innr-wrp clearfix">
               <?php 
-              $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-              $equery = new WP_Query(array( 
-                'post_type'=> 'product',
-                'posts_per_page' => $per_page,
-                'post__not_in' => array($excludeID),
-                'paged' => $paged,
-                'order'=> $sorting,
-                's' => $keyword,
-                'tax_query' => $termQuery
-              ) 
-              );
               while($equery->have_posts()): $equery->the_post(); 
                 global $product;
                 $product_thumb = '';
@@ -304,6 +342,7 @@
                 </div>  
               </div>
               <?php endwhile; ?>
+
             </div>
             <div class="pro-overview-pagination">
               <div class="faq-pagination">
@@ -324,6 +363,9 @@
                 endif; 
               ?>
               </div>  
+              <?php else: ?>
+                <div class="notfound">Geen resultaat!</div>
+              <?php endif; wp_reset_postdata(); ?>
             </div>  
           </div>
         </div>
@@ -331,7 +373,6 @@
     </div>
   </div>    
 </section>
-<?php endif; wp_reset_postdata(); ?>
 
 <?php
   $showhide_usp = get_field('showhide_usp', 'option');

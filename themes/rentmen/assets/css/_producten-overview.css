@@ -736,7 +736,12 @@ span.woocommerce-Price-currencySymbol {
     padding: 0 !important;
 }
 
-
+.notfound {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    padding-top: 50px;
+}
 
 @media(max-width: 1499px){
 
