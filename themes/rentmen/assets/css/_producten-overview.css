@@ -726,6 +726,9 @@ html .price-slider .ui-button.ui-state-disabled:active {
 strong.price span {
     display: inline-block;
     margin: 0;
+    color: #BF211E;
+    font-size: 16px;
+    line-height: 22px;
 }
 span.woocommerce-Price-currencySymbol {
     padding-right: 5px;
@@ -735,7 +738,10 @@ span.woocommerce-Price-currencySymbol {
     color: transparent !important;
     padding: 0 !important;
 }
-
+a.button.rentbtn.product_type_simple.add_to_cart_button {
+    background: transparent !important;
+    border: 0 !important;
+}
 .notfound {
     text-align: center;
     color: red;

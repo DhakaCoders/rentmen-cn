@@ -275,7 +275,7 @@
   appearance: none;
   opacity: 1;
   width:100% !important;
-  height: 100% !important;
+  height: 56px !important;
   text-align:center !important;
   font-weight: 700 !important;
   font-size: 18px !important;
@@ -652,7 +652,12 @@
 }
 
 
-
+.feature-filter-btn.clor label {
+    text-indent: -9999px;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50px !important;
+}
 
 
 
