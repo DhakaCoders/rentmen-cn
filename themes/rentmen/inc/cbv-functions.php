@@ -123,7 +123,14 @@ function cbv_get_excerpt($limit = 8, $dot = ''){
   return $excerpt;
 }
 
-function cookieset(){
+function cookieset($atts = []){
+   // normalize attribute keys, lowercase
+    $atts = array_change_key_case((array)$atts, CASE_LOWER);
+ 
+    // override default attributes with user attributes
+    $atts = shortcode_atts([
+               'url' => '#',
+           ], $atts);
   $output = '<div class="catapult-cookie-wrp">
   <div id="catapult-cookie-bar" class="catapult-cookie-bar clearfix">
     <div class="catapult-cookie-topbar">
@@ -135,7 +142,7 @@ function cookieset(){
     <span class="ctcc-left-side">
       <h4>Deze website maakt gebruik van cookies.</h4>
       Phasellus ac tortor mi. Aliquam eget volutpat elit. Duis dapibus dolor sit amet arcu porttitor laoreet. Mauris eget massa nulla. 
-      <a class="ctcc-more-info-link" tabindex="0"  href="#">Meer Info</a>
+      <a class="ctcc-more-info-link" tabindex="0"  href="'.$atts['url'].'">Meer Info</a>
     </span>
     <span class="catapultCookieBtn">
       
