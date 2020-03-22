@@ -2,12 +2,25 @@
 
 = General =
 1. Sob archive page a post na thakle no results mgs ta show kora ache? kora ache -- done
+=======
+1. Sob archive page a post na thakle no results mgs ta show kora ache?
+2. Sitemap page lagbe ( Feestburo follow koro )
+3. 404 page ar design lagbe ( Feestburo follow koro )
+- https://www.screencast.com/t/stVvQFeCT3 
+4. Footer menu 1, 2, 3 dao
+- https://www.screencast.com/t/ANBmeZZyu
 
 = Home Page =
 1. 2 ta tab hobe na. Cases in de kijker tab ai baki options gulo hobe. -- Done
 - https://www.screencast.com/t/9a3pQhAP
 2. Product cart a add hole akhane dekhabe
 - https://www.screencast.com/t/asGCqaLzmHz
+
+= Product =
+1. Color, size attribues filter kivabe niye aste pari
+- https://www.screencast.com/t/LT6ta34OX
+2. Ai filter ta niye ki korbo
+- https://www.screencast.com/t/JzgHRxkt
 
 = Single Product =
 1. Qoute deyar option ta dite hobe -- Done
@@ -37,9 +50,17 @@
 1. Faq page ar category gele error
 - https://www.screencast.com/t/PES366KTpHez
 
+= Cart/Checkout =
+1. Error dekci 
+- https://www.screencast.com/t/MTypKLtbCjs7
 
 
 ==== Design ====
+
+= General =
+1. Gap ta besi hobe
+- https://www.screencast.com/t/HXHY83ks
+2. Cookie
 
 = Shop/Product/ =
 1. Design icon after added to cart
@@ -57,6 +78,12 @@
 = Single faq =
 1. line height ar plm
 - https://www.screencast.com/t/cOGY6Y4K
+
+= Cart/Checkout/Account =
+1. Design update/match korte hobe
+- https://www.screencast.com/t/h5bDV0oLx6
+2. Design update/match korte hobe
+- https://www.screencast.com/t/U6YgfUsg3R
 
 
 ======= Before Upload =====
