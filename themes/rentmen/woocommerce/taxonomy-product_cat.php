@@ -12,7 +12,32 @@
   if ( isset($_GET['p']) && !empty($_GET['p']) ){
     $keyword = $_GET['p'];
   }
-  if ( isset($_GET['price']) && !empty($_GET['price']) ){
+  if( isset($_GET['price']) && !empty($_GET['price']) && isset($_GET['tags']) && !empty($_GET['tags']) ){
+    $price = explode(",",$_GET['price']);
+    $gtags = explode(",",$_GET['tags']);
+    $metaQuery = array(
+        array(
+            'key' => '_price',
+            'value' => array($price[0], $price[1]),
+            'compare' => 'BETWEEN',
+            'type' => 'NUMERIC'
+        )
+      );
+    $termQuery = array(
+    'relation' => 'AND',
+      array(
+      'taxonomy' => 'product_cat',
+      'field' => 'term_id',
+      'terms' => $ccat->term_id
+      ),
+      array(
+      'taxonomy' => 'product_tag',
+      'field' => 'slug',
+      'terms' => $gtags
+      )
+    );
+
+  } elseif ( isset($_GET['price']) && !empty($_GET['price']) ){
     $price = explode(",",$_GET['price']);
     $metaQuery = array(
     array(
@@ -44,36 +69,6 @@
 	'terms' => $gtags
 	)
     );
-  } elseif( 
-    isset($_GET['price']) && !empty($_GET['price']) && 
-    isset($_GET['tags']) && !empty($_GET['tags'])
-  ){
-    $price = explode(",",$_GET['price']);
-    $gtags = explode(",",$_GET['tags']);
-    printr($price);
-    printr($gtags);
-    $metaQuery = array(
-        array(
-            'key' => '_price',
-            'value' => array($price[0], $price[1]),
-            'compare' => 'BETWEEN',
-            'type' => 'NUMERIC'
-        )
-      );
-    $termQuery = array(
-	'relation' => 'AND',
-	array(
-	'taxonomy' => 'product_cat',
-	'field' => 'term_id',
-	'terms' => $ccat->term_id
-	),
-	array(
-	'taxonomy' => 'product_tag',
-	'field' => 'slug',
-	'terms' => $gtags
-	)
-    );
-
   } else {
   	$termQuery = array(
 	array(
@@ -255,7 +250,7 @@
                 <div class="pro-check-box-filter pro-filter-main filterCheckboxs"> 
                   <div class="filterData" data-key="tags" data-delim=","></div>
                   <form id="formName" action="" method="get">
-                    <?php var_dump($gtags); $i = 1; foreach( $tags as $tag ): ?>
+                    <?php $i = 1; foreach( $tags as $tag ): ?>
                     <div class="form-group">
                       <input type="checkbox" name="tag" value="<?php echo $tag->slug; ?>" id="checkfilter<?php echo $i; ?>" <?php echo ( in_array($tag->slug, $gtags) )? 'checked': ''; ?>>
                       <label for="checkfilter<?php echo $i; ?>"><?php echo $tag->name; ?></label>
