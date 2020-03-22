@@ -1,8 +1,66 @@
-= Options =
-1. USP's to mone hoy only Over Ons page a ache ar kothao nai.
-- https://www.screencast.com/t/BujS6tsvlb1
+==== Development ====
+
+= General =
+1. Sob archive page a post na thakle no results mgs ta show kora ache?
 
 = Home Page =
 1. 2 ta tab hobe na. Cases in de kijker tab ai baki options gulo hobe.
 - https://www.screencast.com/t/9a3pQhAP
+2. Product cart a add hole akhane dekhabe
+- https://www.screencast.com/t/asGCqaLzmHz
 
+= Single Product =
+1. Qoute deyar option ta dite hobe
+2. Ata kivabe mange hobe
+- https://www.screencast.com/t/pKm12UCp2FPO
+
+= Single blog =
+1. H2 dite parci na
+- https://www.screencast.com/t/tdIsJEE3rpKu
+2. FAQ deyar option pachci na
+- https://www.screencast.com/t/o054RFTLNe
+3. Name, pos 50% kore dao and text 100% kore dao
+- https://www.screencast.com/t/7sDdrTzUW
+4. Different design post ta kaj korce na
+- https://www.screencast.com/t/h91xBhTTu
+
+= Over ons =
+1. Subtitel opore hobe based on design
+- https://www.screencast.com/t/ub8hEPxdR
+
+= Contact =
+1. Title tai placeholder hobe
+- https://www.screencast.com/t/bNnWOUlBUtk
+2. Map marker missing
+
+= Faq =
+1. Faq page ar category gele error
+- https://www.screencast.com/t/PES366KTpHez
+
+
+
+==== Design ====
+
+= Shop/Product/ =
+1. Design icon after added to cart
+2. Single slider active thumb
+3. Single product qoute
+4. Single related product cart icon
+
+= Inner page =
+1. Title same height korte hobe
+- https://www.screencast.com/t/RnIaQHUS
+
+= Contact =
+1. Tab change a url hash tag change korte hobe
+
+= Single faq =
+1. line height ar plm
+- https://www.screencast.com/t/cOGY6Y4K
+
+
+======= Before Upload =====
+1. Overall check
+2. Desktop design check
+3. Mobile design check
+4. Title check
