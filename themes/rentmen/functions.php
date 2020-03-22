@@ -43,9 +43,9 @@ if( !function_exists('cbv_theme_setup') ){
 
 		register_nav_menus( array(
           'cbv_main_menu' => __( 'Hoofdmenu', THEME_NAME ),
-          'cbv_fta_menu' => __( 'Footer A Menu', THEME_NAME ),
-          'cbv_ftb_menu' => __( 'Footer B Menu', THEME_NAME ),
-          'cbv_ftc_menu' => __( 'Footer C Menu', THEME_NAME ),
+          'cbv_fta_menu' => __( 'Footer 1 Menu', THEME_NAME ),
+          'cbv_ftb_menu' => __( 'Footer 2 Menu', THEME_NAME ),
+          'cbv_ftc_menu' => __( 'Footer 3 Menu', THEME_NAME ),
           'cbv_copyright_menu' => __( 'Copyright Menu', THEME_NAME ),
 		) );
 
