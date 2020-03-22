@@ -11,7 +11,18 @@ $('.navbar-toggle').on('click', function(){
 if($('.mHc').length){
   $('.mHc').matchHeight();
 };
-
+if($('.mHc2').length){
+  $('.mHc2').matchHeight({ property: 'min-height' });
+};
+if($('.mHc3').length){
+  $('.mHc3').matchHeight();
+};
+if($('.mHc4').length){
+  $('.mHc4').matchHeight();
+};
+if($('.mHc5').length){
+  $('.mHc5').matchHeight();
+};
 
 if($('.fancybox').length){
 $('.fancybox').fancybox({
@@ -491,8 +502,47 @@ if (windowWidth < 768) {
     $(this).parent().find('.pro-filter-main').slideToggle(300);
     $(this).parent().siblings().find('.pro-filter-main').slideUp(300);
   });
+}
 
-  
+if (windowWidth < 768) {
+  if( $('.hm-dw-slider-wrp').length ){
+    $('.hm-dw-slider-wrp').slick({
+      arrows: false,
+      dots: true,
+      infinite: false,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true
+          }
+        }
+      ]
+    });
+  }
+  if( $('.blogSliderMobile').length ){
+    $('.blogSliderMobile').slick({
+      arrows: false,
+      dots: true,
+      infinite: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true
+          }
+        }
+      ]
+    });
+  }
 }
 
 if( $('.dft-question-mark-slider').length ){
