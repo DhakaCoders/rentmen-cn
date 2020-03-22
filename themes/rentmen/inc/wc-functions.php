@@ -181,6 +181,24 @@ function product_option_custom_field(){
 
 }
 
+function product_attribute_filter(){
+    global $product, $woocommerce;
+        $attributes = get_terms( 'pa_color', 'orderby=count&hide_empty=0' );
+        if ( !empty($attributes) && $attributes ):
+        echo '<div class="feature-filter-btn clor">';
+            foreach ( $attributes as $pa_color ) {
+                $color_code = get_field('akleur', $pa_color);
+                $bgcolr = $pa_color->slug;
+                if( !empty($color_code) ) $bgcolr = $color_code; 
+                echo '<input type="checkbox" id="'.$pa_color->slug.'" name="kleur" value="'.$pa_color->name.'">';
+                echo '<label style="background:'.$bgcolr.'" for="'.$pa_color->slug.'">'.$pa_color->name.'</label>';
+              }
+             
+        echo '</div>';
+        endif;
+
+}
+
 // Front: Calculate new item price and add it as custom cart item data
 add_filter('woocommerce_add_cart_item_data', 'add_custom_product_data', 10, 3);
 function add_custom_product_data( $cart_item_data, $product_id, $variation_id ) {

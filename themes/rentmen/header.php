@@ -260,6 +260,7 @@
                     <svg class="cart-icon-svg" width="26" height="24" viewBox="0 0 26 24" fill="#FFFFFF">
                       <use xlink:href="#cart-icon-svg"></use>
                     </svg> 
+                    <?php if(WC()->cart->get_cart_contents_count() > 0) echo sprintf ( '<span>%d</span>', WC()->cart->get_cart_contents_count() ); ?>
                   </i>
                   Winkelmand
                 </a>

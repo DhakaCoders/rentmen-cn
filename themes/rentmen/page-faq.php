@@ -106,16 +106,16 @@ $terms = get_terms( array(
             </ul>
           </div>
           <?php else: ?>
-            <div>Geen resultaten</div>
+            <div class="notfound">Geen resultaat!</div>
         <?php endif; wp_reset_postdata(); ?>
         </div>
       </div>
     </div>
+    <?php if( $query->max_num_pages > 1 ): ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="faq-pagination">
           <?php 
-            if( $query->max_num_pages > 1 ):
             $big = 999999999; // need an unlikely integer
             echo paginate_links( array(
               'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -125,14 +125,12 @@ $terms = get_terms( array(
               'type'  => 'list',
               'show_all' => true,
               'prev_next' => false
-            ) );
-            else:
-              echo '<div class="hasgap"></div>';
-            endif; 
+            ) ); 
           ?>
         </div>
       </div>
     </div>
+    <?php endif; ?>
   </div>
 </section>
 <?php get_footer(); ?>

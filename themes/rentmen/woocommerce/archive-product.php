@@ -233,6 +233,14 @@
                 </div>
               </div>
               <?php endif; ?>
+              <div class="pro-overview-sidebar-color pro-filter-con">
+                <div class="pro-overview-sidebar-head">
+                  <h3 class="sidebar-widget-title">KLEUR</h3>
+                </div> 
+                <div class="pro-color-filter pro-filter-main"> 
+                  <?php product_attribute_filter(); ?>
+                </div>
+              </div>
             </div>
           </div>
           <div class="pro-overview-grid-con">

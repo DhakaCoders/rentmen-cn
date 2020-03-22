@@ -748,7 +748,9 @@ a.button.rentbtn.product_type_simple.add_to_cart_button {
     font-size: 18px;
     padding-top: 50px;
 }
-
+.pro-color-filter.pro-filter-main {
+    margin-top: 30px;
+}
 @media(max-width: 1499px){
 
 }

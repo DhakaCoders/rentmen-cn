@@ -62,11 +62,8 @@
         </div>
       </div>
     </div>
-    <?php endif; ?>
     <?php  
-      $showhide_cknop = get_field('showhide_cknop', HOMEID);
       $hknops = get_field('home_knops', HOMEID);
-      if($showhide_cknop):
         if( $hknops ): 
     ?>
     <div class="row">
@@ -76,7 +73,6 @@
             <?php 
             foreach( $hknops as $hknop ): 
               $h_knop = $hknop['knop'];
-              
             ?>
             <li>
               <div class="hm-de-kijker-post-innr">
