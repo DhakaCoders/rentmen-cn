@@ -17,7 +17,7 @@
 - https://www.screencast.com/t/asGCqaLzmHz
 
 = Product =
-1. Color, size attribues filter kivabe niye aste pari
+1. Color, size attribues filter kivabe niye aste pari  --- Done
 - https://www.screencast.com/t/LT6ta34OX
 2. Ai filter ta niye ki korbo
 - https://www.screencast.com/t/JzgHRxkt
@@ -38,13 +38,13 @@
 - https://www.screencast.com/t/h91xBhTTu
 
 = Over ons =
-1. Subtitel opore hobe based on design
+1. Subtitel opore hobe based on design   -- Done
 - https://www.screencast.com/t/ub8hEPxdR
 
 = Contact =
-1. Title tai placeholder hobe
+1. Title tai placeholder hobe  --- Done
 - https://www.screencast.com/t/bNnWOUlBUtk
-2. Map marker missing
+2. Map marker missing   -- Done
 
 = Faq =
 1. Faq page ar category gele error
