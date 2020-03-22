@@ -23,9 +23,10 @@ get_template_part('templates/page', 'banner');
   </div>
 </section>
 <?php endif; ?>
-<?php if(have_posts()): ?>
+
 <section class="rm-news-section">
   <div class="container">
+    <?php if(have_posts()): ?>
     <div class="row">
       <div class="col-md-12">
         <div class="rm-news-sec-inr">
@@ -88,7 +89,9 @@ get_template_part('templates/page', 'banner');
         </div>
       </div>
     </div>
+    <?php else: ?>
+      <div class="notfound">Geen resultaat!</div>
+    <?php endif; ?>
   </div>
 </section>
-<?php endif; ?>
 <?php get_footer(); ?>
