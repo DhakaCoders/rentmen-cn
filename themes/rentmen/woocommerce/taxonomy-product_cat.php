@@ -288,7 +288,7 @@
                 <?php if (!empty($thumb_id)){ ?>
                   <?php echo cbv_get_image_tag($thumb_id, 'prodgrid'); ?>
                 <?php } else {?>
-                <span><img src="<?php echo THEME_URI; ?>/assets/images/pro-overview-single-img.png" alt=""></span>
+                <span><img src="<?php echo THEME_URI; ?>/assets/images/product-df.jpg" alt="<?php the_title();?>"></span>
                 <?php } ?>
                 <a href="<?php the_permalink();?>" class="overlay-link"></a>
               </div>
@@ -351,7 +351,7 @@
                     <?php if (!empty($thumb_id)){ ?>
                       <?php echo cbv_get_image_tag($thumb_id, 'prodgrid'); ?>
                     <?php } else {?>
-                      <img src="<?php echo THEME_URI; ?>/assets/images/interestedItemSlider-img-1.png" alt="">
+                      <img src="<?php echo THEME_URI; ?>/assets/images/product-df.jpg" alt="<?php the_title();?>">
                     <?php } ?>
                     </a>
                   </div>

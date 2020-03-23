@@ -79,6 +79,12 @@
 1. line height ar plm
 - https://www.screencast.com/t/cOGY6Y4K
 
+
+= Shop/Product/ =
+1. Design icon after added to cart
+2. Single slider active thumb
+4. Single related product cart icon
+
 = Cart/Checkout/Account =
 1. Design update/match korte hobe
 - https://www.screencast.com/t/h5bDV0oLx6
