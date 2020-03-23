@@ -49,6 +49,9 @@
   align-items: center;
   justify-content: center;
 }
+.thumbSlider-wrp .slick-current .thumbSlider-item-img{
+  border-color: #F3BF00;
+}
 .thumbSlider-item i {
  position: relative;
 
@@ -533,6 +536,10 @@
 .interestedItemSlider{
   margin-left: -12px;
   margin-right: -12px;  
+}
+.interestedItemSlider .slick-track{
+  margin-left: auto;
+  margin-right: auto;
 }
 .interestedItemSlider .slick-list {
   padding-bottom: 20px;

@@ -18,8 +18,8 @@
           <div class="col-sm-12">
             <div class="hm-banner-dsc">
               <?php
-                if( !empty($hslide['subtitel']) ) printf('<h3>%s</h3>', $hslide['subtitel']);
-                if( !empty($hslide['titel']) ) printf('<h1>%s</h1>', $hslide['titel']);
+                if( !empty($hslide['subtitel']) ) printf('<span class="hm-bnr-title-sub">%s</span>', $hslide['subtitel']);
+                if( !empty($hslide['titel']) ) printf('<strong class="hm-bnr-title">%s</strong>', $hslide['titel']);
                 if( !empty($hslide['beschrijving']) ) echo wpautop( $hslide['beschrijving'] );
 
                 $knop = $hslide['knop'];
@@ -87,11 +87,13 @@
                   </div>
                   <?php endif; ?>
                 <div class="hm-de-kijker-post-dsc">
+                  <h3 class="hm-de-kijker-post-dsc-link">
                   <?php 
                     if( is_array( $h_knop ) &&  !empty( $h_knop['url'] ) ){
                       printf('<a href="%s" target="%s">%s</a>', $h_knop['url'], $h_knop['target'], $h_knop['title']); 
                     } 
                   ?>
+                  </h3>
                 </div>
               </div>
             </li>
@@ -122,17 +124,16 @@
             <li>
               <a href="<?php echo esc_url( get_term_link( $cat ) ); ?>">
                <div class="hm-post-categorie-title">
-                  <span>
-                    <?php if( !empty($thumbnail_id) ): $catimg = cbv_get_image_src($thumbnail_id); ?>
+                  <h3>
                     <i>
+                    <?php if( !empty($thumbnail_id) ): $catimg = cbv_get_image_src($thumbnail_id); ?>
                       <img class="style-svg" src="<?php echo $catimg; ?>" alt="<?php echo $cat->name; ?>">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
+                    <?php else: ?>
+                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;"><use xlink:href="#post-cty-table-icon-svg"></use></svg>
                     <?php endif; ?>
+                    </i>
                     <?php echo $cat->name; ?>
-                  </span>
+                  </h3>
                 </div>
               </a>
            </li>
@@ -232,14 +233,7 @@
           <div class="hm-download-box-item">
             <div class="hm-download-box">
               <a href="<?php the_permalink(); ?>" class="overlay-link"></a>
-              <strong>
-                <i>
-                  <svg class="dw-question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2">
-                    <use xlink:href="#dw-question-icon-svg"></use>
-                  </svg> 
-                </i>
-                <?php the_title(); ?>
-              </strong>
+              <h3 class="hm-download-box-title"><strong><i><svg class="dw-question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2"><use xlink:href="#dw-question-icon-svg"></use></svg></i><?php the_title(); ?></strong></h3>
             </div>
           </div>
           <?php endwhile; ?>
@@ -288,7 +282,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="rm-news-sec-inr">
-          <ul class="clearfix reset-list dft-slider-pagi">
+          <ul class="clearfix reset-list dft-slider-pagi blogSliderMobile">
             <?php 
               $blog_src = '';
               while($blg_query->have_posts()): $blg_query->the_post();
@@ -306,15 +300,15 @@
                     <a class="overlay-link" href="#"></a>
                     <div class="dft-blog-item-fea-img" style="background: url(<?php echo $blog_src; ?>);"></div>
                   </div>
-                  <div class="dft-blog-item-des mHc">
+                  <div class="dft-blog-item-des">
                     <div class="dft-blog-item-des-date">
                       <strong><?php echo get_the_date('d'); ?></strong>
                       <span><?php echo get_the_date('M'); ?></span>
                     </div>
-                    <h5 class="equalheight">
-                     <a href="<?php the_permalink();?>"><?php the_title();?></a>
-                    </h5>
-                    <?php the_excerpt();?>
+                    <h3 class="dft-blog-item-title mHc">
+                      <a href="<?php the_permalink();?>"><?php the_title();?></a>
+                    </h3>
+                    <div class="dft-blog-item-excerpt mHc2"><?php the_excerpt();?></div>
                     <a href="<?php the_permalink();?>">Lees Meer</a>
                   </div>
                 </div>

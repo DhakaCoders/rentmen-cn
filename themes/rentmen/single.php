@@ -9,80 +9,60 @@ while ( have_posts() ) :
     <div class="row">
       <div class="col-md-12">
         <article class="default-page-con">
-          
-          <?php $i = 1;
-            while ( have_rows('inhoud') ) : the_row(); 
-              if( get_row_layout() == 'introductietekst' ){
-              $afbeelding = get_sub_field('afbeelding');
-              if( !empty($afbeelding) ){
+          <?php
+            $i = 1;
+            $hasLayout = 0;
+            while ( have_rows('inhoud') ) : the_row();
+              if( $i == 1 && get_row_layout() == 'introductietekst' ){
+                $titel = get_sub_field('titel');
+                $afbeelding = get_sub_field('afbeelding');
+                if( !empty($afbeelding) ){
+                  $hasLayout = 1;
+                  if( !empty($titel) ) printf('<div><strong class="dfp-promo-module-title">%s</strong></div>', $titel);
             ?>
-            <?php 
-              if( !empty(get_the_title()) ) printf('<div><strong class="dfp-promo-module-title">%s</strong></div>', get_the_title());
-            ?>
-            <div class="dfp-promo-module clearfix">
-            <div class="dft-share-on">
-              <span>Deel op:</span>
-              <a href="#">
-                <i>
-                  <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;">
-                    <use xlink:href="#facebook-icon-svg"></use>
-                  </svg> 
-                </i>
-              </a>
-              <a href="#">
-                <i>
-                  <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;">
-                    <use xlink:href="#instagram-icon-svg"></use>
-                  </svg> 
-                </i>
-              </a>
-            </div>
-            <div class="dfp-plate-one-img-bx">
-              <div class="dft-blog-item-des-date">
-                <strong><?php echo get_the_date('d'); ?></strong>
-                <span><?php echo get_the_date('M'); ?></span>
-              </div>
-              <?php if( !empty($afbeelding) ): echo cbv_get_image_tag($afbeelding); endif;?>
-            </div>
-            </div>
+                    <div class="dfp-promo-module clearfix">
+                      <div class="dft-share-on">
+                        <span>Deel op:</span>
+                        <a href="#"><i><svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;"><use xlink:href="#facebook-icon-svg"></use></svg></i></a>
+                        <a href="#"><i><svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;"><use xlink:href="#instagram-icon-svg"></use></svg></i></a>
+                      </div>
+                      <div class="dfp-plate-one-img-bx">
+                        <div class="dft-blog-item-des-date">
+                          <strong><?php echo get_the_date('d'); ?></strong>
+                          <span><?php echo get_the_date('M'); ?></span>
+                        </div>
+                        <?php if( !empty($afbeelding) ): echo cbv_get_image_tag($afbeelding); endif;?>
+                      </div>
+                    </div>
             <?php
-            }
-            }else{
-              if( empty($afbeelding) && $i == 1){
+                }else{
             ?>
-          <div class="dfp-promo-module notopimg clearfix">
-          <?php 
-            if( !empty(get_the_title()) ) printf('<div><strong class="dfp-promo-module-title">%s</strong></div>', get_the_title());
-          ?>
-          <div class="dft-date-xs-cntlr">
-              <div class="dft-blog-item-des-date">
-                <strong><?php echo get_the_date('d'); ?></strong>
-                <span><?php echo get_the_date('M'); ?></span>
-              </div>
-          <div class="dft-share-on">
-            <span>Deel op:</span>
-            <a href="#">
-              <i>
-                <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;">
-                  <use xlink:href="#facebook-icon-svg"></use>
-                </svg> 
-              </i>
-            </a>
-            <a href="#">
-              <i>
-                <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;">
-                  <use xlink:href="#instagram-icon-svg"></use>
-                </svg> 
-              </i>
-            </a>
-          </div>
-          </div>
-          <hr>
-        </div>
-              <?php
-            }
-            }
+                  <div class="dfp-promo-module notopimg clearfix">
+                    <?php 
+                      if( !empty($titel) ) printf('<div><strong class="dfp-promo-module-title">%s</strong></div>', $titel);
+                    ?>
+                    <div class="dft-date-xs-cntlr">
+                      <div class="dft-blog-item-des-date">
+                        <strong><?php echo get_the_date('d'); ?></strong>
+                        <span><?php echo get_the_date('M'); ?></span>
+                      </div>
+                      <div class="dft-share-on dft-share-on-xs-cntlr">
+                        <span>Deel op:</span>
+                        <a href="#"><i><svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;"><use xlink:href="#facebook-icon-svg"></use></svg></i></a>
+                        <a href="#"><i><svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;"><use xlink:href="#instagram-icon-svg"></use></svg></i></a>
+                      </div>
+                    </div>
+                    <hr>
+                  </div>
+            <?php
+                }
+              }
+            $i++; endwhile;
+            ?>
 
+            <?php
+if( $i !== 1 ):
+            while ( have_rows('inhoud') ) : the_row();
             if( get_row_layout() == 'teksteditor' ){
               $beschrijving = get_sub_field('fc_teksteditor');
               echo '<div class="dfp-text-module clearfix">';
@@ -118,29 +98,25 @@ while ( have_posts() ) :
                 endforeach;
               echo "</div></div>";
               endif;      
-            }elseif( get_row_layout() == 'faqs' ){
-              $faqsIds = get_sub_field('fc_faqs');
-              $fQuery = new WP_Query(array(
-                'post_type' => 'faqs',
-                'posts_per_page'=> -1,
-                'post__in' => $faqsIds
-              ));
-              if( $fQuery->have_posts() ):
+            }elseif( get_row_layout() == 'usps' ){
+              $fc_usps = get_sub_field('fc_usps');
               echo "<div class='dft-question-mark-slider-cntlr'><div class='dft-question-mark-slider dft-slider-pagi'>";
-                while($fQuery->have_posts()): $fQuery->the_post();
+                foreach( $fc_usps as $usp ):
+                  $knop = $usp['knop'];
                   echo "<div class='dft-question-mark-slide-item'><div class='dft-question-mark-slide-item-inr mHc'>";
-                    echo '<a class="overlay-link" href="'.get_permalink().'"></a>';
+                    if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
+                      printf('<a class="overlay-link" href="%s" target="%s">%s</a>', $knop['url'], $knop['target'], $knop['title']); 
+                    }
                     echo '<i>
                     <svg class="question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2">
                       <use xlink:href="#question-icon-svg"></use>
                     </svg> 
                   </i>';
-                    printf('<h3 class="dft-question-mark-slide-item-title"><strong>%s</strong></h3>', get_the_title());
+                    printf('<h3 class="dft-question-mark-slide-item-title"><strong>%s</strong></h3>', $usp['titel']);
                     echo '<span><img src="'.THEME_URI.'/assets/images/arrow-orange.svg"></span>';
                   echo "</div></div>";
-                endwhile;
+                endforeach;
               echo "</div></div>";
-              endif; wp_reset_postdata();
             }elseif( get_row_layout() == 'quote' ){
               $fc_diensten = get_sub_field('fc_quote');
               $naam = get_sub_field('naam');
@@ -214,25 +190,16 @@ while ( have_posts() ) :
              $gap = get_sub_field('fc_gap');
              printf('<div class="gap clearfix" data-value="20" data-md="20" data-sm="20" data-xs="10" data-xxs="10"></div>', $rheight);
             }
-            $i++;
-           endwhile;?>
-           <div class="dft-share-on dft-share-on-bm">
+          
+           endwhile;
+            endif;
+            ?>
+            <div class="dft-share-on dft-share-on-bm">
               <span>Deel op:</span>
-              <a href="#">
-                <i>
-                  <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;">
-                    <use xlink:href="#facebook-icon-svg"></use>
-                  </svg> 
-                </i>
-              </a>
-              <a href="#">
-                <i>
-                  <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;">
-                    <use xlink:href="#instagram-icon-svg"></use>
-                  </svg> 
-                </i>
-              </a>
+              <a href="#"><i><svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#1E1E1E;"><use xlink:href="#facebook-icon-svg"></use></svg></i></a>
+              <a href="#"><i><svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#1E1E1E;"><use xlink:href="#instagram-icon-svg"></use></svg></i></a>
             </div>
+
         </article>
       </div>
     </div>

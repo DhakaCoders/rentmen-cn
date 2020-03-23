@@ -46,9 +46,11 @@
           <div class="ftr-col-main clearfix">
             <div class="ftr-col ftr-col-1">
               <div class="ftr-logo-1">
-                <i><a href="<?php echo esc_url(home_url('/')); ?>">
+              <i>
+                <a href="<?php echo esc_url(home_url('/')); ?>">
                   <?php echo $logo_tag; ?>
-                </a></i>
+                </a>
+              </i>
               </div>
               <div class="ftr-logo-2">
                 <i><?php echo $logo_tag2; ?></i>
@@ -56,7 +58,7 @@
             </div>
             <div class="ftr-col ftr-col-2">
               <?php 
-                _e( '<h6>Navigatie</h6>', THEME_NAME ); 
+                _e( '<h6><span>Navigatie</span></h6>', THEME_NAME ); 
                 $fmenuOptionsa = array( 
                     'theme_location' => 'cbv_fta_menu', 
                     'menu_class' => 'ulc',
@@ -68,7 +70,7 @@
             </div>
             <div class="ftr-col ftr-col-3">
               <?php 
-                _e( '<h6>Categorieën</h6>', THEME_NAME ); 
+                _e( '<h6><span>Categorieën</span></h6>', THEME_NAME ); 
                 $fmenuOptionsb = array( 
                     'theme_location' => 'cbv_ftb_menu', 
                     'menu_class' => 'ulc',
@@ -80,7 +82,7 @@
             </div>
             <div class="ftr-col ftr-col-4">
               <?php 
-                _e( '<h6>mijn rekening</h6>', THEME_NAME ); 
+                _e( '<h6><span>Mijn Rekening</span></h6>', THEME_NAME ); 
                 $fmenuOptionsc = array( 
                     'theme_location' => 'cbv_ftc_menu', 
                     'menu_class' => 'ulc',
@@ -91,7 +93,7 @@
               ?>                
             </div>
             <div class="ftr-col ftr-col-5">
-              <?php _e( '<h6>contact</h6>', THEME_NAME ); ?>
+              <?php _e( '<h6><span>Contact</span></h6>', THEME_NAME ); ?>
               <ul class="ulc">
                 <?php if( !empty( $adres ) ): ?>
                 <li>
@@ -102,19 +104,19 @@
                 <?php if( !empty($telefoon) ): ?>
                 <li>
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/ftr-cell-icon.svg" alt=""></i>
-                  <a href="<?php echo $telefoon; ?>"><?php echo $show_telefoon; ?></a>
+                  <a href="tel:<?php echo $telefoon; ?>"><?php echo $show_telefoon; ?></a>
                 </li>
                 <?php endif; ?>
                 <?php if( !empty($telefoon1) ): ?>
                 <li>
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/ftr-cell-icon.svg" alt=""></i>
-                  <a href="<?php echo $telefoon1; ?>"><?php echo $show_telefoon1; ?></a>
+                  <a href="tel:<?php echo $telefoon1; ?>"><?php echo $show_telefoon1; ?></a>
                 </li>
                 <?php endif; ?>
                 <?php if( !empty($e_mailadres) ): ?>
                 <li>
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/ftr-mail-icon.svg" alt=""></i>
-                  <a href="<?php echo $e_mailadres; ?>"><?php echo $e_mailadres; ?></a>
+                  <a href="mailto:<?php echo $e_mailadres; ?>"><?php echo $e_mailadres; ?></a>
                 </li>
                 <?php endif; ?>
               </ul>              
@@ -153,6 +155,103 @@
     </div>
   </div>
 </footer>
+
+<div class="xs-menu-bar xs-menu-bar-open">
+  <div class="xs-menu-bar-inr">
+    <div class="xs-humbergur-btn">
+      <span><img src="<?php echo THEME_URI; ?>/assets/images/xs-humbergar-icon.png"></span>
+      <strong>Menu</strong>
+    </div>
+    <div class="xs-menu-bar-cart">
+      <a href="#">
+        <span class="iconCart">
+          <?php if(WC()->cart->get_cart_contents_count() > 0) echo sprintf ( '<i>%d</i>', WC()->cart->get_cart_contents_count() ); ?>
+          <img src="<?php echo THEME_URI; ?>/assets/images/xs-cart-icon.png">
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="show-sm">
+  <div class="xs-pop-up-menu">
+    <div class="xs-pop-up-menu-inr">
+      <div class="xs-pop-menu-con">
+        <nav class="xs-main-nav clearfix">
+          <ul class="clearfix reset-list">
+            <li class="current-menu-item"><a href="#">Home</a></li>
+            <li class="menu-item-has-children">
+              <a href="#">Over Ons</a>
+              <ul class="sub-menu">
+                <li><a href="#">sub menu item</a></li>
+                <li><a href="#">sub menu item</a></li>
+                <li><a href="#">sub menu item</a></li>
+                <li><a href="#">sub menu item</a></li>
+                <li><a href="#">sub menu item</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Nieuws</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="xs-social">
+          <div class="hdr-social">
+            <ul class="reset-list">
+              <li>
+                <a href="#">
+                  <i>
+                    <svg class="facebook-icon-svg" width="6" height="12" viewBox="0 0 6 12" fill="#FFFFFF">
+                      <use xlink:href="#facebook-icon-svg"></use>
+                    </svg> 
+                  </i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i>
+                    <svg class="instagram-icon-svg" width="12" height="12" viewBox="0 0 12 12" fill="#FFFFFF">
+                      <use xlink:href="#instagram-icon-svg"></use>
+                    </svg> 
+                  </i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="xs-sign-up">
+          <div class="hdr-sign-up">
+            <a href="#">
+              <i>
+                <svg class="sign-up-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#FFFFFF">
+                  <use xlink:href="#sign-up-icon-svg"></use>
+                </svg> 
+              </i>
+              <strong>Aanmelden</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="xs-menu-bar xs-menu-bar-close">
+        <div class="xs-menu-bar-inr">
+          <div class="xs-humbergur-btn">
+            <span><img src="<?php echo THEME_URI; ?>/assets/images/xs-close-icon.png"></span>
+            <strong>Sluit</strong>
+          </div>
+          <div class="xs-menu-bar-cart">
+            <a href="#">
+              <span class="iconCart">
+                <?php if(WC()->cart->get_cart_contents_count() > 0) echo sprintf ( '<i>%d</i>', WC()->cart->get_cart_contents_count() ); ?>
+                <img src="<?php echo THEME_URI; ?>/assets/images/xs-cart-icon.png">
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
 <?php wp_footer(); ?>
 </body>
 </html>

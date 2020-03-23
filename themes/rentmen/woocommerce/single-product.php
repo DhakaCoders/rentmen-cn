@@ -156,7 +156,7 @@ if( !empty($terms) && !is_wp_error($terms) ){
                 </svg> 
               </i>
               <?php if( !empty($stestimonial['tekst']) ) echo wpautop($stestimonial['tekst']); ?>
-              <?php if( !empty($stestimonial['name']) ) printf('<strong>- %s, %s</strong>', $stestimonial['name'], $stestimonial['positie']); ?>
+              <?php if( !empty($stestimonial['naam']) ) printf('<strong>- %s, %s</strong>', $stestimonial['naam'], $stestimonial['positie']); ?>
             </div>
           </div>
       	 <?php endif; ?>
@@ -175,10 +175,8 @@ if( !empty($terms) && !is_wp_error($terms) ){
           	$customTitel = get_option('taxonomy_'.$termid);
           ?>
           <div class="organize-party-head m-auto">
-            <?php 
-            if( !empty($customTitel) ) printf('<h2>%s</h2>', $customTitel['custom_titel_term_meta']);
-            if( !empty($termdes) ) echo wpautop( $termdes, true );  
-            ?>
+            <h2>Organiseer uw feest in een paar snelle stappen</h2>
+            <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
           </div>
       	  <?php endif; ?>
 
@@ -198,7 +196,7 @@ if( !empty($terms) && !is_wp_error($terms) ){
               		<?php endif; ?>
                 </div>
                 <?php 
-                if( !empty($dproces['titel']) ) printf('<h5 class="order-process-title">%s</h5>', $dproces['titel']); 
+                if( !empty($dproces['title']) ) printf('<h4 class="order-process-title">%s</h4>', $dproces['title']); 
                 if( !empty($dproces['beschrijving']) ) echo wpautop( $dproces['beschrijving'], true );
                 ?>
               </div>

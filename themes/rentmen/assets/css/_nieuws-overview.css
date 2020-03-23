@@ -18,10 +18,13 @@
 .rm-news-section{
 	overflow: hidden;
 }
-.rm-news-sec-inr ul{
-	margin-left: -25px;
-	margin-right: -25px;
-	padding-bottom: 30px;
+.rm-news-sec-inr ul {
+    margin-left: -25px;
+    margin-right: -25px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .rm-news-sec-inr ul li{
 	float: left;
@@ -121,18 +124,5 @@
 	.rm-nieuws-overview-entry-hdr-title{
 		margin-bottom: 20px;
 	}
-}
-
-@media(max-width: 575px){
-
-}
-
-@media(max-width: 479px){
-
-
-}
-
-@media(max-width: 359px){
-
 }
 
