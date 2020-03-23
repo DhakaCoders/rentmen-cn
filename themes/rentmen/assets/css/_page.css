@@ -434,38 +434,10 @@ span.catapultCookieBtn button:hover{
   content: none!important;
 }
 
-
-
-
-
-
-
-
-
-
-
 @media(max-width: 1499px){
   .single-pro-rgt-con {
     padding-left: 80px;
   }
-  
-}
-
-@media(max-width: 1399px){
-
-}
-
-@media(max-width: 1299px){
-
-}
-
-@media(max-width: 1199px){
-
-
-}
-
-@media(max-width: 991px){
-
   
 }
 
@@ -477,18 +449,4 @@ span.catapultCookieBtn button:hover{
     background: #fff;
     padding: 15px 0 15px;
   }
-}
-
-@media(max-width: 575px){
-
-
-}
-
-@media(max-width: 479px){
-
-
-}
-
-@media(max-width: 359px){
-
 }

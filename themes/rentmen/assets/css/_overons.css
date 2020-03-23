@@ -137,10 +137,6 @@ overons-service-sec-wrp
     padding-top: 50px;
 }
 
-@media(max-width: 1499px){
-
-}
-
 @media(max-width: 1399px){
 	.overons-two-part-lft-img{
 		right: 80px;
@@ -307,9 +303,5 @@ overons-service-sec-wrp
 	.overons-two-part-lft-img {
 	    height: 350px !important;
 	}
-
-}
-
-@media(max-width: 359px){
 
 }

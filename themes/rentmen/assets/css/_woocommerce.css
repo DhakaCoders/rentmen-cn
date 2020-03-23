@@ -58,10 +58,11 @@ body.single-product .pro-cart-btn button:hover svg{
 	color: #000;
 }
 
-.woocommerce #coupon_code{
-	width: 135px;
-	border: 2px solid #F3BF00!important;
-	padding: 5px;
+.woocommerce #coupon_code {
+    width: 160px;
+    border: 2px solid #F3BF00!important;
+    padding: 5px 10px;
+    height: 52px;
 }
 
 .woocommerce .woocommerce-notices-wrapper ul{

@@ -179,6 +179,8 @@
                         <?php echo cbv_get_image_tag($thumbnail_id); ?>
                         <?php echo cbv_get_image_tag($hoverid); ?>
                       </i>
+                      <?php else: ?>
+                        <i><svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;"><use xlink:href="#post-cty-table-icon-svg"></use></svg></i>
                       <?php endif; ?>
                       <span><?php echo $term->name; ?></span>
                     </a>
