@@ -301,7 +301,8 @@ hm-de-kijker-post-sec-wrp
 .hm-post-categorie-title:hover{
 	background: #1E1E1E;
 }
-.hm-post-categorie-title:hover span{
+.hm-post-categorie-title:hover span,
+.hm-post-categorie-title:hover h3{
 	color: #fff;
 }
 .hm-post-categorie-title:hover span i svg,
@@ -892,6 +893,7 @@ hm-download-sec-wrp
 
 @media(max-width: 575px){
 	.hm-banner-bg{
+		padding-top: 200px;
 		min-height: 630px !important;
 	}
 	.hm-banner-dsc strong,

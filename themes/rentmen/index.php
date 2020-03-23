@@ -48,15 +48,15 @@ get_template_part('templates/page', 'banner');
                     <a class="overlay-link" href="<?php the_permalink();?>"></a>
                     <div class="dft-blog-item-fea-img" style="background: url(<?php echo $blog_src; ?>);"></div>
                   </div>
-                  <div class="dft-blog-item-des mHc">
+                  <div class="dft-blog-item-des">
                     <div class="dft-blog-item-des-date">
                       <strong><?php echo get_the_date('d'); ?></strong>
                       <span><?php echo get_the_date('M'); ?></span>
                     </div>
-                    <h3 class="dft-blog-item-title">
+                    <h3 class="dft-blog-item-title mHc">
                      <a href="<?php the_permalink();?>"><?php the_title();?></a>
                     </h3>
-                    <?php the_excerpt();?>
+                    <div class="dft-blog-item-excerpt mHc2"><?php the_excerpt();?></div>
                     <a href="<?php the_permalink();?>">Lees Meer</a>
                   </div>
                 </div>

@@ -100,19 +100,19 @@
                 <?php if( !empty($telefoon) ): ?>
                 <li>
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/ftr-cell-icon.svg" alt=""></i>
-                  <a href="<?php echo $telefoon; ?>"><?php echo $show_telefoon; ?></a>
+                  <a href="tel:<?php echo $telefoon; ?>"><?php echo $show_telefoon; ?></a>
                 </li>
                 <?php endif; ?>
                 <?php if( !empty($telefoon1) ): ?>
                 <li>
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/ftr-cell-icon.svg" alt=""></i>
-                  <a href="<?php echo $telefoon1; ?>"><?php echo $show_telefoon1; ?></a>
+                  <a href="tel:<?php echo $telefoon1; ?>"><?php echo $show_telefoon1; ?></a>
                 </li>
                 <?php endif; ?>
                 <?php if( !empty($e_mailadres) ): ?>
                 <li>
                   <i><img src="<?php echo THEME_URI; ?>/assets/images/ftr-mail-icon.svg" alt=""></i>
-                  <a href="<?php echo $e_mailadres; ?>"><?php echo $e_mailadres; ?></a>
+                  <a href="mailto:<?php echo $e_mailadres; ?>"><?php echo $e_mailadres; ?></a>
                 </li>
                 <?php endif; ?>
               </ul>              
@@ -160,7 +160,10 @@
     </div>
     <div class="xs-menu-bar-cart">
       <a href="#">
-        <img src="<?php echo THEME_URI; ?>/assets/images/xs-cart-icon.png">
+        <span class="iconCart">
+          <?php if(WC()->cart->get_cart_contents_count() > 0) echo sprintf ( '<i>%d</i>', WC()->cart->get_cart_contents_count() ); ?>
+          <img src="<?php echo THEME_URI; ?>/assets/images/xs-cart-icon.png">
+        </span>
       </a>
     </div>
   </div>
@@ -232,7 +235,10 @@
           </div>
           <div class="xs-menu-bar-cart">
             <a href="#">
-              <img src="<?php echo THEME_URI; ?>/assets/images/xs-cart-icon.png">
+              <span class="iconCart">
+                <?php if(WC()->cart->get_cart_contents_count() > 0) echo sprintf ( '<i>%d</i>', WC()->cart->get_cart_contents_count() ); ?>
+                <img src="<?php echo THEME_URI; ?>/assets/images/xs-cart-icon.png">
+              </span>
             </a>
           </div>
         </div>

@@ -135,7 +135,7 @@
                   <?php endif; ?>
                 </div>
                 <?php 
-                if( !empty($dproces['titel']) ) printf('<h5 class="order-process-title">%s</h5>', $dproces['titel']); 
+                if( !empty($dproces['title']) ) printf('<h4 class="order-process-title">%s</h4>', $dproces['title']); 
                 if( !empty($dproces['beschrijving']) ) echo wpautop( $dproces['beschrijving'], true );
                 ?>
               </div>

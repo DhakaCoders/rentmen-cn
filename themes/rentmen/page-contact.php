@@ -80,8 +80,8 @@ get_template_part('templates/page', 'banner');
             <div class="rm-contact-form-tab clearfix">
               <h4>E-mail Ons</h4>
               <ul class="reset-list tabs-menu clearfix">
-                <li><a href="#tabs">particulier</a></li>
-                <li><a href="#tabs">bedrijf</a></li>
+                <li><a href="#particulier">particulier</a></li>
+                <li><a href="#bedrijf">bedrijf</a></li>
               </ul>
             </div>
             <div class="tabs">

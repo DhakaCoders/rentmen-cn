@@ -77,6 +77,10 @@
   color: #fff;
   background: #BF211E;
 }
+.pro-overview-sidebar-cat ul li.active i svg,
+.pro-overview-sidebar-cat ul li a:hover i svg{
+  fill: #fff;
+}
 .pro-overview-sidebar-cat ul > li > a > i {
   display: inline-block;
   vertical-align: baseline;
@@ -344,6 +348,9 @@ html .price-slider .ui-button.ui-state-disabled:active {
 .pro-overview-grid-con{
   width: 74.5%;
   float: left;
+}
+.pro-overview-grid-con .notfound{
+  text-align: left;
 }
 .pro-overview-single-des-con{
   padding-top: 30px;

@@ -125,12 +125,13 @@
               <a href="<?php echo esc_url( get_term_link( $cat ) ); ?>">
                <div class="hm-post-categorie-title">
                   <h3>
+                    <i>
                     <?php if( !empty($thumbnail_id) ): $catimg = cbv_get_image_src($thumbnail_id); ?>
-                    <i><img class="style-svg" src="<?php echo $catimg; ?>" alt="<?php echo $cat->name; ?>">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg></i>
+                      <img class="style-svg" src="<?php echo $catimg; ?>" alt="<?php echo $cat->name; ?>">
+                    <?php else: ?>
+                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;"><use xlink:href="#post-cty-table-icon-svg"></use></svg>
                     <?php endif; ?>
+                    </i>
                     <?php echo $cat->name; ?>
                   </h3>
                 </div>
