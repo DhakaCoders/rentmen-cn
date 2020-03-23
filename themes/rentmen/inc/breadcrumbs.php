@@ -52,8 +52,27 @@ function cbv_breadcrumbs() {
       if ($show_home_link_on_blog) echo $sep;
       echo $blog_link;
     }
+    if( is_tax('faq') ) {
+      // Get posts type
+      $pageslug = 'faq';
+      // If post type is not post
+      if( !empty($pageslug) ) {
+        $args = array(
+            'name' => $pageslug,
+            'post_type' => 'page'
+        );
+        $post_type_object = get_posts( $args );
+        $post_type_link     = get_permalink( get_page_by_path( $pageslug ) );
 
-    if ( is_category() ) {
+        echo '<li class="item item-cat item-custom-post-type-' . $pageslug . '"><a href="' . $post_type_link . '">' . $post_type_object[0]->post_title . '</a></li>' . $sep;
+
+      }
+
+      $custom_tax_name = get_queried_object()->name;
+       echo '<li class="active"><a href="javascript:void(0)">'. $custom_tax_name .'</a></li>';
+
+    } elseif ( is_category() ) {
+
       $cat = get_category(get_query_var('cat'), false);
       if ($cat->parent != 0) {
         $cats = get_category_parents($cat->parent, TRUE, $sep);

@@ -46,7 +46,9 @@
           <div class="ftr-col-main clearfix">
             <div class="ftr-col ftr-col-1">
               <div class="ftr-logo-1">
-                <i><?php echo $logo_tag; ?></i>
+                <i><a href="<?php echo esc_url(home_url('/')); ?>">
+                  <?php echo $logo_tag; ?>
+                </a></i>
               </div>
               <div class="ftr-logo-2">
                 <i><?php echo $logo_tag2; ?></i>

@@ -53,7 +53,7 @@ get_template_part('templates/page', 'banner');
                       <strong><?php echo get_the_date('d'); ?></strong>
                       <span><?php echo get_the_date('M'); ?></span>
                     </div>
-                    <h3 class="dft-blog-item-title">
+                    <h3 class="dft-blog-item-title equalheight">
                      <a href="<?php the_permalink();?>"><?php the_title();?></a>
                     </h3>
                     <?php the_excerpt();?>
@@ -90,7 +90,11 @@ get_template_part('templates/page', 'banner');
       </div>
     </div>
     <?php else: ?>
-      <div class="notfound">Geen resultaat!</div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="notfound">Geen resultaat!</div>
+      </div>
+    </div>
     <?php endif; ?>
   </div>
 </section>

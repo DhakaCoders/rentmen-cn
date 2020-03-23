@@ -89,7 +89,7 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
             $query = new WP_Query(array( 
                 'post_type'=> 'faqs',
                 'post_status' => 'publish',
-                'posts_per_page' => 1,
+                'posts_per_page' => 9,
                 'orderby' => 'date',
                 'order'=> 'desc',
                 's' => $keyword,
@@ -112,7 +112,7 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
                 <div class="faq-grd-item mHc">
                   <div class="faq-grd-item-inner">
                     <div class="faq-grd-item-des">
-                      <h3 class="faq-grd-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                      <h3 class="faq-grd-title equalheight"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                       <?php the_excerpt(); ?>
                       <a href="<?php the_permalink(); ?>">Lees Meer</a>
                     </div>

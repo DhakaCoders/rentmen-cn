@@ -56,25 +56,29 @@ while ( have_posts() ) :
                 endforeach;
               echo "</div></div>";
               endif;      
-            }elseif( get_row_layout() == 'usps' ){
-              $fc_usps = get_sub_field('fc_usps');
+            }elseif( get_row_layout() == 'faqs' ){
+              $faqsIds = get_sub_field('fc_faqs');
+              $fQuery = new WP_Query(array(
+                'post_type' => 'faqs',
+                'posts_per_page'=> -1,
+                'post__in' => $faqsIds
+              ));
+              if( $fQuery->have_posts() ):
               echo "<div class='dft-question-mark-slider-cntlr'><div class='dft-question-mark-slider dft-slider-pagi'>";
-                foreach( $fc_usps as $usp ):
-                  $knop = $usp['knop'];
+                while($fQuery->have_posts()): $fQuery->the_post();
                   echo "<div class='dft-question-mark-slide-item'><div class='dft-question-mark-slide-item-inr mHc'>";
-                    if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
-                      printf('<a class="overlay-link" href="%s" target="%s">%s</a>', $knop['url'], $knop['target'], $knop['title']); 
-                    }
+                    echo '<a class="overlay-link" href="'.get_permalink().'"></a>';
                     echo '<i>
                     <svg class="question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2">
                       <use xlink:href="#question-icon-svg"></use>
                     </svg> 
                   </i>';
-                    printf('<h3 class="dft-question-mark-slide-item-title"><strong>%s</strong></h3>', $usp['titel']);
+                    printf('<h3 class="dft-question-mark-slide-item-title"><strong>%s</strong></h3>', get_the_title());
                     echo '<span><img src="'.THEME_URI.'/assets/images/arrow-orange.svg"></span>';
                   echo "</div></div>";
-                endforeach;
+                endwhile;
               echo "</div></div>";
+              endif; wp_reset_postdata();
             }elseif( get_row_layout() == 'quote' ){
               $fc_diensten = get_sub_field('fc_quote');
               $naam = get_sub_field('naam');

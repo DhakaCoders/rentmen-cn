@@ -13,6 +13,15 @@ if($('.mHc').length){
 };
 
 
+var maxHeight = 0;
+if($('.equalheight').length){
+$(".equalheight").each(function(){
+   if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
+});
+
+$(".equalheight").height(maxHeight);
+}
+
 if($('.fancybox').length){
 $('.fancybox').fancybox({
     //openEffect  : 'none',

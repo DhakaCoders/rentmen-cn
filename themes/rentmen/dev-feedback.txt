@@ -30,11 +30,11 @@
 = Single blog =
 1. H2 dite parci na --- Done
 - https://www.screencast.com/t/tdIsJEE3rpKu
-2. FAQ deyar option pachci na
+2. FAQ deyar option pachci na  -- Done
 - https://www.screencast.com/t/o054RFTLNe
-3. Name, pos 50% kore dao and text 100% kore dao
+3. Name, pos 50% kore dao and text 100% kore dao  -- Done
 - https://www.screencast.com/t/7sDdrTzUW
-4. Different design post ta kaj korce na
+4. Different design post ta kaj korce na  -- Done
 - https://www.screencast.com/t/h91xBhTTu
 
 = Over ons =
@@ -47,29 +47,29 @@
 2. Map marker missing   -- Done
 
 = Faq =
-1. Faq page ar category gele error
+1. Faq page ar category gele error   -- Done
 - https://www.screencast.com/t/PES366KTpHez
 
 = Cart/Checkout =
 1. Error dekci 
-- https://www.screencast.com/t/MTypKLtbCjs7
+- https://www.screencast.com/t/MTypKLtbCjs7  --- pending
 
 
 ==== Design ====
 
 = General =
 1. Gap ta besi hobe
-- https://www.screencast.com/t/HXHY83ks
+- https://www.screencast.com/t/HXHY83ks -- Done
 2. Cookie
 
 = Shop/Product/ =
 1. Design icon after added to cart
 2. Single slider active thumb
-3. Single product qoute
+3. Single product qoute       --- Done
 4. Single related product cart icon
 
 = Inner page =
-1. Title same height korte hobe
+1. Title same height korte hobe   --- Done
 - https://www.screencast.com/t/RnIaQHUS
 
 = Contact =

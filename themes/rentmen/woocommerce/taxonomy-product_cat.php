@@ -83,7 +83,7 @@
   if(isset($_COOKIE['sorting']) && !empty($_COOKIE['sorting'])) {
     $sorting = $_COOKIE['sorting'];
   }
-  $per_page = 1;
+  $per_page = 12;
 
 	$terms = get_terms( array(
 	  'taxonomy' => 'product_cat',
@@ -354,7 +354,7 @@
                     </a>
                   </div>
                   <div class="pro-overview-grid-des">
-                    <h4 class="pro-overview-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h4>
+                    <h4 class="pro-overview-title equalheight"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h4>
                     <span><?php echo cbv_get_excerpt(); ?></span>
                     <strong class="price"><?php echo $product->get_price_html(); ?> / stel</strong>
                     <div class="pro-overview-grid-btm-lnc clearfix">

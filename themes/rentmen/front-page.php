@@ -311,7 +311,7 @@
                       <strong><?php echo get_the_date('d'); ?></strong>
                       <span><?php echo get_the_date('M'); ?></span>
                     </div>
-                    <h5>
+                    <h5 class="equalheight">
                      <a href="<?php the_permalink();?>"><?php the_title();?></a>
                     </h5>
                     <?php the_excerpt();?>
