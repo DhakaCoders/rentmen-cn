@@ -2,6 +2,10 @@
 get_header(); 
 $thisID = get_the_ID();
   $ccat = get_queried_object();
+  if( isset($_GET['q']) && !empty($_GET['q']) )
+    $keyword = $_GET['q'];
+  else
+    $keyword = '';
 ?>
 <section class="breadcrumbs-sec">
   <div class="container-lg">
@@ -12,16 +16,12 @@ $thisID = get_the_ID();
             <?php if( isset($ccat->name) && !empty($ccat->name)) printf('<h1>%s</h1>', $ccat->name); ?>
           </div>          
           <div class="breadcrumbs-main">
-            <ul>           
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-            </ul>
+            <?php cbv_breadcrumbs(); ?>
           </div>
         </div>
         <div class="breadcrumbs-innr show-xs clearfix">
           <div class="breadcrumbs-left">
-            <a href="#">Home</a>
+            <a href="<?php echo esc_url( home_url() );?>"></a>
           </div>
           <div class="breadcrumbs-right">
             <a href="javascript:history.go(-1)">Terug</a>
@@ -46,13 +46,13 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
       <div class="col-sm-12">
         <div class="faq-cnt-inner">
           <?php 
-            if( isset($ccat->name) && !empty($ccat->name)) printf('<h2>%s</h2>', $ccat->name);
+            if( isset($ccat->name) && !empty($ccat->name)) printf('<div><strong class="faw-page-entry-title">%s</strong></div>', $ccat->name);
             if( isset($ccat->description) && !empty($ccat->description))
               echo wpautop( $ccat->description, true );
           ?>
           <div class="rm-search-form">
-            <form>
-              <input type="search" name="" placeholder="Typ je vraag hier">
+            <form action="" method="get">
+              <input type="search" name="q" value="<?php echo $keyword; ?>" placeholder="Typ je vraag hier">
               <div class="rm-search-submit-btn">
                 <button>
                   <i>
@@ -89,9 +89,10 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
             $query = new WP_Query(array( 
                 'post_type'=> 'faqs',
                 'post_status' => 'publish',
-                'posts_per_page' => 1,
+                'posts_per_page' => 9,
                 'orderby' => 'date',
                 'order'=> 'desc',
+                's' => $keyword,
                 'paged' => $paged,
                 'tax_query' => array(
                   array(
@@ -111,7 +112,7 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
                 <div class="faq-grd-item mHc">
                   <div class="faq-grd-item-inner">
                     <div class="faq-grd-item-des">
-                      <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                      <h3 class="faq-grd-title equalheight"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                       <?php the_excerpt(); ?>
                       <a href="<?php the_permalink(); ?>">Lees Meer</a>
                     </div>
@@ -124,15 +125,17 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
               <?php endwhile; ?>
             </ul>
           </div>
+        <?php else: ?>
+            <div class="notfound">Geen resultaat!</div>
         <?php endif; wp_reset_postdata(); ?>
         </div>
       </div>
     </div>
+    <?php if( $query->max_num_pages > 1 ): ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="faq-pagination">
           <?php 
-            if( $query->max_num_pages > 1 ):
             $big = 999999999; // need an unlikely integer
             echo paginate_links( array(
               'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -143,13 +146,11 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
               'show_all' => true,
               'prev_next' => false
             ) );
-            else:
-              echo '<div class="hasgap"></div>';
-            endif; 
           ?>
         </div>
       </div>
     </div>
+  <?php endif;  ?>
   </div>
 </section>
 <?php } ?>

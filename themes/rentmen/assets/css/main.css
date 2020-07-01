@@ -5,28 +5,16 @@
 @import url('_header.css');
 @import url('_page.css');
 @import url('_home.css');
-
-/*Shoriful*/
 @import url('_faq-overview.css');
 @import url('_faq-details.css');
-
-
-/*Milon*/
 @import url('_overons.css');
-
-
-/*Prashanto*/
 @import url('_producten-details.css');
 @import url('_producten-overview.css');
-
-
-/*Rannojit*/
 @import url('_binnenpagina.css');
 @import url('_nieuws-overview.css');
-
-
-
 @import url('_contact.css');
+@import url('_woocommerce.css');
+@import url('_wc_common.css');
 @import url('_footer.css');
 
 

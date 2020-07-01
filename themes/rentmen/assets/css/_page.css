@@ -42,6 +42,14 @@
   padding-right: 43px;
   position: relative;
   float: left;
+
+}
+.breadcrumbs-main ul li.wclist{
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 22px;
+    color: #1E1E1E;
 }
 .breadcrumbs-main ul li a {
   display: block;
@@ -351,6 +359,66 @@ span.catapultCookieBtn button:hover{
   background-image: url(../images/dft-slider-pagi-4.svg);
   background-repeat: no-repeat;
 }
+.dfp-promo-module.notopimg {
+    position: relative;
+}
+
+.error-404-wrap h1 {
+    display: inline-block;
+    padding: 12px 20px 12px 60px;
+    position: relative;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 11;
+    border-right: 3px solid #F3BF00;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.error-404-wrap h1:before, .error-404-wrap h1:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    background: #F3BF00;
+}
+.error-404-wrap h1:after {
+    top: 0;
+    width: 48%;
+    height: 3px;
+    background: #F3BF00;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.error-404-wrap h1:before {
+    bottom: 0;
+    width: 92%;
+    height: 3px;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.error-404-wrap a.btn {
+    display: inline-block;
+    vertical-align: baseline;
+    text-decoration: none;
+    border: 2px solid #F3BF00;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 16px;
+    color: #F3BF00;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 15px 45px;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    margin-top: 20px;
+}
+.error-404-wrap a.btn:hover {
+    background: #F3BF00;
+    color: #fff;
+}
 @media(min-width: 991px){
   .dft-slider-pagi .slick-dots li:hover{
     background-image: url(../images/dft-slider-pagi-2.svg);
@@ -366,38 +434,10 @@ span.catapultCookieBtn button:hover{
   content: none!important;
 }
 
-
-
-
-
-
-
-
-
-
-
 @media(max-width: 1499px){
   .single-pro-rgt-con {
     padding-left: 80px;
   }
-  
-}
-
-@media(max-width: 1399px){
-
-}
-
-@media(max-width: 1299px){
-
-}
-
-@media(max-width: 1199px){
-
-
-}
-
-@media(max-width: 991px){
-
   
 }
 
@@ -409,18 +449,4 @@ span.catapultCookieBtn button:hover{
     background: #fff;
     padding: 15px 0 15px;
   }
-}
-
-@media(max-width: 575px){
-
-
-}
-
-@media(max-width: 479px){
-
-
-}
-
-@media(max-width: 359px){
-
 }

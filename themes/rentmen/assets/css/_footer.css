@@ -1,6 +1,3 @@
-.footer-wrp{
-
-}
 .ftr-top{
   background: #FAFAFA;
   padding: 70px 0 50px;
@@ -422,9 +419,5 @@
   .ftr-btm-col-1 span {
     font-size: 13px;
   }
-}
-
-@media(max-width: 359px){
-
 }
 

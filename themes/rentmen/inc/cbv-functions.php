@@ -72,81 +72,103 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
-
-function get_camp_header(){
-    if( is_user_logged_in() ){
-        get_header('logged');
-    }else{
-        get_header();
+function cbv_table( $table){
+  if ( ! empty ( $table ) ) {
+    echo '<div class="dfp-tbl-wrap">
+    <div class="table-dsc" data-aos="fade-up" data-aos-delay="200">
+    <table>';
+    if ( ! empty( $table['caption'] ) ) {
+      echo '<caption>' . $table['caption'] . '</caption>';
     }
-}
-
- function get_count_posts_by_author($post_type = 'post', $authorID){
-   global $wpdb;
-   $expire_camp = 0;
-   if( empty($authorID) ) return;
-    $query = "SELECT ID FROM $wpdb->posts WHERE post_author = '$authorID' AND post_status = 'publish'";
-    $posts = $wpdb->get_results($query);
-    $Count = count($posts);
-    foreach ($posts as $key => $post) {
-      if( camp_expire_date($post->ID) ){
-        $expire_camp += 1;
+    if ( ! empty( $table['header'] ) ) {
+      echo "<thead class='dfp-thead'>";
+      echo '<tr>';
+      echo '<th><span>#</span></th>';
+      foreach ( $table['header'] as $th ) {
+        echo '<th><span>';
+        echo $th['c'];
+        echo '</span></th>';
       }
+      echo '</tr>';
+      echo '</thead>';
     }
-    if( $expire_camp > 0 )
-      $totalCount = ( $Count - $expire_camp );
-    else
-      $totalCount = $Count;
-    if( $totalCount > 0 )
-      return $totalCount;
-    else
-      return false;
+    echo '<tbody>';
+    $i = 1;
+    foreach ( $table['body'] as $tr ) {
+      echo '<tr>';
+      echo '<td><span>'.$i.'.</span></td>';
+      foreach ( $tr as $td ) {
+        echo '<td><span class="mHc">';
+        echo $td['c'];
+        echo '</span></td>';
+      }
+      echo '</tr>';
+      $i++;
+    }
+    echo '</tbody>';
+    echo '</table></div>';
+    echo '</div>';
+  }  
 }
-function get_count_posts_by_cat($post_type = 'post', $catid){
- global $wpdb;
- if( empty($catid) ) return;
+
+function cbv_get_excerpt($limit = 8, $dot = ''){
+  $excerpt = explode(' ', get_the_excerpt(), $limit);
+  if (count($excerpt)>=$limit) {
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt);
+  } else {
+    $excerpt = implode(" ",$excerpt);
+  } 
+  $excerpt = preg_replace('`\[[^\]]*\]`',$dot,$excerpt);
+  return $excerpt;
+}
+
+function cookieset($atts = []){
+   // normalize attribute keys, lowercase
+    $atts = array_change_key_case((array)$atts, CASE_LOWER);
  
-  $result_count = the_count_active_post_by_cat($post_type, $catid);
-  if($result_count)
-    return $result_count;
-  else
-    return false;
+    // override default attributes with user attributes
+    $atts = shortcode_atts([
+               'url' => '#',
+           ], $atts);
+  $output = '<div class="catapult-cookie-wrp">
+  <div id="catapult-cookie-bar" class="catapult-cookie-bar clearfix">
+    <div class="catapult-cookie-topbar">
+      <i><img src="'.THEME_URI.'/assets/images/cookie-icon.svg"></i>
+      <strong class="catapult-close-btn">
+       <img src="'.THEME_URI.'/assets/images/cookie-close-icon.svg">
+      </strong>
+    </div>
+    <span class="ctcc-left-side">
+      <h4>Deze website maakt gebruik van cookies.</h4>
+      Phasellus ac tortor mi. Aliquam eget volutpat elit. Duis dapibus dolor sit amet arcu porttitor laoreet. Mauris eget massa nulla. 
+      <a class="ctcc-more-info-link" tabindex="0"  href="'.$atts['url'].'">Meer Info</a>
+    </span>
+    <span class="catapultCookieBtn">
+      
+    </span>
+    <a role="button" tabindex="0" data-cli_action="accept" id="cookie_action_close_header" class="medium cli-plugin-main-button cookie_action_close_header cli_action_button">ok, bedankt</a>
+  </div>
+</div>';
+$output .= '<style>
+#cookie-law-info-bar {
+    border: 0;
+    font-size: initial;
+    margin: 0 auto;
+    padding: 0 !important;
+    position: inherit;
+    width: initial;
+
+    box-shadow: transparent;
+}
+.cli-plugin-button, .cli-plugin-button:visited {
+    text-decoration: none;
+    position: inherit !important;
+    background-color: transparent !important;
+    display: none !important;
+}
+</style>';
+return $output;
 }
 
- function the_count_active_post_by_cat($post_type, $catid){
-    $expire_camp = 0;
-    $Query = new WP_Query(array( 
-      'post_type'=> $post_type,
-      'post_status' => array('publish'),
-      'posts_per_page' => -1,
-      'tax_query' => array(
-        array(
-          'taxonomy' => 'campaign',
-          'field' => 'term_id',
-          'terms' => $catid
-        )
-      )
-    ) 
-    );
-    if($Query->have_posts()){
-      $totalCount = 0;
-      $Count = $Query->found_posts;
-      while($Query->have_posts()): $Query->the_post(); 
-        if( camp_expire_date(get_the_ID())){
-          $expire_camp += 1;
-        }
-      endwhile;
-      $totalCount = ( $Count - $expire_camp );
-      wp_reset_postdata();
-      return $totalCount;
-    }
-    return false;
- }
-
-function array_insert(&$array, $position, $insert_arr)
-{
-    if (is_int($position)) {
-        return array_merge(array_slice($array, 0, $position), $insert_arr, array_slice($array, $position));
-    }
-    return false;
-}
+add_shortcode('getcookie', 'cookieset' );

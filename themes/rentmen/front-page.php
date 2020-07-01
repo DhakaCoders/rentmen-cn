@@ -1,357 +1,194 @@
 <?php get_header(); ?>
+<?php  
+  $hshowhide_slide = get_field('showhide_slider', HOMEID);
+  $hslides = get_field('home_slider', HOMEID);
+  if($hshowhide_slide):
+?>
 <section class="hm-banner-sec-wrp">
+  <?php if($hslides){ ?>
   <div class="hm-slider-wrp">
-    <div class="hm-banner-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/home-page-banner-img.jpg);">
+    <?php
+      $i = 1;
+      foreach( $hslides as $hslide ): 
+      $slideposter = !empty($hslide['afbeelding'])? $hslide['afbeelding']: '';
+    ?>
+    <div class="hm-banner-bg" style="background: url(<?php echo $slideposter; ?>);">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <div class="hm-banner-dsc">
-              <h3>Welkom bij Rentmen Verhuur</h3>
-              <h1>Verhuur Feestmateriaal</h1>
-              <p>Springkastelen, tenten, tafels, stoelen, bestek,... Alles wat je maar nodig hebt om je evenement kracht bij te zetten.</p>
-              <a href="#">Over Ons</a>
-              <a href="#">onze producten</a>
+              <?php
+                if( !empty($hslide['subtitel']) ) printf('<span class="hm-bnr-title-sub">%s</span>', $hslide['subtitel']);
+                if( !empty($hslide['titel']) ) printf('<strong class="hm-bnr-title">%s</strong>', $hslide['titel']);
+                if( !empty($hslide['beschrijving']) ) echo wpautop( $hslide['beschrijving'] );
+
+                $knop = $hslide['knop'];
+                $knop1 = $hslide['knop2'];
+                if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
+                    printf('<a href="%s" target="%s">%s</a>', $knop['url'], $knop['target'], $knop['title']); 
+                }
+                if( is_array( $knop1 ) &&  !empty( $knop1['url'] ) ){
+                    printf('<a href="%s" target="%s">%s</a>', $knop1['url'], $knop1['target'], $knop1['title']); 
+                } 
+              ?>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="hm-banner-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/home-page-banner-img.jpg);">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="hm-banner-dsc">
-              <h3>Welkom bij Rentmen Verhuur</h3>
-              <h1>Verhuur Feestmateriaal</h1>
-              <p>Springkastelen, tenten, tafels, stoelen, bestek,... Alles wat je maar nodig hebt om je evenement kracht bij te zetten.</p>
-              <a href="#">Over Ons</a>
-              <a href="#">onze producten</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hm-banner-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/home-page-banner-img.jpg);">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="hm-banner-dsc">
-              <h3>Welkom bij Rentmen Verhuur</h3>
-              <h1>Verhuur Feestmateriaal</h1>
-              <p>Springkastelen, tenten, tafels, stoelen, bestek,... Alles wat je maar nodig hebt om je evenement kracht bij te zetten.</p>
-              <a href="#">Over Ons</a>
-              <a href="#">onze producten</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php $i++; endforeach; ?>
   </div>    
+  <?php } ?>
 </section>
-
-<div class="catapult-cookie-wrp">
-  <div id="catapult-cookie-bar" class="catapult-cookie-bar clearfix">
-    <div class="catapult-cookie-topbar">
-      <i><img src="<?php echo THEME_URI; ?>/assets/images/cookie-icon.svg"></i>
-      <strong class="catapult-close-btn">
-       <img src="<?php echo THEME_URI; ?>/assets/images/cookie-close-icon.svg">
-      </strong>
-    </div>
-    <span class="ctcc-left-side">
-      <h4>Deze website maakt gebruik van cookies.</h4>
-      Phasellus ac tortor mi. Aliquam eget volutpat elit. Duis dapibus dolor sit amet arcu porttitor laoreet. Mauris eget massa nulla. 
-      <a class="ctcc-more-info-link" tabindex="0"  href="#">Meer Info</a>
-    </span>
-    <span class="catapultCookieBtn">
-      <button id="catapultCookie" tabindex="0" onclick="catapultAcceptCookies();">ok, bedankt</button>
-    </span>
-  </div>
-</div>
-
-
+<?php endif; ?>
 <section class="hm-de-kijker-post-sec-wrp">
   <div class="container">
+    <?php
+      $hshowhide_cases = get_field('showhide_cases', HOMEID);
+      $hcasesgrp = get_field('cases_in_de_kijker', HOMEID);
+      if( $hshowhide_cases ):
+    ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-de-kijker-head">
-          <h2>In De Kijker</h2>
-          <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
-          <a href="#">Ontdek ons geheel aanbod</a>
+          <?php 
+            if( !empty($hcasesgrp['titel']) ) printf('<h2>%s</h2>', $hcasesgrp['titel']);
+            if( !empty($hcasesgrp['beschrijving']) ) echo wpautop( $hcasesgrp['beschrijving'] );
+            $knop2 = $hcasesgrp['knop'];
+            if( is_array( $knop2 ) &&  !empty( $knop2['url'] ) ){
+                printf('<a href="%s" target="%s">%s</a>', $knop2['url'], $knop2['target'], $knop2['title']); 
+            } 
+          ?>
         </div>
       </div>
     </div>
+    <?php  
+      $hknops = get_field('home_knops', HOMEID);
+        if( $hknops ): 
+    ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-de-kijker-post-wrp clearfix">
           <ul class='reset-list clearfix'>
+            <?php 
+            foreach( $hknops as $hknop ): 
+              $h_knop = $hknop['knop'];
+            ?>
             <li>
               <div class="hm-de-kijker-post-innr">
                 <div class="hm-de-kijker-post-img-overflow">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-1.png);"></div>
-                </div>
+                  <?php if(!empty($hknop['afbeelding'])): $hknopsrc = cbv_get_image_src($hknop['afbeelding'], 'knopgrid');?>
+                    <?php 
+                      if( is_array( $h_knop ) &&  !empty( $h_knop['url'] ) ){
+                        printf('<a class="overlay-link" href="%s" target="%s"></a>', $h_knop['url'], $h_knop['target']); 
+                      } 
+                    ?>
+                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo $hknopsrc; ?>);"></div>
+                  </div>
+                  <?php endif; ?>
                 <div class="hm-de-kijker-post-dsc">
-                  <a href="#">Meubilair</a>
+                  <h3 class="hm-de-kijker-post-dsc-link">
+                  <?php 
+                    if( is_array( $h_knop ) &&  !empty( $h_knop['url'] ) ){
+                      printf('<a href="%s" target="%s">%s</a>', $h_knop['url'], $h_knop['target'], $h_knop['title']); 
+                    } 
+                  ?>
+                  </h3>
                 </div>
               </div>
             </li>
-            <li>
-              <div class="hm-de-kijker-post-innr">
-                <div class="hm-de-kijker-post-img-overflow">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-2.png);"></div>
-                </div>
-                <div class="hm-de-kijker-post-dsc">
-                  <a href="#">Gedekte tafel</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="hm-de-kijker-post-innr">
-                <div class="hm-de-kijker-post-img-overflow">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-3.png);"></div>
-                </div>
-                <div class="hm-de-kijker-post-dsc">
-                  <a href="#">Keukenmateriaal</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="hm-de-kijker-post-innr">
-                <div class="hm-de-kijker-post-img-overflow">
-                  <a href="#" class="overlay-link"></a>
-                  <div class="hm-de-kijker-post-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-de-kijker-post-img-4.png);"></div>
-                </div>
-                <div class="hm-de-kijker-post-dsc">
-                  <a href="#">Partytenten</a>
-                </div>
-              </div>
-            </li>
+            <?php endforeach; ?>
           </ul>
         </div>
       </div>
     </div>
+    <?php endif; ?>
+    <?php endif; ?>
+    <?php  
+      $showhide_pcats = get_field('showhide_pcats', HOMEID);
+      $cats= get_field('categorie_selecteren', HOMEID);
+      if($showhide_pcats):
+    ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="categorie-xs-btn">
           <span>meer categorieën</span>
         </div>
+        <?php if( $cats ): ?>
         <div class="hm-post-categorie-wrp clearfix">
           <ul class="reset-list">
+            <?php foreach( $cats as $cat ): 
+              $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
+              $hoverid = get_field( 'hover_thumbnail', $cat );
+              ?>
             <li>
-              <a href="#">
+              <a href="<?php echo esc_url( get_term_link( $cat ) ); ?>">
                <div class="hm-post-categorie-title">
-                  <span>
+                  <h3>
                     <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
+                    <?php if( !empty($thumbnail_id) ): $catimg = cbv_get_image_src($thumbnail_id); ?>
+                      <img class="style-svg" src="<?php echo $catimg; ?>" alt="<?php echo $cat->name; ?>">
+                    <?php else: ?>
+                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;"><use xlink:href="#post-cty-table-icon-svg"></use></svg>
+                    <?php endif; ?>
                     </i>
-                    Categorie Titel
-                  </span>
+                    <?php echo $cat->name; ?>
+                  </h3>
                 </div>
               </a>
            </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
-            <li>
-              <a href="#">
-               <div class="hm-post-categorie-title">
-                  <span>
-                    <i>
-                      <img class="style-svg" src="<?php echo THEME_URI; ?>/assets/images/post-catagory-table-icon.svg">
-                      <svg class="post-cty-table-icon-svg" width="26" height="26" viewBox="0 0 26 26" fill="#1E1E1E;">
-                        <use xlink:href="#post-cty-table-icon-svg"></use>
-                      </svg> 
-                    </i>
-                    Categorie Titel
-                  </span>
-                </div>
-              </a>
-           </li>
+            <?php endforeach; ?>
           </ul>
         </div>
+        <?php endif; ?>
       </div>
     </div>
+    <?php endif; ?>
   </div>
 </section>
+<?php
+  $hshowhide_overons = get_field('showhide_overons', HOMEID);
+  $hoverons = get_field('home_overons', HOMEID);
+  if( $hshowhide_overons ):
+    $deshoversrc = '';
+    if(!empty($hoverons['afbeelding']))
+      $deshoversrc = cbv_get_image_src($hoverons['afbeelding'], 'hovers');
 
+?>
 <section class="hm-two-grid-sec-wrp">
   <div class="hm-two-grid-sec-bg"></div>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-two-grid-wrp clearfix">
-          <div class="hm-two-grid-rgt-img order-2" style="background:url(<?php echo THEME_URI; ?>/assets/images/hm-two-grid-rgt-img.png);">
-            <img src="<?php echo THEME_URI; ?>/assets/images/hm-two-grid-rgt-img-xs.png">
+          <div class="hm-two-grid-rgt-img order-2" style="background:url(<?php echo $deshoversrc; ?>);">
+            <?php if( !empty($hoverons['mobiel_afbeelding']) )
+                echo cbv_get_image_tag($hoverons['mobiel_afbeelding']);
+            ?>
             <span>
-              <img class="hide-sm" src="<?php echo THEME_URI; ?>/assets/images/hm-mv-icon.png">
-              <img class="show-sm" src="<?php echo THEME_URI; ?>/assets/images/hm-mv-icon-xs.png">
+              <?php if( !empty($hoverons['logo']) ): 
+                $hoverlogo = cbv_get_image_src($hoverons['logo']);
+              ?>
+              <img class="hide-sm" src="<?php echo $hoverlogo; ?>" alt="<?php echo cbv_get_image_alt($hoverlogo); ?>">
+              <?php endif; ?>
+              <?php if( !empty($hoverons['mobiel_logo']) ): 
+                $mhoverlogo = cbv_get_image_src($hoverons['mobiel_logo']);
+              ?>
+              <img class="show-sm" src="<?php echo $mhoverlogo; ?>" alt="<?php echo cbv_get_image_alt($mhoverlogo); ?>">
+              <?php endif; ?>
             </span>
           </div>
           <div class="hm-two-grid-lft order-1">
             <div class="hm-two-grid-dsc">
-              <span>Mauris lacinia malesuada</span>
-              <h2>LOREM IPSUM DOLOR</h2>
-              <p>Suspendisse ligula augue, maximus eget sem ut, tempor malesuada odio. Aliquam facilisis massa vitae arcu malesuada molestie. Mauris lacinia malesuada elit, nec rhoncus dui vehicula id. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <p>Ut mi augue, auctor eu ante ac, feugiat blandit augue. Nullam luctus dolor velit, ac porttitor tortor convallis at. Duis blandit lorem nisi, vitae maximus.</p>
-              <ul>
-                <li>Aliquam facilisis massa vitae arcu malesuada molestie. </li>
-                <li>Maecenas hendrerit luctus enim at volutpat.</li>
-                <li>Sed a augue hendrerit, suscipit enim.</li>
-                <li>Morbi sit amet nulla sit amet ligula varius viverra nec aliquam elit.</li>
-              </ul>
-              <a href="#">over ons</a>
+            <?php
+              if( !empty($hoverons['subtitel']) ) printf('<span>%s</span>', $hoverons['subtitel']);
+              if( !empty($hoverons['titel']) ) printf('<h2>%s</h2>', $hoverons['titel']);
+              if( !empty($hoverons['beschrijving']) ) echo wpautop( $hoverons['beschrijving'] );
+              $knop4 = $hoverons['knop'];
+              if( is_array( $knop4 ) &&  !empty( $knop4['url'] ) ){
+                  printf('<a href="%s" target="%s">%s</a>', $knop4['url'], $knop4['target'], $knop4['title']); 
+              }
+            ?>     
             </div>
           </div>
         </div>
@@ -359,160 +196,125 @@
     </div>
   </div>
 </section>
+<?php endif; ?>
+<?php
+  $showhidegv = get_field('showhidegv', HOMEID);
+  $gvsec = get_field('gvsec', HOMEID);
+  $vragenIDs = $gvsec['select_gestelde_vragen'];
+  if(!empty($vragenIDs) && $vragenIDs > 0)
+    $vragenIDs = $vragenIDs;
+  else
+    $vragenIDs = array();
 
-
+  if( $showhidegv ):
+  $query = new WP_Query(array( 
+      'post_type'=> 'faqs',
+      'post_status' => 'publish',
+      'posts_per_page' => 4,
+      'orderby' => 'date',
+      'order'=> 'desc',
+      'post__in' => $vragenIDs
+    ) 
+  );
+?>
 <section class="hm-download-sec-wrp">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-de-kijker-head">
-          <h2>Veel Gestelde Vragen</h2>
-          <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
+          <?php
+            if( !empty($gvsec['titel']) ) printf('<h2>%s</h2>', $gvsec['titel']);
+            if( !empty($gvsec['beschrijving']) ) echo wpautop( $gvsec['beschrijving'] );
+          ?>  
         </div>
+        <?php if($query->have_posts()): ?>
         <div class="hm-dw-slider-wrp dft-slider-pagi clearfix">
+          <?php while($query->have_posts()): $query->the_post(); ?>
           <div class="hm-download-box-item">
             <div class="hm-download-box">
-              <a href="#" class="overlay-link"></a>
-              <strong>
-                <i>
-                  <svg class="dw-question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2">
-                    <use xlink:href="#dw-question-icon-svg"></use>
-                  </svg> 
-                </i>
-                Donec varius enim sed odio porttitor, a venenatis nunc?
-              </strong>
+              <a href="<?php the_permalink(); ?>" class="overlay-link"></a>
+              <h3 class="hm-download-box-title"><strong><i><svg class="dw-question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2"><use xlink:href="#dw-question-icon-svg"></use></svg></i><?php the_title(); ?></strong></h3>
             </div>
           </div>
-          <div class="hm-download-box-item">
-            <div class="hm-download-box">
-              <a href="#" class="overlay-link"></a>
-              <strong>
-                <i>
-                  <svg class="dw-question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2">
-                    <use xlink:href="#dw-question-icon-svg"></use>
-                  </svg> 
-                </i>
-                Donec varius enim sed odio porttitor, a venenatis nunc?
-              </strong>
-            </div>
-          </div>
-          <div class="hm-download-box-item">
-            <div class="hm-download-box">
-              <a href="#" class="overlay-link"></a>
-              <strong>
-                <i>
-                  <svg class="dw-question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2">
-                    <use xlink:href="#dw-question-icon-svg"></use>
-                  </svg> 
-                </i>
-                Donec varius enim sed odio porttitor, a venenatis nunc?
-              </strong>
-            </div>
-          </div>
-          <div class="hm-download-box-item">
-            <div class="hm-download-box">
-              <a href="#" class="overlay-link"></a>
-              <strong>
-                <i>
-                  <svg class="dw-question-icon-svg" width="60" height="60" viewBox="0 0 60 60" fill="#E2E2E2">
-                    <use xlink:href="#dw-question-icon-svg"></use>
-                  </svg> 
-                </i>
-                Donec varius enim sed odio porttitor, a venenatis nunc?
-              </strong>
-            </div>
-          </div>
+          <?php endwhile; ?>
         </div>
+        <?php endif; wp_reset_postdata(); ?>
       </div>
     </div>
+    <?php if($query->have_posts()): ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-download-btn">
-          <a href="#">BEKIJK ALLES</a>
+          <a href="<?php echo esc_url( home_url('faq') );?>">BEKIJK ALLES</a>
         </div>
       </div>
     </div>
+    <?php endif; wp_reset_postdata(); ?>
   </div>
 </section>
-
-
+<?php endif; ?>
+<?php
+  $showhidenews = get_field('showhidenews', HOMEID);
+  $newssec = get_field('newssec', HOMEID);
+  $blg_query = new WP_Query(array( 
+    'post_type'=> 'post',
+    'post_status' => 'publish',
+    'posts_per_page' => 3,
+    'orderby' => 'date',
+    'order'=> 'desc'
+    ) 
+  );
+  if( $showhidenews ):
+?>
 <section class="hm-lates-news-post-sec-wrp">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-de-kijker-head">
-          <h2>Laatste Nieuws</h2>
-          <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
+          <?php
+            if( !empty($newssec['titel']) ) printf('<h2>%s</h2>', $newssec['titel']);
+            if( !empty($newssec['beschrijving']) ) echo wpautop( $newssec['beschrijving'] );
+          ?> 
         </div>
       </div>
     </div>
+    <?php if($blg_query->have_posts()): ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="rm-news-sec-inr">
-          <ul class="clearfix reset-list dft-slider-pagi">
+          <ul class="clearfix reset-list dft-slider-pagi blogSliderMobile">
+            <?php 
+              $blog_src = '';
+              while($blg_query->have_posts()): $blg_query->the_post();
+                
+                $attach_id = get_post_thumbnail_id(get_the_ID());
+                if( !empty($attach_id) )
+                  $blog_src = cbv_get_image_src($attach_id,'bloggrid');
+                else
+                  $blog_src = '';
+            ?>
             <li>
               <div class="dft-blog-item">
                 <div class="dft-blog-item-inr">
                   <div class="dft-blog-item-fea-img-cntlr">
                     <a class="overlay-link" href="#"></a>
-                    <div class="dft-blog-item-fea-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/blog-fea-img-01.jpg);"></div>
+                    <div class="dft-blog-item-fea-img" style="background: url(<?php echo $blog_src; ?>);"></div>
                   </div>
-                  <div class="dft-blog-item-des mHc">
+                  <div class="dft-blog-item-des">
                     <div class="dft-blog-item-des-date">
-                      <strong>07</strong>
-                      <span>FEB</span>
+                      <strong><?php echo get_the_date('d'); ?></strong>
+                      <span><?php echo get_the_date('M'); ?></span>
                     </div>
-                    <h5>
-                     <a href="#">Ut mi augue, auctor eu ante ac, feugiat blandit augue?</a>
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-                    <a href="#">Lees Meer</a>
+                    <h3 class="dft-blog-item-title mHc">
+                      <a href="<?php the_permalink();?>"><?php the_title();?></a>
+                    </h3>
+                    <div class="dft-blog-item-excerpt mHc2"><?php the_excerpt();?></div>
+                    <a href="<?php the_permalink();?>">Lees Meer</a>
                   </div>
                 </div>
               </div>
             </li>
-            <li>
-              <div class="dft-blog-item">
-                <div class="dft-blog-item-inr">
-                  <div class="dft-blog-item-fea-img-cntlr">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="dft-blog-item-fea-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/blog-fea-img-02.jpg);"></div>
-                  </div>
-                  <div class="dft-blog-item-des mHc">
-                    <div class="dft-blog-item-des-date">
-                      <strong>11</strong>
-                      <span>FEB</span>
-                    </div>
-                    <h5>
-                     <a href="#">Ut mi augue, auctor eu ante ac, feugiat blandit augue?</a>
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-                    <a href="#">Lees Meer</a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="dft-blog-item">
-                <div class="dft-blog-item-inr">
-                  <div class="dft-blog-item-fea-img-cntlr">
-                    <a class="overlay-link" href="#"></a>
-                    <div class="dft-blog-item-fea-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/blog-fea-img-03.jpg);"></div>
-                  </div>
-                  <div class="dft-blog-item-des mHc">
-                    <div class="dft-blog-item-des-date">
-                      <strong>08</strong>
-                      <span>FEB</span>
-                    </div>
-                    <h5>
-                     <a href="#">Ut mi augue, auctor eu ante ac, feugiat blandit augue?</a>
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mi augue, auctor eu ante ac.</p>
-                    <a href="#">Lees Meer</a>
-                  </div>
-                </div>
-              </div>
-            </li>
+            <?php endwhile; ?>
           </ul>
         </div>
       </div>
@@ -520,10 +322,15 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="hm-download-btn">
-          <a href="#">BEKIJK ALLES</a>
+          <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">BEKIJK ALLES</a>
         </div>
       </div>
     </div>
+    <?php 
+      endif;  
+      wp_reset_postdata();
+    ?>
   </div>
 </section>
+<?php endif; ?>
 <?php get_footer(); ?>

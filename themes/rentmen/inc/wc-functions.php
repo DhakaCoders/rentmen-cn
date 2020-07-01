@@ -15,50 +15,6 @@ function woo_hide_page_title() {
 	
 }
 
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
-
-
-/**
- * Add wc custom content wrapper
- */
-add_action('woocommerce_before_main_content', 'get_custom_wc_output_content_wrapper', 10);
-add_action('woocommerce_after_main_content', 'get_custom_wc_output_content_wrapper_end', 10, 1);
-
-function get_custom_wc_output_content_wrapper(){
-
-	if(is_shop() OR is_product_category()){ $customClass = ' product-cat-sec'; $controlClass = ' cat-controller product-des-controller';}elseif(is_product()){$customClass = ' product-des-sec';$controlClass = ' product-des-controller'; }else{ $customClass = ''; $controlClass = '';}
-	echo '<section class="main-content-sec-wrp'.$customClass.'"><div class="container"><div class="row"><div class="col-12"><div class="main-content-wrp'.$controlClass.' clearfix">';
-    echo '<div class="main-content-lft hide-sm"><div class="main-content-lft-dsc clearfix">';
-    if ( is_active_sidebar( 'dshop-widget' ) ) dynamic_sidebar( 'dshop-widget' );
-    echo '</div></div>';
-
-    echo '<div class="main-content-rgt">';
-    if(is_product_category()):
-        $cate = get_queried_object();
-        $gettop_content = get_field('tcontent', 'product_cat' . '_' . $cate->term_id);
-        echo '<div class="main-content-top">';
-            if(!empty($gettop_content)) echo wpautop( $gettop_content );
-        echo '</div>';
-
-        echo '<div class="product-select show-sm"> <div class="news-grid-select-3">';
-        pcategory_dropdown();
-        echo '</div></div>';
-    endif;
-}
-
-function get_custom_wc_output_content_wrapper_end(){
-    if(is_product_category()):
-        $cate = get_queried_object();
-        $getbtm_content = get_field('bcontent', 'product_cat' . '_' . $cate->term_id);
-        echo '<div class="main-content-btm">';
-            if(!empty($getbtm_content)) echo wpautop( $getbtm_content );
-        echo '</div>';
-    endif;
-	echo '</div></div></div></div></div></section>';
-}
-
-
 /*Loop Hooks*/
 
 
@@ -85,6 +41,20 @@ if (!function_exists('loop_columns')) {
     }
 }
 
+// change a number of the breadcrumb defaults.
+add_filter( 'woocommerce_breadcrumb_defaults', 'cbv_woocommerce_breadcrumbs' );
+if( !function_exists('cbv_woocommerce_breadcrumbs')):
+function cbv_woocommerce_breadcrumbs() {
+    return array(
+            'delimiter'   => '',
+            'wrap_before' => '<div class="breadcrumbs clearfix"><ul class="ulc clearfix">',
+            'wrap_after'  => '</ul></div>',
+            'before'      => '<li class="wclist">',
+            'after'       => '</li>',
+            'home'        => _x( 'home', 'breadcrumb', 'woocommerce' ),
+        );
+}
+endif;
 
 add_action('woocommerce_shop_loop_item_title', 'add_shorttext_below_title_loop', 5);
 if (!function_exists('add_shorttext_below_title_loop')) {
@@ -144,76 +114,211 @@ if (!function_exists('add_custom_box_product_summary')) {
     function add_custom_box_product_summary() {
         global $product, $woocommerce, $post;
         $sh_desc = '';
+        if( !empty($sh_desc) ) $sh_desc = $sh_desc;
         $sh_desc = $product->get_short_description();
-        
-        echo '<div class="summary-grid">';
-        echo '<div class="summary-des-box">';
-        echo '<h1 class="product_title entry-title">'.$product->get_title().'</h1><div class="shortdes">'; 
-        if( !empty($sh_desc) ) echo $sh_desc;  
-        echo '</div><div class="single-price">';
-        echo $product->get_price_html();
-        echo '</div></div>';
-        woocommerce_template_single_add_to_cart();
+        echo '<strong class="price">'.$product->get_price_html().' / stuk</strong>';
+        echo '<div class="pro-details-pro-title">';
+        echo '<strong>'.$product->get_title().'</strong>';
         echo '</div>';
+        echo '<span>Totaal beschikbare producten: 129</span>';
+        echo wpautop( $sh_desc, true );
+        echo'<div class="pro-counter-wrp clearfix">';
+        woocommerce_template_single_add_to_cart();
+        echo'</div>';
     }
 }
 
-
-add_action('woocommerce_after_single_product_summary', 'add_custom_long_text', 20);
-
-
-function add_custom_long_text(){
-    global $product;
-    $sh_desc = $product->get_description();
-    if(empty($sh_desc)) return;
-    echo '<div class="wclong-desc bottom-content  clearfix">';
-    echo $sh_desc;
+function product_option_custom_field(){
+    global $product, $woocommerce;
+    if( !$product->is_type('variable') ){
+        $attributes = $product->get_attributes(); //get all attributes
+        if ( !empty($attributes) && $attributes ):
+        echo '<div class="single-pro-filter-wrp">';
+        foreach ( $attributes as $attribute ){
+          if ( $attribute['name'] == 'pa_color' || $attribute['name'] == 'color' ) {
+            $pa_colors = get_the_terms( $product->get_id(), $attribute['name']);
+            echo '<div class="color-filter">
+                <h6>beschikbare kleur</h6>
+                 <div class="feature-filter-btn clor">';
+                 foreach ( $pa_colors as $pa_color ) {
+                    $color_code = get_field('akleur', $pa_color);
+                    $bgcolr = $pa_color->slug;
+                    if( !empty($color_code) ) $bgcolr = $color_code; 
+                echo '<input type="radio" id="'.$pa_color->slug.'" name="kleur" value="'.$pa_color->name.'">';
+                echo '<label style="background:'.$bgcolr.'" for="'.$pa_color->slug.'">'.$pa_color->name.'</label>';
+              }
+            echo '</div></div>';
+             
+          } elseif ($attribute['name'] == 'pa_variabelen') {
+              $pa_variabelens = get_the_terms( $product->get_id(), $attribute['name']);
+              echo '<div class="variables-filter">
+              <h6>variabelen</h6>
+              <div class="feature-filter-btn">';
+              foreach( $pa_variabelens as $pa_variabelen ) {
+                echo '<input type="radio" id="'.$pa_variabelen->slug.'" name="variabelen" value="'.$pa_variabelen->name.'">';
+                echo '<label for="'.$pa_variabelen->slug.'">'.$pa_variabelen->name.'</label>';
+              }
+              echo '</div></div>';
+          } elseif ( ($attribute['name'] == 'pa_size') || ($attribute['name'] == 'size') ) {
+              $pa_variabelens = get_the_terms( $product->get_id(), $attribute['name']);
+              echo '<div class="variables-filter">
+              <h6>Size</h6>
+              <div class="feature-filter-btn">';
+              foreach( $pa_variabelens as $pa_variabelen ) {
+                echo '<input type="radio" id="'.$pa_variabelen->slug.'" name="size" value="'.$pa_variabelen->name.'">';
+                echo '<label for="'.$pa_variabelen->slug.'">'.$pa_variabelen->name.'</label>';
+              }
+              echo '</div></div>';
+          }
+        }
+        echo '</div>';
+        endif;
+    }
+    echo '<div class="pro-calendar">';
+    echo '<i><img src="'.THEME_URI.'/assets/images/pro-calendar.svg" alt=""></i>';
+    echo '<span>selecteer datum en controleer beschikbaarheid</span>';
     echo '</div>';
+
+}
+
+function product_attribute_filter(){
+    global $product, $woocommerce;
+        $attributes = get_terms( 'pa_color', 'orderby=count&hide_empty=0' );
+        if ( !empty($attributes) && $attributes ):
+        echo '<div class="feature-filter-btn clor">';
+            foreach ( $attributes as $pa_color ) {
+                $color_code = get_field('akleur', $pa_color);
+                $bgcolr = $pa_color->slug;
+                if( !empty($color_code) ) $bgcolr = $color_code; 
+                echo '<input type="checkbox" id="'.$pa_color->slug.'" name="kleur" value="'.$pa_color->name.'">';
+                echo '<label style="background:'.$bgcolr.'" for="'.$pa_color->slug.'">'.$pa_color->name.'</label>';
+              }
+             
+        echo '</div>';
+        endif;
+
+}
+
+// Front: Calculate new item price and add it as custom cart item data
+add_filter('woocommerce_add_cart_item_data', 'add_custom_product_data', 10, 3);
+function add_custom_product_data( $cart_item_data, $product_id, $variation_id ) {
+    $status = false;
+    if ( isset($_POST['kleur']) && !empty($_POST['kleur'])) {
+        $cart_item_data['color_val'] = $_POST['kleur'];
+        $cart_item_data['color_label'] = 'Beschikbare Kleur';
+        $status = true;
+    }
+    if ( isset($_POST['variabelen']) && !empty($_POST['variabelen'])) {
+        $cart_item_data['variabe_val'] = $_POST['variabelen'];
+        $cart_item_data['variabe_label'] = 'Variabelen';
+        $status = true;
+    }
+    if ( isset($_POST['size']) && !empty($_POST['size'])) {
+        $cart_item_data['size_val'] = $_POST['size'];
+        $cart_item_data['size_label'] = 'Size';
+        $status = true;
+    }
+    if($status){
+       $cart_item_data['unique_key'] = md5(microtime().rand()); 
+    }
+    
+    return $cart_item_data;
+}
+
+// Front: Display option in cart item
+add_filter('woocommerce_get_item_data', 'display_custom_item_data', 10, 2);
+
+function display_custom_item_data($cart_item_data, $cart_item) {
+    if ( isset($cart_item['color_val']) && isset($cart_item['color_label']) ) {
+        $cart_item_data[] = array(
+            'name' => __($cart_item['color_label'], "woocommerce"),
+            'value' => strip_tags($cart_item['color_val'])
+        );
+
+        
+    }
+
+    if( isset($cart_item['variabe_val']) && isset($cart_item['variabe_label']) ) {
+        $cart_item_data[] = array(
+            'name' => __($cart_item['variabe_label'], "woocommerce"),
+            'value' => strip_tags($cart_item['variabe_val'])
+        );
+    }
+    if( isset($cart_item['size_val']) && isset($cart_item['size_label']) ) {
+        $cart_item_data[] = array(
+            'name' => __($cart_item['size_label'], "woocommerce"),
+            'value' => strip_tags($cart_item['size_val'])
+        );
+    }
+
+    return $cart_item_data;
 }
 
 
-/**
- * Get HTML for a gallery image.
- *
- * Woocommerce_gallery_thumbnail_size, woocommerce_gallery_image_size and woocommerce_gallery_full_size accept name based image sizes, or an array of width/height values.
- *
- * @since 3.3.2
- * @param int  $attachment_id Attachment ID.
- * @param bool $main_image Is this the main image or a thumbnail?.
- * @return string
- */
-if (!function_exists('cbv_wc_get_gallery_image_html')) {
-function cbv_wc_get_gallery_image_html( $attachment_id, $main_image = false ) {
-    $flexslider        = (bool) apply_filters( 'woocommerce_single_product_flexslider_enabled', get_theme_support( 'wc-product-gallery-slider' ) );
-    $gallery_thumbnail = wc_get_image_size( 'gallery_thumbnail' );
-    $thumbnail_size    = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
-    $image_size        = apply_filters( 'woocommerce_gallery_image_size', $flexslider || $main_image ? 'woocommerce_single' : $thumbnail_size );
-    $full_size         = apply_filters( 'woocommerce_gallery_full_size', apply_filters( 'woocommerce_product_thumbnails_large_size', 'full' ) );
-    $thumbnail_src     = wp_get_attachment_image_src( $attachment_id, $thumbnail_size );
-    $full_src          = wp_get_attachment_image_src( $attachment_id, $full_size );
-    $alt_text          = trim( wp_strip_all_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) );
-    $image             = wp_get_attachment_image(
-        $attachment_id,
-        $image_size,
-        false,
-        apply_filters(
-            'woocommerce_gallery_image_html_attachment_image_params',
-            array(
-                'title'                   => _wp_specialchars( get_post_field( 'post_title', $attachment_id ), ENT_QUOTES, 'UTF-8', true ),
-                'data-caption'            => _wp_specialchars( get_post_field( 'post_excerpt', $attachment_id ), ENT_QUOTES, 'UTF-8', true ),
-                'data-src'                => esc_url( $full_src[0] ),
-                'data-large_image'        => esc_url( $full_src[0] ),
-                'data-large_image_width'  => esc_attr( $full_src[1] ),
-                'data-large_image_height' => esc_attr( $full_src[2] ),
-                'class'                   => esc_attr( $main_image ? 'wp-post-image' : '' ),
-            ),
-            $attachment_id,
-            $image_size,
-            $main_image
-        )
-    );
+// Save and display custom fields in order item meta
+add_action( 'woocommerce_add_order_item_meta', 'add_custom_fields_order_item_meta', 20, 3 );
+function add_custom_fields_order_item_meta( $item_id, $cart_item, $cart_item_key ) {
 
-    return '<div data-thumb="' . esc_url( $thumbnail_src[0] ) . '" data-thumb-alt="' . esc_attr( $alt_text ) . '" class="woocommerce-product-gallery__image"><a rel="fancybox" data-fancybox="gallery" class="woocommerce-main-image zoom fancybox" href="' . esc_url( $full_src[0] ) . '">' . $image . '</a></div>';
-}
+    if ( isset($cart_item['color_val']) && isset($cart_item['color_label']) ) {
+        wc_add_order_item_meta($item_id, $cart_item['color_label'], $cart_item['color_val']);
+        
+    }
+    if( isset($cart_item['variabe_val']) && isset($cart_item['variabe_label']) ) {
+        wc_add_order_item_meta($item_id, $cart_item['variabe_label'], $cart_item['variabe_val']);
+    }
+    if( isset($cart_item['size_val']) && isset($cart_item['size_label']) ) {
+        wc_add_order_item_meta($item_id, $cart_item['size_label'], $cart_item['size_val']);
+    }
 
 }
+
+
+function single_add_to_cart_text(){
+    echo '<i><svg class="pro-cart-btn-svg" width="26" height="24" viewBox="0 0 26 24" fill="#fff"><use xlink:href="#pro-cart-btn-svg"></use></svg></i>';
+    echo '<span>winkel nu</span>';
+}
+
+function mj_taxonomy_add_custom_meta_field() {
+?>
+<div class="form-field">
+    <label for="term_meta[custom_titel_term_meta]"><?php _e( 'Category Custom Titel', 'MJ' ); ?></label>
+    <input type="text" name="term_meta[custom_titel_term_meta]" id="term_meta[custom_titel_term_meta]" value="">
+</div>
+<?php
+}
+add_action( 'product_cat_add_form_fields', 'mj_taxonomy_add_custom_meta_field', 0, 0 );
+
+function mj_taxonomy_edit_custom_meta_field($term) {
+
+        $t_id = $term->term_id;
+        $term_meta = get_option( "taxonomy_$t_id" ); 
+       ?>
+        <tr class="form-field">
+        <th scope="row" valign="top"><label for="term_meta[custom_titel_term_meta]"><?php _e( 'Category Custom Titel', 'MJ' ); ?></label></th>
+            <td>
+                <input type="text" name="term_meta[custom_titel_term_meta]" id="term_meta[custom_titel_term]" value="<?php echo esc_attr( $term_meta['custom_titel_term_meta'] ) ? esc_attr( $term_meta['custom_titel_term_meta'] ) : ''; ?>">
+            </td>
+        </tr>
+    <?php
+    }
+
+add_action( 'product_cat_edit_form_fields','mj_taxonomy_edit_custom_meta_field', 10, 2 );
+
+function mj_save_taxonomy_custom_meta_field( $term_id ) {
+        if ( isset( $_POST['term_meta'] ) ) {
+
+            $t_id = $term_id;
+            $term_meta = get_option( "taxonomy_$t_id" );
+            $cat_keys = array_keys( $_POST['term_meta'] );
+            foreach ( $cat_keys as $key ) {
+                if ( isset ( $_POST['term_meta'][$key] ) ) {
+                    $term_meta[$key] = $_POST['term_meta'][$key];
+                }
+            }
+            // Save the option array.
+            update_option( "taxonomy_$t_id", $term_meta );
+        }
+
+    }  
+add_action( 'edited_product_cat', 'mj_save_taxonomy_custom_meta_field', 10, 2 );  
+add_action( 'create_product_cat', 'mj_save_taxonomy_custom_meta_field', 10, 2 );

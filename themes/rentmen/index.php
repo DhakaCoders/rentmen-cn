@@ -1,51 +1,32 @@
 <?php 
 get_header(); 
-$thisID = get_the_ID();
+$thisID = get_option( 'page_for_posts' );
+get_template_part('templates/page', 'banner');
 ?>
-<section class="breadcrumbs-sec">
-  <div class="container-lg">
-    <div class="row">
-      <div class="col-12">
-        <div class="breadcrumbs-innr hide-xs clearfix">
-          <div class="breadcrumbs-lft-text">
-            <strong class="page-title">Nieuws</strong>
-          </div>          
-          <div class="breadcrumbs-main">
-            <ul>           
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="breadcrumbs-innr show-xs clearfix">
-          <div class="breadcrumbs-left">
-            <a href="#">Home</a>
-          </div>
-          <div class="breadcrumbs-right">
-            <a href="javascript:history.go(-1)">Terug</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>    
-</section>
-
+<?php  
+  $showhidenews = get_field('showhidenews', $thisID);
+  $introsec = get_field('introsec', $thisID);
+  if($showhidenews):
+?>
 <section class="rm-nieuws-overview-entry-hdr-sec">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="rm-nieuws-overview-entry-hdr">
-          <h3>Laatste Nieuws</h3>
-          <p>Morbi euismod blandit massa id congue. Mauris dignissim, augue ac maximus dapibus, enim ante facilisis odio, vel blandit tortor quam sit amet ante. Suspendisse a volutpat nulla.</p>
+          <?php 
+            if( !empty($introsec['titel']) ) printf('<div class="rm-nieuws-overview-entry-hdr-title">%s</div>', $introsec['titel']);
+            if( !empty($introsec['beschrijving']) ) echo wpautop( $introsec['beschrijving'] );
+          ?>
         </div>
       </div>
     </div>
   </div>
 </section>
-<?php if(have_posts()): ?>
+<?php endif; ?>
+
 <section class="rm-news-section">
   <div class="container">
+    <?php if(have_posts()): ?>
     <div class="row">
       <div class="col-md-12">
         <div class="rm-news-sec-inr">
@@ -64,18 +45,18 @@ $thisID = get_the_ID();
               <div class="dft-blog-item">
                 <div class="dft-blog-item-inr">
                   <div class="dft-blog-item-fea-img-cntlr">
-                    <a class="overlay-link" href="#"></a>
+                    <a class="overlay-link" href="<?php the_permalink();?>"></a>
                     <div class="dft-blog-item-fea-img" style="background: url(<?php echo $blog_src; ?>);"></div>
                   </div>
-                  <div class="dft-blog-item-des mHc">
+                  <div class="dft-blog-item-des">
                     <div class="dft-blog-item-des-date">
                       <strong><?php echo get_the_date('d'); ?></strong>
                       <span><?php echo get_the_date('M'); ?></span>
                     </div>
-                    <h5>
+                    <h3 class="dft-blog-item-title mHc">
                      <a href="<?php the_permalink();?>"><?php the_title();?></a>
-                    </h5>
-                    <?php the_excerpt();?>
+                    </h3>
+                    <div class="dft-blog-item-excerpt mHc2"><?php the_excerpt();?></div>
                     <a href="<?php the_permalink();?>">Lees Meer</a>
                   </div>
                 </div>
@@ -108,7 +89,9 @@ $thisID = get_the_ID();
         </div>
       </div>
     </div>
+    <?php else: ?>
+      <div class="notfound">Geen resultaat!</div>
+    <?php endif; ?>
   </div>
 </section>
-<?php endif; ?>
 <?php get_footer(); ?>

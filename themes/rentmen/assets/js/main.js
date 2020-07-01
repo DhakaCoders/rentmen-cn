@@ -1,6 +1,6 @@
 (function($) {
 var windowWidth = $(window).width();
-/*Google Map*/
+/*Google Map Style*/
 var CustomMapStyles  = [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
 
 $('.navbar-toggle').on('click', function(){
@@ -11,21 +11,27 @@ $('.navbar-toggle').on('click', function(){
 if($('.mHc').length){
   $('.mHc').matchHeight();
 };
+if($('.mHc2').length){
+  $('.mHc2').matchHeight({ property: 'min-height' });
+};
+if($('.mHc3').length){
+  $('.mHc3').matchHeight();
+};
+if($('.mHc4').length){
+  $('.mHc4').matchHeight();
+};
+if($('.mHc5').length){
+  $('.mHc5').matchHeight();
+};
 
-//$('[data-toggle="tooltip"]').tooltip();
-
-//banner animation
-$(window).scroll(function() {
-  var scroll = $(window).scrollTop();
-  $('.page-banner-bg').css({
-    '-webkit-transform' : 'scale(' + (1 + scroll/2000) + ')',
-    '-moz-transform'    : 'scale(' + (1 + scroll/2000) + ')',
-    '-ms-transform'     : 'scale(' + (1 + scroll/2000) + ')',
-    '-o-transform'      : 'scale(' + (1 + scroll/2000) + ')',
-    'transform'         : 'scale(' + (1 + scroll/2000) + ')'
-  });
+var maxHeight = 0;
+if($('.equalheight').length){
+$(".equalheight").each(function(){
+   if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
 });
 
+$(".equalheight").height(maxHeight);
+}
 
 if($('.fancybox').length){
 $('.fancybox').fancybox({
@@ -35,69 +41,10 @@ $('.fancybox').fancybox({
 
 }
 
-
-/**
-Responsive on 767px
-*/
-
-// if (windowWidth <= 767) {
-  $('.toggle-btn').on('click', function(){
-    $(this).toggleClass('menu-expend');
-    $('.toggle-bar ul').slideToggle(500);
-  });
-
-
-// }
-
-
-
-// http://codepen.io/norman_pixelkings/pen/NNbqgG
-// https://stackoverflow.com/questions/38686650/slick-slides-on-pagination-hover
-
-
-/**
-Slick slider
-*/
-if( $('.responsive-slider').length ){
-    $('.responsive-slider').slick({
-      dots: true,
-      infinite: false,
-      speed: 300,
-      slidesToShow: 4,
-      slidesToScroll: 4,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ]
-    });
-}
-
-
-
+$('.toggle-btn').on('click', function(){
+  $(this).toggleClass('menu-expend');
+  $('.toggle-bar ul').slideToggle(500);
+});
 
 if( $('#mapID').length ){
 var latitude = $('#mapID').data('latitude');
@@ -129,15 +76,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 }
 
-
-/*Shoriful*/
-
-
-
-
-
-
-/*Milon*/
+$('#sortproduct').on('change', function(){               
+  var campSort = $(this).val();
+  var URL = $('#sortproduct').data('url');
+  setCookie('sorting', campSort, 1);
+  window.location.href = URL;
+});
 
 /*
 =======================
@@ -200,19 +144,6 @@ if (windowWidth <= 639) {
 }
 
 
-if (windowWidth < 768) {
-  if( $('.dft-slider-pagi').length ){
-      $('.dft-slider-pagi').slick({
-        dots: true,
-        arrows: false,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 1,
-        slidesToScroll: 1
-      });
-  }
-}
-
 if( $('.hm-slider-wrp').length ){
     $('.hm-slider-wrp').slick({
       pauseOnHover: false,
@@ -237,6 +168,7 @@ Start Contact Google Map ->>
 if( $('#googlemap').length ){
     var latitude = $('#googlemap').data('latitude');
     var longitude = $('#googlemap').data('longitude');
+    var homeurl = $('#googlemap').data('homeurl');
 
     var myCenter= new google.maps.LatLng(latitude,  longitude);
     var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
@@ -259,7 +191,7 @@ if( $('#googlemap').length ){
 
       var marker= new google.maps.Marker({
         position:myCenter,
-        icon:'assets/images/map-marker.png'
+        icon:homeurl+'/assets/images/map-marker.png'
         });
       marker.setMap(map);
     }
@@ -268,10 +200,6 @@ if( $('#googlemap').length ){
 }
 
 
-
-
-
-/*Prashanto*/
 
 //slick slider
 
@@ -313,7 +241,7 @@ if( $('.product-slider-wrp').length ){
   });
 }
 
-
+if (windowWidth > 767) {
 if( $('.interestedItemSlider').length ){
   $('.interestedItemSlider').slick({
     slidesToShow: 3,
@@ -342,53 +270,99 @@ if( $('.interestedItemSlider').length ){
     ]
   });
 }
-
-
-
-if( $('.organizePartySlider').length ){
-  $('.organizePartySlider').slick({
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    infinite: true,
-    speed: 700,
-    dots: true,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 476,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  });
 }
 
+  if( $('.organizePartySlider-1').length ){
+    $('.organizePartySlider-1').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      infinite: true,
+      speed: 700,
+      dots: true,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: false
+          }
+        },
+        {
+          breakpoint: 476,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  }
 
+
+
+  if( $('.organizePartySlider-2').length ){
+    $('.organizePartySlider-2').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      infinite: true,
+      speed: 700,
+      dots: true,
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: false
+          }
+        },
+        {
+          breakpoint: 476,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  }
 
 if( $('.overview-feature-slider').length ){
   $('.overview-feature-slider').slick({
@@ -410,7 +384,9 @@ if( $('.overview-feature-slider').length ){
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false
         }
       },
       {
@@ -498,64 +474,68 @@ if( $('.pro-counter .qty').length ){
 
 }
 
-
-//price renge slider
-if( $('.price-slider').length ){
-  var outputSpan = $('#spanOutput');
-  var sliderDiv = $('#slider');
-
-  sliderDiv.slider({
-    range: true,
-    min: 0,
-    max: 200,
-    values: [23.99, 119.99],
-    slide: function (event, ui) {
-      outputSpan.html(ui.values[0] + ' - ' + ui.values[1] + ' Years');
-      $('#minAmount').val(ui.values[0]);
-      $('#maxAmount').val(ui.values[1]);
-    }
+if (windowWidth < 768) {
+  // footer slide menu
+  $('.ftr-col h6').on('click', function(){
+    $(this).toggleClass('active');
+    $(this).parent().siblings().find('h6').removeClass('active');
+    $(this).parent().find('ul').slideToggle(300);
+    $(this).parent().siblings().find('ul').slideUp(300);
   });
-
-  outputSpan.html(sliderDiv.slider('values', 0) + ' - '
-    + sliderDiv.slider('values', 1) + ' Years');
-  $('#minAmount').val(sliderDiv.slider('values', 0));
-  $('#maxAmount').val(sliderDiv.slider('values', 1));
-
+  // sidebar slide filter
+  $('.pro-overview-sidebar-sm-con').on('click', function(){
+    $(this).toggleClass('active');
+    $(this).next().slideToggle(300);
+  });
+  
+  $('.pro-overview-sidebar-head').on('click', function(){
+    $(this).toggleClass('active');
+    $(this).parent().siblings().find('.pro-overview-sidebar-head').removeClass('active');
+    $(this).parent().find('.pro-filter-main').slideToggle(300);
+    $(this).parent().siblings().find('.pro-filter-main').slideUp(300);
+  });
 }
 
-
-
-$('input[type="checkbox"]').change(function(){
-  this.value = (Number(this.checked));
-});
-
-
-// footer slide menu
-$('.ftr-col h6').on('click', function(){
-  $(this).toggleClass('active');
-  $(this).parent().siblings().find('h6').removeClass('active');
-  $(this).parent().find('ul').slideToggle(300);
-  $(this).parent().siblings().find('ul').slideUp(300);
-});
-
-
-// sidebar slide filter
-$('.pro-overview-sidebar-head').on('click', function(){
-  $(this).toggleClass('active');
-  $(this).parent().siblings().find('.pro-overview-sidebar-head').removeClass('active');
-  $(this).parent().find('.pro-filter-main').slideToggle(300);
-  $(this).parent().siblings().find('.pro-filter-main').slideUp(300);
-});
-
-$('.pro-overview-sidebar-sm-con').on('click', function(){
-  $(this).toggleClass('active');
-  $(this).next().slideToggle(300);
-});
-
-
-
-/*Rannojit*/
-
+if (windowWidth < 768) {
+  if( $('.hm-dw-slider-wrp').length ){
+    $('.hm-dw-slider-wrp').slick({
+      arrows: false,
+      dots: true,
+      infinite: false,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true
+          }
+        }
+      ]
+    });
+  }
+  if( $('.blogSliderMobile').length ){
+    $('.blogSliderMobile').slick({
+      arrows: false,
+      dots: true,
+      infinite: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true
+          }
+        }
+      ]
+    });
+  }
+}
 
 if( $('.dft-question-mark-slider').length ){
     $('.dft-question-mark-slider').slick({
@@ -623,4 +603,164 @@ if (windowWidth < 768) {
   });
 }
 
+/**
+* Sidebar Filter
+*/
+var tags = [];
+var tagsNow = [];
+var allTags = [];
+var pMin = parseInt( $('#minAmount').val());
+var pMax = parseInt($('#maxAmount').val());
+var pMinNow = 0;
+var pMaxNow = 0;
+if( $('.price-slider').length ){
+  $("#slider").slider({
+      range: true,
+      min: 0,
+      max: 500,
+      step: 1,
+      values: [pMin, pMax],
+      animate: 'slow',
+      create: function(event, ui) {
+          $('#min').appendTo($('#slider span.ui-slider-handle').get(0));
+          $('#max').appendTo($('#slider span.ui-slider-handle').get(1));
+          pMinNow = parseInt(pMin);
+          pMaxNow = parseInt(pMax);
+      },
+      slide: function(event, ui) { 
+        $(ui.handle).find('i').html('€' + ui.value); 
+        $('#minAmount').val(ui.values[0]);
+        $('#maxAmount').val(ui.values[1]);
+      },
+      stop: function( event, ui ) {
+        $('#minAmount').val(ui.values[0]);
+        $('#maxAmount').val(ui.values[1]);
+        if( ui.values[0] != pMinNow ){
+          pMinNow = parseInt(ui.values[0]);
+          setupRequest();
+        }
+        if( ui.values[1] != pMaxNow ){
+          pMaxNow = parseInt(ui.values[1]);
+          setupRequest();
+        }      
+      }
+  });
+  // only initially needed
+  $('#min').html('€' + $('#slider').slider('values', 0)).position({
+      my: 'center top',
+      at: 'center top',
+      of: $('#slider span.ui-slider-handle:eq(0)'),
+      offset: "0, 10"
+  });
+
+  $('#max').html('€' + $('#slider').slider('values', 1)).position({
+      my: 'center top',
+      at: 'center top',
+      of: $('#slider span.ui-slider-handle:eq(1)'),
+      offset: "0, 10"
+  });
+}
+
+$('.filterCheckboxs input[type=checkbox]').each(function(){
+  var id = $(this).val();
+  if($(this).is(':checked')){
+    tagsNow.push(id);
+    //tagsNow.push(id);
+  }
+});
+
+$('.filterCheckboxs').on('change', 'input[type=checkbox]', function() {
+  var id = $(this).val(); // this gives me null
+  var index = tagsNow.indexOf(id);
+  
+  if($(this).is(':checked')){
+    tagsNow.push(id);
+  }
+  else{
+    if (index > -1) {
+      tagsNow.splice(index, 1);
+    }
+  }
+  //tagsNow.concat(tags); 
+  setupRequest();
+});
+
+function setupRequest(){
+  var isReq = false;
+  var rqtURL = '';
+  var rqtURL1 = '';
+  var rqtURL2 = '';
+  var rqtTo = $('#thisURL').attr('data-url');
+  
+  //Prices
+  if( 0 != pMinNow || 500 != pMaxNow ){
+    isReq = true;
+    rqtURL1 = 'price='+pMinNow+','+pMaxNow;
+  }else{
+    rqtURL1 = '';
+  }
+
+  //Tags
+  hasTags = isEqual(tags, tagsNow);
+  if( tagsNow.length ){
+    isReq = true;
+    ftags = arraySeparator(tagsNow, ',');
+    rqtURL2 = 'tags='+ftags;
+  }
+
+  if( rqtURL1 != '' ){
+    rqtURL = '?'+rqtURL1;
+    if( rqtURL2 != '' ){
+      rqtURL = '?'+rqtURL1+'&'+rqtURL2;
+    }
+  }else{
+    rqtURL = '?'+rqtURL2;
+  }
+
+  if( isReq ){
+    var genRqURL = rqtTo+rqtURL;
+    window.location.href = genRqURL;
+  }else{
+    window.location.href = rqtTo;
+  }
+// '/?price=12,20&tags=tag1,tag2';
+// '/shop/?min_price=20&max_price=30';
+}
+
+function arraySeparator(arr, sep){
+  var string = '';
+  if( arr.length ){
+    for(var i=0; i<arr.length; i++){
+      string += arr[i]
+      if( i < arr.length - 1 ){ string += sep }
+    }
+  }
+  return string;
+}
+
+function isEqual(a, b){
+  var isEqual = true;
+  if(a.length != b.length) {
+    isEqual = false; 
+  }else{
+    //comapring each element of array 
+    for(var i=0; i<a.length; i++){
+      aVal = a[i];
+      index = b.indexOf(aVal); 
+      if (index == -1) {
+        isEqual = false;
+      }
+    }
+  }
+  return isEqual;
+}
+
 })(jQuery);
+
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}

@@ -5,48 +5,31 @@
 get_header(); 
 while( have_posts() ): the_post();
 $thisID = get_the_ID();
+get_template_part('templates/page', 'banner');
+if( isset($_GET['q']) && !empty($_GET['q']) )
+  $keyword = $_GET['q'];
+else
+  $keyword = '';
+
 ?>
-<section class="breadcrumbs-sec">
-  <div class="container-lg">
-    <div class="row">
-      <div class="col-12">
-        <div class="breadcrumbs-innr hide-xs clearfix">
-          <div class="breadcrumbs-lft-text">
-            <h1><?php the_title(); ?></h1>
-          </div>          
-          <div class="breadcrumbs-main">
-            <ul>           
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-              <li><a href="#">Binnenpagina</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="breadcrumbs-innr show-xs clearfix">
-          <div class="breadcrumbs-left">
-            <a href="#">Home</a>
-          </div>
-          <div class="breadcrumbs-right">
-            <a href="javascript:history.go(-1)">Terug</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>    
-</section>
-
-
-
 <section class="faq-content">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="faq-cnt-inner">
-          <h2><?php the_title(); ?></h2>
-          <?php the_content(); ?>
+          <?php  
+            $showhidenews = get_field('showhidenews', $thisID);
+            $introsec = get_field('introsec', $thisID);
+            if($showhidenews):
+          ?>
+          <?php 
+            if( !empty($introsec['titel']) ) printf('<div><strong class="faw-page-entry-title">%s</strong></div>', $introsec['titel']);
+            if( !empty($introsec['beschrijving']) ) echo wpautop( $introsec['beschrijving'] );
+          ?>
+          <?php endif; ?>
           <div class="rm-search-form">
-            <form>
-              <input type="search" name="" placeholder="Typ je vraag hier">
+            <form action="" method="get">
+              <input type="search" name="q" value="<?php echo $keyword; ?>" placeholder="Typ je vraag hier">
               <div class="rm-search-submit-btn">
                 <button>
                   <i>
@@ -93,9 +76,10 @@ $terms = get_terms( array(
             $query = new WP_Query(array( 
                 'post_type'=> 'faqs',
                 'post_status' => 'publish',
-                'posts_per_page' => 1,
+                'posts_per_page' => 9,
                 'orderby' => 'date',
                 'order'=> 'desc',
+                's' => $keyword,
                 'paged' => $paged
               ) 
             );
@@ -108,7 +92,7 @@ $terms = get_terms( array(
                 <div class="faq-grd-item mHc">
                   <div class="faq-grd-item-inner">
                     <div class="faq-grd-item-des">
-                      <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                      <h3 class="faq-grd-title equalheight"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                       <?php the_excerpt(); ?>
                       <a href="<?php the_permalink(); ?>">Lees Meer</a>
                     </div>
@@ -121,15 +105,17 @@ $terms = get_terms( array(
               <?php endwhile; ?>
             </ul>
           </div>
+          <?php else: ?>
+            <div class="notfound">Geen resultaat!</div>
         <?php endif; wp_reset_postdata(); ?>
         </div>
       </div>
     </div>
+    <?php if( $query->max_num_pages > 1 ): ?>
     <div class="row">
       <div class="col-sm-12">
         <div class="faq-pagination">
           <?php 
-            if( $query->max_num_pages > 1 ):
             $big = 999999999; // need an unlikely integer
             echo paginate_links( array(
               'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -139,14 +125,12 @@ $terms = get_terms( array(
               'type'  => 'list',
               'show_all' => true,
               'prev_next' => false
-            ) );
-            else:
-              echo '<div class="hasgap"></div>';
-            endif; 
+            ) ); 
           ?>
         </div>
       </div>
     </div>
+    <?php endif; ?>
   </div>
 </section>
 <?php get_footer(); ?>

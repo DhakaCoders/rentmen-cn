@@ -23,6 +23,10 @@ if( !function_exists('cbv_theme_setup') ){
 			add_theme_support('category-thumbnails');
 		}
         add_image_size( 'faqfull', 534, 563, true );
+        add_image_size( 'bloggrid', 422, 280, true );
+        add_image_size( 'gallerygrid', 440, 272, true );
+        add_image_size( 'productslide', 442, 440, true );
+        add_image_size( 'knopgrid', 298, 220, true );
 
 		
 		// add size to media uploader
@@ -38,7 +42,10 @@ if( !function_exists('cbv_theme_setup') ){
 		) );
 
 		register_nav_menus( array(
-          'cbv_main_menu' => __( 'Main Menu', THEME_NAME ),
+          'cbv_main_menu' => __( 'Hoofdmenu', THEME_NAME ),
+          'cbv_fta_menu' => __( 'Footer 1 Menu', THEME_NAME ),
+          'cbv_ftb_menu' => __( 'Footer 2 Menu', THEME_NAME ),
+          'cbv_ftc_menu' => __( 'Footer 3 Menu', THEME_NAME ),
           'cbv_copyright_menu' => __( 'Copyright Menu', THEME_NAME ),
 		) );
 
@@ -53,26 +60,25 @@ function cbv_theme_scripts(){
     include_once( THEME_DIR . '/enq-scripts/popper.php' );
     include_once( THEME_DIR . '/enq-scripts/bootstrap.php' );
     include_once( THEME_DIR . '/enq-scripts/fonts.php' );
-    include_once( THEME_DIR . '/enq-scripts/stick.sidebar.php' );
     include_once( THEME_DIR . '/enq-scripts/fancybox.php' );
     include_once( THEME_DIR . '/enq-scripts/slick.php' );
     include_once( THEME_DIR . '/enq-scripts/google.maps.php' );
     include_once( THEME_DIR . '/enq-scripts/matchheight.php' );
     include_once( THEME_DIR . '/enq-scripts/app.php' );
-    include_once( THEME_DIR . '/enq-scripts/nav.php' );
     include_once( THEME_DIR . '/enq-scripts/jquery.ui.php' );
-    include_once( THEME_DIR . '/enq-scripts/packery.php' );
     include_once( THEME_DIR . '/enq-scripts/theme.default.php' );
 }
 
-//add_action( 'wp_enqueue_scripts', 'cbv_theme_scripts');
+add_action( 'wp_enqueue_scripts', 'cbv_theme_scripts');
 
 
 /**
 Includes->>
 */
 include_once(THEME_DIR .'/inc/widgets-area.php');
+include_once(THEME_DIR .'/inc/breadcrumbs.php');
 include_once(THEME_DIR .'/inc/cbv-functions.php');
+include_once(THEME_DIR .'/inc/wc-functions.php');
 /**
 ACF Option pages->>
 */
@@ -105,8 +111,12 @@ add_filter('use_block_editor_for_post', '__return_false');
 
 function searchfilter($query) {
     if (is_search() && $query->is_main_query() && !is_admin() ) {
-        //$query->set('post_type',array('post'));
-        $query->set( 'posts_per_page', 2 );
+        $query->set('post_type',array('product'));
+        $query->set( 'posts_per_page', 1 );
+        $query->set( 'orderby', 'modified' );
+    }elseif(is_archive() && $query->is_main_query() && !is_admin()){
+        $query->set('post_type',array('product'));
+        $query->set( 'posts_per_page', 1 );
         $query->set( 'orderby', 'modified' );
     }
 return $query;
