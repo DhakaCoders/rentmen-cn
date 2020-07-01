@@ -78,7 +78,7 @@
 }
 
 .faq-tabs ul li a:hover:after{
-	width: 100%
+	width: 100%;
 }
 .faq-tabs ul li a:hover{
 	color: #F3BF00;
